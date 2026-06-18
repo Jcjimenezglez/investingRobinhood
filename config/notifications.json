@@ -1,0 +1,38 @@
+{
+  "email": {
+    "to": "jcjimenezglez@gmail.com",
+    "from": "onboarding@resend.dev",
+    "fromNote": "Cambiar a tu dominio verificado en Resend cuando lo configures (ej. alerts@tudominio.com)",
+    "enabled": true,
+    "provider": "resend",
+    "script": "scripts/send-alert.sh"
+  },
+  "robinhoodAppPush": {
+    "enabled": true,
+    "note": "Robinhood envía push automático en cada trade del agente — verificar en app"
+  },
+  "triggers": {
+    "emailImmediately": [
+      "escalation_required",
+      "trading_halted",
+      "mcp_connection_failure",
+      "first_autonomous_trade",
+      "order_review_warnings"
+    ],
+    "emailDigestDaily": [
+      "trades_executed",
+      "portfolio_snapshot",
+      "next_day_plan"
+    ],
+    "noEmail": [
+      "routine_trade_within_policy",
+      "research_only_session",
+      "hold_decision"
+    ]
+  },
+  "subjectPrefixes": {
+    "urgent": "[ROBINHOOD AGENT — ACCIÓN REQUERIDA]",
+    "trade": "[ROBINHOOD AGENT — Trade]",
+    "digest": "[ROBINHOOD AGENT — Resumen]"
+  }
+}

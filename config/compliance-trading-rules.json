@@ -1,0 +1,62 @@
+{
+  "lastUpdated": "2026-06-18",
+  "accountAgentic": {
+    "type": "cash",
+    "nickname": "Agentic",
+    "aumUsd": 100
+  },
+  "marketHoursET": {
+    "preMarket": "9:00–9:30",
+    "regular": "9:30–16:00",
+    "afterHours": "16:00–18:00",
+    "agenticFractionalOrders": "regular only (9:30–16:00)"
+  },
+  "recommendedEntryWindowET": {
+    "start": "9:35",
+    "end": "10:15",
+    "reason": "Evitar volatilidad de apertura 9:30–9:35; liquidez estable"
+  },
+  "regulatoryUS": {
+    "pdt": {
+      "status": "abolished-margin-2026-06-04",
+      "note": "FINRA eliminó PDT clásico en cuentas margin (Jun 4 2026). Cuenta Agentic es CASH — reglas distintas.",
+      "source": "https://robinhood.com/us/en/support/articles/day-trading/"
+    },
+    "settlement": {
+      "cycle": "T+1",
+      "note": "Venta liquida al día hábil siguiente. En cash account: good-faith / freeriding si compras y vendes sin fondos settled."
+    },
+    "cashAccountViolations": [
+      "Good faith violation — comprar y vender antes de pagar con fondos settled",
+      "Freeriding — vender sin tener cash para cubrir compra",
+      "Con $100 y 1 posición: esperar T+1 entre round-trips si aplica"
+    ],
+    "washSale": {
+      "applies": "Solo impacto fiscal si vendes con pérdida y recompras en 30 días",
+      "agenticNote": "Cuenta taxable individual Agentic — relevante si hay loss harvest"
+    },
+    "shortSelling": "No en Agentic MCP / cash focus",
+    "options": "No aprobado en cuenta Agentic (option_level vacío)"
+  },
+  "robinhoodAgenticBeta": [
+    "Usuario responsable de todas las órdenes del agente",
+    "Puede perder todo el capital",
+    "Push notification en cada trade",
+    "Desconectar agente en app en cualquier momento"
+  ],
+  "fundLimits": {
+    "source": "config/risk-policy.json",
+    "maxTradesPerDay": 2,
+    "maxTradesPerWeek": 5,
+    "maxPositionPct": 50,
+    "stopLossBackupPct": 8,
+    "haltDrawdownPct": 20
+  },
+  "preTradeChecklist": [
+    "Horario regular ET (fractional $ orders)",
+    "get_equity_tradability AMZN OK",
+    "review_equity_order → order_checks vacío",
+    "Thesis document exists",
+    "Within fund size limits"
+  ]
+}

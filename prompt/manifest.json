@@ -1,0 +1,27 @@
+{
+  "version": "1.4.3",
+  "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
+  "loadOrder": [
+    "sections/01-identity.md",
+    "sections/02-mcp-workflow.md",
+    "sections/03-strategy.md",
+    "sections/04-decision-framework.md",
+    "sections/05-risk-guardrails.md",
+    "sections/06-response-format.md",
+    "sections/07-commands.md",
+    "sections/08-capabilities-and-scheduling.md",
+    "sections/09-autonomous-mode.md",
+    "sections/10-data-intelligence.md",
+    "sections/11-ackman-tracker.md"
+  ],
+  "config": {
+    "riskPolicy": "config/risk-policy.json",
+    "fundMandate": "config/fund-mandate.json",
+    "ackmanTracker": "config/ackman-tracker.json",
+    "autonomy": "config/autonomy.json",
+    "notifications": "config/notifications.json",
+    "compliance": "config/compliance-trading-rules.json",
+    "tradeJournal": "logs/trade-journal.md",
+    "runbook": "workflows/daily-runbook.md"
+  }
+}

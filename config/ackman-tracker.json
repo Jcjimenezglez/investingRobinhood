@@ -1,0 +1,40 @@
+{
+  "source": "Pershing Square Capital Management 13F-HR",
+  "filedDate": "2026-05-15",
+  "positionsAsOf": "2026-03-31",
+  "portfolioValueUsd": 13714299861,
+  "positionCount": 11,
+  "disclaimer": "13F se publica ~45 días tarde y SOLO muestra longs de equity US. Oculta hedges, opciones, cortos, preferentes, deals privados y activismo. Úsalo como hunting ground + confluencia, NO como copia mecánica.",
+  "holdings": [
+    { "symbol": "BN",   "name": "Brookfield Corp",        "weightPct": 17.6, "change": "trimmed -2.8%", "robinhoodTradable": true },
+    { "symbol": "AMZN", "name": "Amazon",                  "weightPct": 17.4, "change": "increased +19.2% (biggest add)", "robinhoodTradable": true },
+    { "symbol": "UBER", "name": "Uber Technologies",       "weightPct": 15.7, "change": "trimmed -0.8%", "robinhoodTradable": true },
+    { "symbol": "MSFT", "name": "Microsoft",               "weightPct": 15.3, "change": "NEW position", "robinhoodTradable": true },
+    { "symbol": "QSR",  "name": "Restaurant Brands Intl",  "weightPct": 12.2, "change": "trimmed -1.0%", "robinhoodTradable": true },
+    { "symbol": "META", "name": "Meta Platforms",          "weightPct": 11.1, "change": "trimmed -0.5%", "robinhoodTradable": true },
+    { "symbol": "HHH",  "name": "Howard Hughes Holdings",  "weightPct": 8.7,  "change": "Ackman Exec Chairman — 'modern Berkshire' vehicle", "robinhoodTradable": true },
+    { "symbol": "SEG",  "name": "Seaport Entertainment",   "weightPct": 0.8,  "change": "small/illiquid", "robinhoodTradable": true },
+    { "symbol": "GOOG", "name": "Alphabet",                "weightPct": 0.7,  "change": "CUT -94.9% — effectively EXITED", "robinhoodTradable": true },
+    { "symbol": "HTZ",  "name": "Hertz Global",            "weightPct": 0.5,  "change": "speculative turnaround", "robinhoodTradable": true }
+  ],
+  "directVehicles": [
+    { "symbol": "HHH", "note": "Howard Hughes — NYSE, tradable en Robinhood. Lo más cercano a 'co-invertir con Ackman' (es su holding tipo Berkshire). Requiere tesis propia." },
+    { "name": "PSH / PSHZF", "note": "Pershing Square Holdings cotiza en Londres/Ámsterdam (LN:PSH) y OTC (PSHZF). NO disponible/limpio en Robinhood US. Descartado." }
+  ],
+  "speculativeNotViaRobinhood": [
+    { "name": "Fannie Mae / Freddie Mac (FNMA/FMCC)", "note": "Tesis legacy de Ackman, alto riesgo. OTC — verificar tradability antes de considerar." }
+  ],
+  "usageRules": [
+    "El fund opera con TESIS PROPIA (estilo Ackman), no copia el 13F a ciegas.",
+    "Confluencia = señal de mayor convicción: si NUESTRA tesis coincide con una posición real de Ackman, sube convicción.",
+    "Si Ackman EXITÓ un nombre (ej. GOOG -94.9%), NO usarlo como idea principal salvo tesis propia muy fuerte.",
+    "No replicar 8-11 nombres con $100 (sería closet-index del libro de Ackman).",
+    "HHH permitido como única 'apuesta directa Ackman' con tesis propia.",
+    "Refrescar este archivo tras cada nuevo 13F (~45 días post-quarter)."
+  ],
+  "confluenceWithFundMemo": {
+    "AMZN": "FUERTE — nuestro BUY independiente = posición #2 de Ackman y su mayor add Q1. Validación.",
+    "GOOGL": "CONFLICTO — nuestro backup previo = Ackman lo cortó 94.9%. Degradar GOOGL como backup.",
+    "HOOD": "Neutral — no está en el libro de Ackman; sigue como WATCHLIST por valuación."
+  }
+}

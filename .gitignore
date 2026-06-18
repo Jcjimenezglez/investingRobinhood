@@ -1,0 +1,5 @@
+.env
+logs/alerts/
+logs/intelligence/*.md
+!logs/intelligence/.gitkeep
+!logs/trade-journal.md

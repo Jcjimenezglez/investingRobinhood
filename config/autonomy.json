@@ -1,0 +1,67 @@
+{
+  "mode": "autonomous",
+  "authorizedAt": "2026-06-18",
+  "authorizationNote": "Usuario autorizó trading autónomo dentro de risk-policy.json. Ejecutar sin confirmación chat salvo escalación.",
+  "execution": {
+    "autoPlaceOrders": true,
+    "alwaysReviewViaMcp": true,
+    "skipChatConfirmation": true,
+    "onlyDuringRegularHours": true,
+    "agenticAccountNickname": "Agentic"
+  },
+  "escalation": {
+    "emailOnEscalation": true,
+    "pauseAndEmailOnHalt": true,
+    "requireHumanApprovalWhen": [
+      "order_checks_non_empty_after_review",
+      "trade_exceeds_max_order_usd",
+      "daily_loss_limit_breached",
+      "weekly_loss_limit_breached",
+      "consecutive_losses_halt",
+      "conviction_below_medium",
+      "symbol_outside_universe",
+      "mcp_auth_or_connection_failure"
+    ],
+    "executeButNotifyImmediately": [
+      "first_autonomous_trade_ever",
+      "any_executed_order"
+    ]
+  },
+  "schedule": {
+    "timezone": "America/New_York",
+    "sessions": [
+      {
+        "name": "pre-market-prep",
+        "cron": "0 8 * * 1-5",
+        "action": "research-only",
+        "description": "Recopilar news, SEC, social. Sin trades. Guardar en logs/intelligence/"
+      },
+      {
+        "name": "market-open",
+        "cron": "35 9 * * 1-5",
+        "action": "full-cycle",
+        "description": "Letter → thesis scan → fundamentals → enter/exit/hold per Ackman mandate"
+      },
+      {
+        "name": "intraday-monitor",
+        "cron": "30,45 9 * * 1-5",
+        "cronAlt": "*/15 10-15 * * 1-5",
+        "cronClose": "0 16 * * 1-5",
+        "action": "monitor-auto-exit",
+        "description": "Cada 15 min en regular hours: check posiciones; market sell si stop -8% o target +25%. Ver workflows/monitor-positions.md"
+      },
+      {
+        "name": "midday-check",
+        "cron": "0 12 * * 1-5",
+        "action": "monitor",
+        "description": "Revisar posiciones vs stop/target. Exit parcial si aplica"
+      },
+      {
+        "name": "close-check",
+        "cron": "0 15 * * 1-5",
+        "action": "monitor",
+        "description": "Última revisión antes del cierre. Journal + email digest si hubo trades"
+      }
+    ]
+  }
+}

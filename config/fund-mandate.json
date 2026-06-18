@@ -1,0 +1,38 @@
+{
+  "fundName": "investingRobinhood",
+  "fundType": "concentrated-long-only",
+  "inspiration": "Bill Ackman / Pershing Square — thesis-driven, high conviction, catalyst-oriented",
+  "investmentPhilosophy": "ackman-only",
+  "explicitlyExcluded": [
+    "burry-style macro shorts",
+    "dual-PM overlays",
+    "passive index hold",
+    "cross-account correlation rules"
+  ],
+  "aumUsd": 100,
+  "accountScope": "agentic-only",
+  "scopeNote": "All decisions based solely on the $100 Agentic account. Other LP accounts are irrelevant to fund thesis.",
+  "clientMandate": "Generate absolute returns. Concentrated bets on mispriced quality. Not index-hugging. Not passive hold.",
+  "researchUniverse": [
+    "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN"
+  ],
+  "notTradableViaAgentic": [
+    { "name": "SpaceX", "reason": "Private" },
+    { "name": "ETH", "reason": "Crypto — not Agentic MCP equities" },
+    { "name": "BTC", "reason": "Crypto" },
+    { "name": "DOGE", "reason": "Crypto" }
+  ],
+  "ackmanPrinciples": [
+    "Few names, large conviction weights",
+    "Write the thesis before capital goes in",
+    "Identify catalyst + timeline (3–12 months)",
+    "Quality business + mispriced entry",
+    "Exit when thesis breaks — not calendar",
+    "Explain decisions like an investor letter",
+    "Judge only the $100 fund book — ignore external accounts"
+  ],
+  "thesisTemplatePath": "workflows/investment-thesis-template.md",
+  "lettersPath": "logs/investor-letters/",
+  "ackmanTracker": "config/ackman-tracker.json",
+  "ackmanTrackerNote": "Confluencia/hunting ground, NO copia mecánica del 13F. HHH = único vehículo directo Ackman permitido con tesis propia."
+}

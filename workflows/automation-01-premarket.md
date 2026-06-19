@@ -39,7 +39,7 @@ WebSearch Reddit/StockTwits solo como señal débil.
 Escribir `logs/intelligence/YYYY-MM-DD-0800-premarket.md`:
 
 1. **Snapshot fund** — cash, P&L, posiciones vs límites risk-policy
-2. **AMZN + MSFT** — bull/bear, P&L%, distancia stop (-8%) y target (+25%), ¿tesis intacta?
+2. **Posiciones abiertas** — bull/bear, P&L%, distancia stop backup (-8%), fair value vs precio (thesis memo), ¿tesis intacta?
 3. **Ranking universo** (#1–10): convicción, mispricing, catalizador 3–12m, confluencia Ackman
 4. **Decisión para sesión 9:35** — HOLD / ADD / ROTATE / EXIT (con sizing si aplica)
 5. **Riesgos del día**

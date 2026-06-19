@@ -30,9 +30,10 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 review_equity_order (BUY) → si order_checks {} → place_equity_order
 → get_equity_positions (entry + quantity exacta)
 → review_equity_order (STOP GTC -8%) → place_equity_order (sell stop_market gtc)
-→ review_equity_order (TAKE-PROFIT limit GTC +25%) → place_equity_order (sell limit gtc, vende TODO)
-→ trade-journal.md (entry + stop + target prices)
+→ trade-journal.md (entry + stop backup + fair value del thesis memo)
 ```
+
+Sin take-profit GTC automático — exits al alza según `exitPolicy` Ackman en risk-policy.
 
 Si stop GTC rechazado: alerta + fallback monitoreo 12:00 / 15:00 ET con `check`.
 

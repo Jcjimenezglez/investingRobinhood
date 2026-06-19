@@ -30,7 +30,7 @@ get_portfolio, get_equity_positions, get_equity_orders
 |--------|-----------|
 | **HOLD** | Convicción < Media, datos insuficientes, o book OK sin señal |
 | **BUY/ADD** | Convicción ≥ Media, thesis en `logs/theses/`, dentro risk-policy, max 2 posiciones |
-| **SELL/EXIT** | Tesis rota, stop -8%, target +25%, o mejor rotación |
+| **SELL/EXIT** | Tesis rota, tesis realizada, trim en memo, stop -8% backup, o mejor rotación |
 
 Sizing: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.
 
@@ -39,7 +39,7 @@ Sizing: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.
 ```
 review_equity_order → si order_checks {} → place_equity_order
 get_equity_positions → entry price exacto
-Intentar stop GTC -8% + take-profit limit GTC +25%
+Intentar stop GTC -8% (backup). Sin take-profit mecánico.
 Si fractional rechaza GTC → log alerta + fallback monitor
 append logs/trade-journal.md
 bash scripts/send-alert.sh trade "BUY/SELL TICKER" "detalle"

@@ -7,12 +7,13 @@
     "weekdaysOnly": true
   },
   "pollIntervalMinutes": 15,
-  "autoSellOnStopOrTarget": true,
+  "autoSellOnHardStopOnly": true,
+  "autoSellOnTakeProfit": false,
   "accountNickname": "Agentic",
   "useRiskPolicyThresholds": true,
   "stopLossPct": 8,
-  "takeProfitPct": 25,
-  "takeProfitAction": "sell_all",
+  "exitPolicy": "ackman-thesis-driven",
+  "takeProfitPct": null,
   "alertScript": "scripts/send-alert.sh",
   "journalPath": "logs/trade-journal.md"
 }

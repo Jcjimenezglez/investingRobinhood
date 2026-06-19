@@ -47,8 +47,10 @@ Copia a `logs/theses/TICKER-YYYY-MM-DD.md` antes de cada **nueva** posición.
 ### 6. Trade plan
 
 - Entry: limit $___ / market $___
-- Target take-profit: +25% (vende todo, limit GTC automático)
-- Full exit if: thesis broken
+- Fair value range (thesis): $___ – $___
+- Trim plan (opcional): vender ___% si precio ≥ $___ (margen de seguridad agotado)
+- Full exit if: thesis broken / catalyst failed / better idea elsewhere
+- Hard stop backup: -8% GTC (solo pánico con tesis intacta)
 
 ### 7. Bear case (what kills us)
 

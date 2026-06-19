@@ -33,7 +33,7 @@ Por candidato:
 
 - **Bull:** 2–3 bullets cuantitativos
 - **Bear:** 2–3 riesgos concretos
-- **Setup:** entry, stop ($/%), target ($/%), size, R:R
+- **Setup:** entry, stop backup ($/%), fair value range (thesis), size, R:R
 - **Convicción:** Baja / Media / Alta — operar solo Media o Alta
 
 ## Fase 4 — Ejecución (BUY)
@@ -60,23 +60,18 @@ Registrar stop en trade-journal + intelligence log
 - Log en `logs/alerts/` + journal
 - Fallback: monitoreo manual con `check` a 12:00 y 15:00 ET; vender si ≤ stop backup
 
-**Primary exit por tesis rota** sigue en monitoreo — stop/take-profit GTC son automáticos en el broker.
+**Primary exit por tesis rota / fair value / rotate** — monitoreo activo en sesiones programadas.
 
-## Fase 4c — Take-profit GTC +25% (obligatorio tras BUY en `go`)
+**Stop GTC -8%** = red de seguridad si tesis intacta; no sustituye decisión Ackman de salida.
 
-Inmediatamente después del stop (misma corrida `go`):
+## ~~Fase 4c — Take-profit GTC +25%~~ (ELIMINADO)
 
-```
-limit_price = average_buy_price × (1 + takeProfitPct/100)   # default +25%
-review_equity_order → side=sell, type=limit, quantity=shares_available_for_sells, limit_price, time_in_force=gtc
-Si order_checks {} → place_equity_order
-Registrar take-profit en trade-journal
-```
+**Ackman no usa take-profit mecánico.** No colocar limit GTC por +25% ni vender automáticamente al alcanzar un %.
 
-**Si el broker rechaza dos órdenes sell GTC** (stop + limit misma cantidad): intentar take-profit primero o stop según `order_checks`; alerta en logs/alerts/ + fallback `check`.
-
-**Si limit GTC falla** (fractional): fallback monitoreo — vender todo en `check` si P&L ≥ +25%.
+Salidas al alza (cuando aplique):
+- **Trim parcial** — solo si el thesis memo define % y precio (ej. fair value alcanzado, margen de seguridad reducido)
+- **Exit total** — tesis realizada o rotación a mejor risk/reward (ej. Ackman GOOGL → MSFT)
 
 ## Fase 5 — Monitoreo
 
-Cada sesión: posiciones vs. stop/target; exit si aplica; pausar tras 3 pérdidas seguidas.
+Cada sesión: posiciones vs. tesis + stop backup; exit/trim si tesis lo dicta; pausar tras 3 pérdidas seguidas.

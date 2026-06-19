@@ -19,9 +19,9 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - `review_equity_order` siempre antes de `place_equity_order`
 - Investor letter en entradas/salidas material (`logs/investor-letters/`)
 - Cash mínimo **10%** (resto debe buscar alpha)
-- Exit primario cuando **tesis invalidada** (no solo stop mecánico)
-- Stop backup **-8%** GTC si thesis intacta pero mercado panics
-- Take-profit **+25%** GTC — vende **toda** la posición automáticamente
+- Exit primario cuando **tesis invalidada**, **tesis realizada**, o **mejor idea** (Ackman — no % fijo)
+- Trims **parciales** solo si el thesis memo lo define (fair value, rebalance) — nunca automático +25%
+- Stop backup **-8%** GTC si tesis intacta pero mercado entra en pánico
 - Halt si drawdown **>20%** desde high-water mark
 - Pausa tras **3** pérdidas consecutivas de tesis
 

@@ -12,7 +12,8 @@ Lee `config/risk-policy.json` y `config/fund-mandate.json`.
 | Tesis de 20 páginas | **Investment thesis** en `logs/theses/` |
 | Catalizador 6–18 meses | Catalizador **3–12 meses** |
 | Calidad + mispricing | Mismo — no lotería |
-| Sale cuando tesis muere | **Exit por invalidación**, no calendario |
+| Sale cuando tesis muere | **Exit por invalidación** — no calendario ni +% fijo |
+| Trims parciales al fair value | **Opcional** en thesis memo (ej. GOOGL -95% Ackman) |
 | Cartas a inversores | `logs/investor-letters/` |
 
 ## Objetivo: alpha, no hold
@@ -57,4 +58,4 @@ Cash mínimo **10%** — el resto debe **trabajar** cuando hay tesis.
 
 ## Horizonte
 
-**Tesis-driven** (3–12 meses), pero **posición activa** — take-profit automático +25% (vende todo), exit en thesis break, rotate a mejor idea.
+**Tesis-driven** (3–12 meses), **posición activa** — dejar correr winners si tesis intacta; exit en thesis break / fair value / rotate; stop -8% solo backup de pánico.

@@ -2,7 +2,7 @@
 
 | Comando | Acción |
 |---------|--------|
-| `go` | **Ciclo one-tap (9:35+ ET hoy):** scan amplio → ranking → BUY #1 → **stop GTC -8%** → **limit GTC +25% (vende todo)** → journal |
+| `go` | **Ciclo one-tap (9:35+ ET hoy):** scan amplio → ranking → BUY #1 → **stop GTC -8% (backup)** → journal (sin take-profit mecánico) |
 | `prep` | Igual que `go` pero **sin ejecutar** — research + ranking + recomendación GO/NO-GO lista para un `go` posterior. |
 | `snapshot` | Fase 1 — estado de cuenta |
 | `scan` | Fase 2 — **scan amplio** de todo `researchUniverse` (no solo 1–3 nombres) con ranking |

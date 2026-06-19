@@ -41,16 +41,28 @@
     "maxDrawdownFromHighWaterMarkPct": 15,
     "thesisInvalidationExit": true,
     "stopLossPct": 8,
-    "stopLossNote": "Hard stop backup; primary exit = thesis broken",
+    "stopLossNote": "Hard stop backup solo si tesis intacta; exit primario = tesis rota (Ackman)",
     "placeStopGtcAfterEntry": true,
     "stopOrderType": "stop_market",
     "stopTimeInForce": "gtc",
-    "takeProfitPct": 25,
-    "takeProfitAction": "sell_all",
-    "placeTakeProfitGtcAfterEntry": true,
-    "takeProfitOrderType": "limit",
-    "takeProfitTimeInForce": "gtc",
-    "takeProfitNote": "Limit GTC sell at entry × 1.25 — vende TODO automático si llega +25%",
+    "exitPolicy": {
+      "style": "ackman-thesis-driven",
+      "autoTakeProfit": false,
+      "takeProfitPct": null,
+      "note": "Ackman NO vende por % fijo. Sale cuando: (1) tesis rota, (2) tesis realizada / fair value, (3) mejor idea en otro lado. Trims parciales opcionales — nunca automáticos por +25%.",
+      "fullExitTriggers": [
+        "thesis_invalidated",
+        "catalyst_failed_beyond_grace_period",
+        "superior_risk_reward_elsewhere"
+      ],
+      "partialTrimTriggers": [
+        "fair_value_reached_per_thesis_memo",
+        "valuation_expansion_reduced_margin_of_safety",
+        "portfolio_concentration_rebalance"
+      ],
+      "defaultTrimPct": null,
+      "defaultTrimNote": "Si trim: tamaño definido en thesis (ej. 30–50% al fair value), no regla mecánica global"
+    },
     "maxTradesPerDay": 2,
     "maxTradesPerWeek": 5,
     "requireReviewBeforeOrder": true,

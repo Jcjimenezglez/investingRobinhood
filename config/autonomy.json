@@ -48,13 +48,13 @@
         "cronAlt": "*/15 10-15 * * 1-5",
         "cronClose": "0 16 * * 1-5",
         "action": "monitor-auto-exit",
-        "description": "Cada 15 min en regular hours: check posiciones; market sell si stop -8% o target +25%. Ver workflows/monitor-positions.md"
+        "description": "Cada 15 min en regular hours: check posiciones; market sell si stop -8% backup o tesis rota. Ver workflows/monitor-positions.md"
       },
       {
         "name": "midday-check",
         "cron": "0 12 * * 1-5",
         "action": "monitor",
-        "description": "Revisar posiciones vs stop/target. Exit parcial si aplica"
+        "description": "Revisar posiciones vs stop backup y tesis. Trim/exit solo por Ackman rules"
       },
       {
         "name": "close-check",

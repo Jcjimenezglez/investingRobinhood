@@ -1,5 +1,7 @@
 # Comparative Investment Memo #1 — investingRobinhood
 
+> **Superseded (AMZN trade plan):** Ver `AMZN-2026-06-19.md` para exit/trim Ackman y posición abierta.
+
 **Fund:** investingRobinhood  
 **Date:** 2026-06-18  
 **AUM:** $100.00 (100% cash)  
@@ -127,10 +129,10 @@
 3. **Competitive** — Azure/GCP take share; custom silicon fails at scale
 
 ### Trade plan
-- **Entry:** Limit GTC **$237.00** (at/below prior close) — `$45 notional`
-- **Partial trim:** +25% (~$296) if thesis intact — sell ~1/3
-- **Full exit:** Kill criteria triggered
-- **Next step:** `review_equity_order` → `place_equity_order` at market open regular hours
+
+> Ver **`AMZN-2026-06-19.md`** — trim ~33% @ $285 (tesis intacta), full exit por kill criteria, stop backup $217.75. Sin +25% mecánico.
+
+- **Entry (filled):** ~$237 GTC — `$45 notional` ✓ 2026-06-18
 
 ---
 

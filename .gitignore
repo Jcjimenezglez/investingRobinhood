@@ -3,3 +3,7 @@ logs/alerts/
 logs/intelligence/*.md
 !logs/intelligence/.gitkeep
 !logs/trade-journal.md
+data/raw/
+!data/raw/.gitkeep
+!data/signals/
+!data/signals/.gitkeep

@@ -22,6 +22,8 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - Exit primario cuando **tesis invalidada**, **tesis realizada**, o **mejor idea** (Ackman — no % fijo)
 - Trims **parciales** solo si el thesis memo lo define (fair value, rebalance) — nunca automático +25%
 - Stop backup **-8%** GTC si tesis intacta pero mercado entra en pánico
+- **Fractional positions:** stops GTC rechazados por Robinhood — monitoreo automation-03 es fallback primario; no asumir bracket en broker
+- **Whole shares** cuando size ≥ $15 y precio lo permita — habilita stop GTC real
 - Halt si drawdown **>20%** desde high-water mark
 - Pausa tras **3** pérdidas consecutivas de tesis
 

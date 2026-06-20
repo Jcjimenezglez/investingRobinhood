@@ -1,119 +1,106 @@
 # Investing Robinhood — AI Stock Broker Agent
 
-Agente de IA configurado como **broker profesional** para operar acciones vía el [Robinhood Trading MCP](https://agent.robinhood.com/mcp/trading) (Agentic Beta).
+Agente de IA configurado como **CIO estilo Ackman** para operar acciones vía el [Robinhood Trading MCP](https://agent.robinhood.com/mcp/trading) (Agentic Beta).
 
-Diseñado para testear con **$100** en una cuenta Agentic aislada del resto de tu portfolio.
+Fondo concentrado de **$100** en cuenta Agentic aislada — tesis-driven, catalizador 3–12 meses, sin take-profit mecánico.
 
 ## Qué hace el agente
 
-| Capacidad | Herramienta MCP |
-|-----------|-----------------|
-| Buscar tickers | `search`, `get_popular_lists` |
-| Cotizaciones y tradability | `get_equity_quotes`, `get_equity_tradability` |
-| Ver portfolio | `get_accounts`, `get_portfolio`, `get_equity_positions` |
-| Preview de órdenes | `review_equity_order` |
-| Ejecutar trades | `place_equity_order` (solo cuenta Agentic) |
+| Capacidad | Herramienta / recurso |
+|-----------|----------------------|
+| Portfolio y trades | MCP Robinhood (solo Agentic) |
+| Scan + ranking numérico | `config/signal-weights.json` + universo en `config/fund-mandate.json` |
+| Intel multi-fuente | `prompt/sections/10-data-intelligence.md` + `data/signals/` |
+| Medición de outcomes | `logs/scorecard/positions.jsonl` |
+| Automatización | Cursor Automations + [`workflows/automation-*.md`](workflows/) |
+
+## Estrategia (Ackman concentrated catalyst)
+
+- **1–2 posiciones** máximo · hasta **50%** en convicción Alta
+- **Universo:** GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN
+- **Exit:** tesis rota / fair value / rotación — **no** +% fijo automático
+- **Stop backup:** -8% GTC (whole shares) o monitoreo intraday (fractional)
+- **Objetivo:** retornos absolutos con disciplina PM
+
+Config: [`config/risk-policy.json`](config/risk-policy.json) · Mandato: [`config/fund-mandate.json`](config/fund-mandate.json)
 
 ## Setup en Cursor
 
 ### 1. Conectar el MCP
 
-**Opción A — UI de Cursor**
+**Local:** `.cursor/mcp.json` o Cursor Settings → MCP → `https://agent.robinhood.com/mcp/trading`
 
-1. Cursor Settings → Tools & MCPs → Connect
-2. Pega: `https://agent.robinhood.com/mcp/trading`
-3. Autentica (solo desktop)
-
-**Opción B — Config del proyecto**
-
-Este repo incluye `.cursor/mcp.json` con el servidor preconfigurado. Cursor lo detecta al abrir el proyecto.
+**Cloud Automations:** [`workflows/automation-cloud-mcp-setup.md`](workflows/automation-cloud-mcp-setup.md)
 
 ### 2. Cuenta Agentic
 
-1. Tras conectar el MCP, Robinhood te guía para abrir la cuenta **Agentic**
-2. Deposita **$100** (o el monto que quieras testear)
-3. Verifica en la app móvil de Robinhood
+Deposita **$100**, verifica push notifications en app Robinhood.
 
-> La cuenta Agentic está **separada** de tu portfolio principal. El agente solo puede operar ahí.
+### 3. Automations (ET, lun–vie)
 
-### 3. Usar el agente
+| Hora | Workflow |
+|------|----------|
+| 8:00 | [`automation-01-premarket.md`](workflows/automation-01-premarket.md) |
+| 9:35 | [`automation-02-market-open.md`](workflows/automation-02-market-open.md) |
+| 12:00, 15:00 | [`automation-03-intraday-monitor.md`](workflows/automation-03-intraday-monitor.md) |
+| Vie 16:30 | [`automation-04-weekly-review.md`](workflows/automation-04-weekly-review.md) |
 
-Abre un chat Agent en este workspace. El system prompt se carga automáticamente desde `.cursor/rules/stock-broker-agent.mdc`.
+Checklist antes de ausentarte: [`workflows/pre-absence-checklist.md`](workflows/pre-absence-checklist.md)
 
-Comandos de inicio:
+### 4. Alertas email
+
+Copia `.env.example` → `.env` con `RESEND_API_KEY`. Script: [`scripts/send-alert.sh`](scripts/send-alert.sh)
+
+## Comandos
 
 ```
 snapshot     → estado de cuenta
-scan         → buscar oportunidades
-analiza AAPL → análisis bull/bear de un ticker
-trade SPY $25 → preview + ejecución (con confirmación)
+scan         → ranking universo completo con scores
+go           → ciclo completo + trade #1 si convicción ≥ Media
+prep         → research sin ejecutar
+journal      → historial trades
+prompt version → versión del system prompt
 ```
 
-## Estrategia para $100
+## Data pipeline (gratis)
 
-Con capital tan pequeño, la estrategia por defecto es **Liquid Momentum Swing**:
-
-- **1–2 posiciones** máximo (no puedes diversificar como un fondo)
-- **ETFs + mega caps** (SPY, QQQ, AAPL, MSFT…) — liquidez alta, fractional shares
-- **Trades de $10–$40** (10–40% del portfolio)
-- **Stop loss -6%**, take profit +12%
-- **Reserva de cash ≥15%**
-- Horizonte: **2–10 días** (swing, no day-trading agresivo)
-
-Config completa: [`config/risk-policy.json`](config/risk-policy.json)
-
-### Por qué no otras estrategias (por ahora)
-
-| Estrategia | Problema con $100 |
-|------------|-------------------|
-| Day trading | Comisiones/spreads comen el capital |
-| 10+ posiciones | Imposible con $100 |
-| Penny stocks | Illiquid, alto riesgo |
-| Opciones | Aún no disponible en MCP beta |
-
-## Flujo de seguridad
-
-```
-search → quotes → análisis → review_equity_order → [confirmación] → place_equity_order
+```bash
+bash scripts/fetch-signals.sh all   # SEC + skeleton universe
 ```
 
-El agente **nunca** salta el paso de `review_equity_order`. Robinhood devuelve warnings pre-trade que debes revisar.
+El agente merge datos MCP en `data/signals/`. Ver [`data/README.md`](data/README.md).
 
 ## Estructura del proyecto
 
 ```
 investingRobinhood/
-├── .cursor/
-│   ├── mcp.json
-│   └── rules/stock-broker-agent.mdc   # Loader (alwaysApply)
-├── prompt/
-│   ├── manifest.json                  # Versión + orden del prompt
-│   ├── README.md                      # Cómo editar el prompt
-│   └── sections/                      # System prompt modular (8 archivos)
-├── config/risk-policy.json              # Límites numéricos
-├── logs/trade-journal.md
-├── AGENTS.md
-└── README.md
+├── config/
+│   ├── fund-mandate.json
+│   ├── risk-policy.json
+│   ├── signal-weights.json      # scoring convicción
+│   ├── macro-regime.json
+│   └── data-sources.json
+├── data/signals/                # JSON diario
+├── logs/
+│   ├── trade-journal.md
+│   ├── scorecard/               # positions.jsonl + monthly/weekly
+│   ├── theses/
+│   └── intelligence/
+├── prompt/sections/             # system prompt modular
+├── scripts/
+│   ├── send-alert.sh
+│   └── fetch-signals.sh
+└── workflows/                   # runbooks + automations
 ```
 
-### Mejorar el system prompt
+## Mejora continua
 
-Edita archivos en `prompt/sections/`. Guía completa: [`prompt/README.md`](prompt/README.md).
+1. Trades → `logs/scorecard/positions.jsonl`
+2. Viernes → weekly review + sugerencias calibración weights
+3. Mensual → `logs/scorecard/monthly/YYYY-MM.md`
 
-Capacidades y scheduling: [`prompt/sections/08-capabilities-and-scheduling.md`](prompt/sections/08-capabilities-and-scheduling.md).
+Prompt version: ver [`prompt/manifest.json`](prompt/manifest.json) (actual **1.5.0**).
 
 ## Riesgos
 
-Robinhood Agentic Trading es un producto **beta**. Lee los [disclosures oficiales](https://robinhood.com/us/en/support/articles/agentic-trading-overview/):
-
-- Puedes perder todo el capital depositado
-- Los agentes de IA pueden cometer errores
-- Tú eres responsable de todas las órdenes
-- Supervisa la actividad en la app Robinhood (push notifications en cada trade)
-
-## Próximos pasos
-
-1. Conecta el MCP y autentica
-2. Deposita $100 en la cuenta Agentic
-3. Abre un chat y escribe `snapshot`
-4. Cuando estés listo: `scan` → `analiza TICKER` → `trade TICKER $25`
+Robinhood Agentic es **beta**. Puedes perder todo el capital. Supervisa actividad en app Robinhood.

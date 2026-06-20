@@ -19,11 +19,23 @@ get_equity_quotes (todos los del universo)        → precio, cambio %
 get_equity_fundamentals (top candidatos)          → P/E, FCF, márgenes, 52w
 get_popular_watchlists                            → movers, earnings próximos
 get_equity_tradability                            → operabilidad
+data/signals/YYYY-MM-DD-universe.json (si existe) → scores pre-calculados
 WebSearch + SEC (top 3)                           → catalizador / mispricing
 config/ackman-tracker.json                        → confluencia
+config/signal-weights.json                        → umbrales convicción
+config/macro-regime.json                          → cap deploy si risk_off
 ```
 
-**Entrega un ranking** (no un solo nombre): tabla con cada candidato, convicción, mispricing, catalizador y confluencia Ackman. Filtros: precio ≥ $10, alta liquidez, calidad.
+**Entrega un ranking** (no un solo nombre): tabla con cada candidato, **Score** (0–1), convicción, mispricing, catalizador y confluencia Ackman. Filtros: precio ≥ $10, alta liquidez, calidad.
+
+| Ticker | Score | Convicción | Mispricing | Catalyst | Ackman |
+|--------|-------|------------|------------|----------|--------|
+
+Score compuesto = suma ponderada según `config/signal-weights.json`:
+
+- ≥ `min_score_for_high_conviction` → Alta elegible
+- ≥ `min_score_for_medium_conviction` → Media elegible
+- Por debajo → Baja / PASS
 
 Solo el **#1 del ranking** pasa a Fase 3/4, y solo si convicción ≥ Media.
 
@@ -43,7 +55,10 @@ review_equity_order → preview + warnings
 place_equity_order → si pasa review y risk-policy
 get_equity_positions → cantidad exacta fillada + average_buy_price
 append logs/trade-journal.md (entry price)
+append logs/scorecard/positions.jsonl (structured)
 ```
+
+**Whole shares vs fractional:** Si `size_usd ≥ $15` y el precio permite ≥1 acción entera, preferir **whole shares** en entry para habilitar stop GTC -8% en broker. Fractional OK si no hay alternativa — fallback monitoreo automation-03 obligatorio (ver journal AMZN/MSFT).
 
 ## Fase 4b — Stop GTC -8% (obligatorio tras BUY en `go`)
 

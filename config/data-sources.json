@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "description": "Free data sources for investingRobinhood signal pipeline. MCP tools require agent session; SEC via curl in fetch-signals.sh.",
+  "universeConfig": "config/fund-mandate.json",
+  "ackmanTracker": "config/ackman-tracker.json",
+  "signalWeights": "config/signal-weights.json",
+  "macroRegime": "config/macro-regime.json",
+  "outputDir": "data/signals",
+  "rawDir": "data/raw",
+  "mcpTools": {
+    "quotes": "get_equity_quotes",
+    "fundamentals": "get_equity_fundamentals",
+    "earningsCalendar": "get_earnings_calendar",
+    "earningsResults": "get_earnings_results",
+    "indexQuotes": "get_index_quotes",
+    "historicals": "get_equity_historicals"
+  },
+  "sec": {
+    "searchIndexTemplate": "https://efts.sec.gov/LATEST/search-index?q={TICKER}&forms=10-K,10-Q,8-K",
+    "userAgent": "investingRobinhood research-agent contact@example.com",
+    "rateLimitMs": 200
+  },
+  "webSearch": {
+    "enabled": true,
+    "note": "Macro and news via agent WebSearch — not scripted. See prompt/sections/10-data-intelligence.md capa 2."
+  },
+  "dailyFiles": {
+    "universe": "{date}-universe.json",
+    "earnings": "{date}-earnings.json",
+    "secPattern": "data/raw/{date}-sec-{TICKER}.json"
+  }
+}

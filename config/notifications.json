@@ -22,7 +22,8 @@
     "emailDigestDaily": [
       "trades_executed",
       "portfolio_snapshot",
-      "next_day_plan"
+      "next_day_plan",
+      "weekly_scorecard_summary"
     ],
     "noEmail": [
       "routine_trade_within_policy",

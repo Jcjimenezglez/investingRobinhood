@@ -38,6 +38,7 @@ Si no → reportar precio, P&L %, distancia a stop backup, estado tesis vs fair 
 review_equity_order → side=sell, type=market, quantity=shares_available_for_sells, market_hours=regular_hours
 Si order_checks {} → place_equity_order
 append logs/trade-journal.md
+update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
 bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "motivo: hard_stop|thesis_break, precio, fill"
 ```
 

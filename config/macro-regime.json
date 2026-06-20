@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "description": "Simple macro regime filter. Agent sets regime in intelligence logs; may cap deploy size.",
+  "regimes": ["risk_on", "neutral", "risk_off"],
+  "defaultRegime": "neutral",
+  "detection": {
+    "vixProxy": {
+      "tool": "get_index_quotes",
+      "symbol": "VIX",
+      "fallback": "WebSearch VIX level today"
+    },
+    "riskOffThresholds": {
+      "vixAbove": 28,
+      "spyDayChangePctBelow": -2.0
+    }
+  },
+  "deployCapsWhenRiskOff": {
+    "maxConvictionLevel": "Media",
+    "maxSinglePositionPct": 30,
+    "note": "No new Alta conviction entries during risk_off unless thesis exceptionally strong and human approves via escalation email"
+  },
+  "intelligenceLogField": "regime"
+}

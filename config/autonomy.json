@@ -61,6 +61,13 @@
         "cron": "0 15 * * 1-5",
         "action": "monitor",
         "description": "Última revisión antes del cierre. Journal + email digest si hubo trades"
+      },
+      {
+        "name": "weekly-review",
+        "cron": "30 16 * * 5",
+        "action": "scorecard-review",
+        "workflow": "workflows/automation-04-weekly-review.md",
+        "description": "Viernes post-cierre: scorecard, benchmark SPY, calibración signal-weights (sugerencias only)"
       }
     ]
   }

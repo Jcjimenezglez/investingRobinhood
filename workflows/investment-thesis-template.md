@@ -58,6 +58,15 @@ Copia a `logs/theses/TICKER-YYYY-MM-DD.md` antes de cada **nueva** posición.
 2.
 3.
 
+### 8. Post-mortem (completar al cerrar posición)
+
+- **Catalyst outcome:** hit / miss / delayed
+- **Entry quality:** entry vs fair value range at time of buy
+- **Hold discipline:** exit por tesis vs stop backup vs trim plan
+- **Return:** ___% vs SPY ___% same period
+- **Thesis correct:** catalyst_hit | partial | failed
+- **Lesson for next thesis:** ___
+
 ---
 
 **Decision:** BUY / PASS / WATCHLIST

@@ -2,6 +2,22 @@
 
 Antes de **cualquier** trade autónomo, ejecuta recopilación en capas. Guarda resumen en `logs/intelligence/YYYY-MM-DD-HHmm.md`.
 
+## Capa 0 — Signals estructurados (si existen)
+
+```
+data/signals/YYYY-MM-DD-universe.json   → quotes, fundamentals, ackman flags, scores
+data/signals/YYYY-MM-DD-earnings.json   → earnings calendar (MCP merge)
+data/raw/YYYY-MM-DD-sec-TICKER.json     → SEC search-index snapshots
+```
+
+Generación:
+
+1. `bash scripts/fetch-signals.sh all` — SEC + skeleton (shell)
+2. Agente merge MCP quotes/fundamentals/earnings en `data/signals/`
+3. Scoring numérico con `config/signal-weights.json`
+
+**Regla:** Si el archivo del día existe y tiene quotes MCP (<24h), no repitas fetch SEC/WebSearch para esos tickers salvo 8-K material nuevo.
+
 ## Capa 1 — Broker (MCP Robinhood) — obligatoria
 
 ```
@@ -59,6 +75,24 @@ En `logs/intelligence/` escribe:
 ```
 
 Solo **TRADE** autónomo si convicción ≥ Media y todas las capas revisadas.
+
+## Capa 6 — Scorecard y aprendizaje
+
+Tras cada trade o exit:
+
+1. Append `logs/scorecard/positions.jsonl` (schema: `logs/scorecard/schema.json`)
+2. Al cerrar posición: completar post-mortem en thesis memo §8
+3. Viernes: automation-04 escribe `logs/scorecard/weekly/YYYY-WW.md`
+
+**Macro regime:** leer `config/macro-regime.json`. Documentar en intelligence log:
+
+```markdown
+## Regime
+- regime: risk_on | neutral | risk_off
+- deploy_cap: normal | capped (risk_off → max Media, 30% single name)
+```
+
+Benchmark: comparar retorno posición vs SPY mismo periodo (`get_equity_historicals` SPY).
 
 ## Honestidad
 

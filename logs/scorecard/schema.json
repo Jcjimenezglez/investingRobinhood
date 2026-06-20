@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "investingRobinhood position scorecard",
+  "description": "Append-only record per position. Source of truth for structured outcomes; narrative remains in logs/trade-journal.md.",
+  "type": "object",
+  "required": [
+    "ticker",
+    "entry_date",
+    "entry_price",
+    "size_usd",
+    "conviction",
+    "thesis_path",
+    "status"
+  ],
+  "properties": {
+    "ticker": { "type": "string" },
+    "entry_date": { "type": "string", "format": "date" },
+    "entry_price": { "type": "number" },
+    "size_usd": { "type": "number" },
+    "conviction": {
+      "type": "string",
+      "enum": ["Alta", "Media-Alta", "Media", "Baja"]
+    },
+    "thesis_path": { "type": "string" },
+    "catalyst_date": { "type": ["string", "null"], "format": "date" },
+    "fair_value_low": { "type": ["number", "null"] },
+    "fair_value_high": { "type": ["number", "null"] },
+    "signals_used": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "fundamentals",
+          "sec",
+          "ackman_confluence",
+          "earnings",
+          "social",
+          "macro_regime"
+        ]
+      }
+    },
+    "status": { "type": "string", "enum": ["open", "closed", "trimmed"] },
+    "stop_backup": { "type": ["number", "null"] },
+    "exit_date": { "type": ["string", "null"], "format": "date" },
+    "exit_reason": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "thesis_invalidated",
+        "catalyst_failed",
+        "fair_value_trim",
+        "superior_rotation",
+        "hard_stop_backup",
+        "manual"
+      ]
+    },
+    "return_pct": { "type": ["number", "null"] },
+    "thesis_correct": {
+      "type": ["string", "null"],
+      "enum": [null, "catalyst_hit", "partial", "failed", "pending"]
+    },
+    "benchmark_spy_return_same_period": { "type": ["number", "null"] },
+    "notes": { "type": "string" }
+  }
+}

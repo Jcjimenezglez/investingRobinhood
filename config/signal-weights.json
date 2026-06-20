@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes.",
+  "weights": {
+    "fundamental_quality": 0.35,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.20,
+    "ackman_confluence": 0.10,
+    "social_sentiment": 0.10
+  },
+  "min_score_for_medium_conviction": 0.55,
+  "min_score_for_high_conviction": 0.72,
+  "catalystProximityDays": {
+    "optimalMin": 14,
+    "optimalMax": 120,
+    "tooFarPenalty": 0.15
+  },
+  "fundamentalQualityHints": {
+    "peBelowSectorMedian": 0.1,
+    "wideMoatLanguageInThesis": 0.05
+  },
+  "calibrationNote": "Weekly review may suggest weight changes — human approves before editing this file."
+}

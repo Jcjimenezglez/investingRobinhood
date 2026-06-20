@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
   "loadOrder": [
     "sections/01-identity.md",
@@ -12,7 +12,8 @@
     "sections/08-capabilities-and-scheduling.md",
     "sections/09-autonomous-mode.md",
     "sections/10-data-intelligence.md",
-    "sections/11-ackman-tracker.md"
+    "sections/11-ackman-tracker.md",
+    "sections/13-ackman-calibration-agent.md"
   ],
   "config": {
     "riskPolicy": "config/risk-policy.json",
@@ -24,6 +25,7 @@
     "tradeJournal": "logs/trade-journal.md",
     "scorecard": "logs/scorecard/positions.jsonl",
     "signalWeights": "config/signal-weights.json",
+    "calibrationPolicy": "config/calibration-policy.json",
     "macroRegime": "config/macro-regime.json",
     "dataSources": "config/data-sources.json",
     "runbook": "workflows/daily-runbook.md"

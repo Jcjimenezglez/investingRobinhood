@@ -32,7 +32,37 @@ Leer intelligence logs de la semana + `data/signals/*-universe.json` si existen.
 Responder:
 
 - ¿Qué señal correlacionó mejor? (fundamentals / catalyst / ackman_confluence)
-- ¿Sugerencia de ajuste a `config/signal-weights.json`? (**solo sugerencia** — humano aprueba)
+- Escribir **`logs/scorecard/weekly/YYYY-WW-suggestions.json`** para Ackman Calibration (#5):
+
+```json
+{
+  "week": "YYYY-WW",
+  "navUsd": 0,
+  "spyReturnPct": 0,
+  "fundReturnPct": 0,
+  "attribution": {
+    "fundamental_quality": 0,
+    "mispricing_vs_fair_value": 0,
+    "catalyst_proximity_days": 0,
+    "ackman_confluence": 0,
+    "social_sentiment": 0
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0,
+    "mispricing_vs_fair_value": 0,
+    "catalyst_proximity_days": 0,
+    "ackman_confluence": 0,
+    "social_sentiment": 0
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0,
+    "min_score_for_high_conviction": 0
+  },
+  "ackmanNote": "1-2 sentences for calibration PM"
+}
+```
+
+Scores en `attribution` = -1 a +1 (evidencia semanal). `proposedDeltas` = cambios sugeridos antes de guardrails (Ackman PM aplica límites).
 
 ## Fase 4 — Output
 
@@ -53,7 +83,8 @@ Escribir `logs/scorecard/weekly/YYYY-WW.md` (ISO week):
 - Trades / holds / exits
 
 ## Calibration suggestions
-- [ ] signal-weights: ...
+
+- Ver `YYYY-WW-suggestions.json` (input para Ackman PM automation-05 @ 17:00 ET)
 
 ## Next week focus
 - Catalysts / earnings dates

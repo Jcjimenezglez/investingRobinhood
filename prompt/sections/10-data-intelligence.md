@@ -94,6 +94,14 @@ Tras cada trade o exit:
 
 Benchmark: comparar retorno posición vs SPY mismo periodo (`get_equity_historicals` SPY).
 
+## Loop Ackman Calibration (viernes)
+
+1. **#4 Weekly Review** (16:30) → `weekly/YYYY-WW.md` + `YYYY-WW-suggestions.json`
+2. **#5 Ackman PM** (17:00) → aplica pesos en `config/signal-weights.json` (policy: `config/calibration-policy.json`)
+3. **Lunes #1/#2** → ranking usa pesos actualizados (leer `calibration/*-applied.json`)
+
+Sin aprobación humana en pesos. Ver `prompt/sections/13-ackman-calibration-agent.md`.
+
 ## Honestidad
 
 - No afirmes haber "leído TikTok" si solo hay search snippets.

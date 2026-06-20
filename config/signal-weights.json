@@ -19,5 +19,6 @@
     "peBelowSectorMedian": 0.1,
     "wideMoatLanguageInThesis": 0.05
   },
-  "calibrationNote": "Weekly review may suggest weight changes — human approves before editing this file."
+  "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
+  "lastCalibratedWeek": null
 }

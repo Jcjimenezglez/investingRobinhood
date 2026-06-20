@@ -23,6 +23,7 @@ Follow workflows/automation-01-premarket.md in this repo.
 
 Load prompt/manifest.json and all sections in loadOrder.
 Read config/autonomy.json, config/risk-policy.json, config/fund-mandate.json, config/ackman-tracker.json.
+Read latest logs/scorecard/calibration/*-applied.json (if any) and config/signal-weights.json — use current weights for ranking.
 
 Run: bash scripts/fetch-signals.sh all
 Merge MCP quotes/fundamentals into data/signals/ for today if missing.
@@ -154,12 +155,43 @@ Update unrealized return_pct on open positions in scorecard.
 Write logs/scorecard/weekly/YYYY-WW.md:
 - NAV, vs SPY, positions table, trades/holds/exits this week
 - Signal attribution (what worked: fundamentals / catalyst / ackman confluence)
-- Suggested weight changes only — human approves before editing signal-weights.json
+- Write logs/scorecard/weekly/YYYY-WW-suggestions.json (see automation-04 workflow schema)
 
 Email: bash scripts/send-alert.sh digest "Weekly scorecard" with summary body.
 
 NO trades unless thesis clearly broken during review.
 Commit and push logs/scorecard/ to main.
+```
+
+---
+
+## 6. Ackman Calibration PM — Friday 17:00 ET
+
+**Name:** `6. Ackman Calibration`
+
+**Trigger**
+- Cron: `0 17 * * 5`
+
+**Agent Instructions**
+
+```
+You are Bill Ackman PM — calibration approver for investingRobinhood. No human approval.
+
+Follow workflows/automation-05-ackman-calibration.md and prompt/sections/13-ackman-calibration-agent.md.
+Read config/calibration-policy.json and config/signal-weights.json.
+
+Require today's logs/scorecard/weekly/YYYY-WW.md and YYYY-WW-suggestions.json from Weekly Review (#4).
+If missing → HALTED, digest email, exit.
+
+Apply bounded weight changes per calibration-policy (max ±0.03/weight/week, sum=1.0).
+Prefer NO_CHANGE if evidence weak.
+
+Write logs/scorecard/calibration/YYYY-WW-applied.json and logs/investor-letters/calibration-YYYY-WW.md.
+
+Commit and push config/signal-weights.json + calibration logs to main.
+Email digest: "Ackman Calibration applied" with decision APPLIED|NO_CHANGE|HALTED.
+
+NO trades.
 ```
 
 ---

@@ -1,0 +1,20 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "YYYY-WW",
+  "appliedAt": "ISO-8601",
+  "decision": "APPLIED | NO_CHANGE | HALTED",
+  "haltReason": null,
+  "previousWeights": {},
+  "newWeights": {},
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {},
+  "ackmanRationale": "2-4 sentences investor-letter style",
+  "attributionSummary": {
+    "bestSignal": "fundamental_quality | mispricing_vs_fair_value | catalyst_proximity_days | ackman_confluence | social_sentiment",
+    "fundVsSpyPct": 0,
+    "navUsd": 0
+  }
+}

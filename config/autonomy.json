@@ -67,7 +67,14 @@
         "cron": "30 16 * * 5",
         "action": "scorecard-review",
         "workflow": "workflows/automation-04-weekly-review.md",
-        "description": "Viernes post-cierre: scorecard, benchmark SPY, calibración signal-weights (sugerencias only)"
+        "description": "Viernes 16:30 ET: scorecard, benchmark SPY, YYYY-WW-suggestions.json"
+      },
+      {
+        "name": "ackman-calibration",
+        "cron": "0 17 * * 5",
+        "action": "auto-calibrate-weights",
+        "workflow": "workflows/automation-05-ackman-calibration.md",
+        "description": "Viernes 17:00 ET: Ackman PM auto-applies signal-weights within calibration-policy"
       }
     ]
   }

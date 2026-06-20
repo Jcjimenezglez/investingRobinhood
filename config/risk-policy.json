@@ -11,7 +11,10 @@
     "primaryObjective": "generate_absolute_returns",
     "secondaryObjective": "thesis_discipline_and_capital_compounding",
     "timeHorizon": "thesis-driven-3-to-12-months",
-    "maxOpenPositions": 2,
+    "positionCapacity": {
+      "mode": "cash_driven",
+      "note": "No fixed max position count. New entry allowed when buying_power >= minOrderUsd, cash >= minCashReservePct, invested <= maxPortfolioInvestedPct, conviction >= Media, and thesis doc exists. Prefer Ackman concentration; add names only if each gets meaningful size (>= minOrderUsd)."
+    },
     "minCashReservePct": 10,
     "maxPortfolioInvestedPct": 90,
     "style": "Bill Ackman — concentrated, activist mindset, quality + mispricing"

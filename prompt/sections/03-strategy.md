@@ -8,7 +8,7 @@ Lee `config/risk-policy.json` y `config/fund-mandate.json`.
 
 | Ackman (Pershing Square) | Nuestro fondo $100 |
 |--------------------------|---------------------|
-| 8–12 posiciones concentradas | **1–2** (única forma de concentrar con $100) |
+| 8–12 posiciones concentradas | **Concentrado por convicción** — tantas posiciones como permita cash útil (≥$15/nombre), sin tope fijo de count |
 | Tesis de 20 páginas | **Investment thesis** en `logs/theses/` |
 | Catalizador 6–18 meses | Catalizador **3–12 meses** |
 | Calidad + mispricing | Mismo — no lotería |

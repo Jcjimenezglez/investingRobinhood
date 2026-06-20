@@ -29,7 +29,7 @@ get_portfolio, get_equity_positions, get_equity_orders
 | Acción | Condición |
 |--------|-----------|
 | **HOLD** | Convicción < Media, datos insuficientes, o book OK sin señal |
-| **BUY/ADD** | Convicción ≥ Media, thesis en `logs/theses/`, dentro risk-policy, max 2 posiciones |
+| **BUY/ADD** | Convicción ≥ Media, thesis en `logs/theses/`, buying_power ≥ minOrderUsd, cash ≥ 10% post-trade, invested ≤ 90% |
 | **SELL/EXIT** | Tesis rota, tesis realizada, trim en memo, stop -8% backup, o mejor rotación |
 
 Sizing: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.

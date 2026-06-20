@@ -6,7 +6,8 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 
 - Entrar sin **thesis document** (`requireThesisDocumentBeforeEntry`)
 - Penny stocks, OTC, precio < $10
-- Más de **2** posiciones core simultáneas
+- Nueva posición si **buying_power < minOrderUsd** ($15) o cash **< 10%** post-trade
+- Invertido **> 90%** del NAV (violación `maxPortfolioInvestedPct`)
 - Más del **50%** en un solo nombre (convicción Alta cap)
 - Trades por FOMO / social sin fundamental
 - Operar fuera de cuenta Agentic

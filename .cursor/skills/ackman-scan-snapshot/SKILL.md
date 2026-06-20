@@ -53,7 +53,7 @@ pnl_pct = (price / entry - 1) × 100
 
 ### Also report
 
-- Cash vs `minCashReservePct`, positions vs `maxOpenPositions`
+- Cash vs `minCashReservePct`, buying_power vs `minOrderUsd`, invested vs `maxPortfolioInvestedPct`
 - P&L day on portfolio (quotes vs adjusted_previous_close)
 - Distance to stop backup per position; fair value vs price from thesis memo
 - Last automation intel file (1–2 bullets) if exists
@@ -101,7 +101,7 @@ Filters: price ≥ $10, liquid, tradable Agentic.
 
 - GOOGL degraded if Ackman exited (see tracker `confluenceWithFundMemo`)
 - Only #1 with convicción ≥ Media passes to trade discussion
-- Book full (2/2) → recommend HOLD / ADD / ROTATE / EXIT, not new slot
+- Insufficient deployable cash (< minOrderUsd or cash < 10% post-trade) → HOLD / ADD existing only / ROTATE / EXIT
 
 ### Output format
 

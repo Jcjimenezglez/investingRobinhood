@@ -7,7 +7,7 @@ Datos reales en `config/ackman-tracker.json` (13F Pershing Square, refrescar cad
 1. **No copiamos el 13F a ciegas.** Llega ~45 días tarde y solo muestra longs de equity US (oculta hedges, opciones, preferentes, deals privados, activismo).
 2. **Confluencia = convicción extra.** Si nuestra tesis propia coincide con una posición real de Ackman → sube convicción.
 3. **Exits de Ackman = señal de cautela.** Si Ackman salió de un nombre, no lo usamos como idea principal salvo tesis propia muy fuerte.
-4. **No closet-indexing.** Con $100 no replicamos 8-11 nombres; mantenemos 1-2 concentrados.
+4. **No closet-indexing.** Con $100 no replicamos 8-11 nombres; mantenemos pocas posiciones con size significativo según cash disponible.
 5. **HHH** (Howard Hughes, NYSE) es la única "apuesta directa Ackman" permitida — su vehículo tipo Berkshire — siempre con tesis propia.
 
 ## Estado actual (Q1 2026)

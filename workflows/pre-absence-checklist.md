@@ -17,7 +17,7 @@ Usar antes de ausentarte 1+ semanas. Consolida checks de [`daily-runbook.md`](da
 
 ## Portfolio
 
-- [ ] Posiciones ≤ 2 (`config/risk-policy.json`)
+- [ ] Cash ≥ 10% y buying_power ≥ minOrderUsd ($15) si se planea ADD (`config/risk-policy.json`)
 - [ ] Cash ≥ 10%
 - [ ] Thesis doc vigente por posición abierta en `logs/theses/`
 - [ ] `logs/scorecard/positions.jsonl` actualizado (status open/closed)

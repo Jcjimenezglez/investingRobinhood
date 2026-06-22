@@ -63,4 +63,5 @@ bash scripts/send-alert.sh urgent "motivo" "detalle"
 
 Escribir `logs/intelligence/YYYY-MM-DD-0935-open.md` con decisión, trades ejecutados o HOLD, y plan resto del día.
 
-Commit y push cambios en `logs/` a `main`.
+1. **Persistir en disco** — el chat no sustituye el archivo en `logs/intelligence/`.
+2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD 0935 open" && git push origin main`

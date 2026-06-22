@@ -52,4 +52,5 @@ bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "hard_stop|thesis_break, pre
 
 Escribir `logs/intelligence/YYYY-MM-DD-HHmm-monitor.md` con estado posiciones, P&L, distancia stop backup, tesis status, exits ejecutados.
 
-Commit y push cambios en `logs/` a `main`.
+1. **Persistir en disco** — el chat no sustituye el archivo en `logs/intelligence/`.
+2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD monitor" && git push origin main`

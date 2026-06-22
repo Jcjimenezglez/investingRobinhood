@@ -1,0 +1,62 @@
+{
+  "date": "2026-06-22",
+  "source": "MCP get_earnings_results + get_earnings_calendar",
+  "universe_earnings": [
+    {
+      "symbol": "AMZN",
+      "next_report": "2026-07-30",
+      "timing": "pm",
+      "eps_estimate": 1.81,
+      "verified": false
+    },
+    {
+      "symbol": "MSFT",
+      "next_report": "2026-07-29",
+      "timing": "pm",
+      "eps_estimate": 4.23,
+      "verified": false
+    },
+    {
+      "symbol": "META",
+      "next_report": "2026-07-30",
+      "timing": "pm",
+      "eps_estimate": null,
+      "verified": false,
+      "note": "tentative late July window"
+    },
+    {
+      "symbol": "GOOGL",
+      "next_report": "2026-07-29",
+      "timing": "pm",
+      "eps_estimate": null,
+      "verified": false,
+      "note": "tentative"
+    },
+    {
+      "symbol": "AAPL",
+      "next_report": "2026-07-31",
+      "timing": "pm",
+      "eps_estimate": null,
+      "verified": false,
+      "note": "tentative"
+    },
+    {
+      "symbol": "NVDA",
+      "next_report": "2026-08-27",
+      "timing": "pm",
+      "eps_estimate": null,
+      "verified": false,
+      "note": "tentative Q2 FY27"
+    }
+  ],
+  "macro_calendar_this_week": [
+    {
+      "date": "2026-06-22",
+      "event": "US-Iran diplomatic talks day 1"
+    },
+    {
+      "date": "2026-06-27",
+      "event": "PCE price index (Fed preferred inflation gauge)"
+    }
+  ]
+}

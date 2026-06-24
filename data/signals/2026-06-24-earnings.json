@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-24",
+  "source": "MCP get_earnings_calendar + get_earnings_results",
+  "universe_earnings": {
+    "AMZN": {
+      "next_date": "2026-07-30",
+      "days": 36,
+      "eps_estimate": 1.81
+    },
+    "MSFT": {
+      "next_date": "2026-07-29",
+      "days": 35,
+      "eps_estimate": 4.23
+    },
+    "MU_today": {
+      "date": "2026-06-24",
+      "timing": "pm",
+      "note": "semis sentiment proxy for NVDA"
+    }
+  },
+  "macro_catalyst": {
+    "PCE": "2026-06-26 (approx)",
+    "note": "Fed preferred inflation gauge Thursday"
+  }
+}

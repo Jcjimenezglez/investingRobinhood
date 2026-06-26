@@ -1,0 +1,25 @@
+{
+  "week": "2026-W26",
+  "navUsd": 98.86,
+  "spyReturnPct": -2.09,
+  "fundReturnPct": -1.14,
+  "attribution": {
+    "fundamental_quality": 0.6,
+    "mispricing_vs_fair_value": 0.1,
+    "catalyst_proximity_days": 0.3,
+    "ackman_confluence": 0.7,
+    "social_sentiment": -0.2
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.01,
+    "mispricing_vs_fair_value": 0.0,
+    "catalyst_proximity_days": 0.0,
+    "ackman_confluence": 0.02,
+    "social_sentiment": -0.03
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund beat SPY by 95bps with zero trades — ackman_confluence and fundamental_quality drove book selection (MSFT #1, AMZN #4). Media-Alta outperformed Alta slightly; hold conviction thresholds until post-earnings outcomes. Trim social_sentiment weight — no weekly edge observed."
+}

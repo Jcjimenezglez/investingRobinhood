@@ -1,0 +1,51 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W26",
+  "appliedAt": "2026-06-26T21:00:21.269Z",
+  "decision": "APPLIED",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.35,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.20,
+    "ackman_confluence": 0.10,
+    "social_sentiment": 0.10
+  },
+  "newWeights": {
+    "fundamental_quality": 0.36,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.20,
+    "ackman_confluence": 0.12,
+    "social_sentiment": 0.07
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasApplied": {
+    "fundamental_quality": 0.01,
+    "mispricing_vs_fair_value": 0.0,
+    "catalyst_proximity_days": 0.0,
+    "ackman_confluence": 0.02,
+    "social_sentiment": -0.03
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": -2.81,
+    "haltDrawdownLimitPct": 15,
+    "weeklyReviewPresent": true
+  },
+  "ackmanRationale": "We beat SPY by 95bps with zero trades — a quiet week that still rewarded discipline. Ackman confluence was our best explanatory signal: MSFT ranked #1 all week and both book names outperformed the benchmark. We nudge weight toward confluence and quality, trim social sentiment where we saw no edge. Conviction thresholds unchanged until post-earnings outcomes settle the Alta vs Media-Alta calibration question.",
+  "attributionSummary": {
+    "bestSignal": "ackman_confluence",
+    "fundVsSpyPct": 0.95,
+    "navUsd": 98.86
+  }
+}

@@ -1,12 +1,12 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes.",
   "weights": {
-    "fundamental_quality": 0.35,
+    "fundamental_quality": 0.36,
     "mispricing_vs_fair_value": 0.25,
     "catalyst_proximity_days": 0.20,
-    "ackman_confluence": 0.10,
-    "social_sentiment": 0.10
+    "ackman_confluence": 0.12,
+    "social_sentiment": 0.07
   },
   "min_score_for_medium_conviction": 0.55,
   "min_score_for_high_conviction": 0.72,
@@ -20,5 +20,5 @@
     "wideMoatLanguageInThesis": 0.05
   },
   "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
-  "lastCalibratedWeek": null
+  "lastCalibratedWeek": "2026-W26"
 }

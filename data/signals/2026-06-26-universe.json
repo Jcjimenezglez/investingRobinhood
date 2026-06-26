@@ -1,0 +1,318 @@
+{
+  "date": "2026-06-26",
+  "regime": "neutral",
+  "generated_by": "automation-01-premarket + MCP merge",
+  "note": "Scores per config/signal-weights.json v1.0.0",
+  "tickers": [
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "price": 356.58,
+        "previous_close": 352.83,
+        "premarket_change_pct": 1.06,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 21.77,
+        "pb_ratio": 6.55,
+        "market_cap_usd": 2620000000000.0,
+        "high_52_weeks": 555.45,
+        "low_52_weeks": 349.2,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.95,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.98,
+        "social_sentiment": 0.52,
+        "composite": 0.89
+      },
+      "rank": 1
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "price": 544.58,
+        "previous_close": 542.87,
+        "premarket_change_pct": 0.31,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 20.27,
+        "pb_ratio": 5.81,
+        "market_cap_usd": 1380000000000.0,
+        "high_52_weeks": 796.25,
+        "low_52_weeks": 520.26,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.93,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.81,
+        "social_sentiment": 0.45,
+        "composite": 0.861
+      },
+      "rank": 2
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "price": 72.195,
+        "previous_close": 72.25,
+        "premarket_change_pct": -0.08,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 18.4,
+        "pb_ratio": 6.08,
+        "market_cap_usd": 147110000000.0,
+        "high_52_weeks": 101.99,
+        "low_52_weeks": 67.19,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.85,
+        "catalyst_proximity_days": 0.8,
+        "ackman_confluence": 0.83,
+        "social_sentiment": 0.45,
+        "composite": 0.833
+      },
+      "rank": 3
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "price": 227.66,
+        "previous_close": 227.01,
+        "premarket_change_pct": 0.29,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 28.0,
+        "pb_ratio": 5.7,
+        "market_cap_usd": 2440000000000.0,
+        "high_52_weeks": 278.56,
+        "low_52_weeks": 196.0,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "scores": {
+        "fundamental_quality": 0.87,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.99,
+        "social_sentiment": 0.48,
+        "composite": 0.801
+      },
+      "rank": 4
+    },
+    {
+      "symbol": "QSR",
+      "quote": {
+        "price": 73.235,
+        "previous_close": 73.23,
+        "premarket_change_pct": 0.01,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 28.95,
+        "pb_ratio": 6.75,
+        "market_cap_usd": 33420000000.0,
+        "high_52_weeks": 81.96,
+        "low_52_weeks": 61.33,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "scores": {
+        "fundamental_quality": 0.77,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.7,
+        "ackman_confluence": 0.81,
+        "social_sentiment": 0.4,
+        "composite": 0.71
+      },
+      "rank": 5
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "price": 92.2,
+        "previous_close": 93.47,
+        "premarket_change_pct": -1.36,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 45.21,
+        "pb_ratio": 9.04,
+        "market_cap_usd": 84260000000.0,
+        "high_52_weeks": 153.86,
+        "low_52_weeks": 63.52,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "fundamental_quality": 0.55,
+        "mispricing_vs_fair_value": 0.88,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.48,
+        "composite": 0.67
+      },
+      "rank": 6
+    },
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "price": 341.23,
+        "previous_close": 343.71,
+        "premarket_change_pct": -0.72,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 26.34,
+        "pb_ratio": 8.74,
+        "market_cap_usd": 4160000000000.0,
+        "high_52_weeks": 408.61,
+        "low_52_weeks": 169.94,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% \u2014 effectively EXITED",
+      "scores": {
+        "fundamental_quality": 0.72,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.2,
+        "social_sentiment": 0.42,
+        "composite": 0.664
+      },
+      "rank": 7
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "price": 276.37,
+        "previous_close": 275.15,
+        "premarket_change_pct": 0.44,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 35.45,
+        "pb_ratio": 40.37,
+        "market_cap_usd": 4040000000000.0,
+        "high_52_weeks": 317.4,
+        "low_52_weeks": 199.26,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "fundamental_quality": 0.65,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.42,
+        "composite": 0.659
+      },
+      "rank": 8
+    },
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "price": 193.5,
+        "previous_close": 195.74,
+        "premarket_change_pct": -1.14,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 30.48,
+        "pb_ratio": 24.66,
+        "market_cap_usd": 4820000000000.0,
+        "high_52_weeks": 236.54,
+        "low_52_weeks": 151.49,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "fundamental_quality": 0.65,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.8,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.5,
+        "composite": 0.657
+      },
+      "rank": 9
+    },
+    {
+      "symbol": "BN",
+      "quote": {
+        "price": 42.73,
+        "previous_close": 43.0,
+        "premarket_change_pct": -0.63,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-06-26T12:02Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 82.7,
+        "pb_ratio": 2.25,
+        "market_cap_usd": 96040000000.0,
+        "high_52_weeks": 49.57,
+        "low_52_weeks": 37.93,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "scores": {
+        "fundamental_quality": 0.55,
+        "mispricing_vs_fair_value": 0.72,
+        "catalyst_proximity_days": 0.7,
+        "ackman_confluence": 0.84,
+        "social_sentiment": 0.38,
+        "composite": 0.634
+      },
+      "rank": 10
+    }
+  ]
+}

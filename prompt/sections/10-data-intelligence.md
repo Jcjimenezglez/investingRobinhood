@@ -7,7 +7,8 @@ Antes de **cualquier** trade autónomo, ejecuta recopilación en capas. Guarda r
 ```
 data/signals/YYYY-MM-DD-universe.json   → quotes, fundamentals, ackman flags, scores
 data/signals/YYYY-MM-DD-earnings.json   → earnings calendar (MCP merge)
-data/raw/YYYY-MM-DD-sec-TICKER.json     → SEC search-index snapshots
+data/signals/YYYY-MM-DD-scanner.json  → run_scan hits (filtered)
+data/raw/YYYY-MM-DD-sec-TICKER.json   → SEC search-index snapshots
 ```
 
 Generación:
@@ -22,11 +23,20 @@ Generación:
 
 ```
 get_portfolio, get_equity_positions, get_equity_orders
-get_equity_quotes (universo + candidatos)
-get_equity_fundamentals, get_equity_historicals (si analizas single stock)
-get_popular_watchlists → daily movers, upcoming earnings
+get_equity_quotes (universo + candidatos scanner)
+get_equity_fundamentals, get_equity_historicals (benchmark SPY + relative strength top candidatos)
+get_earnings_calendar (high_market_cap, 14d) + get_earnings_results (universo)
+run_scan × N (config/scanner-presets.json) → data/signals/*-scanner.json
+get_watchlists / sync investingRH-core (config/watchlist-policy.json)
 search, get_equity_tradability
 ```
+
+### Capa 1b — Scanner merge
+
+1. `run_scan` para cada scan en `config/scanner-presets.json`
+2. Filtrar: precio ≥ $10, market cap ≥ $1B, volumen ≥ 5M
+3. Intersección con `researchUniverse` = boost catalyst; fuera del universo = candidato nuevo (requiere thesis antes de trade)
+4. Persistir en `data/signals/YYYY-MM-DD-scanner.json`
 
 ## Capa 2 — Noticias y macro — WebSearch
 

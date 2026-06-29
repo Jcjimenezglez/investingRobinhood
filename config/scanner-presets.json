@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "description": "Robinhood MCP scanner presets for investingRobinhood. scan_id values are account-specific — refresh via get_scans if missing.",
+  "setupNote": "On first run or if scans empty: create_scan per preset below, then update scan_id fields.",
+  "qualityFilters": {
+    "minPriceUsd": 10,
+    "minMarketCapUsd": 1000000000,
+    "minAvgDailyVolume": 5000000,
+    "note": "Apply when merging scanner hits into ranking — reject penny/micro-cap outside risk-policy"
+  },
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "title": "investingRH-earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "preset": "UPCOMING_EARNINGS",
+      "purpose": "Catalyst discovery — earnings within ~7d window; cross-ref researchUniverse + preferredTickers",
+      "mergePriority": "high",
+      "runIn": ["premarket", "market-open"]
+    },
+    {
+      "key": "daily-movers",
+      "title": "investingRH-daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "preset": "DAILY_GAINERS",
+      "purpose": "Macro context — top % movers; filter by qualityFilters before thesis work",
+      "mergePriority": "low",
+      "runIn": ["premarket"]
+    },
+    {
+      "key": "oversold-quality",
+      "title": "investingRH-oversold-quality",
+      "scan_id": null,
+      "preset": "INITIAL",
+      "filters": [
+        {
+          "filter_type": "FILTER_TYPE_RSI",
+          "predicate": "PREDICATE_LESS_THAN",
+          "values": ["35"],
+          "interval": "1d",
+          "length": 14
+        }
+      ],
+      "purpose": "Dip entries in quality names — create on first session if scan_id null",
+      "mergePriority": "medium",
+      "runIn": ["market-open"]
+    }
+  ],
+  "workflow": {
+    "ensureScans": "get_scans → if missing, create_scan from presets → update scan_id in this file",
+    "runOrder": ["earnings-14d", "daily-movers", "oversold-quality"],
+    "outputFile": "data/signals/{date}-scanner.json",
+    "mergeRule": "Union scanner tickers with researchUniverse; dedupe; apply qualityFilters; fundamentals required before ranking"
+  }
+}

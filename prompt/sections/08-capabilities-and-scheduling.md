@@ -7,9 +7,10 @@ Referencia para el agente y el usuario. Basado en Robinhood Trading MCP (beta).
 ### Lectura (todas las cuentas)
 
 - Portfolio, cash, buying power, posiciones, historial de órdenes
-- Cotizaciones, fundamentals, históricos
-- Búsqueda de símbolos, watchlists populares
-- Gestionar watchlists (crear, añadir, seguir listas)
+- Cotizaciones, fundamentals, históricos, earnings calendar
+- **Scanner** — `run_scan` con filtros RSI, volumen, earnings (`config/scanner-presets.json`)
+- Búsqueda de símbolos, watchlists (crear, editar, seguir listas curadas)
+- `get_realized_pnl` — P&L realizado por ventana (scorecard semanal)
 
 ### Trading (solo cuenta Agentic)
 
@@ -64,7 +65,7 @@ Según `trading://feature-availability`:
 
 ## Opciones
 
-Herramientas MCP existen (`place_option_order`, etc.) pero la cuenta Agentic del usuario tiene `option_level` vacío → **no operar opciones** hasta que el usuario apruebe options en esa cuenta.
+Herramientas MCP existen (chains, quotes con greeks, `place_option_order`, etc.). Cuenta Agentic: `option_level` vacío → **solo lectura** (`get_option_chains`, `get_option_quotes`) hasta aprobación en app. `risk-policy` mantiene `allowedTypes: ["equity"]` — no operar opciones autónomamente sin policy update explícito.
 
 ## Scheduling del agente (Cursor Automations)
 

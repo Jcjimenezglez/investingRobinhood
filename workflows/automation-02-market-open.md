@@ -19,9 +19,12 @@ get_portfolio, get_equity_positions, get_equity_orders
 
 ## Fase 2 — Scan + intel
 
-- `get_equity_quotes` + `get_equity_fundamentals` — todo researchUniverse
+- `run_scan` (config/scanner-presets.json) → merge scanner hits con researchUniverse
+- `get_equity_quotes` + `get_equity_fundamentals` — universo + candidatos scanner
+- `get_earnings_calendar` + `get_earnings_results` para tickers en ventana catalyst
 - WebSearch macro + SEC top candidatos
 - Confluencia Ackman (`config/ackman-tracker.json`)
+- `watchlist sync` → investingRH-core
 - Ranking #1–10 con convicción
 
 ## Fase 3 — Decisión

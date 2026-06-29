@@ -1,0 +1,27 @@
+{
+  "date": "2026-06-29",
+  "source": "MCP run_scan + config/scanner-presets.json",
+  "qualityFiltersApplied": {
+    "minPriceUsd": 10,
+    "minMarketCapUsd": 1000000000,
+    "minAvgDailyVolume": 5000000
+  },
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "total_items": 186,
+      "universe_overlap": ["MSFT", "AMZN", "META", "GOOGL", "NVDA"],
+      "note": "Full results in MCP; overlap with researchUniverse flagged for catalyst scoring"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "total_items": 315,
+      "universe_overlap": [],
+      "note": "Gainers filtered by qualityFilters before thesis — most hits are micro-cap, excluded"
+    }
+  ],
+  "candidates": [],
+  "schema_note": "Agent populates candidates[] after run_scan with tickers passing qualityFilters; empty on bootstrap"
+}

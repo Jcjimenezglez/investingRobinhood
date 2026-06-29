@@ -1,0 +1,20 @@
+{
+  "date": "2026-06-29",
+  "source": "MCP get_earnings_results",
+  "universe_earnings": [
+    {
+      "symbol": "AMZN",
+      "next_report": "2026-07-30",
+      "timing": "pm",
+      "verified": false,
+      "days_away": 31
+    },
+    {
+      "symbol": "MSFT",
+      "next_report": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_away": 30
+    }
+  ]
+}

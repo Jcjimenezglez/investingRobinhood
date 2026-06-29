@@ -9,12 +9,14 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 - [ ] Horario ET correcto para el tipo de sesión
 - [ ] Leer `prompt/sections/09-autonomous-mode.md` + `10-data-intelligence.md`
 
-## 2. Scan amplio + Research (Capas 1–5 + signals)
+## 2. Scan amplio + Research (Capas 0–5 + signals + scanner)
 
 - Si existe `data/signals/YYYY-MM-DD-universe.json` (hoy ET): **leer primero** — no repetir SEC/MCP inline salvo stale >24h
 - Si no existe: `bash scripts/fetch-signals.sh all` (SEC + skeleton) + MCP merge por agente
+- **`run_scan`** según `config/scanner-presets.json` → `data/signals/YYYY-MM-DD-scanner.json`
+- **`get_earnings_calendar`** (high_market_cap, 14d) → merge en `*-earnings.json`
 - Snapshot MCP
-- **Scan de TODO `researchUniverse`** (no asumir AMZN ni ningún nombre fijo): quotes + fundamentals del universo completo
+- **Scan de TODO `researchUniverse`** + hits scanner filtrados: quotes + fundamentals
 - WebSearch noticias + macro; SEC en top candidatos (solo si no en `data/raw/`)
 - Confluencia Ackman (`config/ackman-tracker.json`)
 - Macro regime (`config/macro-regime.json`) → documentar `regime:` en intelligence log

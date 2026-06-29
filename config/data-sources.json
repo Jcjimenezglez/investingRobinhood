@@ -13,8 +13,12 @@
     "earningsCalendar": "get_earnings_calendar",
     "earningsResults": "get_earnings_results",
     "indexQuotes": "get_index_quotes",
-    "historicals": "get_equity_historicals"
+    "historicals": "get_equity_historicals",
+    "scanner": "run_scan",
+    "realizedPnl": "get_realized_pnl"
   },
+  "scannerConfig": "config/scanner-presets.json",
+  "watchlistConfig": "config/watchlist-policy.json",
   "sec": {
     "searchIndexTemplate": "https://efts.sec.gov/LATEST/search-index?q={TICKER}&forms=10-K,10-Q,8-K",
     "userAgent": "investingRobinhood research-agent contact@example.com",
@@ -27,6 +31,7 @@
   "dailyFiles": {
     "universe": "{date}-universe.json",
     "earnings": "{date}-earnings.json",
+    "scanner": "{date}-scanner.json",
     "secPattern": "data/raw/{date}-sec-{TICKER}.json"
   }
 }

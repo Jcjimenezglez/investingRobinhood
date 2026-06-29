@@ -13,7 +13,7 @@ data/
 
 ## Daily workflow
 
-1. **Agent (MCP)** — quotes, fundamentals, earnings → merge into `signals/YYYY-MM-DD-universe.json` and `YYYY-MM-DD-earnings.json`
+1. **Agent (MCP)** — quotes, fundamentals, earnings, scanner → merge into `signals/YYYY-MM-DD-universe.json`, `YYYY-MM-DD-earnings.json`, `YYYY-MM-DD-scanner.json`
 2. **Shell** — `bash scripts/fetch-signals.sh sec` → SEC 8-K index per ticker in `data/raw/`
 3. **Shell** — `bash scripts/fetch-signals.sh skeleton` → universe skeleton with Ackman confluence flags
 4. **Agent** — if `data/signals/{today}-universe.json` exists, read before WebSearch/SEC inline

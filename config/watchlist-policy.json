@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "description": "Robinhood watchlist sync for investingRobinhood mandate.",
+  "coreWatchlist": {
+    "display_name": "investingRH-core",
+    "list_id": "dd8806fa-ccfb-4216-bd21-26e520d67721",
+    "icon_emoji": "📊",
+    "description": "Core book + researchUniverse — agent-managed"
+  },
+  "syncRules": {
+    "alwaysInclude": "config/fund-mandate.json researchUniverse",
+    "includeOpenPositions": true,
+    "includeTopRanking": 5,
+    "maxItems": 20,
+    "excludeCrypto": true,
+    "excludeTypes": ["currency_pair", "futures"]
+  },
+  "commands": {
+    "sync": "get_watchlist_items → diff vs target set → add_to_watchlist / remove_from_watchlist",
+    "when": ["premarket", "after-trade", "on-user-request"]
+  },
+  "curatedLists": {
+    "note": "Optional: get_popular_watchlists → follow_watchlist for Robinhood-curated themes (read-only items)",
+    "suggestedFollow": ["Upcoming Earnings", "100 Most Popular"]
+  }
+}

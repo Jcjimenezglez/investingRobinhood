@@ -15,7 +15,9 @@
 get_accounts → identificar Agentic
 get_portfolio, get_equity_positions, get_equity_orders
 get_equity_quotes + get_equity_fundamentals: posiciones abiertas + todo researchUniverse
-get_popular_watchlists → upcoming earnings
+get_earnings_calendar (filter: high_market_cap, days: 14) → merge *-earnings.json
+run_scan × N (config/scanner-presets.json) → data/signals/YYYY-MM-DD-scanner.json
+watchlist sync → investingRH-core (config/watchlist-policy.json)
 bash scripts/fetch-signals.sh all   → SEC + universe skeleton (merge MCP después)
 ```
 

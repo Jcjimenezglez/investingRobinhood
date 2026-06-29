@@ -1,5 +1,5 @@
 {
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
   "loadOrder": [
     "sections/01-identity.md",
@@ -28,6 +28,8 @@
     "calibrationPolicy": "config/calibration-policy.json",
     "macroRegime": "config/macro-regime.json",
     "dataSources": "config/data-sources.json",
+    "scannerPresets": "config/scanner-presets.json",
+    "watchlistPolicy": "config/watchlist-policy.json",
     "runbook": "workflows/daily-runbook.md"
   }
 }

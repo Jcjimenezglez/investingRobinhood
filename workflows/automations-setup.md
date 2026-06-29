@@ -26,7 +26,10 @@ Read config/autonomy.json, config/risk-policy.json, config/fund-mandate.json, co
 Read latest logs/scorecard/calibration/*-applied.json (if any) and config/signal-weights.json — use current weights for ranking.
 
 Run: bash scripts/fetch-signals.sh all
-Merge MCP quotes/fundamentals into data/signals/ for today if missing.
+Merge MCP quotes/fundamentals/earnings into data/signals/ for today if missing.
+Run MCP scanner: get_scans → run_scan per config/scanner-presets.json → write data/signals/YYYY-MM-DD-scanner.json
+get_earnings_calendar (high_market_cap, 14d) → merge *-earnings.json
+watchlist sync → investingRH-core (config/watchlist-policy.json)
 
 Write logs/intelligence/YYYY-MM-DD-0800-premarket.md with:
 - Fund snapshot (cash, positions, P&L vs limits)
@@ -54,12 +57,15 @@ You are CIO of investingRobinhood ($100 Agentic, Ackman mandate).
 
 Follow workflows/automation-02-market-open.md and workflows/daily-runbook.md.
 
-Load prompt/manifest.json v1.5.0 and loadOrder sections.
-Read config/signal-weights.json, config/macro-regime.json, config/risk-policy.json.
+Load prompt/manifest.json v1.6.0 and loadOrder sections.
+Read config/scanner-presets.json, config/watchlist-policy.json, config/signal-weights.json, config/macro-regime.json, config/risk-policy.json.
 
 If data/signals/YYYY-MM-DD-universe.json exists for today, use it first.
+If data/signals/YYYY-MM-DD-scanner.json exists for today, use it for candidate merge.
 
-Scan full researchUniverse. Rank with numeric Score. Only trade if conviction >= Media.
+run_scan (scanner-presets) if scanner file missing or stale.
+Scan full researchUniverse + filtered scanner hits. Rank with numeric Score. Only trade if conviction >= Media.
+watchlist sync after ranking.
 
 If TRADE: review_equity_order then place_equity_order (Agentic only).
 After any trade/exit: append logs/trade-journal.md and logs/scorecard/positions.jsonl.

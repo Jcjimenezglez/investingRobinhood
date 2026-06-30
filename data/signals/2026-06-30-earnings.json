@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-30",
+  "source": "MCP get_earnings_calendar",
+  "filter": "high_market_cap",
+  "days": 14,
+  "universe_earnings": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_until": 29,
+      "note": "Q4 FY26"
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_until": 30,
+      "note": "Q2 FY26"
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_until": 30,
+      "note": "Q2 estimated"
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm",
+      "days_until": 31,
+      "note": "Q3 FY26 estimated"
+    },
+    {
+      "symbol": "NVDA",
+      "report_date": "2026-08-27",
+      "timing": "pm",
+      "days_until": 58,
+      "note": "Q2 FY27 estimated"
+    }
+  ],
+  "market_highlights_today": [
+    {
+      "symbol": "NKE",
+      "report_date": "2026-06-30",
+      "timing": "pm"
+    },
+    {
+      "symbol": "STZ",
+      "report_date": "2026-06-30",
+      "timing": "pm"
+    }
+  ]
+}

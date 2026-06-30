@@ -1,0 +1,33 @@
+{
+  "date": "2026-06-30",
+  "generated_by": "automation-01-premarket",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 323,
+      "universe_hits": [],
+      "note": "No researchUniverse tickers in 7d earnings window; MSFT/AMZN/META report ~late Jul"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 210,
+      "universe_hits": [
+        {
+          "symbol": "NVDA",
+          "pct_change": 1.01,
+          "last": 196.94
+        },
+        {
+          "symbol": "GOOGL",
+          "pct_change": 0.24,
+          "last": 354.51
+        }
+      ],
+      "note": "NVDA +1.0% premarket; GOOGL +0.24% post-Dow debut momentum"
+    }
+  ]
+}

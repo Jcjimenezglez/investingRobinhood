@@ -1,0 +1,29 @@
+{
+  "date": "2026-07-01",
+  "generated_by": "automation-01-premarket",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 313,
+      "universe_hits": [],
+      "note": "No researchUniverse tickers in 7d earnings window; MSFT/AMZN/META report ~late Jul"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 227,
+      "universe_hits": [
+        {
+          "symbol": "MSFT",
+          "pct_change": 1.79,
+          "last": 379.69,
+          "note": "premarket vs prior close — not in scanner top gainers (micro-cap dominated)"
+        }
+      ],
+      "note": "MSFT +1.8% premarket lead; NVDA −0.7% · AMZN +0.6% · META +0.6%"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-02",
+  "generated_by": "automation-01-premarket",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 311,
+      "universe_hits": [],
+      "note": "No researchUniverse tickers in 7d earnings window; MSFT/AMZN/META report ~late Jul"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 217,
+      "universe_hits": [
+        {
+          "symbol": "HOOD",
+          "pct_change": 2.76,
+          "last": 111.65,
+          "note": "premarket +2.8%"
+        },
+        {
+          "symbol": "META",
+          "pct_change": -0.62,
+          "last": 609.14,
+          "note": "consolidating after +8.8% prior session"
+        }
+      ],
+      "note": "META +8.8% Wed on AI cloud news; MSFT +3% Wed; semis profit-taking NVDA flat"
+    }
+  ]
+}

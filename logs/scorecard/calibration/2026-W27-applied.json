@@ -1,0 +1,52 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W27",
+  "appliedAt": "2026-07-03T21:00:30.000Z",
+  "decision": "APPLIED",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.36,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.20,
+    "ackman_confluence": 0.12,
+    "social_sentiment": 0.07
+  },
+  "newWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasApplied": {
+    "fundamental_quality": -0.02,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.01,
+    "social_sentiment": -0.02
+  },
+  "rebalanceNote": "Proposed deltas netted +0.02; fundamental_quality reduced 0.02 to preserve sum=1.0. social_sentiment at minWeightFloor 0.05.",
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 0.0,
+    "haltDrawdownLimitPct": 15,
+    "weeklyReviewPresent": true
+  },
+  "ackmanRationale": "We beat SPY by 275bps since inception with zero trades — a recovery week that rewarded patience. Catalyst proximity and ackman confluence explained the +3.5% NAV move as earnings windows tightened; MSFT (#1 universe) and AMZN (#4, max 13F add) rallied into late-July catalysts. We nudge weight toward catalyst timing and confluence, trim social sentiment to the floor where we saw no edge. Conviction thresholds unchanged — Media-Alta still leads Alta by ~115bps, below the 2% bar for threshold moves.",
+  "attributionSummary": {
+    "bestSignal": "ackman_confluence",
+    "fundVsSpyPct": 2.75,
+    "navUsd": 102.35
+  }
+}

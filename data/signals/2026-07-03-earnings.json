@@ -1,0 +1,23 @@
+{
+  "date": "2026-07-03",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-03",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [],
+  "research_universe_upcoming": [
+    {"symbol": "MSFT", "report_date": "2026-07-29", "timing": "pm", "verified": false, "days_out": 26},
+    {"symbol": "META", "report_date": "2026-07-29", "timing": "pm", "verified": false, "days_out": 26},
+    {"symbol": "AMZN", "report_date": "2026-07-30", "timing": "pm", "verified": false, "days_out": 27}
+  ],
+  "highlights_14d": [
+    {"symbol": "DAL", "report_date": "2026-07-10", "timing": "am"},
+    {"symbol": "PEP", "report_date": "2026-07-09", "timing": "am"},
+    {"symbol": "BAC", "report_date": "2026-07-14", "timing": "am"},
+    {"symbol": "JPM", "report_date": "2026-07-14", "timing": "am"},
+    {"symbol": "GS", "report_date": "2026-07-14", "timing": "am"},
+    {"symbol": "NFLX", "report_date": "2026-07-16", "timing": "pm"},
+    {"symbol": "TSM", "report_date": "2026-07-16", "timing": "am"}
+  ],
+  "note": "14d window ends Jul 17; book catalysts MSFT/META/AMZN sit just outside at ~26-27d"
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-03",
+  "generated_by": "automation-01-premarket",
+  "source": "MCP run_scan per config/scanner-presets.json",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 295,
+      "results_returned": 150,
+      "research_universe_hits": [],
+      "note": "No researchUniverse names in 7d earnings window; mega-cap Q2 cluster ~Jul 29-30"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 280,
+      "results_returned": 150,
+      "research_universe_hits": [],
+      "top_movers_quality_filtered": [
+        {"symbol": "AEHR", "pct_change": 3.22, "last": 72.21, "market_cap_usd": 2200469649},
+        {"symbol": "LEU", "pct_change": 3.38, "last": 167.61, "market_cap_usd": 3189550091},
+        {"symbol": "DY", "pct_change": 4.85, "last": 459.0, "market_cap_usd": 13146569740}
+      ],
+      "note": "Micro-cap noise dominates; qualityFilters reject most daily-movers hits"
+    }
+  ],
+  "merge_rule": "Union with researchUniverse; dedupe; apply qualityFilters from scanner-presets.json"
+}

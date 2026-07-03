@@ -1,0 +1,25 @@
+{
+  "week": "2026-W27",
+  "navUsd": 102.35,
+  "spyReturnPct": -0.40,
+  "fundReturnPct": 2.35,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.4,
+    "catalyst_proximity_days": 0.6,
+    "ackman_confluence": 0.8,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.01,
+    "social_sentiment": -0.02
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund beat SPY by 275bps since inception with zero trades — catalyst proximity and ackman_confluence drove recovery week (+3.5% NAV WoW). Media-Alta (MSFT) still leads Alta (AMZN) on return; hold conviction thresholds until post-earnings outcomes. Trim social_sentiment — no weekly edge observed."
+}

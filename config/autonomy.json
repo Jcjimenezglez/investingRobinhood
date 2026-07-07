@@ -78,14 +78,16 @@
       },
       {
         "name": "bench-refresh",
-        "cron": "0 10 * * 6",
+        "cron": "0 14 * * 6",
+        "cronNote": "Cursor UTC: 14:00 UTC = 10:00 AM EDT. Si UI respeta America/New_York, usar 0 10 * * 6",
         "action": "research-only",
         "workflow": "workflows/automation-06-bench-refresh.md",
         "description": "Sábado 10:00 ET: bench memo #1 fuera del book. Sin trades."
       },
       {
         "name": "monthly-close",
-        "cron": "0 18 1 * *",
+        "cron": "0 22 1 * *",
+        "cronNote": "Cursor evalúa cron en UTC: 22:00 UTC = 6:00 PM EDT. Si tu UI respeta America/New_York, usar 0 18 1 * * en su lugar. Invierno EST: 0 23 1 * *",
         "action": "scorecard-review",
         "workflow": "workflows/automation-07-monthly-close.md",
         "description": "Día 1 18:00 ET: scorecard mensual del mes anterior"

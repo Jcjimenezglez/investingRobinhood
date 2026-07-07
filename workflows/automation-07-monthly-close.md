@@ -1,8 +1,10 @@
-# Automation #7 — Monthly Close (1st of month, 6:00 PM ET)
+# Automation #7 — Monthly Close (1st of month, 6:00 PM America/New_York)
 
 **Modo:** evaluación — **NO trades**.
 
-**Periodo:** mes calendario anterior (ej. run 1-ago 18:00 ET → scorecard de julio completo).
+**Horario:** día 1 de cada mes, **6:00 PM hora de Nueva York** (después del cierre del último día hábil del mes anterior).
+
+**Cron en Cursor:** si el preview muestra 2:00 PM con `0 18 1 * *`, el scheduler usa UTC → pon `0 22 1 * *` (EDT) o `0 23 1 * *` (EST).
 
 ## Pre-flight
 

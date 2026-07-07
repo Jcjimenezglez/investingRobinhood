@@ -210,12 +210,13 @@ NO trades.
 
 ---
 
-## 7. Bench Refresh — Saturday 10:00 ET
+## 7. Bench Refresh — Saturday 10:00 AM ET
 
 **Name:** `investingRobinhood Bench Refresh Sat 10am ET`
 
 **Trigger**
-- Cron: `0 10 * * 6`
+- Cron (si timezone America/New_York aplica): `0 10 * * 6`
+- Cron (si Cursor usa UTC y preview muestra 6:00 AM): `0 14 * * 6` → debe decir **10:00 AM EDT**
 
 **Agent Instructions**
 
@@ -236,12 +237,15 @@ NO place_equity_order.
 
 ---
 
-## 8. Monthly Close — 1st of month 18:00 ET
+## 8. Monthly Close — 1st of month 6:00 PM ET
 
 **Name:** `investingRobinhood Monthly Close`
 
 **Trigger**
-- Cron: `0 18 1 * *`
+- Cron (si Cursor muestra **2:00 PM** con `0 18` → el scheduler usa **UTC**): `0 22 1 * *`
+- Cron (si timezone **America/New_York** aplica al cron): `0 18 1 * *`
+- **Verificar en UI:** "Next run" debe decir **6:00 PM EDT** (ago) o **6:00 PM EST** (ene). Si dice 2:00 PM, usar `0 22 1 * *`.
+- Invierno (EST, nov–mar) con scheduler UTC: `0 23 1 * *` para 6:00 PM NY
 
 **Agent Instructions**
 

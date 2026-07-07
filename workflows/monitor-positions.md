@@ -1,6 +1,6 @@
-# Monitor Positions — Auto Exit (Cursor Automation)
+# Monitor Positions — Auto Exit
 
-Ejecutar cada **15 min** en **regular hours** (9:30–16:00 ET, lun–vie).
+Ejecutar en **market-open 9:35**, **midday 12:00** y **close 15:00** ET (lun–vie). Ver `automation-02-market-open.md` Fase 1.5 y `automation-03-intraday-monitor.md`.
 
 ## Pre-flight
 
@@ -39,13 +39,12 @@ review_equity_order → side=sell, type=market, quantity=shares_available_for_se
 Si order_checks {} → place_equity_order
 append logs/trade-journal.md
 update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
-bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "motivo: hard_stop|thesis_break, precio, fill"
 ```
 
 ## Escalación (no vender)
 
-- `order_checks` no vacío → `send-alert.sh urgent` + no ejecutar
-- MCP auth failure → urgent + no ejecutar
+- `order_checks` no vacío → log en intel + no ejecutar
+- MCP auth failure → HALT + log en intel
 - Trim parcial sin thesis memo explícito → alerta + no ejecutar
 
 Recalcular siempre desde `average_buy_price` del MCP.

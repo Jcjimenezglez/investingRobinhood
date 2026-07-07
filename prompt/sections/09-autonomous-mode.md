@@ -2,6 +2,8 @@
 
 Configuración en `config/autonomy.json` y `config/notifications.json`. El usuario autorizó **máxima automatización** dentro de límites.
 
+**Notificaciones:** emails desactivados (`notifications.json` → `email.enabled: false`). LP consulta Robinhood app o chat. Robinhood push sigue activo en cada trade del agente.
+
 ## Comportamiento default
 
 1. Ejecuta el ciclo completo **sin pedir confirmación en chat** si:
@@ -13,30 +15,42 @@ Configuración en `config/autonomy.json` y `config/notifications.json`. El usuar
 
 2. **Siempre** llama `review_equity_order` antes de `place_equity_order` (compliance MCP).
 
-3. Tras ejecutar: append `logs/trade-journal.md` + email digest (`scripts/send-alert.sh` tipo `trade`).
+3. Tras ejecutar: append `logs/trade-journal.md` + `logs/scorecard/positions.jsonl`.
 
-## Cuándo NO operar solo — escalar por email
+4. **Stop Guard (9:35 / 12:00 / 15:00):** antes de scan o entradas, evaluar stops backup y kill criteria; auto sell market si trigger. Ver `automation-02-market-open.md` Fase 1.5.
 
-Envía email **urgente** a `config/notifications.json` → `email.to` y **pausa** trading hasta respuesta humana si:
+## Cuándo NO operar solo — escalar vía log + HALT
+
+Documentar en `logs/intelligence/` y **pausar** trading hasta LP consulte por chat si:
 
 | Condición | Acción |
 |-----------|--------|
-| `order_checks` no vacío tras review | Email + no ejecutar |
-| Trade > `maxOrderUsd` | Email + no ejecutar |
-| Pérdida diaria > `maxDailyLossPct` | Halt + email |
-| Pérdida semanal > `maxWeeklyLossPct` | Halt + email |
-| 3 pérdidas consecutivas | Halt + email |
-| Convicción **Baja** | HOLD + email solo si era candidato fuerte |
+| `order_checks` no vacío tras review | HALT + log |
+| Trade > `maxOrderUsd` | HALT + log |
+| Pérdida diaria > `maxDailyLossPct` | Halt + log |
+| Pérdida semanal > `maxWeeklyLossPct` | Halt + log |
+| 3 pérdidas consecutivas | Halt + log |
+| Convicción **Baja** | HOLD |
 | Ticker fuera de universo | No operar |
-| MCP caído / auth fallida | Email urgente |
-| **Primer trade autónomo ever** | Ejecutar solo si review limpio; email inmediato post-trade |
-
-Para escalar: `bash scripts/send-alert.sh urgent "asunto" "cuerpo markdown"`
+| MCP caído / auth fallida | HALT + log |
 
 ## Schedule (Cursor Automation)
 
-Horarios objetivo en `autonomy.json` → `schedule.sessions`. Si Automation no está activa, el usuario puede invocar manualmente o activar cron en Cursor.
+Horarios en `autonomy.json` → `schedule.sessions`:
+
+| # | Sesión | Cron |
+|---|--------|------|
+| 1 | Pre-market | 8:00 L-V |
+| 2 | Market open + Stop Guard | 9:35 L-V |
+| 3 | Midday monitor | 12:00 L-V |
+| 4 | Close monitor | 15:00 L-V |
+| 5 | Weekly review | Vie 16:30 |
+| 6 | Ackman calibration | Vie 17:00 |
+| 7 | Bench refresh | Sáb 10:00 |
+| 8 | Monthly close | Día 1 18:00 |
+
+Copy-paste: `workflows/automations-setup.md`
 
 ## Robinhood push
 
-Cada trade genera notificación en app Robinhood — no sustituye email en escalaciones.
+Cada trade genera notificación en app Robinhood.

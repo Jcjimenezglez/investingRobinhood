@@ -90,16 +90,8 @@ Escribir `logs/scorecard/weekly/YYYY-WW.md` (ISO week):
 - Catalysts / earnings dates
 ```
 
-## Email digest
-
-```bash
-bash scripts/send-alert.sh digest "Weekly scorecard YYYY-WW" "$(cat logs/scorecard/weekly/YYYY-WW.md)"
-```
-
-Incluir link a `logs/scorecard/positions.jsonl` y último monthly si existe.
-
 ## Escalación
 
-Si drawdown > `maxDrawdownFromHighWaterMarkPct` en risk-policy → `send-alert.sh urgent` + halt per autonomy.json.
+Si drawdown > `maxDrawdownFromHighWaterMarkPct` en risk-policy → log HALT en weekly file (LP consulta chat).
 
 Commit cambios en `logs/scorecard/` a `main`.

@@ -40,7 +40,7 @@ review_equity_order (BUY) → si order_checks {} → place_equity_order
 
 Sin take-profit GTC automático — exits al alza según `exitPolicy` Ackman en risk-policy.
 
-Si stop GTC rechazado: alerta + fallback monitoreo 12:00 / 15:00 ET con `check`.
+Si stop GTC rechazado: log + fallback Stop Guard 9:35 / 12:00 / 15:00 ET.
 
 ## 4b. Scorecard (obligatorio tras trade o exit)
 
@@ -55,20 +55,19 @@ Journal narrativo (`logs/trade-journal.md`) sigue siendo complemento humano — 
 
 ## 5. Escalación
 
-Si cualquier trigger en `autonomy.json` → `escalation.requireHumanApprovalWhen`:
+Si cualquier trigger en `autonomy.json` → `escalation.requireHumanApprovalWhen`: log HALT en `logs/intelligence/` y no ejecutar. LP consulta chat (emails desactivados).
 
-```bash
-bash scripts/send-alert.sh urgent "Motivo" "Detalle y acción sugerida"
-```
+## Cron objetivo (ET)
 
-## Cron objetivo (ET, lun–vie)
+| Hora | Día | Sesión |
+|------|-----|--------|
+| 8:00 | L-V | Research only + `fetch-signals.sh` |
+| 9:35 | L-V | Full cycle + Stop Guard (trades OK) |
+| 12:00 | L-V | Monitor posiciones |
+| 15:00 | L-V | Pre-close monitor |
+| 16:30 | Vie | Weekly scorecard |
+| 17:00 | Vie | Ackman calibration |
+| 10:00 | Sáb | Bench refresh (research only) |
+| 18:00 | Día 1 | Monthly close |
 
-| Hora | Sesión |
-|------|--------|
-| 8:00 | Research only + `fetch-signals.sh` |
-| 9:35 | Full cycle (trades OK) |
-| 12:00 | Monitor posiciones |
-| 15:00 | Close check + digest |
-| Vie 16:30 | Weekly scorecard ([`automation-04-weekly-review.md`](automation-04-weekly-review.md)) |
-
-Configurar en **Cursor Automations** con trigger cron (timezone US/Eastern).
+Configurar en **Cursor Automations** — copy-paste: `workflows/automations-setup.md` (timezone US/Eastern).

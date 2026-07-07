@@ -3,7 +3,8 @@
     "to": "jcjimenezglez@gmail.com",
     "from": "onboarding@resend.dev",
     "fromNote": "Cambiar a tu dominio verificado en Resend cuando lo configures (ej. alerts@tudominio.com)",
-    "enabled": true,
+    "enabled": false,
+    "disabledReason": "LP consulta Robinhood app o chat; reactivar más adelante si se configura dominio Resend",
     "provider": "resend",
     "script": "scripts/send-alert.sh"
   },

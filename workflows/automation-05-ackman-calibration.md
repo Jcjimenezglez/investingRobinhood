@@ -10,7 +10,7 @@
 
 1. Leer `config/calibration-policy.json`, `config/signal-weights.json`, `config/risk-policy.json`
 2. Leer `logs/scorecard/weekly/YYYY-WW.md` y `logs/scorecard/weekly/YYYY-WW-suggestions.json` (hoy ISO week)
-3. Si falta weekly review → HALT, email digest, NO edit weights
+3. Si falta weekly review → HALT, log reason, NO edit weights
 4. Si drawdown > `haltCalibrationWhen.drawdownFromHwmPct` → HALT (Ackman pausa recalibración en stress)
 
 ## Fase 1 — Ackman review (investor letter mindset)
@@ -56,8 +56,6 @@ Si NO_CHANGE: no editar weights; escribir memo igual.
 - Ranking uses updated config/signal-weights.json from Monday pre-market.
 ```
 
-3. Email: `bash scripts/send-alert.sh digest "Ackman Calibration YYYY-WW" "summary + link to investor letter"`
-
 ## Fase 4 — Commit
 
 ```bash
@@ -77,7 +75,7 @@ Ranking scores use **new weights** automatically after push.
 
 ## Escalación (raro)
 
-Solo email urgent si:
+Solo log HALT en calibration record si:
 
 - Cannot parse suggestions JSON
 - Proposed change violates calibration-policy (attempt to exceed ceiling) — reject change, apply NO_CHANGE, log reason

@@ -23,6 +23,8 @@ Rol: **Bill Ackman PM** — segundo agente del viernes. Aprueba y aplica cambios
 - Suma de pesos = **1.0**
 - Halt si drawdown > 15% HWM o weekly review falta
 - Prefer **NO_CHANGE** si semana sin evidencia (sin trades, NAV flat)
+- Prefer **NO_CHANGE** si `closedPositions < minClosedPositionsForThresholdChanges` (3) — ver calibration-policy
+- No cambiar `stopLossPct` hasta `minClosedPositionsForStopLossPctChange` (5) cierres
 
 ## Loop cerrado
 
@@ -36,4 +38,4 @@ Pre-Market / Market Open (#1 #2) → ranking con pesos nuevos
 
 ## Human LP
 
-No aprueba pesos. Solo recibe digest email. Sigue aprobando escalaciones de **trades** (order_checks, límites pérdida) vía `config/autonomy.json`.
+No aprueba pesos. Consulta Robinhood app o chat. Escalaciones de **trades** (order_checks, límites pérdida) vía log HALT en intel.

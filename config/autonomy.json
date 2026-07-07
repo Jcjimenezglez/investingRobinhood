@@ -10,8 +10,10 @@
     "agenticAccountNickname": "Agentic"
   },
   "escalation": {
-    "emailOnEscalation": true,
-    "pauseAndEmailOnHalt": true,
+    "emailOnEscalation": false,
+    "emailDisabledNote": "LP consulta Robinhood app o chat; ver config/notifications.json",
+    "pauseAndEmailOnHalt": false,
+    "pauseAndLogOnHalt": true,
     "requireHumanApprovalWhen": [
       "order_checks_non_empty_after_review",
       "trade_exceeds_max_order_usd",
@@ -44,23 +46,21 @@
       },
       {
         "name": "intraday-monitor",
-        "cron": "30,45 9 * * 1-5",
-        "cronAlt": "*/15 10-15 * * 1-5",
-        "cronClose": "0 16 * * 1-5",
+        "cron": "0 12,15 * * 1-5",
         "action": "monitor-auto-exit",
-        "description": "Cada 15 min en regular hours: check posiciones; market sell si stop -8% backup o tesis rota. Ver workflows/monitor-positions.md"
+        "description": "12:00 y 15:00 ET: check posiciones; market sell si stop backup o tesis rota. Stop Guard también en 9:35 (market-open). Ver workflows/monitor-positions.md"
       },
       {
         "name": "midday-check",
         "cron": "0 12 * * 1-5",
         "action": "monitor",
-        "description": "Revisar posiciones vs stop backup y tesis. Trim/exit solo por Ackman rules"
+        "description": "Alias midday — cubierto por intraday-monitor cron 12:00"
       },
       {
         "name": "close-check",
         "cron": "0 15 * * 1-5",
         "action": "monitor",
-        "description": "Última revisión antes del cierre. Journal + email digest si hubo trades"
+        "description": "Última revisión antes del cierre. Journal si hubo trades"
       },
       {
         "name": "weekly-review",
@@ -75,6 +75,22 @@
         "action": "auto-calibrate-weights",
         "workflow": "workflows/automation-05-ackman-calibration.md",
         "description": "Viernes 17:00 ET: Ackman PM auto-applies signal-weights within calibration-policy"
+      },
+      {
+        "name": "bench-refresh",
+        "cron": "0 14 * * 6",
+        "cronNote": "Cursor UTC: 14:00 UTC = 10:00 AM EDT. Si UI respeta America/New_York, usar 0 10 * * 6",
+        "action": "research-only",
+        "workflow": "workflows/automation-06-bench-refresh.md",
+        "description": "Sábado 10:00 ET: bench memo #1 fuera del book. Sin trades."
+      },
+      {
+        "name": "monthly-close",
+        "cron": "0 22 1 * *",
+        "cronNote": "Cursor evalúa cron en UTC: 22:00 UTC = 6:00 PM EDT. Si tu UI respeta America/New_York, usar 0 18 1 * * en su lugar. Invierno EST: 0 23 1 * *",
+        "action": "scorecard-review",
+        "workflow": "workflows/automation-07-monthly-close.md",
+        "description": "Día 1 18:00 ET: scorecard mensual del mes anterior"
       }
     ]
   }

@@ -49,11 +49,7 @@ Escribir `logs/intelligence/YYYY-MM-DD-0800-premarket.md`:
 
 ## Escalación
 
-Si MCP falla o límites de riesgo breached:
-
-```bash
-bash scripts/send-alert.sh urgent "motivo" "detalle"
-```
+Si MCP falla o límites de riesgo breached → log HALT en intel (LP consulta chat; emails desactivados).
 
 ## Post-run
 

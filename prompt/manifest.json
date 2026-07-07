@@ -1,6 +1,6 @@
 {
-  "version": "1.6.0",
-  "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
+  "version": "1.7.0",
+  "description": "System prompt modular del Stock Broker Agent. v1.7.0: Stop Guard 9:35, earnings playbook, bench/monthly automations, emails off, cash deployment plan.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",
@@ -30,6 +30,8 @@
     "dataSources": "config/data-sources.json",
     "scannerPresets": "config/scanner-presets.json",
     "watchlistPolicy": "config/watchlist-policy.json",
-    "runbook": "workflows/daily-runbook.md"
+    "runbook": "workflows/daily-runbook.md",
+    "earningsPlaybook": "logs/theses/earnings-playbook-2026-07.md",
+    "benchMemos": "logs/theses/bench/"
   }
 }

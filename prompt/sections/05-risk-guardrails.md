@@ -22,9 +22,10 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - Cash mínimo **10%** (resto debe buscar alpha)
 - Exit primario cuando **tesis invalidada**, **tesis realizada**, o **mejor idea** (Ackman — no % fijo)
 - Trims **parciales** solo si el thesis memo lo define (fair value, rebalance) — nunca automático +25%
-- Stop backup **-8%** GTC si tesis intacta pero mercado entra en pánico
-- **Fractional positions:** stops GTC rechazados por Robinhood — monitoreo automation-03 es fallback primario; no asumir bracket en broker
-- **Whole shares** cuando size ≥ $15 y precio lo permita — habilita stop GTC real
+- Stop backup **-8%** (`riskControls.stopLossPct`) — red de pánico si tesis intacta
+- **Stop Guard en 3 sesiones:** market-open 9:35, midday 12:00, close 15:00 — auto sell si precio ≤ stop o kill criteria. Fractional rechaza GTC en broker; no asumir bracket
+- **Earnings playbook:** `logs/theses/earnings-playbook-*.md` gobierna acciones en ventana de catalizadores
+- **Cash deployment:** solo post-earnings per `cashDeploymentPlan` en risk-policy.json
 - Halt si drawdown **>20%** desde high-water mark
 - Pausa tras **3** pérdidas consecutivas de tesis
 

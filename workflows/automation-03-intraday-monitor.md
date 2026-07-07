@@ -40,13 +40,12 @@ review_equity_order → side=sell, type=market, quantity=shares_available_for_se
 Si order_checks {} → place_equity_order
 append logs/trade-journal.md
 update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
-bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "hard_stop|thesis_break, precio, fill"
 ```
 
 ## Escalación — NO vender
 
-- `order_checks` no vacío → `send-alert.sh urgent` + no ejecutar
-- MCP auth failure → urgent + no ejecutar
+- `order_checks` no vacío → log en intel + no ejecutar
+- MCP auth failure → HALT + log en intel
 
 ## Output
 

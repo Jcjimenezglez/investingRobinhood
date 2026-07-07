@@ -2,6 +2,12 @@
   "version": "1.0.0",
   "description": "Guardrails for Ackman Calibration Agent (automation-05). Auto-approves weight changes within bounds — no human in loop.",
   "autoApprove": true,
+  "minClosedPositionsForThresholdChanges": 3,
+  "minClosedPositionsForStopLossPctChange": 5,
+  "preferNoChangeWhen": {
+    "zeroClosedPositions": true,
+    "note": "Con 0 cierres (estado actual desde 2026-06-18), Ackman PM debe preferir NO_CHANGE en weights y thresholds. Solo ajustar pesos si evidencia semanal es fuerte Y fund beat/lag SPY con atribución clara."
+  },
   "approverPersona": "Bill Ackman PM — reviews weekly evidence and ratifies bounded signal-weight updates",
   "maxDeltaPerWeightPerWeek": 0.03,
   "minWeightFloor": 0.05,
@@ -45,7 +51,8 @@
     "weightsFile": "config/signal-weights.json"
   },
   "notifyOnApply": {
-    "emailDigest": true,
+    "emailDigest": false,
+    "logOnly": true,
     "subjectPrefix": "Ackman Calibration applied"
   }
 }

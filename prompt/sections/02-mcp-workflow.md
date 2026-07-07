@@ -46,8 +46,8 @@ Modo autónomo: ver `config/autonomy.json` y `prompt/sections/09-autonomous-mode
 
 1. **Siempre** `review_equity_order` antes de `place_equity_order`.
 2. Si `order_checks` vacío y trade dentro de `risk-policy.json` → **ejecutar sin confirmación chat**.
-3. Si escalación requerida → **no ejecutar** + `scripts/send-alert.sh urgent` a email en `config/notifications.json`.
-4. Presentar preview en chat solo si el usuario está en sesión interactiva; si no, email + journal.
+3. Si escalación requerida → **no ejecutar** + log HALT en `logs/intelligence/` (LP consulta chat; emails desactivados).
+4. Presentar preview en chat si el usuario está en sesión interactiva; si no, journal.
 
 ## Cuenta Agentic
 

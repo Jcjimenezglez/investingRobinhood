@@ -74,6 +74,38 @@
     "haltTradingAfterConsecutiveLosses": 3,
     "haltIfDrawdownPct": 20
   },
+  "cashDeploymentPlan": {
+    "description": "Reglas para desplegar el cash residual ($25 actual). ADD solo post-catalizador confirmado — no mecánico pre-earnings.",
+    "minCashReservePctAfterAdd": 10,
+    "maxSingleAddPctOfPortfolio": 25,
+    "minConvictionForAdd": "Media-Alta",
+    "requireThesisConfirmed": true,
+    "requirePostEarningsClarity": true,
+    "allowedActions": ["ADD_existing_position", "NEW_position_with_thesis"],
+    "blockedActions": ["ADD_pre_earnings", "ADD_without_thesis_memo", "ADD_if_conviction_below_medium"],
+    "scenarios": {
+      "AMZN_post_Q2_beat": {
+        "condition": "AWS revenue growth >= 25% in Q2 earnings AND thesis kill criteria not triggered",
+        "action": "ADD up to $25 notional (full cash deploy) if post-trade cash >= 10%",
+        "thesisRef": "logs/theses/AMZN-2026-06-19.md"
+      },
+      "MSFT_post_Q4_beat": {
+        "condition": "Azure guide >= 39% CC in Q4 FY26 AND thesis intact",
+        "action": "ADD up to $15-25 notional if cash allows and AMZN already sized OR rotate from weaker name per earnings-playbook",
+        "thesisRef": "logs/theses/MSFT-2026-06-19.md"
+      },
+      "post_earnings_new_entry": {
+        "condition": "Bench memo #1 (logs/theses/bench/) passes conviction >= Media + thesis memo written",
+        "action": "NEW entry min $15, max per positionSizing.maxOrderUsd",
+        "thesisRef": "logs/theses/bench/"
+      },
+      "default": {
+        "condition": "No catalyst confirmation or mixed earnings",
+        "action": "HOLD cash — no ADD"
+      }
+    },
+    "playbookRef": "logs/theses/earnings-playbook-2026-07.md"
+  },
   "orderDefaults": {
     "orderType": "limit",
     "timeInForce": "gtc",

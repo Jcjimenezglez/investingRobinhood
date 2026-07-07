@@ -17,6 +17,35 @@ get_accounts → Agentic
 get_portfolio, get_equity_positions, get_equity_orders
 ```
 
+## Fase 1.5 — Stop Guard (PRIMERO, antes de scan/entradas)
+
+**Objetivo:** actuar gaps overnight y apertura — sin cron nuevo. Misma lógica que automation-03.
+
+```
+get_equity_quotes → precio por posición abierta
+Leer logs/theses/TICKER-*.md → kill criteria
+stop = entry × (1 - config/risk-policy.json → riskControls.stopLossPct / 100)   # default −8%
+```
+
+Por cada posición (`shares_available_for_sells` > 0):
+
+| Condición | Acción |
+|-----------|--------|
+| precio ≤ stop backup | **AUTO SELL market** (toda la posición) — `exit_reason: hard_stop` |
+| kill criteria del thesis memo | **AUTO SELL market** — `exit_reason: thesis_break` |
+| earnings playbook activo (`logs/theses/earnings-playbook-*.md`) | Aplicar matriz de escenarios antes de improvisar |
+| ninguna | continuar a Fase 2 |
+
+```
+review_equity_order → side=sell, type=market, quantity=shares_available_for_sells
+Si order_checks {} → place_equity_order
+append logs/trade-journal.md + update logs/scorecard/positions.jsonl
+```
+
+**No** auto-vender por ganancia % fija. Si fractional rechaza stop GTC en broker → confiar en sesiones 9:35 / 12:00 / 15:00 (documentado en trade-journal).
+
+Si se ejecutó exit en esta fase → **no** abrir nuevas posiciones el mismo día salvo rotación explícita en playbook.
+
 ## Fase 2 — Scan + intel
 
 - `run_scan` (config/scanner-presets.json) → merge scanner hits con researchUniverse
@@ -45,10 +74,9 @@ get_equity_positions → entry price exacto
 Intentar stop GTC -8% (backup). Sin take-profit mecánico.
 Si fractional rechaza GTC → log alerta + fallback monitor
 append logs/trade-journal.md
-bash scripts/send-alert.sh trade "BUY/SELL TICKER" "detalle"
 ```
 
-## Escalación — NO operar, email urgente
+## Escalación — NO operar, log en intel + HALT
 
 - `order_checks` no vacío tras review
 - Trade > maxOrderUsd
@@ -58,9 +86,7 @@ bash scripts/send-alert.sh trade "BUY/SELL TICKER" "detalle"
 - Ticker fuera universo
 - MCP auth failure
 
-```bash
-bash scripts/send-alert.sh urgent "motivo" "detalle"
-```
+Documentar motivo en `logs/intelligence/YYYY-MM-DD-0935-open.md` bajo sección **Escalación** y **HALT** trading hasta próxima sesión o intervención LP vía chat.
 
 ## Output
 

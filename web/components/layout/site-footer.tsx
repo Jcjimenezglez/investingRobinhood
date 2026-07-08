@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 import { LogoMark } from "@/components/brand/logo-mark";
 import { BRAND } from "@/lib/site-config";
 
@@ -16,28 +15,41 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-border bg-muted/30">
-      <div className="container-page space-y-4 py-10">
-        <div className="flex items-center gap-2.5">
-          <LogoMark size="sm" />
-          <span className="text-sm font-semibold">{BRAND.name}</span>
+    <footer className="mt-16 border-t border-border/80">
+      <div className="container-page space-y-5 py-10">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
+            <LogoMark size="sm" />
+            <div>
+              <span className="hud-title block text-xs tracking-[0.2em]">
+                {BRAND.name}
+              </span>
+              <span className="font-data text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                SYS // PUBLIC TRACK RECORD
+              </span>
+            </div>
+          </div>
+          <span className="hud-live">
+            <span className="hud-live-dot" />
+            Live feed
+          </span>
         </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          <span className="font-medium text-foreground">Disclaimer.</span>{" "}
-          {BRAND.name} documents an experimental AI trading agent on a small
-          Robinhood Agentic account. Not investment advice. Past performance
-          does not guarantee future results.
+        <p className="max-w-3xl font-data text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <span className="text-signal">Disclaimer.</span> {BRAND.name}{" "}
+          documents an experimental AI trading agent on a small Robinhood
+          Agentic account. Not investment advice. Past performance does not
+          guarantee future results.
         </p>
-        <Separator />
+        <div className="h-px w-full bg-gradient-to-r from-signal/50 via-border to-violet/40" />
         <nav
-          className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground"
+          className="flex flex-wrap gap-x-5 gap-y-2 font-data text-[11px] uppercase tracking-[0.16em] text-muted-foreground"
           aria-label="Footer"
         >
           {footerLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-foreground"
+              className="transition-colors hover:text-signal"
             >
               {link.label}
             </Link>

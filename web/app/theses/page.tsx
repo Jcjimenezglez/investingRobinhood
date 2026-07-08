@@ -35,11 +35,11 @@ export default function ThesesPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-start gap-3">
-        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+        <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <FileText className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Theses</h1>
+          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">Theses</h1>
           <DirectAnswer className="mt-2">
             Every {BRAND.name} BUY starts with a full written memo — business
             quality, mispricing, catalyst, and kill criteria — published here
@@ -48,7 +48,7 @@ export default function ThesesPage() {
         </div>
       </div>
 
-      <Card className="rounded-lg border-border shadow-none">
+      <Card className="border-border">
         <CardHeader>
           <CardTitle className="text-base font-semibold">
             Investment memos

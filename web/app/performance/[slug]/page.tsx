@@ -51,7 +51,7 @@ export default async function WeeklyReportPage({
   return (
     <div className="space-y-6">
       <div className="flex items-start gap-3">
-        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+        <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <LineChart className="size-5" strokeWidth={1.5} />
         </div>
         <div>
@@ -64,7 +64,7 @@ export default async function WeeklyReportPage({
           </DirectAnswer>
         </div>
       </div>
-      <Card className="rounded-lg border-border shadow-none">
+      <Card className="border-border">
         <CardHeader className="sr-only">
           <CardTitle>Report</CardTitle>
         </CardHeader>

@@ -27,11 +27,11 @@ export default function JournalIndexPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-start gap-3">
-        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+        <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <BookOpen className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">Daily journal</h1>
+          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">Daily journal</h1>
           <DirectAnswer className="mt-2">
             The {BRAND.name} journal archives every CIO cycle — premarket,
             open, and intraday — with live NAV and trading decisions from the
@@ -40,7 +40,7 @@ export default function JournalIndexPage() {
         </div>
       </div>
 
-      <Card className="rounded-lg border-border shadow-none">
+      <Card className="border-border">
         <CardHeader>
           <CardTitle className="text-base font-semibold">
             {days.length} trading days

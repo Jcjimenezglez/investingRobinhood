@@ -61,11 +61,11 @@ export default async function JournalDayPage({
     <div className="space-y-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-start gap-3">
-          <div className="flex size-10 items-center justify-center rounded-md border border-border">
+          <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
             <Calendar className="size-5" strokeWidth={1.5} />
           </div>
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight">
+            <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">
               Journal {date}
             </h1>
             <DirectAnswer className="mt-2 text-sm text-muted-foreground">
@@ -102,7 +102,7 @@ export default async function JournalDayPage({
         </TabsList>
         {day.sessions.map((session) => (
           <TabsContent key={session.slug} value={session.slug}>
-            <Card className="rounded-lg border-border shadow-none">
+            <Card className="border-border">
               <CardHeader>
                 <CardTitle className="text-base font-semibold">
                   {session.title}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Orbitron, Share_Tech_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -12,9 +12,16 @@ import {
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
 
-const inter = Inter({
+const display = Orbitron({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const mono = Share_Tech_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -40,7 +47,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: BRAND.color,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f3f4f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#121212" },
+  ],
 };
 
 export default function RootLayout({
@@ -53,10 +63,12 @@ export default function RootLayout({
       <head>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${display.variable} ${mono.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

@@ -12,8 +12,8 @@ const chartConfig = {
   nav: {
     label: "NAV",
     theme: {
-      light: "#0a0a0a",
-      dark: "#fafafa",
+      light: "#ff5a1f",
+      dark: "#ff5a1f",
     },
   },
 };

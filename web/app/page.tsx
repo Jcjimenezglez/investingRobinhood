@@ -9,12 +9,10 @@ import { FaqSection } from "@/components/seo/faq-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  HudPanel,
+  HudPanelBody,
+  HudPanelHeader,
+} from "@/components/ui/hud-panel";
 import {
   getFundSnapshot,
   getJournalDays,
@@ -35,28 +33,64 @@ export default function HomePage() {
   const latestLetter = getLetters()[0];
 
   return (
-    <div className="space-y-8">
-      <section className="space-y-3">
-        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-          Live track record
-        </p>
-        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          {BRAND.name}: thesis-driven AI fund on Robinhood Agentic
-        </h1>
-        <DirectAnswer>
-          {BRAND.name} publishes the live NAV, daily CIO journal, trades, and
-          investment theses of a concentrated AI hedge fund that started at $
-          {BRAND.startingNav} on {BRAND.inceptionDate}. Current NAV is $
-          {snapshot.nav.toFixed(2)} ({snapshot.returnPct >= 0 ? "+" : ""}
-          {snapshot.returnPct.toFixed(2)}% since inception) with{" "}
-          {snapshot.positions} open position
-          {snapshot.positions !== 1 ? "s" : ""} — updated on trading days from
-          live Agentic account data.
-        </DirectAnswer>
+    <div className="space-y-7">
+      <section className="hud-panel hud-panel-accent hud-scanline relative overflow-hidden px-5 py-7 sm:px-7 sm:py-9">
+        <div className="relative z-10 grid gap-6 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
+          <div className="space-y-4">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hud-live">
+                <span className="hud-live-dot" />
+                Live track record
+              </span>
+              <span className="font-data text-[10px] uppercase tracking-[0.2em] text-violet">
+                PR // {BRAND.inceptionDate}
+              </span>
+            </div>
+            <h1 className="hud-title max-w-3xl text-3xl text-foreground sm:text-5xl">
+              <span className="text-signal">{BRAND.name}</span>
+              <span className="mt-2 block text-xl font-semibold tracking-[0.08em] text-foreground/90 sm:text-3xl">
+                Thesis-driven AI fund telemetry
+              </span>
+            </h1>
+            <DirectAnswer className="max-w-2xl font-data text-sm leading-relaxed text-muted-foreground sm:text-[0.95rem]">
+              {BRAND.name} publishes the live NAV, daily CIO journal, trades, and
+              investment theses of a concentrated AI hedge fund that started at $
+              {BRAND.startingNav} on {BRAND.inceptionDate}. Current NAV is $
+              {snapshot.nav.toFixed(2)} ({snapshot.returnPct >= 0 ? "+" : ""}
+              {snapshot.returnPct.toFixed(2)}% since inception) with{" "}
+              {snapshot.positions} open position
+              {snapshot.positions !== 1 ? "s" : ""} — updated on trading days from
+              live Agentic account data.
+            </DirectAnswer>
+          </div>
+
+          <div className="grid gap-3 border border-border/70 bg-background/40 p-4 backdrop-blur-sm">
+            <div className="flex items-center justify-between">
+              <span className="hud-label">System status</span>
+              <span className="font-data text-[10px] uppercase tracking-[0.16em] text-signal">
+                Online
+              </span>
+            </div>
+            <div className="space-y-2 font-data text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+              <div className="flex justify-between border-b border-border/60 pb-2">
+                <span>NAV sync</span>
+                <span className="text-foreground">{snapshot.lastUpdated}</span>
+              </div>
+              <div className="flex justify-between border-b border-border/60 pb-2">
+                <span>Open book</span>
+                <span className="text-foreground">{snapshot.positions} names</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Cash floor</span>
+                <span className="text-foreground">{snapshot.cashPct.toFixed(0)}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Fund snapshot"
       >
         <StatCard
@@ -64,6 +98,7 @@ export default function HomePage() {
           value={`$${snapshot.nav.toFixed(2)}`}
           sub={`Updated ${snapshot.lastUpdated}`}
           icon={DollarSign}
+          accent
         />
         <StatCard
           title="Return"
@@ -85,82 +120,101 @@ export default function HomePage() {
         />
       </section>
 
-      <Card className="rounded-lg border-border shadow-none">
-        <CardHeader>
-          <CardTitle className="text-base font-semibold">NAV history</CardTitle>
-          <CardDescription>
-            Fund value since {BRAND.inceptionDate} inception
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="pl-2">
-          <NavAreaChart data={navSeries} />
-        </CardContent>
-      </Card>
-
-      <Card className="rounded-lg border-border shadow-none">
-        <CardHeader className="flex flex-row items-center justify-between">
+      <HudPanel accent>
+        <HudPanelHeader>
           <div>
-            <CardTitle className="text-base font-semibold">
-              Open positions
-            </CardTitle>
-            <CardDescription>Conviction-sized book</CardDescription>
+            <p className="hud-label">Telemetry</p>
+            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+              NAV history
+            </h2>
+            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              Fund value since {BRAND.inceptionDate} inception
+            </p>
           </div>
-          <Button variant="outline" size="sm" asChild>
+        </HudPanelHeader>
+        <HudPanelBody className="pl-2 pt-4">
+          <NavAreaChart data={navSeries} />
+        </HudPanelBody>
+      </HudPanel>
+
+      <HudPanel>
+        <HudPanelHeader>
+          <div>
+            <p className="hud-label">Book</p>
+            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+              Open positions
+            </h2>
+            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              Conviction-sized allocation
+            </p>
+          </div>
+          <Button variant="outline" size="sm" asChild className="font-data uppercase tracking-[0.14em]">
             <Link href="/trades/">
               All trades
               <ArrowRight className="size-3.5" />
             </Link>
           </Button>
-        </CardHeader>
-        <CardContent>
+        </HudPanelHeader>
+        <HudPanelBody>
           <PositionsTable positions={positions} />
-        </CardContent>
-      </Card>
+        </HudPanelBody>
+      </HudPanel>
 
-      <Card className="rounded-lg border-border shadow-none">
-        <CardHeader className="flex flex-row items-center justify-between">
+      <HudPanel>
+        <HudPanelHeader>
           <div>
-            <CardTitle className="text-base font-semibold">
+            <p className="hud-label">CIO feed</p>
+            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
               Recent journal
-            </CardTitle>
-            <CardDescription>Daily CIO decisions</CardDescription>
+            </h2>
+            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              Daily decision log
+            </p>
           </div>
-          <Button variant="outline" size="sm" asChild>
+          <Button variant="outline" size="sm" asChild className="font-data uppercase tracking-[0.14em]">
             <Link href="/journal/">
               Full journal
               <ArrowRight className="size-3.5" />
             </Link>
           </Button>
-        </CardHeader>
-        <CardContent>
+        </HudPanelHeader>
+        <HudPanelBody>
           <JournalTable days={recentDays} />
-        </CardContent>
-      </Card>
+        </HudPanelBody>
+      </HudPanel>
 
       {latestLetter && (
-        <Card className="rounded-lg border-border shadow-none">
-          <CardHeader>
-            <CardTitle className="text-base font-semibold">
-              Latest investor letter
-            </CardTitle>
-            <CardDescription>{latestLetter.date}</CardDescription>
-          </CardHeader>
-          <CardContent>
+        <HudPanel accent>
+          <HudPanelHeader>
+            <div>
+              <p className="hud-label">Dispatch</p>
+              <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+                Latest investor letter
+              </h2>
+              <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+                {latestLetter.date}
+              </p>
+            </div>
+          </HudPanelHeader>
+          <HudPanelBody>
             <Link
               href={`/letters/${latestLetter.slug}/`}
-              className="group flex items-center justify-between rounded-md border border-border p-4 transition-colors hover:bg-muted/50"
+              className="group flex items-center justify-between border border-border bg-background/35 px-4 py-4 transition-colors hover:border-signal/50 hover:bg-muted/40"
             >
-              <span className="font-medium">{latestLetter.title}</span>
-              <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+              <span className="font-data text-sm uppercase tracking-[0.08em]">
+                {latestLetter.title}
+              </span>
+              <ArrowRight className="size-4 text-signal transition-transform group-hover:translate-x-0.5" />
             </Link>
-          </CardContent>
-        </Card>
+          </HudPanelBody>
+        </HudPanel>
       )}
 
       <FaqSection items={homeFaq} />
-      <p className="text-sm text-muted-foreground">
-        <Link href="/faq/" className="font-medium text-foreground hover:underline">
-          View all FAQ →
+      <p className="font-data text-xs uppercase tracking-[0.14em] text-muted-foreground">
+        <Link href="/faq/" className="hud-link">
+          View all FAQ
+          <ArrowRight className="size-3.5" />
         </Link>
       </p>
 

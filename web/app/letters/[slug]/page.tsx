@@ -52,7 +52,7 @@ export default async function LetterPage({
   return (
     <div className="space-y-6">
       <div className="flex items-start gap-3">
-        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+        <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <ScrollText className="size-5" strokeWidth={1.5} />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default async function LetterPage({
           </DirectAnswer>
         </div>
       </div>
-      <Card className="rounded-lg border-border shadow-none">
+      <Card className="border-border">
         <CardHeader className="sr-only">
           <CardTitle>Letter</CardTitle>
         </CardHeader>

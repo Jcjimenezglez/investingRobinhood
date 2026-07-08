@@ -78,7 +78,7 @@ export default function MethodologyPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Methodology</h1>
+        <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">Methodology</h1>
         <DirectAnswer className="mt-3">
           {BRAND.name} runs a concentrated, thesis-driven AI fund — not day
           trading and not passive indexing. The CIO agent writes a full
@@ -92,13 +92,15 @@ export default function MethodologyPage() {
         {pillars.map((p) => (
           <Card
             key={p.title}
-            className="rounded-lg border-border shadow-none"
+            className="border-border"
           >
             <CardHeader className="pb-2">
-              <div className="mb-2 flex size-9 items-center justify-center rounded-md border border-border">
+              <div className="mb-2 flex size-9 items-center justify-center border border-border bg-background text-signal">
                 <p.icon className="size-4" strokeWidth={1.5} />
               </div>
-              <CardTitle className="text-sm font-semibold">{p.title}</CardTitle>
+              <CardTitle className="text-sm font-semibold tracking-tight">
+                {p.title}
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-sm leading-relaxed">
@@ -112,15 +114,13 @@ export default function MethodologyPage() {
       <Separator />
 
       <section>
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-          Research universe
-        </h2>
-        <p className="mt-3 font-mono text-sm">
+        <h2 className="hud-label">Research universe</h2>
+        <p className="mt-3 font-data text-sm tracking-[0.08em]">
           {universe.map((ticker, i) => (
             <span key={ticker}>
               <Link
                 href={`/trades/${ticker.toLowerCase()}/`}
-                className="hover:underline"
+                className="text-signal hover:underline"
               >
                 {ticker}
               </Link>
@@ -131,18 +131,16 @@ export default function MethodologyPage() {
       </section>
 
       <section>
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-          Published daily on {BRAND.name}
-        </h2>
-        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+        <h2 className="hud-label">Published daily on {BRAND.name}</h2>
+        <ul className="mt-3 space-y-2 font-data text-sm text-muted-foreground">
           <li>
-            <Link href="/journal/" className="text-foreground hover:underline">
+            <Link href="/journal/" className="text-signal hover:underline">
               Journal
             </Link>{" "}
             — CIO cycles with NAV and HOLD/BUY/SELL decisions
           </li>
           <li>
-            <Link href="/trades/" className="text-foreground hover:underline">
+            <Link href="/trades/" className="text-signal hover:underline">
               Trades & theses
             </Link>{" "}
             — entries, sizing, full memos
@@ -150,14 +148,14 @@ export default function MethodologyPage() {
           <li>
             <Link
               href="/performance/"
-              className="text-foreground hover:underline"
+              className="text-signal hover:underline"
             >
               Weekly performance
             </Link>{" "}
             — NAV scorecard vs SPY
           </li>
           <li>
-            <Link href="/letters/" className="text-foreground hover:underline">
+            <Link href="/letters/" className="text-signal hover:underline">
               Investor letters
             </Link>{" "}
             — major allocation decisions

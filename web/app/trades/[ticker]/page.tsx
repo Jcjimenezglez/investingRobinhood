@@ -65,11 +65,11 @@ export default async function TickerPage({
   return (
     <div className="space-y-6">
       <div className="flex items-start gap-3">
-        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+        <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <TrendingUp className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">{upper}</h1>
+          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">{upper}</h1>
           <DirectAnswer className="mt-2 text-sm text-muted-foreground">
             {BRAND.name} history for {upper}: current position, linked
             investment theses, and every CIO journal mention — updated from live
@@ -79,7 +79,7 @@ export default async function TickerPage({
       </div>
 
       {position && (
-        <Card className="rounded-lg border-border shadow-none">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-base font-semibold">Position</CardTitle>
           </CardHeader>
@@ -115,7 +115,7 @@ export default async function TickerPage({
       )}
 
       {theses.length > 0 && (
-        <Card className="rounded-lg border-border shadow-none">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-base font-semibold">Theses</CardTitle>
           </CardHeader>
@@ -135,7 +135,7 @@ export default async function TickerPage({
       )}
 
       {journalMentions.length > 0 && (
-        <Card className="rounded-lg border-border shadow-none">
+        <Card className="border-border">
           <CardHeader>
             <CardTitle className="text-base font-semibold">
               Journal mentions

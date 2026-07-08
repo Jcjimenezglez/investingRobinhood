@@ -6,7 +6,7 @@ set -euo pipefail
 : "${VERCEL_TOKEN:?Set VERCEL_TOKEN}"
 
 TEAM_ID="team_G5P8bHVuaNrZnDYe2Xr7oXL2"
-PROJECT_NAME="${VERCEL_PROJECT_NAME:-investing-robinhood-track}"
+PROJECT_NAME="${VERCEL_PROJECT_NAME:-investing-robinhood}"
 SITE_URL="https://${PROJECT_NAME}.vercel.app"
 REPO="jcjimenezglez/investingRobinhood"
 

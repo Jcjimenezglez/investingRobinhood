@@ -18,7 +18,7 @@ export const SITE = {
   tagline: "Ackman-style AI fund — live track record",
   description:
     "Daily journal, trades, and investment theses from a $100 thesis-driven AI hedge fund operating on Robinhood Agentic.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://investingrobinhood.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://investing-robinhood.vercel.app",
 };
 
 export function sanitizeMarkdown(content: string): string {

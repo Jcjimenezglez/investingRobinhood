@@ -30,7 +30,7 @@ export function FaqSection({
                 {item.question}
               </span>
             </dt>
-            <dd className="mt-2 pl-8 font-data text-sm leading-relaxed text-muted-foreground">
+            <dd className="mt-2 pl-8 text-sm leading-relaxed text-muted-foreground">
               {item.answer}
             </dd>
           </HudPanel>

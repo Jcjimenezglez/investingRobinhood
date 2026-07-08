@@ -34,11 +34,11 @@ export function SiteFooter() {
             Live feed
           </span>
         </div>
-        <p className="max-w-3xl font-data text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          <span className="text-signal">Disclaimer.</span> {BRAND.name}{" "}
-          documents an experimental AI trading agent on a small Robinhood
-          Agentic account. Not investment advice. Past performance does not
-          guarantee future results.
+        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          <span className="font-medium text-signal">Disclaimer.</span>{" "}
+          {BRAND.name} documents an experimental AI trading agent on a small
+          Robinhood Agentic account. Not investment advice. Past performance
+          does not guarantee future results.
         </p>
         <div className="h-px w-full bg-gradient-to-r from-signal/50 via-border to-violet/40" />
         <nav

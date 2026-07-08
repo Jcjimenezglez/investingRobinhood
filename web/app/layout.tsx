@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Orbitron, Share_Tech_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Orbitron, Share_Tech_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -11,6 +11,13 @@ import {
 } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
+
+const body = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 const display = Orbitron({
   subsets: ["latin"],
@@ -64,7 +71,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
       <body
-        className={`${display.variable} ${mono.variable} font-sans antialiased`}
+        className={`${body.variable} ${display.variable} ${mono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

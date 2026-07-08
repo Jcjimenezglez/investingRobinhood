@@ -52,7 +52,7 @@ export default function HomePage() {
                 Thesis-driven AI fund telemetry
               </span>
             </h1>
-            <DirectAnswer className="max-w-2xl font-data text-sm leading-relaxed text-muted-foreground sm:text-[0.95rem]">
+            <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
               {BRAND.name} publishes the live NAV, daily CIO journal, trades, and
               investment theses of a concentrated AI hedge fund that started at $
               {BRAND.startingNav} on {BRAND.inceptionDate}. Current NAV is $

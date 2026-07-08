@@ -132,7 +132,7 @@ export default function MethodologyPage() {
 
       <section>
         <h2 className="hud-label">Published daily on {BRAND.name}</h2>
-        <ul className="mt-3 space-y-2 font-data text-sm text-muted-foreground">
+        <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
           <li>
             <Link href="/journal/" className="text-signal hover:underline">
               Journal

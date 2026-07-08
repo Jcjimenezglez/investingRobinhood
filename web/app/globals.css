@@ -32,7 +32,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-display);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
 }
 
@@ -108,13 +108,21 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01" 1, "cv11" 1;
+    font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    font-feature-settings: "ss01" 1, "kern" 1;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -20%, var(--panel-shine), transparent 55%),
       linear-gradient(var(--grid-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 100% 100%, 28px 28px, 28px 28px;
     background-attachment: fixed;
+  }
+
+  p {
+    line-height: 1.7;
   }
 
   ::selection {
@@ -129,7 +137,12 @@
   }
 
   .font-display {
-    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-display), Orbitron, ui-sans-serif, sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
+    letter-spacing: 0.01em;
   }
 
   .font-data {
@@ -306,8 +319,24 @@
 
 .prose-fund {
   @apply prose prose-neutral max-w-none dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-p:text-muted-foreground prose-strong:text-foreground prose-table:text-sm;
+  font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
   --tw-prose-links: var(--signal);
   --tw-prose-invert-links: var(--signal);
+  --tw-prose-body: var(--muted-foreground);
+}
+
+.prose-fund p,
+.prose-fund li {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+.prose-fund h1,
+.prose-fund h2,
+.prose-fund h3 {
+  font-family: var(--font-display), Orbitron, ui-sans-serif, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .prose-fund table {

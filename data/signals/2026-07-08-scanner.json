@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-08",
+  "generated_by": "MCP run_scan",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 289
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 223
+    }
+  ],
+  "research_universe_hits": [],
+  "note": "No researchUniverse tickers in earnings-14d 7d window; MSFT/META/AMZN/AAPL 21-23d out. Geopolitical risk (Iran/oil) + FOMC minutes Wed; broad premarket weakness ~-1% across universe."
+}

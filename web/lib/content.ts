@@ -8,6 +8,7 @@ import type {
   NavPoint,
   Position,
 } from "./types";
+import { sanitizeForPublic } from "./sanitize";
 
 const REPO_ROOT = path.join(process.cwd(), "..");
 const LOGS_ROOT = path.join(REPO_ROOT, "logs");
@@ -21,9 +22,7 @@ export const SITE = {
 };
 
 export function sanitizeMarkdown(content: string): string {
-  return content
-    .replace(/••••\d{4}/g, "Agentic account")
-    .replace(/Agentic ••••\d{4}/g, "Agentic account");
+  return sanitizeForPublic(content);
 }
 
 function readDirSafe(dir: string): string[] {

@@ -45,6 +45,10 @@ export function Footer() {
           lose your entire investment.
         </p>
         <p className="footer-meta">
+          Public track record only — account IDs, order details, and personal
+          references are redacted before publish.
+        </p>
+        <p className="footer-meta">
           <Link href="/rss.xml" prefetch={false}>
             RSS
           </Link>

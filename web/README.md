@@ -47,4 +47,16 @@ Optional: GitHub Action cron that commits journal + triggers Vercel deploy at 16
 - [ ] Verify `/robots.txt` and `/rss.xml`
 - [ ] Add JSON-LD (future)
 
-Account numbers are stripped at publish time (`••••3029` → `Agentic account`).
+## Privacy
+
+All published content passes `lib/sanitize.ts` before render:
+
+- Account numbers and Robinhood account IDs → redacted
+- Order UUIDs, emails, exact fractional share counts → redacted
+- Internal repo paths (`logs/`, `config/`, etc.) → `[internal]`
+- Pre-flight / MCP check-loop sections → stripped from journal pages
+- LP-personal references in letters/theses → neutralized public copy
+
+`npm run build` runs `scripts/verify-public-content.ts` and **fails** if private patterns leak.
+
+**Never published:** `logs/trade-journal.md`, calibration files, alerts, `.env`, raw MCP dumps.

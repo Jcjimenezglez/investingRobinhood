@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-rss.mjs",
+    "prebuild": "node scripts/generate-rss.mjs && npx tsx scripts/verify-public-content.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -20,6 +20,7 @@
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
 }

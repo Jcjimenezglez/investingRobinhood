@@ -1,5 +1,17 @@
 import Link from "next/link";
-import { NavChart } from "@/components/nav-chart";
+import { ArrowRight, DollarSign, Layers, Percent, Wallet } from "lucide-react";
+import { NavAreaChart } from "@/components/charts/nav-area-chart";
+import { JournalTable } from "@/components/fund/journal-table";
+import { PositionsTable } from "@/components/fund/positions-table";
+import { StatCard } from "@/components/fund/stat-card";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   getFundSnapshot,
   getJournalDays,
@@ -11,131 +23,121 @@ import {
 export default function HomePage() {
   const snapshot = getFundSnapshot();
   const navSeries = getNavSeries();
-  const recentDays = getJournalDays().slice(0, 7);
+  const recentDays = getJournalDays().slice(0, 10);
   const positions = getPositions().filter((p) => p.status === "open");
   const latestLetter = getLetters()[0];
 
-  const returnClass =
-    snapshot.returnPct >= 0 ? "positive" : "negative";
-
   return (
-    <>
-      <section className="hero">
-        <div>
-          <h1>Live track record of a thesis-driven AI fund</h1>
-          <p className="lead">
-            investingRobinhood documents every decision from a $100 concentrated
-            portfolio on Robinhood Agentic — written theses, daily CIO cycles,
-            and Ackman-style discipline.
-          </p>
-        </div>
-
-        <div className="stats">
-          <div className="stat">
-            <label>NAV</label>
-            <strong>${snapshot.nav.toFixed(2)}</strong>
-          </div>
-          <div className="stat">
-            <label>Return since inception</label>
-            <strong className={returnClass}>
-              {snapshot.returnPct >= 0 ? "+" : ""}
-              {snapshot.returnPct.toFixed(2)}%
-            </strong>
-          </div>
-          <div className="stat">
-            <label>Cash</label>
-            <strong>
-              ${snapshot.cash.toFixed(0)} ({snapshot.cashPct.toFixed(0)}%)
-            </strong>
-          </div>
-          <div className="stat">
-            <label>Open positions</label>
-            <strong>{snapshot.positions}</strong>
-          </div>
-        </div>
-
-        <NavChart data={navSeries} />
+    <div className="space-y-8">
+      <section className="space-y-2">
+        <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+          Live track record
+        </p>
+        <h1 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          Thesis-driven AI fund on Robinhood Agentic
+        </h1>
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+          Daily CIO cycles, written theses, and concentrated positions —
+          documented in public.
+        </p>
       </section>
 
-      <h2 className="section-title">Open positions</h2>
-      <div className="table-wrap">
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Ticker</th>
-              <th>Entry</th>
-              <th>Size</th>
-              <th>Conviction</th>
-              <th>Return</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {positions.map((p) => (
-              <tr key={p.ticker}>
-                <td>
-                  <Link href={`/trades/${p.ticker.toLowerCase()}/`}>
-                    {p.ticker}
-                  </Link>
-                </td>
-                <td>
-                  ${p.entry_price.toFixed(2)} · {p.entry_date}
-                </td>
-                <td>${p.size_usd.toFixed(0)}</td>
-                <td>{p.conviction}</td>
-                <td>
-                  {p.return_pct !== null
-                    ? `${p.return_pct >= 0 ? "+" : ""}${p.return_pct.toFixed(2)}%`
-                    : "—"}
-                </td>
-                <td>
-                  <span className="badge open">{p.status}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <StatCard
+          title="NAV"
+          value={`$${snapshot.nav.toFixed(2)}`}
+          sub={`Updated ${snapshot.lastUpdated}`}
+          icon={DollarSign}
+        />
+        <StatCard
+          title="Return"
+          value={`${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`}
+          sub="Since inception ($100)"
+          icon={Percent}
+        />
+        <StatCard
+          title="Cash"
+          value={`$${snapshot.cash.toFixed(0)}`}
+          sub={`${snapshot.cashPct.toFixed(0)}% of book`}
+          icon={Wallet}
+        />
+        <StatCard
+          title="Positions"
+          value={String(snapshot.positions)}
+          sub="Open names"
+          icon={Layers}
+        />
+      </section>
 
-      <h2 className="section-title">Recent journal</h2>
-      <ul className="card-list">
-        {recentDays.map((day) => (
-          <li key={day.date}>
-            <Link href={`/journal/${day.date}/`}>
-              <span>
-                <strong>{day.date}</strong>
-                {day.decision && (
-                  <>
-                    {" "}
-                    <span className={`badge ${day.decision.toLowerCase()}`}>
-                      {day.decision}
-                    </span>
-                  </>
-                )}
-              </span>
-              <span className="meta">
-                {day.sessions.length} session
-                {day.sessions.length !== 1 ? "s" : ""}
-                {day.nav ? ` · NAV $${day.nav.toFixed(2)}` : ""}
-              </span>
+      <Card className="rounded-lg border-border shadow-none">
+        <CardHeader>
+          <CardTitle className="text-base font-semibold">NAV history</CardTitle>
+          <CardDescription>Fund value since 2026-06-18 inception</CardDescription>
+        </CardHeader>
+        <CardContent className="pl-2">
+          <NavAreaChart data={navSeries} />
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-lg border-border shadow-none">
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle className="text-base font-semibold">
+              Open positions
+            </CardTitle>
+            <CardDescription>Conviction-sized book</CardDescription>
+          </div>
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/trades/">
+              All trades
+              <ArrowRight className="size-3.5" />
             </Link>
-          </li>
-        ))}
-      </ul>
+          </Button>
+        </CardHeader>
+        <CardContent>
+          <PositionsTable positions={positions} />
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-lg border-border shadow-none">
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle className="text-base font-semibold">
+              Recent journal
+            </CardTitle>
+            <CardDescription>Daily CIO decisions</CardDescription>
+          </div>
+          <Button variant="outline" size="sm" asChild>
+            <Link href="/journal/">
+              Full journal
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </Button>
+        </CardHeader>
+        <CardContent>
+          <JournalTable days={recentDays} />
+        </CardContent>
+      </Card>
 
       {latestLetter && (
-        <>
-          <h2 className="section-title">Latest investor letter</h2>
-          <ul className="card-list">
-            <li>
-              <Link href={`/letters/${latestLetter.slug}/`}>
-                <strong>{latestLetter.title}</strong>
-                <span className="meta">{latestLetter.date}</span>
-              </Link>
-            </li>
-          </ul>
-        </>
+        <Card className="rounded-lg border-border shadow-none">
+          <CardHeader>
+            <CardTitle className="text-base font-semibold">
+              Latest investor letter
+            </CardTitle>
+            <CardDescription>{latestLetter.date}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Link
+              href={`/letters/${latestLetter.slug}/`}
+              className="group flex items-center justify-between rounded-md border border-border p-4 transition-colors hover:bg-muted/50"
+            >
+              <span className="font-medium">{latestLetter.title}</span>
+              <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </CardContent>
+        </Card>
       )}
-    </>
+    </div>
   );
 }

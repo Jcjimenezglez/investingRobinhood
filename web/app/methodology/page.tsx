@@ -1,12 +1,61 @@
 import type { Metadata } from "next";
+import {
+  BookOpen,
+  FileText,
+  LineChart,
+  Shield,
+  Target,
+  Zap,
+} from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { SITE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Methodology",
   description:
-    "How investingRobinhood invests: Ackman-style concentration, thesis-driven entries, catalyst horizons, and risk guardrails on a $100 Agentic account.",
+    "How investingRobinhood invests: Ackman-style concentration and thesis-driven entries.",
   alternates: { canonical: `${SITE.url}/methodology/` },
 };
+
+const pillars = [
+  {
+    icon: FileText,
+    title: "Thesis before capital",
+    body: "Every BUY requires a written memo: business quality, mispricing, catalyst, kill criteria.",
+  },
+  {
+    icon: Target,
+    title: "Concentration by conviction",
+    body: "Up to 50% of the ~$100 fund in one high-conviction idea. Cash minimum 10%.",
+  },
+  {
+    icon: Shield,
+    title: "Exit on thesis break",
+    body: "Sell when the case fails or fair value is reached — not on a calendar or profit target.",
+  },
+  {
+    icon: BookOpen,
+    title: "Daily CIO cycle",
+    body: "Automated runbook at premarket, open, and intraday. Each session is published.",
+  },
+  {
+    icon: Zap,
+    title: "Ackman confluence",
+    body: "13F overlap adds conviction; independent thesis required when Ackman exits a name.",
+  },
+  {
+    icon: LineChart,
+    title: "Agentic account only",
+    body: "All trades on Robinhood Agentic beta via MCP. Small AUM, full transparency.",
+  },
+];
 
 const universe = [
   "GOOGL",
@@ -23,88 +72,56 @@ const universe = [
 
 export default function MethodologyPage() {
   return (
-    <>
-      <header className="page-header">
-        <h1>Methodology</h1>
-        <p>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight">Methodology</h1>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
           A concentrated, thesis-driven AI fund — not day trading, not passive
           index hold.
         </p>
-      </header>
-
-      <div className="pillars">
-        <article className="pillar">
-          <h3>Thesis before capital</h3>
-          <p>
-            Every BUY requires a written memo: business quality, mispricing,
-            catalyst (3–12 months), and kill criteria. No lottery tickets.
-          </p>
-        </article>
-        <article className="pillar">
-          <h3>Concentration by conviction</h3>
-          <p>
-            Up to 50% of the ~$100 fund in a single high-conviction idea.
-            Cash minimum 10%. Few names, large weights.
-          </p>
-        </article>
-        <article className="pillar">
-          <h3>Exit on thesis break</h3>
-          <p>
-            We sell when the investment case fails or fair value is reached —
-            not on a calendar or arbitrary profit target.
-          </p>
-        </article>
-        <article className="pillar">
-          <h3>Daily CIO cycle</h3>
-          <p>
-            Automated runbook at premarket, market open, and intraday monitors.
-            Each session is published in the journal.
-          </p>
-        </article>
-        <article className="pillar">
-          <h3>Ackman confluence</h3>
-          <p>
-            We track Pershing Square 13F for research overlap — extra conviction
-            when aligned, stronger independent thesis when not.
-          </p>
-        </article>
-        <article className="pillar">
-          <h3>Agentic account only</h3>
-          <p>
-            All trades execute on a Robinhood Agentic beta account via MCP.
-            Full transparency; small AUM by design.
-          </p>
-        </article>
       </div>
 
-      <h2 className="section-title">Research universe</h2>
-      <p className="lead">{universe.join(" · ")}</p>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {pillars.map((p) => (
+          <Card
+            key={p.title}
+            className="rounded-lg border-border shadow-none"
+          >
+            <CardHeader className="pb-2">
+              <div className="mb-2 flex size-9 items-center justify-center rounded-md border border-border">
+                <p.icon className="size-4" strokeWidth={1.5} />
+              </div>
+              <CardTitle className="text-sm font-semibold">{p.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-sm leading-relaxed">
+                {p.body}
+              </CardDescription>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
 
-      <h2 className="section-title">What gets published</h2>
-      <ul className="card-list">
-        <li>
-          <strong>Daily journal</strong>
-          <span className="meta">
-            CIO cycles with NAV, rankings, and HOLD/BUY/SELL decisions
-          </span>
-        </li>
-        <li>
-          <strong>Trades & theses</strong>
-          <span className="meta">
-            Entry fills, conviction sizing, and full investment memos
-          </span>
-        </li>
-        <li>
-          <strong>Weekly performance</strong>
-          <span className="meta">NAV scorecard and alpha vs SPY benchmark</span>
-        </li>
-        <li>
-          <strong>Investor letters</strong>
-          <span className="meta">
-            Major allocation decisions explained to the LP
-          </span>
-        </li>
-      </ul>
-    </>
+      <Separator />
+
+      <div>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          Research universe
+        </h2>
+        <p className="mt-3 font-mono text-sm">{universe.join(" · ")}</p>
+      </div>
+
+      <div>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          Published daily
+        </h2>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+          <li>Journal — CIO cycles with NAV and HOLD/BUY/SELL decisions</li>
+          <li>Trades & theses — entries, sizing, full memos</li>
+          <li>Weekly performance — NAV scorecard vs SPY</li>
+          <li>Investor letters — major allocation decisions</li>
+        </ul>
+      </div>
+    </div>
   );
 }

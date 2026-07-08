@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BookOpen } from "lucide-react";
+import { JournalTable } from "@/components/fund/journal-table";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { getJournalDays } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -12,38 +20,30 @@ export default function JournalIndexPage() {
   const days = getJournalDays();
 
   return (
-    <>
-      <header className="page-header">
-        <h1>Daily journal</h1>
-        <p>
-          One page per trading day — premarket, open, and intraday monitor
-          sessions from the autonomous CIO runbook.
-        </p>
-      </header>
+    <div className="space-y-6">
+      <div className="flex items-start gap-3">
+        <div className="flex size-10 items-center justify-center rounded-md border border-border">
+          <BookOpen className="size-5" strokeWidth={1.5} />
+        </div>
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Daily journal</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Premarket, open, and intraday monitor sessions from the CIO runbook.
+          </p>
+        </div>
+      </div>
 
-      <ul className="card-list">
-        {days.map((day) => (
-          <li key={day.date}>
-            <Link href={`/journal/${day.date}/`}>
-              <span>
-                <strong>{day.date}</strong>
-                {day.decision && (
-                  <>
-                    {" "}
-                    <span className={`badge ${day.decision.toLowerCase()}`}>
-                      {day.decision}
-                    </span>
-                  </>
-                )}
-              </span>
-              <span className="meta">
-                {day.sessions.map((s) => s.sessionType).join(" · ")}
-                {day.nav ? ` · NAV $${day.nav.toFixed(2)}` : ""}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
+      <Card className="rounded-lg border-border shadow-none">
+        <CardHeader>
+          <CardTitle className="text-base font-semibold">
+            {days.length} trading days
+          </CardTitle>
+          <CardDescription>Sorted newest first</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <JournalTable days={days} />
+        </CardContent>
+      </Card>
+    </div>
   );
 }

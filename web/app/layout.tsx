@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Header, Footer } from "@/components/site-chrome";
+import { Inter } from "next/font/google";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 import { SITE } from "@/lib/content";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -18,15 +25,8 @@ export const metadata: Metadata = {
     description: SITE.description,
     url: SITE.url,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: SITE.name,
-    description: SITE.description,
-  },
   alternates: {
-    types: {
-      "application/rss+xml": "/rss.xml",
-    },
+    types: { "application/rss+xml": "/rss.xml" },
   },
   robots: { index: true, follow: true },
 };
@@ -38,10 +38,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        <main className="container">{children}</main>
-        <Footer />
+      <body className={`${inter.variable} font-sans`}>
+        <SiteHeader />
+        <main className="container-page py-8 sm:py-10">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

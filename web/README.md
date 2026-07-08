@@ -31,13 +31,20 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com npm run build
 
 Output: `web/out/` (static export).
 
-## Deploy on Vercel
+## Deploy on Vercel (recommended)
 
-1. Import repo, set **Root Directory** to `web`
-2. Environment: `NEXT_PUBLIC_SITE_URL=https://yourdomain.com`
-3. Deploy — rebuild after each day's logs are committed
+1. [vercel.com/new](https://vercel.com/new) → Import `investingRobinhood` from GitHub
+2. **Root Directory:** `web`
+3. **Environment:** `NEXT_PUBLIC_SITE_URL=https://<your-project>.vercel.app`
+4. Deploy — you get a `*.vercel.app` URL immediately (swap to custom domain later)
 
-Optional: GitHub Action cron that commits journal + triggers Vercel deploy at 16:30 ET.
+Or CLI (after `vercel login`):
+
+```bash
+cd web && vercel --prod
+```
+
+`vercel.json` is included. Each push to `main` can auto-deploy if Git integration is enabled.
 
 ## SEO checklist
 

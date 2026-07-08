@@ -1,0 +1,396 @@
+:root {
+  --bg: #0b0f14;
+  --surface: #121820;
+  --border: #243041;
+  --text: #e8edf4;
+  --muted: #93a4b8;
+  --accent: #5b9cff;
+  --green: #3dd68c;
+  --red: #ff6b6b;
+  --max: 920px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 15, 20, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.brand-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #1f3b66, #0f766e);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  font-size: 0.9rem;
+}
+
+.site-header nav a {
+  color: var(--muted);
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+main {
+  padding: 2rem 0 3rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  line-height: 1.55;
+}
+
+.footer-meta {
+  margin-top: 1rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 62ch;
+  margin: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+}
+
+.stat label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.35rem;
+  margin-top: 0.2rem;
+}
+
+.stat strong.positive {
+  color: var(--green);
+}
+
+.stat strong.negative {
+  color: var(--red);
+}
+
+.section-title {
+  margin: 2rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.card-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.card-list a {
+  color: var(--text);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.card-list a:hover {
+  text-decoration: none;
+}
+
+.card-list .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.badge.hold {
+  color: #f0c674;
+  border-color: #5c4d24;
+}
+
+.badge.buy,
+.badge.open {
+  color: var(--green);
+  border-color: #1f5c40;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.nav-chart {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.nav-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-chart figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.markdown {
+  color: var(--text);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  line-height: 1.25;
+  margin-top: 1.75rem;
+}
+
+.markdown h1 {
+  font-size: 1.6rem;
+}
+
+.markdown h2 {
+  font-size: 1.2rem;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.55rem;
+  text-align: left;
+}
+
+.markdown th {
+  background: #18202b;
+}
+
+.markdown code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: #18202b;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+
+.markdown pre {
+  overflow-x: auto;
+  background: #18202b;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.session-block + .session-block {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.session-block h2 {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+}
+
+.data-table th {
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.pillars {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pillar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+}
+
+.pillar h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.pillar p {
+  margin: 0;
+  color: var(--muted);
+}

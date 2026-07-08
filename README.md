@@ -101,6 +101,16 @@ investingRobinhood/
 
 Prompt version: ver [`prompt/manifest.json`](prompt/manifest.json) (actual **1.5.0**).
 
+## Public site (`web/`)
+
+Static track record site — reads `logs/` at build time. See [`web/README.md`](web/README.md).
+
+```bash
+cd web && npm install && npm run dev
+```
+
+Deploy on Vercel with root directory `web` and `NEXT_PUBLIC_SITE_URL` set to your domain.
+
 ## Riesgos
 
 Robinhood Agentic es **beta**. Puedes perder todo el capital. Supervisa actividad en app Robinhood.

@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --prefix web",
-  "buildCommand": "npm run build --prefix web",
-  "outputDirectory": "web/out",
-  "framework": "nextjs"
+  "buildCommand": "NEXT_PUBLIC_SITE_URL=https://investing-robinhood.vercel.app npm run build --prefix web",
+  "outputDirectory": "web/out"
 }

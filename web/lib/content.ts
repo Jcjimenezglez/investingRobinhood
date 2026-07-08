@@ -13,12 +13,14 @@ import { sanitizeForPublic } from "./sanitize";
 const REPO_ROOT = path.join(process.cwd(), "..");
 const LOGS_ROOT = path.join(REPO_ROOT, "logs");
 
+import { BRAND } from "./site-config";
+
+/** @deprecated Prefer BRAND from site-config for new code */
 export const SITE = {
-  name: "investingRobinhood",
-  tagline: "Ackman-style AI fund — live track record",
-  description:
-    "Daily journal, trades, and investment theses from a $100 thesis-driven AI hedge fund operating on Robinhood Agentic.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://investing-robinhood.vercel.app",
+  name: BRAND.name,
+  tagline: BRAND.tagline,
+  description: BRAND.shortDescription,
+  url: BRAND.url,
 };
 
 export function sanitizeMarkdown(content: string): string {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, FileText } from "lucide-react";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -17,11 +19,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getTheses } from "@/lib/content";
+import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Investment theses",
-  description: "Written investment memos before capital deployment.",
-};
+  description:
+    "Tapefund investment memos: written theses before every BUY covering business quality, mispricing, catalyst, and kill criteria.",
+  path: "/theses/",
+});
 
 export default function ThesesPage() {
   const theses = getTheses();
@@ -34,10 +40,11 @@ export default function ThesesPage() {
         </div>
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Theses</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Written before every BUY — quality, mispricing, catalyst, kill
-            criteria.
-          </p>
+          <DirectAnswer className="mt-2">
+            Every {BRAND.name} BUY starts with a full written memo — business
+            quality, mispricing, catalyst, and kill criteria — published here
+            before capital is deployed.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -75,6 +82,14 @@ export default function ThesesPage() {
           </Table>
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Tapefund Investment Theses",
+          description: "Written investment memos from the Tapefund AI fund.",
+          path: "/theses/",
+        })}
+      />
     </div>
   );
 }

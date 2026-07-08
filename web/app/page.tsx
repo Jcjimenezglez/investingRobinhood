@@ -4,6 +4,9 @@ import { NavAreaChart } from "@/components/charts/nav-area-chart";
 import { JournalTable } from "@/components/fund/journal-table";
 import { PositionsTable } from "@/components/fund/positions-table";
 import { StatCard } from "@/components/fund/stat-card";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { FaqSection } from "@/components/seo/faq-section";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,6 +22,10 @@ import {
   getNavSeries,
   getPositions,
 } from "@/lib/content";
+import { faqPageJsonLd } from "@/lib/seo";
+import { BRAND, SITE_FAQ } from "@/lib/site-config";
+
+const homeFaq = SITE_FAQ.slice(0, 3);
 
 export default function HomePage() {
   const snapshot = getFundSnapshot();
@@ -29,20 +36,29 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      <section className="space-y-2">
+      <section className="space-y-3">
         <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
           Live track record
         </p>
-        <h1 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          Thesis-driven AI fund on Robinhood Agentic
+        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          {BRAND.name}: thesis-driven AI fund on Robinhood Agentic
         </h1>
-        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Daily CIO cycles, written theses, and concentrated positions —
-          documented in public.
-        </p>
+        <DirectAnswer>
+          {BRAND.name} publishes the live NAV, daily CIO journal, trades, and
+          investment theses of a concentrated AI hedge fund that started at $
+          {BRAND.startingNav} on {BRAND.inceptionDate}. Current NAV is $
+          {snapshot.nav.toFixed(2)} ({snapshot.returnPct >= 0 ? "+" : ""}
+          {snapshot.returnPct.toFixed(2)}% since inception) with{" "}
+          {snapshot.positions} open position
+          {snapshot.positions !== 1 ? "s" : ""} — updated on trading days from
+          live Agentic account data.
+        </DirectAnswer>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Fund snapshot"
+      >
         <StatCard
           title="NAV"
           value={`$${snapshot.nav.toFixed(2)}`}
@@ -52,7 +68,7 @@ export default function HomePage() {
         <StatCard
           title="Return"
           value={`${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`}
-          sub="Since inception ($100)"
+          sub={`Since inception ($${BRAND.startingNav})`}
           icon={Percent}
         />
         <StatCard
@@ -72,7 +88,9 @@ export default function HomePage() {
       <Card className="rounded-lg border-border shadow-none">
         <CardHeader>
           <CardTitle className="text-base font-semibold">NAV history</CardTitle>
-          <CardDescription>Fund value since 2026-06-18 inception</CardDescription>
+          <CardDescription>
+            Fund value since {BRAND.inceptionDate} inception
+          </CardDescription>
         </CardHeader>
         <CardContent className="pl-2">
           <NavAreaChart data={navSeries} />
@@ -138,6 +156,15 @@ export default function HomePage() {
           </CardContent>
         </Card>
       )}
+
+      <FaqSection items={homeFaq} />
+      <p className="text-sm text-muted-foreground">
+        <Link href="/faq/" className="font-medium text-foreground hover:underline">
+          View all FAQ →
+        </Link>
+      </p>
+
+      <JsonLd data={faqPageJsonLd(homeFaq)} />
     </div>
   );
 }

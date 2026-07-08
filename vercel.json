@@ -1,6 +1,30 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --prefix web",
-  "buildCommand": "NEXT_PUBLIC_SITE_URL=https://investing-robinhood.vercel.app npm run build --prefix web",
-  "outputDirectory": "web/out"
+  "buildCommand": "NEXT_PUBLIC_SITE_URL=https://tapefund.com npm run build --prefix web",
+  "outputDirectory": "web/out",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(icon.svg|apple-icon.svg|rss.xml|sitemap.xml|llms.txt|llms-full.txt)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+      ]
+    }
+  ]
 }

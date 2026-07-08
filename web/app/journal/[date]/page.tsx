@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Calendar } from "lucide-react";
 import { MarkdownContent } from "@/components/content/markdown-content";
 import { DecisionBadge } from "@/components/fund/decision-badge";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -11,7 +13,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getJournalDay, getJournalDays, SITE } from "@/lib/content";
+import { getJournalDay, getJournalDays } from "@/lib/content";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return getJournalDays().map((d) => ({ date: d.date }));
@@ -26,11 +34,16 @@ export async function generateMetadata({
   const day = getJournalDay(date);
   if (!day) return { title: "Journal" };
   const decision = day.decision ? ` — ${day.decision}` : "";
-  return {
+  const navPart = day.nav ? ` NAV $${day.nav.toFixed(2)}.` : "";
+  const description = `Tapefund CIO journal for ${date}${decision}.${navPart} ${day.sessions.length} session(s): market snapshot, thesis review, and trading decision from the live Agentic fund.`;
+  return pageMetadata({
     title: `Journal ${date}${decision}`,
-    description: `CIO cycle for ${date}.`,
-    alternates: { canonical: `${SITE.url}/journal/${date}/` },
-  };
+    description,
+    path: `/journal/${date}/`,
+    type: "article",
+    publishedTime: `${date}T16:00:00-04:00`,
+    modifiedTime: `${date}T16:00:00-04:00`,
+  });
 }
 
 export default async function JournalDayPage({
@@ -52,11 +65,16 @@ export default async function JournalDayPage({
             <Calendar className="size-5" strokeWidth={1.5} />
           </div>
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight">{date}</h1>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {day.sessions.length} session
-              {day.sessions.length !== 1 ? "s" : ""}
-            </p>
+            <h1 className="text-2xl font-semibold tracking-tight">
+              Journal {date}
+            </h1>
+            <DirectAnswer className="mt-2 text-sm text-muted-foreground">
+              {BRAND.name} CIO cycle for {date}
+              {day.decision ? ` — decision: ${day.decision}` : ""}
+              {day.nav ? `, NAV $${day.nav.toFixed(2)}` : ""}.{" "}
+              {day.sessions.length} published session
+              {day.sessions.length !== 1 ? "s" : ""} below.
+            </DirectAnswer>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -100,6 +118,22 @@ export default async function JournalDayPage({
           </TabsContent>
         ))}
       </Tabs>
+
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: `Journal ${date}${day.decision ? ` — ${day.decision}` : ""}`,
+            description: `CIO journal for ${date} from ${BRAND.name}.`,
+            path: `/journal/${date}/`,
+            datePublished: date,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Journal", path: "/journal/" },
+            { name: date, path: `/journal/${date}/` },
+          ]),
+        ]}
+      />
     </div>
   );
 }

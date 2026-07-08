@@ -2,13 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ScrollText } from "lucide-react";
 import { MarkdownContent } from "@/components/content/markdown-content";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getLetter, getLetters, SITE } from "@/lib/content";
+import { getLetter, getLetters } from "@/lib/content";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return getLetters().map((l) => ({ slug: l.slug }));
@@ -22,10 +30,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const letter = getLetter(slug);
   if (!letter) return { title: "Letter" };
-  return {
+  return pageMetadata({
     title: letter.title,
-    alternates: { canonical: `${SITE.url}/letters/${slug}/` },
-  };
+    description: `Tapefund investor letter (${letter.date}): ${letter.title}. Ackman-style allocation decision from the live AI fund track record.`,
+    path: `/letters/${slug}/`,
+    type: "article",
+    publishedTime: letter.date,
+    modifiedTime: letter.date,
+  });
 }
 
 export default async function LetterPage({
@@ -47,9 +59,10 @@ export default async function LetterPage({
           <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">
             {letter.title}
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground tabular-nums">
-            {letter.date}
-          </p>
+          <DirectAnswer className="mt-2 text-sm text-muted-foreground tabular-nums">
+            {BRAND.name} investor letter from {letter.date} — major capital
+            allocation decision explained in long form.
+          </DirectAnswer>
         </div>
       </div>
       <Card className="rounded-lg border-border shadow-none">
@@ -60,6 +73,22 @@ export default async function LetterPage({
           <MarkdownContent content={letter.content} />
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: letter.title,
+            description: `Investor letter from ${BRAND.name}, ${letter.date}.`,
+            path: `/letters/${slug}/`,
+            datePublished: letter.date,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Letters", path: "/letters/" },
+            { name: letter.title, path: `/letters/${slug}/` },
+          ]),
+        ]}
+      />
     </div>
   );
 }

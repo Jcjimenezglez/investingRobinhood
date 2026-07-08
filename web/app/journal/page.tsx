@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { BookOpen } from "lucide-react";
 import { JournalTable } from "@/components/fund/journal-table";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -9,12 +11,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getJournalDays } from "@/lib/content";
+import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Daily journal",
   description:
-    "Daily CIO cycles, market snapshots, and trading decisions from the investingRobinhood AI fund.",
-};
+    "Tapefund daily CIO journal: premarket, market open, and intraday sessions with NAV, market snapshot, and HOLD/BUY/SELL decisions.",
+  path: "/journal/",
+});
 
 export default function JournalIndexPage() {
   const days = getJournalDays();
@@ -27,9 +32,11 @@ export default function JournalIndexPage() {
         </div>
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Daily journal</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Premarket, open, and intraday monitor sessions from the CIO runbook.
-          </p>
+          <DirectAnswer className="mt-2">
+            The {BRAND.name} journal archives every CIO cycle — premarket,
+            open, and intraday — with live NAV and trading decisions from the
+            Agentic account runbook.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -44,6 +51,15 @@ export default function JournalIndexPage() {
           <JournalTable days={days} />
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Tapefund Daily Journal",
+          description:
+            "Archive of daily CIO cycles from the Tapefund AI fund.",
+          path: "/journal/",
+        })}
+      />
     </div>
   );
 }

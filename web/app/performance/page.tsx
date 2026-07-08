@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, LineChart } from "lucide-react";
 import { MarkdownContent } from "@/components/content/markdown-content";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -18,11 +20,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getWeeklyReports } from "@/lib/content";
+import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Performance",
-  description: "Weekly NAV scorecards and alpha vs SPY.",
-};
+  description:
+    "Tapefund weekly performance: NAV scorecards, return vs SPY benchmark, alpha, and thesis status updates every Friday.",
+  path: "/performance/",
+});
 
 export default function PerformancePage() {
   const reports = getWeeklyReports();
@@ -36,9 +42,11 @@ export default function PerformancePage() {
         </div>
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Performance</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Weekly scorecards with NAV, alpha vs SPY, and thesis status.
-          </p>
+          <DirectAnswer className="mt-2">
+            {BRAND.name} publishes weekly NAV scorecards every Friday with return
+            vs the SPY benchmark, alpha, cash allocation, and thesis status for
+            each open position.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -89,6 +97,14 @@ export default function PerformancePage() {
           </CardContent>
         </Card>
       )}
+
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Tapefund Performance",
+          description: "Weekly performance reports for the Tapefund AI fund.",
+          path: "/performance/",
+        })}
+      />
     </div>
   );
 }

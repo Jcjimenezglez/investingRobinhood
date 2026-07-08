@@ -6,8 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.join(__dirname, "..", "..");
 const INTEL_DIR = path.join(REPO_ROOT, "logs", "intelligence");
 const OUT = path.join(__dirname, "..", "public", "rss.xml");
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://investing-robinhood.vercel.app";
-const SITE_NAME = "investingRobinhood";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tapefund.com";
+const SITE_NAME = "Tapefund";
 
 function escapeXml(s) {
   return s
@@ -43,7 +43,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>${escapeXml(SITE_NAME)} — Daily journal</title>
     <link>${SITE_URL}</link>
-    <description>${escapeXml("Daily journal from a thesis-driven AI fund.")}</description>
+    <description>${escapeXml("Daily CIO journal from Tapefund — a thesis-driven AI fund track record.")}</description>
     <language>en-us</language>${items.join("")}
   </channel>
 </rss>`;

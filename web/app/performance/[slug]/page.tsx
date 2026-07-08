@@ -2,13 +2,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LineChart } from "lucide-react";
 import { MarkdownContent } from "@/components/content/markdown-content";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getWeeklyReport, getWeeklyReports, SITE } from "@/lib/content";
+import { getWeeklyReport, getWeeklyReports } from "@/lib/content";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return getWeeklyReports().map((r) => ({ slug: r.slug }));
@@ -22,10 +30,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const report = getWeeklyReport(slug);
   if (!report) return { title: "Weekly performance" };
-  return {
+  return pageMetadata({
     title: report.title,
-    alternates: { canonical: `${SITE.url}/performance/${slug}/` },
-  };
+    description: `Tapefund weekly performance (${report.slug}): NAV scorecard, return vs SPY, alpha, and thesis status from the live AI fund.`,
+    path: `/performance/${slug}/`,
+    type: "article",
+    publishedTime: report.slug,
+  });
 }
 
 export default async function WeeklyReportPage({
@@ -47,6 +58,10 @@ export default async function WeeklyReportPage({
           <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">
             {report.title}
           </h1>
+          <DirectAnswer className="mt-2 text-sm text-muted-foreground">
+            {BRAND.name} weekly scorecard for {report.slug} — NAV, benchmark
+            return vs SPY, alpha, and open thesis status.
+          </DirectAnswer>
         </div>
       </div>
       <Card className="rounded-lg border-border shadow-none">
@@ -57,6 +72,22 @@ export default async function WeeklyReportPage({
           <MarkdownContent content={report.content} />
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: report.title,
+            description: `Weekly performance report from ${BRAND.name}, ${report.slug}.`,
+            path: `/performance/${slug}/`,
+            datePublished: report.slug,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Performance", path: "/performance/" },
+            { name: report.slug, path: `/performance/${slug}/` },
+          ]),
+        ]}
+      />
     </div>
   );
 }

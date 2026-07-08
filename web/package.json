@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-rss.mjs && npx tsx scripts/verify-public-content.ts",
+    "prebuild": "node scripts/generate-rss.mjs && node scripts/generate-llms.mjs && npx tsx scripts/verify-public-content.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

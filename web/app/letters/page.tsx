@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, ScrollText } from "lucide-react";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -17,11 +19,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getLetters } from "@/lib/content";
+import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Investor letters",
-  description: "Ackman-style letters documenting capital allocation decisions.",
-};
+  description:
+    "Tapefund investor letters: Ackman-style write-ups documenting major capital allocation decisions and portfolio changes.",
+  path: "/letters/",
+});
 
 export default function LettersPage() {
   const letters = getLetters();
@@ -36,9 +42,11 @@ export default function LettersPage() {
           <h1 className="text-2xl font-semibold tracking-tight">
             Investor letters
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Major allocations explained like a hedge fund letter.
-          </p>
+          <DirectAnswer className="mt-2">
+            {BRAND.name} publishes Ackman-style investor letters when major
+            allocation decisions are made — explaining the thesis, sizing, and
+            portfolio context in long form.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -74,6 +82,14 @@ export default function LettersPage() {
           </Table>
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Tapefund Investor Letters",
+          description: "Investor letters from the Tapefund AI fund.",
+          path: "/letters/",
+        })}
+      />
     </div>
   );
 }

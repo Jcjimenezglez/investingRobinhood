@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, TrendingUp } from "lucide-react";
 import { PositionsTable } from "@/components/fund/positions-table";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -19,7 +21,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getTickerHistory, getTickers, SITE } from "@/lib/content";
+import { getTickerHistory, getTickers } from "@/lib/content";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return getTickers().map((ticker) => ({ ticker: ticker.toLowerCase() }));
@@ -32,10 +36,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { ticker } = await params;
   const upper = ticker.toUpperCase();
-  return {
-    title: `${upper} — position history`,
-    alternates: { canonical: `${SITE.url}/trades/${ticker}/` },
-  };
+  const { position, journalMentions, theses } = getTickerHistory(ticker);
+  const status = position
+    ? position.status === "open"
+      ? `open $${position.size_usd.toFixed(0)} position (${position.conviction} conviction)`
+      : "closed position history"
+    : "journal and thesis mentions";
+  return pageMetadata({
+    title: `${upper} — Tapefund position & thesis`,
+    description: `${BRAND.name} track record for ${upper}: ${status}, investment theses, fair value targets, and ${journalMentions.length} journal mention(s).`,
+    path: `/trades/${ticker}/`,
+  });
 }
 
 export default async function TickerPage({
@@ -59,9 +70,11 @@ export default async function TickerPage({
         </div>
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">{upper}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Position, theses, and journal mentions
-          </p>
+          <DirectAnswer className="mt-2 text-sm text-muted-foreground">
+            {BRAND.name} history for {upper}: current position, linked
+            investment theses, and every CIO journal mention — updated from live
+            Agentic account data.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -156,6 +169,14 @@ export default async function TickerPage({
           </CardContent>
         </Card>
       )}
+
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Trades", path: "/trades/" },
+          { name: upper, path: `/trades/${ticker}/` },
+        ])}
+      />
     </div>
   );
 }

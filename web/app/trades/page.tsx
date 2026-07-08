@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { BarChart3 } from "lucide-react";
 import { PositionsTable } from "@/components/fund/positions-table";
+import { DirectAnswer } from "@/components/seo/direct-answer";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   Card,
   CardContent,
@@ -9,11 +11,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getPositions } from "@/lib/content";
+import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { BRAND } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Trades",
-  description: "Open and closed positions from the investingRobinhood fund.",
-};
+  description:
+    "Tapefund trade history: open and closed positions sized by conviction, with returns, fair value targets, and links to investment theses.",
+  path: "/trades/",
+});
 
 export default function TradesPage() {
   const positions = getPositions();
@@ -26,9 +32,11 @@ export default function TradesPage() {
         </div>
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Trades</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Every position sized by conviction, with thesis links and returns.
-          </p>
+          <DirectAnswer className="mt-2">
+            {BRAND.name} publishes every position — open and closed — with
+            conviction sizing, return since entry, and links to the written
+            thesis behind each trade.
+          </DirectAnswer>
         </div>
       </div>
 
@@ -43,6 +51,14 @@ export default function TradesPage() {
           <PositionsTable positions={positions} />
         </CardContent>
       </Card>
+
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Tapefund Trades",
+          description: "Position history for the Tapefund AI fund.",
+          path: "/trades/",
+        })}
+      />
     </div>
   );
 }

@@ -1,0 +1,69 @@
+# investingRobinhood — public site
+
+Static Next.js site that reads daily content from `../logs/` at build time. No CMS — the agent's markdown **is** the content.
+
+## Pages
+
+| Route | Source |
+|-------|--------|
+| `/` | `positions.jsonl` + latest journal |
+| `/journal/[date]` | `logs/intelligence/YYYY-MM-DD-*.md` |
+| `/trades`, `/trades/[ticker]` | `logs/scorecard/positions.jsonl` |
+| `/theses/[slug]` | `logs/theses/*.md` |
+| `/letters/[slug]` | `logs/investor-letters/*.md` |
+| `/performance` | `logs/scorecard/weekly/*.md` |
+| `/methodology` | Pillar page (SEO) |
+
+## Local dev
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+## Production build
+
+```bash
+cd web
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com npm run build
+```
+
+Output: `web/out/` (static export).
+
+## Deploy on Vercel (recommended)
+
+1. [vercel.com/new](https://vercel.com/new) → Import `investingRobinhood` from GitHub
+2. **Root Directory:** `web`
+3. **Environment:** `NEXT_PUBLIC_SITE_URL=https://<your-project>.vercel.app`
+4. Deploy — you get a `*.vercel.app` URL immediately (swap to custom domain later)
+
+Or CLI (after `vercel login`):
+
+```bash
+cd web && vercel --prod
+```
+
+`vercel.json` is included. Each push to `main` can auto-deploy if Git integration is enabled.
+
+## SEO checklist
+
+- [ ] Buy domain, point DNS to Vercel
+- [ ] Set `NEXT_PUBLIC_SITE_URL` to production URL
+- [ ] Google Search Console → submit `sitemap.xml`
+- [ ] Verify `/robots.txt` and `/rss.xml`
+- [ ] Add JSON-LD (future)
+
+## Privacy
+
+All published content passes `lib/sanitize.ts` before render:
+
+- Account numbers and Robinhood account IDs → redacted
+- Order UUIDs, emails, exact fractional share counts → redacted
+- Internal repo paths (`logs/`, `config/`, etc.) → `[internal]`
+- Pre-flight / MCP check-loop sections → stripped from journal pages
+- LP-personal references in letters/theses → neutralized public copy
+
+`npm run build` runs `scripts/verify-public-content.ts` and **fails** if private patterns leak.
+
+**Never published:** `logs/trade-journal.md`, calibration files, alerts, `.env`, raw MCP dumps.

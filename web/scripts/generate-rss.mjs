@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.join(__dirname, "..", "..");
 const INTEL_DIR = path.join(REPO_ROOT, "logs", "intelligence");
 const OUT = path.join(__dirname, "..", "public", "rss.xml");
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://investingrobinhood.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://investing-robinhood.vercel.app";
 const SITE_NAME = "investingRobinhood";
 
 function escapeXml(s) {

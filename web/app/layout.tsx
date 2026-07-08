@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   organizationJsonLd,
@@ -48,15 +49,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={BRAND.language}>
+    <html lang={BRAND.language} suppressHydrationWarning>
       <head>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
-        <SiteHeader />
-        <main className="container-page py-8 sm:py-10">{children}</main>
-        <SiteFooter />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
+          <SiteHeader />
+          <main className="container-page py-8 sm:py-10">{children}</main>
+          <SiteFooter />
+        </ThemeProvider>
       </body>
     </html>
   );

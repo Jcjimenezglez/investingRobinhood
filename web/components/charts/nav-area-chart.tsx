@@ -11,7 +11,10 @@ import type { NavPoint } from "@/lib/types";
 const chartConfig = {
   nav: {
     label: "NAV",
-    color: "#0a0a0a",
+    theme: {
+      light: "#0a0a0a",
+      dark: "#fafafa",
+    },
   },
 };
 

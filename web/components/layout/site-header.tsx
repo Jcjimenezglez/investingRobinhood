@@ -9,6 +9,7 @@ import {
   ScrollText,
 } from "lucide-react";
 import { LogoMark } from "@/components/brand/logo-mark";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { BRAND } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
@@ -59,6 +60,7 @@ export function SiteHeader() {
             <HelpCircle className="size-3.5 shrink-0" />
             <span className="hidden lg:inline">FAQ</span>
           </Link>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

@@ -59,3 +59,5 @@ bash scripts/send-alert.sh urgent "motivo" "detalle"
 
 1. **Persistir en disco** — crear/actualizar el `.md` en `logs/intelligence/` (el chat no sustituye el archivo).
 2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD …" && git push origin main`
+
+Do not add `[deploy-site]` — see `config/site-publish.json`.

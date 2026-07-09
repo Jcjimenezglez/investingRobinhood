@@ -54,3 +54,5 @@ Escribir `logs/intelligence/YYYY-MM-DD-HHmm-monitor.md` con estado posiciones, P
 
 1. **Persistir en disco** — el chat no sustituye el archivo en `logs/intelligence/`.
 2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD monitor" && git push origin main`
+
+Do not add `[deploy-site]` — see `config/site-publish.json`.

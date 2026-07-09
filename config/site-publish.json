@@ -1,0 +1,15 @@
+{
+  "policy": "weekly-friday",
+  "description": "Public site (tapefund.com) is static — rebuilt from logs/ at deploy time. Daily automations commit logs to main but do NOT trigger Vercel unless [deploy-site] is in the commit message or web/ changed.",
+  "deployMarker": "[deploy-site]",
+  "schedule": {
+    "timezone": "America/New_York",
+    "primary": "Friday 17:00 ET — Ackman Calibration automation (#6) commits with [deploy-site] and runs scripts/trigger-site-deploy.sh",
+    "backup": "GitHub Action deploy-site-friday.yml — Friday 21:35 UTC if hook secret is configured"
+  },
+  "setup": {
+    "vercelDeployHook": "Vercel → investing-robinhood → Settings → Git → Deploy Hooks → main → copy URL to VERCEL_DEPLOY_HOOK",
+    "githubSecret": "Repo Settings → Secrets → VERCEL_DEPLOY_HOOK",
+    "cursorAutomationEnv": "Optional: same VERCEL_DEPLOY_HOOK for Cloud Agent trigger-site-deploy.sh"
+  }
+}

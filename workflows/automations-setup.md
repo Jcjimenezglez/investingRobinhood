@@ -39,6 +39,7 @@ Write logs/intelligence/YYYY-MM-DD-0800-premarket.md with:
 NO place_equity_order in this session.
 
 Commit and push logs/ and data/signals/ to main.
+Do NOT add [deploy-site] — daily log pushes must not redeploy tapefund.com (see config/site-publish.json).
 ```
 
 ---
@@ -74,7 +75,7 @@ Try stop GTC -8% after BUY; if fractional rejected, log and rely on monitor auto
 Escalate (no trade): bash scripts/send-alert.sh urgent if order_checks non-empty or limits breached.
 
 Write logs/intelligence/YYYY-MM-DD-0935-open.md.
-Commit and push logs/ to main.
+Commit and push logs/ to main. Do NOT add [deploy-site].
 ```
 
 ---
@@ -106,7 +107,7 @@ Per position:
 On exit: update logs/trade-journal.md and logs/scorecard/positions.jsonl.
 
 Write logs/intelligence/YYYY-MM-DD-1200-monitor.md.
-Commit and push logs/ to main.
+Commit and push logs/ to main. Do NOT add [deploy-site].
 ```
 
 ---
@@ -134,7 +135,7 @@ If any trade today: bash scripts/send-alert.sh digest with portfolio summary.
 On exit: update logs/trade-journal.md and logs/scorecard/positions.jsonl.
 
 Write logs/intelligence/YYYY-MM-DD-1500-monitor.md.
-Commit and push logs/ to main.
+Commit and push logs/ to main. Do NOT add [deploy-site].
 ```
 
 ---
@@ -166,7 +167,7 @@ Write logs/scorecard/weekly/YYYY-WW.md:
 Email: bash scripts/send-alert.sh digest "Weekly scorecard" with summary body.
 
 NO trades unless thesis clearly broken during review.
-Commit and push logs/scorecard/ to main.
+Commit and push logs/scorecard/ to main. Do NOT add [deploy-site] yet — site deploy runs after Calibration (#6).
 ```
 
 ---
@@ -195,6 +196,8 @@ Prefer NO_CHANGE if evidence weak.
 Write logs/scorecard/calibration/YYYY-WW-applied.json and logs/investor-letters/calibration-YYYY-WW.md.
 
 Commit and push config/signal-weights.json + calibration logs to main.
+Commit message MUST include [deploy-site] (see config/site-publish.json).
+Run: bash scripts/trigger-site-deploy.sh (requires VERCEL_DEPLOY_HOOK in automation env).
 Email digest: "Ackman Calibration applied" with decision APPLIED|NO_CHANGE|HALTED.
 
 NO trades.

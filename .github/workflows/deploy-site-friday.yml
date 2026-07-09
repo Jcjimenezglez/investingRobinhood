@@ -1,0 +1,23 @@
+name: Deploy site (Friday)
+
+on:
+  schedule:
+    # 21:35 UTC ≈ 17:35 ET (EDT). Runs after weekly review + calibration automations.
+    - cron: "35 21 * * 5"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel production deploy
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK secret not set — skipping."
+            echo "Add a Vercel Deploy Hook URL in GitHub repo secrets to enable weekly deploys."
+            exit 0
+          fi
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK"
+          echo "Production deploy triggered."

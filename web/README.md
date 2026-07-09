@@ -46,6 +46,24 @@ cd web && vercel --prod
 
 `vercel.json` is included. Each push to `main` can auto-deploy if Git integration is enabled.
 
+## Publishing schedule
+
+The site is **static** — it reads `logs/` at build time. Policy: **`config/site-publish.json`**.
+
+| When | What happens |
+|------|----------------|
+| Mon–Fri automations | Commit logs to `main` — **no** public redeploy |
+| Friday ~17:00 ET | Calibration automation commits with `[deploy-site]` + runs `scripts/trigger-site-deploy.sh` |
+| Manual `web/` changes | Always redeploy (Vercel `ignoreCommand` detects `web/` diffs) |
+
+### One-time setup (weekly deploy)
+
+1. **Vercel Deploy Hook:** Project → Settings → Git → Deploy Hooks → branch `main` → copy URL
+2. **GitHub Secret:** `VERCEL_DEPLOY_HOOK` (enables backup workflow `.github/workflows/deploy-site-friday.yml`)
+3. **Cursor Automation #6 env:** same `VERCEL_DEPLOY_HOOK` so `trigger-site-deploy.sh` runs after Friday calibration
+
+Without the hook, logs still land in GitHub but tapefund.com only updates when you push `web/` changes manually.
+
 ## SEO checklist
 
 - [ ] Buy domain, point DNS to Vercel

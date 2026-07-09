@@ -103,3 +103,5 @@ Incluir link a `logs/scorecard/positions.jsonl` y último monthly si existe.
 Si drawdown > `maxDrawdownFromHighWaterMarkPct` en risk-policy → `send-alert.sh urgent` + halt per autonomy.json.
 
 Commit cambios en `logs/scorecard/` a `main`.
+
+**No desplegar el sitio** en esta automation — el deploy público es viernes tras Calibration (#6). Ver `config/site-publish.json`.

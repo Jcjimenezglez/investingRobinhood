@@ -62,9 +62,18 @@ Si NO_CHANGE: no editar weights; escribir memo igual.
 
 ```bash
 git add config/signal-weights.json logs/scorecard/calibration/ logs/investor-letters/calibration-*.md
-git commit -m "calibration: Ackman PM week YYYY-WW (APPLIED|NO_CHANGE|HALTED)"
+git commit -m "calibration: Ackman PM week YYYY-WW (APPLIED|NO_CHANGE|HALTED) [deploy-site]"
 git push origin main
+bash scripts/trigger-site-deploy.sh
 ```
+
+El marcador **`[deploy-site]`** en el commit + el deploy hook publican tapefund.com con la semana completa de logs. Si `VERCEL_DEPLOY_HOOK` no está configurado, GitHub Action `deploy-site-friday.yml` hace backup el viernes ~17:35 ET.
+
+## Fase 5 — Publicar sitio (viernes)
+
+Tras el push, ejecutar `bash scripts/trigger-site-deploy.sh` (requiere `VERCEL_DEPLOY_HOOK` en el entorno del Cloud Agent).
+
+Política completa: `config/site-publish.json`.
 
 ## Downstream (next week)
 

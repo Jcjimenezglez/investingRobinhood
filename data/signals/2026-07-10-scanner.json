@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-10",
+  "generated_by": "MCP run_scan",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 291
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 224
+    }
+  ],
+  "research_universe_hits": [],
+  "note": "No researchUniverse tickers in earnings-14d 7d window; GOOGL Q2 ~22-jul (12d). MSFT/META/AMZN/AAPL 19-21d out. Thursday chip rally (+1.3% Nasdaq); Friday futures mixed pre-SK Hynix ADR listing."
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W28",
+  "appliedAt": "2026-07-10T21:00:44.000Z",
+  "decision": "NO_CHANGE",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "newWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "rejectionReason": "no_evidence rule: zero trades, zero exits, WoW NAV move −0.06% (<1%). Proposed social_sentiment delta would breach minWeightFloor (0.05). Pre-earnings consolidation — hold weights until post-earnings outcomes.",
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 0.49,
+    "haltDrawdownLimitPct": 15,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": true
+  },
+  "ackmanRationale": "We held a two-name book through a quiet pre-earnings week — zero trades, NAV flat (−6bps WoW) while SPY rallied +82bps. Since inception we still lead SPY by +141bps, but one flat week is noise, not a mandate to reweight. Catalyst proximity and ackman confluence remain our best explanatory signals; social sentiment stays at the policy floor with no edge. We reject modest proposed deltas and hold conviction thresholds until AMZN and MSFT report late July.",
+  "attributionSummary": {
+    "bestSignal": "ackman_confluence",
+    "fundVsSpyPct": 1.41,
+    "navUsd": 102.36
+  }
+}

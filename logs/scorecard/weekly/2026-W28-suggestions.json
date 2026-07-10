@@ -1,0 +1,25 @@
+{
+  "week": "2026-W28",
+  "navUsd": 102.36,
+  "spyReturnPct": 0.95,
+  "fundReturnPct": 2.36,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.5,
+    "catalyst_proximity_days": 0.7,
+    "ackman_confluence": 0.8,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund +2.36% vs SPY +0.95% since inception; WoW flat (−0.06%) while SPY +0.82% — pre-earnings consolidation. Alta (AMZN) now leads Media-Alta (MSFT) on return. Catalyst proximity and ackman_confluence remain top signals; hold conviction thresholds until post-earnings outcomes. Trim social_sentiment — no weekly edge."
+}

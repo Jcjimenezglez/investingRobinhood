@@ -2,9 +2,23 @@
 <rss version="2.0">
   <channel>
     <title>Tapefund — Daily journal</title>
-    <link>https://tapefund.com</link>
+    <link>https://tapefund.com/</link>
     <description>Daily CIO journal from Tapefund — a thesis-driven AI fund track record.</description>
     <language>en-us</language>
+    <item>
+      <title>Journal 2026-07-10</title>
+      <link>https://tapefund.com/journal/2026-07-10/</link>
+      <guid>https://tapefund.com/journal/2026-07-10/</guid>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <description>CIO cycle for 2026-07-10.</description>
+    </item>
+    <item>
+      <title>Journal 2026-07-09</title>
+      <link>https://tapefund.com/journal/2026-07-09/</link>
+      <guid>https://tapefund.com/journal/2026-07-09/</guid>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+      <description>CIO cycle for 2026-07-09.</description>
+    </item>
     <item>
       <title>Journal 2026-07-08</title>
       <link>https://tapefund.com/journal/2026-07-08/</link>

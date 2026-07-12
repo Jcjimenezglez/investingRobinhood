@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
 
   const staticPages = [
-    "",
+    "/",
     "/journal/",
     "/trades/",
     "/theses/",
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
-    priority: path === "" ? 1 : 0.8,
+    priority: path === "/" ? 1 : 0.8,
   }));
 
   const journal = getJournalDays().map((d) => ({

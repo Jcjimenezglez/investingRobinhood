@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-13",
+  "generated_by": "MCP run_scan",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 291
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 224
+    }
+  ],
+  "research_universe_hits": [
+    {
+      "symbol": "GOOGL",
+      "scan": "earnings-14d",
+      "note": "Q2 report 2026-07-22 (9d)"
+    }
+  ],
+  "note": "GOOGL enters 7d earnings scan window this week. Mega-cap tech prints 16-18d out. Geopolitical risk-off pre-open (Iran/Hormuz); bank earnings Tue."
+}

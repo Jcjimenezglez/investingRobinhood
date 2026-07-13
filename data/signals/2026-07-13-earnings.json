@@ -1,0 +1,99 @@
+{
+  "date": "2026-07-13",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-13",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 9
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 16
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 16
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 17
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 18
+    }
+  ],
+  "highlights_14d": [
+    {
+      "symbol": "JPM",
+      "report_date": "2026-07-14",
+      "timing": "am"
+    },
+    {
+      "symbol": "BAC",
+      "report_date": "2026-07-14",
+      "timing": "am"
+    },
+    {
+      "symbol": "GS",
+      "report_date": "2026-07-14",
+      "timing": "am"
+    },
+    {
+      "symbol": "C",
+      "report_date": "2026-07-14",
+      "timing": "am"
+    },
+    {
+      "symbol": "WFC",
+      "report_date": "2026-07-14",
+      "timing": "am"
+    },
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm"
+    },
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm"
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm"
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm"
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm"
+    }
+  ],
+  "note": "Bank earnings kick off 14-jul; mega-cap tech cluster 22-31 jul."
+}

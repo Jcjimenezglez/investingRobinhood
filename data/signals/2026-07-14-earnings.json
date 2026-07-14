@@ -1,0 +1,117 @@
+{
+  "date": "2026-07-14",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-14",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 8
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 15
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 15
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 16
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 17
+    }
+  ],
+  "highlights_14d": [
+    {
+      "symbol": "JPM",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "BAC",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "GS",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "C",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "WFC",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 8
+    }
+  ],
+  "bank_earnings_today": [
+    {
+      "symbol": "JPM",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "BAC",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "GS",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "C",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "WFC",
+      "report_date": "2026-07-14",
+      "timing": "am",
+      "days_out": 0
+    }
+  ]
+}

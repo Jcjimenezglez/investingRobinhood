@@ -1,0 +1,98 @@
+{
+  "date": "2026-07-15",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-15",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 7,
+      "eps_estimate": "2.87"
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 14
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 14
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 15
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 16
+    }
+  ],
+  "highlights_14d": [
+    {
+      "symbol": "MS",
+      "report_date": "2026-07-15",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "BLK",
+      "report_date": "2026-07-15",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "JNJ",
+      "report_date": "2026-07-15",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "days_out": 7
+    },
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 14
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 14
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_out": 15
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-31",
+      "timing": "pm",
+      "days_out": 16
+    }
+  ],
+  "total_calendar_entries": 605
+}

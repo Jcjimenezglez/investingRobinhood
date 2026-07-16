@@ -1,0 +1,110 @@
+{
+  "date": "2026-07-16",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-16",
+  "generated_by": "MCP get_earnings_calendar + get_earnings_results",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 6,
+      "eps_estimate": "2.87"
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 13
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 13
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 13
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": false,
+      "days_out": 14
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 14
+    }
+  ],
+  "highlights_14d": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "days_out": 6
+    },
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 13
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 13
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 13
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_out": 14
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_out": 14
+    },
+    {
+      "symbol": "UNH",
+      "report_date": "2026-07-16",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "TSM",
+      "report_date": "2026-07-16",
+      "timing": "am",
+      "days_out": 0
+    },
+    {
+      "symbol": "NFLX",
+      "report_date": "2026-07-16",
+      "timing": "pm",
+      "days_out": 0
+    }
+  ]
+}

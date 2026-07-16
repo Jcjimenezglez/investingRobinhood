@@ -1,0 +1,318 @@
+{
+  "date": "2026-07-16",
+  "regime": "neutral",
+  "generated_by": "automation-01-premarket + MCP merge",
+  "note": "Scores per config/signal-weights.json v1.0.2 (calibration W28 NO_CHANGE)",
+  "tickers": [
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "price": 400.32,
+        "previous_close": 395.63,
+        "session_change_pct": 1.19,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 23.56,
+        "high_52_weeks": 555.45,
+        "low_52_weeks": 349.2,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "catalyst_days": 13,
+      "catalyst_report_date": "2026-07-29",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.88,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.99,
+        "social_sentiment": 0.5,
+        "composite": 0.904
+      },
+      "rank": 1
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "price": 73.25,
+        "previous_close": 72.67,
+        "session_change_pct": 0.8,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 17.96,
+        "high_52_weeks": 101.99,
+        "low_52_weeks": 67.19,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "catalyst_days": 20,
+      "catalyst_report_date": "2026-08-05",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.88,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.9,
+        "social_sentiment": 0.5,
+        "composite": 0.881
+      },
+      "rank": 2
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "price": 256.2,
+        "previous_close": 254.96,
+        "session_change_pct": 0.49,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 29.58,
+        "high_52_weeks": 278.56,
+        "low_52_weeks": 196.0,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "catalyst_days": 14,
+      "catalyst_report_date": "2026-07-30",
+      "scores": {
+        "fundamental_quality": 0.9,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.99,
+        "social_sentiment": 0.5,
+        "composite": 0.827
+      },
+      "rank": 3
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "price": 682.68,
+        "previous_close": 681.31,
+        "session_change_pct": 0.2,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 24.77,
+        "high_52_weeks": 796.25,
+        "low_52_weeks": 520.26,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "catalyst_days": 13,
+      "catalyst_report_date": "2026-07-29",
+      "scores": {
+        "fundamental_quality": 0.95,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.85,
+        "social_sentiment": 0.5,
+        "composite": 0.826
+      },
+      "rank": 4
+    },
+    {
+      "symbol": "QSR",
+      "quote": {
+        "price": 74.18,
+        "previous_close": 74.18,
+        "session_change_pct": 0.0,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 29.69,
+        "high_52_weeks": 81.96,
+        "low_52_weeks": 61.33,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "catalyst_days": 44,
+      "catalyst_report_date": null,
+      "scores": {
+        "fundamental_quality": 0.9,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.85,
+        "social_sentiment": 0.5,
+        "composite": 0.798
+      },
+      "rank": 5
+    },
+    {
+      "symbol": "BN",
+      "quote": {
+        "price": 44.63,
+        "previous_close": 44.47,
+        "session_change_pct": 0.36,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 84.11,
+        "high_52_weeks": 49.57,
+        "low_52_weeks": 37.93,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "catalyst_days": 44,
+      "catalyst_report_date": null,
+      "scores": {
+        "fundamental_quality": 0.75,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.9,
+        "social_sentiment": 0.5,
+        "composite": 0.753
+      },
+      "rank": 6
+    },
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "price": 374.8,
+        "previous_close": 370.92,
+        "session_change_pct": 1.05,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 28.29,
+        "high_52_weeks": 408.61,
+        "low_52_weeks": 180.48,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% \u2014 effectively EXITED",
+      "catalyst_days": 6,
+      "catalyst_report_date": "2026-07-22",
+      "scores": {
+        "fundamental_quality": 0.9,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.35,
+        "social_sentiment": 0.5,
+        "composite": 0.744
+      },
+      "rank": 7
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "price": 113.82,
+        "previous_close": 115.54,
+        "session_change_pct": -1.49,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 54.87,
+        "high_52_weeks": 153.86,
+        "low_52_weeks": 63.52,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "catalyst_days": 13,
+      "catalyst_report_date": "2026-07-29",
+      "scores": {
+        "fundamental_quality": 0.7,
+        "mispricing_vs_fair_value": 0.88,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.5,
+        "composite": 0.742
+      },
+      "rank": 8
+    },
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "price": 209.26,
+        "previous_close": 212.5,
+        "session_change_pct": -1.52,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 32.54,
+        "high_52_weeks": 236.54,
+        "low_52_weeks": 164.07,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "catalyst_days": 41,
+      "catalyst_report_date": "2026-08-26",
+      "scores": {
+        "fundamental_quality": 0.9,
+        "mispricing_vs_fair_value": 0.65,
+        "catalyst_proximity_days": 0.85,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.5,
+        "composite": 0.739
+      },
+      "rank": 9
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "price": 328.71,
+        "previous_close": 327.5,
+        "session_change_pct": 0.37,
+        "source": "MCP get_equity_quotes",
+        "as_of": "2026-07-16T12:00Z"
+      },
+      "fundamentals": {
+        "pe_ratio": 39.62,
+        "high_52_weeks": 328.73,
+        "low_52_weeks": 201.5,
+        "source": "MCP get_equity_fundamentals",
+        "bounds": "extended"
+      },
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "catalyst_days": 14,
+      "catalyst_report_date": "2026-07-30",
+      "scores": {
+        "fundamental_quality": 0.8,
+        "mispricing_vs_fair_value": 0.45,
+        "catalyst_proximity_days": 0.9,
+        "ackman_confluence": 0.4,
+        "social_sentiment": 0.5,
+        "composite": 0.664
+      },
+      "rank": 10
+    }
+  ]
+}

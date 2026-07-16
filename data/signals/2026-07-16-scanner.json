@@ -1,0 +1,46 @@
+{
+  "date": "2026-07-16",
+  "generated_by": "MCP run_scan per config/scanner-presets.json",
+  "as_of": "2026-07-16T12:00Z",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_count": 321,
+      "research_universe_hits": [
+        "GOOGL"
+      ],
+      "note": "7-day earnings window"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_count": 206,
+      "research_universe_hits": [],
+      "top_movers_sample": [
+        "DUKR",
+        "EOSER",
+        "TGHL",
+        "ATAI",
+        "VEEE",
+        "LIMN",
+        "ATPC",
+        "DXST",
+        "CNF",
+        "VRAX",
+        "IQST",
+        "ESP",
+        "GHRS",
+        "GDEV",
+        "RECT"
+      ]
+    }
+  ],
+  "quality_filters_applied": {
+    "minPriceUsd": 10,
+    "minMarketCapUsd": 1000000000.0,
+    "minAvgDailyVolume": 5000000.0
+  }
+}

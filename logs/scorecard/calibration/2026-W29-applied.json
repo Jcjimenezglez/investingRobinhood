@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W29",
+  "appliedAt": "2026-07-17T21:02:08.871Z",
+  "decision": "NO_CHANGE",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "newWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "rejectionReason": "no_evidence rule: zero trades, zero exits, WoW NAV move +0.99% (<1%). Proposed social_sentiment delta would breach minWeightFloor (0.05 → 0.04). Proposed deltas net +0.02 without rebalance. Pre-earnings week — hold weights until post-earnings outcomes.",
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": false,
+    "weightsSumToOne": false,
+    "drawdownFromHwmPct": 1.97,
+    "haltDrawdownLimitPct": 15,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": true
+  },
+  "ackmanRationale": "We held a two-name book through a pre-earnings week — zero trades, NAV +99bps WoW while SPY fell −124bps. Since inception we lead SPY by +399bps, and Wed's HWM ($105.46) validated catalyst proximity into the earnings window. But one sub-1% NAV week with no execution is noise, not a mandate to reweight. Catalyst proximity and ackman confluence remain our best explanatory signals; social sentiment stays at the policy floor. We reject modest proposed deltas and hold conviction thresholds until AMZN and MSFT report late July.",
+  "attributionSummary": {
+    "bestSignal": "catalyst_proximity_days",
+    "fundVsSpyPct": 3.99,
+    "navUsd": 103.38
+  }
+}

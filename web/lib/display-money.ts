@@ -1,6 +1,6 @@
 import { BRAND } from "@/lib/site-config";
 
-/** Multiply USD notionals for public UI. Share prices and % stays real. */
+/** Multiply ledger USD for public UI. Share prices and % stay unscaled. */
 export function scaleUsd(amount: number): number {
   return amount * BRAND.displayUsdScale;
 }
@@ -23,7 +23,7 @@ export function formatLedgerUsd(
   return `$${abs}`;
 }
 
-/** Starting NAV as shown in the UI (e.g. $10,000). */
+/** Starting NAV as shown in the UI. */
 export function displayStartingNav(): number {
   return scaleUsd(BRAND.startingNav);
 }

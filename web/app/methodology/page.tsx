@@ -38,7 +38,7 @@ const pillars = [
   {
     icon: Target,
     title: "Concentration by conviction",
-    body: `Up to 50% of the ~${formatStartingNav()} notional book in one high-conviction idea. Cash minimum 10%.`,
+    body: `Up to 50% of the ~${formatStartingNav()} book in one high-conviction idea. Cash minimum 10%.`,
   },
   {
     icon: Shield,

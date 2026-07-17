@@ -63,7 +63,7 @@ export default function HomePage() {
             <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
               {BRAND.name} publishes a live stock-picking track record vs the
               S&amp;P 500 — NAV, CIO journal, trades, and theses since{" "}
-              {BRAND.inceptionDate} (starting {formatStartingNav()} notional).
+              {BRAND.inceptionDate} (starting {formatStartingNav()}).
               Current NAV is {formatLedgerUsd(snapshot.nav, { digits: 2 })} (
               {snapshot.returnPct >= 0 ? "+" : ""}
               {snapshot.returnPct.toFixed(2)}% ) with {snapshot.positions} open

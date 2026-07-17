@@ -82,7 +82,7 @@ export default function NewsletterPage() {
           <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
             {BRAND.name} publishes a live stock-picking track record and an
             upcoming Stock Advisor–style newsletter. Since {BRAND.inceptionDate}{" "}
-            (starting NAV {formatStartingNav()} notional), current NAV is{" "}
+            (starting NAV {formatStartingNav()}), current NAV is{" "}
             {formatLedgerUsd(snapshot.nav, { digits: 2 })} ({returnLabel}). The
             public site is the free scoreboard; join the waitlist for full
             theses and weekly recommendations. This is not investment advice.

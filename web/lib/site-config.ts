@@ -18,7 +18,6 @@ export const BRAND = {
   /**
    * Public UI multiplies ledger USD (NAV, size, cash) by this factor.
    * Share prices and percentages are never scaled.
-   * Example: $100 book → $10,000 notional; $45 AMZN → $4,500.
    */
   displayUsdScale: 100,
   keywords: [
@@ -58,14 +57,9 @@ export const SITE_FAQ: FaqItem[] = [
       "Free on the site: live NAV, return since inception, open tickers, journal summaries, and performance vs SPY. Coming via the newsletter: deeper theses, sizing rationale, and weekly picks commentary.",
   },
   {
-    question: "Why do dollar amounts look like a $10,000 book?",
-    answer:
-      "Public pages show ledger dollars (NAV, position size, cash) scaled 100× for a $10,000 notional presentation. Share prices and all percentages (returns, cash %, conviction sizing) are the real figures from the live account. The underlying account started at $100.",
-  },
-  {
     question: "Is Tapefund investment advice?",
     answer:
-      "No. Tapefund documents an experimental AI trading agent on a small personal account. Nothing on this site is investment advice, a solicitation, or a recommendation to buy or sell any security. Past performance does not guarantee future results.",
+      "No. Nothing on this site is investment advice, a solicitation, or a recommendation to buy or sell any security. Past performance does not guarantee future results.",
   },
   {
     question: "How does Tapefund compare to the S&P 500?",
@@ -75,7 +69,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "Is Tapefund the same as Motley Fool Stock Advisor?",
     answer:
-      "No. Motley Fool Stock Advisor is a large paid stock-picking service. Tapefund is a small, transparent live track record plus an upcoming newsletter — same category (stock picks with performance vs the market), different product and scale.",
+      "No. Motley Fool Stock Advisor is a large paid stock-picking service. Tapefund is a live public track record plus an upcoming newsletter — same category (stock picks with performance vs the market), different product.",
   },
   {
     question: "How often is Tapefund updated?",

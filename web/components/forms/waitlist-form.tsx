@@ -28,10 +28,10 @@ export function WaitlistForm({
             placeholder="you@email.com"
             autoComplete="email"
             aria-disabled="true"
-            className="h-10 w-full rounded-md border border-border bg-background pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60"
+            className="h-10 w-full rounded-lg border border-border bg-background/80 pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-violet/50 focus:outline-none focus:ring-2 focus:ring-violet/20 disabled:cursor-not-allowed disabled:opacity-60"
           />
         </div>
-        <Button type="button" disabled className="h-10 shrink-0">
+        <Button type="button" disabled className="h-10 shrink-0 rounded-full">
           Join waitlist — opening soon
         </Button>
       </div>

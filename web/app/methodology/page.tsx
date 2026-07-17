@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
+import { formatStartingNav } from "@/lib/display-money";
 import { BRAND } from "@/lib/site-config";
 
 export const metadata: Metadata = pageMetadata({
@@ -37,7 +38,7 @@ const pillars = [
   {
     icon: Target,
     title: "Concentration by conviction",
-    body: `Up to 50% of the ~$${BRAND.startingNav} fund in one high-conviction idea. Cash minimum 10%.`,
+    body: `Up to 50% of the ~${formatStartingNav()} notional book in one high-conviction idea. Cash minimum 10%.`,
   },
   {
     icon: Shield,

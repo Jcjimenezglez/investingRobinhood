@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DecisionBadge } from "@/components/fund/decision-badge";
+import { formatLedgerUsd } from "@/lib/display-money";
 import type { JournalDay } from "@/lib/types";
 
 export function JournalTable({ days }: { days: JournalDay[] }) {
@@ -31,7 +32,7 @@ export function JournalTable({ days }: { days: JournalDay[] }) {
               <DecisionBadge decision={day.decision} />
             </TableCell>
             <TableCell className="text-right tabular-nums">
-              {day.nav ? `$${day.nav.toFixed(2)}` : "—"}
+              {day.nav ? formatLedgerUsd(day.nav, { digits: 2 }) : "—"}
             </TableCell>
             <TableCell className="text-muted-foreground">
               {day.sessions.length}

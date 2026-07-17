@@ -22,6 +22,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getTickerHistory, getTickers } from "@/lib/content";
+import { formatLedgerUsd } from "@/lib/display-money";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
 
@@ -39,7 +40,7 @@ export async function generateMetadata({
   const { position, journalMentions, theses } = getTickerHistory(ticker);
   const status = position
     ? position.status === "open"
-      ? `open $${position.size_usd.toFixed(0)} position (${position.conviction} conviction)`
+      ? `open ${formatLedgerUsd(position.size_usd, { digits: 0 })} position (${position.conviction} conviction)`
       : "closed position history"
     : "journal and thesis mentions";
   return pageMetadata({

@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { StatusBadge } from "@/components/fund/decision-badge";
+import { formatLedgerUsd } from "@/lib/display-money";
 import type { Position } from "@/lib/types";
 
 export function PositionsTable({
@@ -56,7 +57,9 @@ export function PositionsTable({
               ${p.entry_price.toFixed(2)}
               <span className="block text-xs">{p.entry_date}</span>
             </TableCell>
-            <TableCell className="tabular-nums">${p.size_usd.toFixed(0)}</TableCell>
+            <TableCell className="tabular-nums">
+              {formatLedgerUsd(p.size_usd, { digits: 0 })}
+            </TableCell>
             <TableCell>{p.conviction}</TableCell>
             <TableCell className="text-right font-medium tabular-nums">
               {p.return_pct !== null

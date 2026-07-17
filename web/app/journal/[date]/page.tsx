@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getJournalDay, getJournalDays } from "@/lib/content";
+import { formatLedgerUsd } from "@/lib/display-money";
 import {
   articleJsonLd,
   breadcrumbJsonLd,
@@ -34,7 +35,9 @@ export async function generateMetadata({
   const day = getJournalDay(date);
   if (!day) return { title: "Journal" };
   const decision = day.decision ? ` — ${day.decision}` : "";
-  const navPart = day.nav ? ` NAV $${day.nav.toFixed(2)}.` : "";
+  const navPart = day.nav
+    ? ` NAV ${formatLedgerUsd(day.nav, { digits: 2 })}.`
+    : "";
   const description = `Tapefund CIO journal for ${date}${decision}.${navPart} ${day.sessions.length} session(s): market snapshot, thesis review, and trading decision from the live Agentic fund.`;
   return pageMetadata({
     title: `Journal ${date}${decision}`,
@@ -71,8 +74,10 @@ export default async function JournalDayPage({
             <DirectAnswer className="mt-2 text-sm text-muted-foreground">
               {BRAND.name} CIO cycle for {date}
               {day.decision ? ` — decision: ${day.decision}` : ""}
-              {day.nav ? `, NAV $${day.nav.toFixed(2)}` : ""}.{" "}
-              {day.sessions.length} published session
+              {day.nav
+                ? `, NAV ${formatLedgerUsd(day.nav, { digits: 2 })}`
+                : ""}
+              . {day.sessions.length} published session
               {day.sessions.length !== 1 ? "s" : ""} below.
             </DirectAnswer>
           </div>
@@ -81,7 +86,7 @@ export default async function JournalDayPage({
           <DecisionBadge decision={day.decision} />
           {day.nav && (
             <span className="text-sm font-medium tabular-nums">
-              NAV ${day.nav.toFixed(2)}
+              NAV {formatLedgerUsd(day.nav, { digits: 2 })}
             </span>
           )}
         </div>

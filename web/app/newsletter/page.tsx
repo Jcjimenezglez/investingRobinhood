@@ -21,6 +21,7 @@ import {
   HudPanelHeader,
 } from "@/components/ui/hud-panel";
 import { getFundSnapshot } from "@/lib/content";
+import { formatLedgerUsd, formatStartingNav } from "@/lib/display-money";
 import { faqPageJsonLd, pageMetadata } from "@/lib/seo";
 import { BRAND, SITE_FAQ } from "@/lib/site-config";
 
@@ -81,10 +82,10 @@ export default function NewsletterPage() {
           <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
             {BRAND.name} publishes a live stock-picking track record and an
             upcoming Stock Advisor–style newsletter. Since {BRAND.inceptionDate}{" "}
-            (starting NAV ${BRAND.startingNav}), current NAV is $
-            {snapshot.nav.toFixed(2)} ({returnLabel}). The public site is the
-            free scoreboard; join the waitlist for full theses and weekly
-            recommendations. This is not investment advice.
+            (starting NAV {formatStartingNav()} notional), current NAV is{" "}
+            {formatLedgerUsd(snapshot.nav, { digits: 2 })} ({returnLabel}). The
+            public site is the free scoreboard; join the waitlist for full
+            theses and weekly recommendations. This is not investment advice.
           </DirectAnswer>
         </div>
       </section>
@@ -95,7 +96,7 @@ export default function NewsletterPage() {
       >
         <StatCard
           title="NAV"
-          value={`$${snapshot.nav.toFixed(2)}`}
+          value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
           sub={`Updated ${snapshot.lastUpdated}`}
           icon={DollarSign}
           accent
@@ -103,7 +104,7 @@ export default function NewsletterPage() {
         <StatCard
           title="Return"
           value={returnLabel}
-          sub={`Since inception ($${BRAND.startingNav})`}
+          sub={`Since inception (${formatStartingNav()})`}
           icon={Percent}
         />
         <StatCard

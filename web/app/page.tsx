@@ -20,6 +20,11 @@ import {
   getNavSeries,
   getPositions,
 } from "@/lib/content";
+import {
+  formatLedgerUsd,
+  formatStartingNav,
+  scaleUsd,
+} from "@/lib/display-money";
 import { faqPageJsonLd } from "@/lib/seo";
 import { BRAND, SITE_FAQ } from "@/lib/site-config";
 
@@ -27,7 +32,10 @@ const homeFaq = SITE_FAQ.slice(0, 3);
 
 export default function HomePage() {
   const snapshot = getFundSnapshot();
-  const navSeries = getNavSeries();
+  const navSeries = getNavSeries().map((p) => ({
+    ...p,
+    nav: scaleUsd(p.nav),
+  }));
   const recentDays = getJournalDays().slice(0, 10);
   const positions = getPositions().filter((p) => p.status === "open");
   const latestLetter = getLetters()[0];
@@ -55,8 +63,8 @@ export default function HomePage() {
             <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
               {BRAND.name} publishes a live stock-picking track record vs the
               S&amp;P 500 — NAV, CIO journal, trades, and theses since{" "}
-              {BRAND.inceptionDate} (starting ${BRAND.startingNav}). Current NAV
-              is ${snapshot.nav.toFixed(2)} (
+              {BRAND.inceptionDate} (starting {formatStartingNav()} notional).
+              Current NAV is {formatLedgerUsd(snapshot.nav, { digits: 2 })} (
               {snapshot.returnPct >= 0 ? "+" : ""}
               {snapshot.returnPct.toFixed(2)}% ) with {snapshot.positions} open
               position{snapshot.positions !== 1 ? "s" : ""}. Free scoreboard on
@@ -122,7 +130,7 @@ export default function HomePage() {
       >
         <StatCard
           title="NAV"
-          value={`$${snapshot.nav.toFixed(2)}`}
+          value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
           sub={`Updated ${snapshot.lastUpdated}`}
           icon={DollarSign}
           accent
@@ -130,12 +138,12 @@ export default function HomePage() {
         <StatCard
           title="Return"
           value={`${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`}
-          sub={`Since inception ($${BRAND.startingNav})`}
+          sub={`Since inception (${formatStartingNav()})`}
           icon={Percent}
         />
         <StatCard
           title="Cash"
-          value={`$${snapshot.cash.toFixed(0)}`}
+          value={formatLedgerUsd(snapshot.cash, { digits: 0 })}
           sub={`${snapshot.cashPct.toFixed(0)}% of book`}
           icon={Wallet}
         />

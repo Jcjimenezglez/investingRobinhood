@@ -13,7 +13,14 @@ export const BRAND = {
   locale: "en_US",
   language: "en",
   inceptionDate: "2026-06-18",
+  /** Real account starting NAV (source of truth in logs). */
   startingNav: 100,
+  /**
+   * Public UI multiplies ledger USD (NAV, size, cash) by this factor.
+   * Share prices and percentages are never scaled.
+   * Example: $100 book → $10,000 notional; $45 AMZN → $4,500.
+   */
+  displayUsdScale: 100,
   keywords: [
     "stock newsletter",
     "stock picks",
@@ -49,6 +56,11 @@ export const SITE_FAQ: FaqItem[] = [
     question: "What is free vs what is for the waitlist?",
     answer:
       "Free on the site: live NAV, return since inception, open tickers, journal summaries, and performance vs SPY. Coming via the newsletter: deeper theses, sizing rationale, and weekly picks commentary.",
+  },
+  {
+    question: "Why do dollar amounts look like a $10,000 book?",
+    answer:
+      "Public pages show ledger dollars (NAV, position size, cash) scaled 100× for a $10,000 notional presentation. Share prices and all percentages (returns, cash %, conviction sizing) are the real figures from the live account. The underlying account started at $100.",
   },
   {
     question: "Is Tapefund investment advice?",

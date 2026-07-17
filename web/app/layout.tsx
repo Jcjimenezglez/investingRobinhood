@@ -65,9 +65,7 @@ export default function RootLayout({
           <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
           <div className="flex min-h-screen flex-col">
             <SiteHeader />
-            <main className="container-page flex-1 py-10 sm:py-16">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
             <SiteFooter />
           </div>
         </ThemeProvider>

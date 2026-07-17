@@ -13,6 +13,7 @@ import {
 import { getJournalDays } from "@/lib/content";
 import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
+import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
   title: "Daily journal",
@@ -25,7 +26,7 @@ export default function JournalIndexPage() {
   const days = getJournalDays();
 
   return (
-    <div className="space-y-6">
+    <PageShell>
       <div className="flex items-start gap-3">
         <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <BookOpen className="size-5" strokeWidth={1.5} />
@@ -60,6 +61,6 @@ export default function JournalIndexPage() {
           path: "/journal/",
         })}
       />
-    </div>
+    </PageShell>
   );
 }

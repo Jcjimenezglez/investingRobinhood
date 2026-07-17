@@ -21,6 +21,7 @@ import {
 import { getTheses } from "@/lib/content";
 import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
+import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
   title: "Investment theses",
@@ -33,7 +34,7 @@ export default function ThesesPage() {
   const theses = getTheses();
 
   return (
-    <div className="space-y-6">
+    <PageShell>
       <div className="flex items-start gap-3">
         <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <FileText className="size-5" strokeWidth={1.5} />
@@ -90,6 +91,6 @@ export default function ThesesPage() {
           path: "/theses/",
         })}
       />
-    </div>
+    </PageShell>
   );
 }

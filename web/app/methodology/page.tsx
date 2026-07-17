@@ -21,6 +21,7 @@ import { Separator } from "@/components/ui/separator";
 import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
 import { formatStartingNav } from "@/lib/display-money";
 import { BRAND } from "@/lib/site-config";
+import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
   title: "Methodology",
@@ -77,7 +78,7 @@ const universe = [
 
 export default function MethodologyPage() {
   return (
-    <div className="space-y-8">
+    <PageShell>
       <div>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
         <DirectAnswer className="mt-3">
@@ -172,6 +173,6 @@ export default function MethodologyPage() {
           path: "/methodology/",
         })}
       />
-    </div>
+    </PageShell>
   );
 }

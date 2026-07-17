@@ -17,6 +17,7 @@ import {
   pageMetadata,
 } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
+import { PageShell } from "@/components/marketing/section";
 
 export function generateStaticParams() {
   return getWeeklyReports().map((r) => ({ slug: r.slug }));
@@ -49,7 +50,7 @@ export default async function WeeklyReportPage({
   if (!report) notFound();
 
   return (
-    <div className="space-y-6">
+    <PageShell>
       <div className="flex items-start gap-3">
         <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
           <LineChart className="size-5" strokeWidth={1.5} />
@@ -88,6 +89,6 @@ export default async function WeeklyReportPage({
           ]),
         ]}
       />
-    </div>
+    </PageShell>
   );
 }

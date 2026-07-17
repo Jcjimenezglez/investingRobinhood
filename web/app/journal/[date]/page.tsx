@@ -21,6 +21,7 @@ import {
   pageMetadata,
 } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
+import { PageShell } from "@/components/marketing/section";
 
 export function generateStaticParams() {
   return getJournalDays().map((d) => ({ date: d.date }));
@@ -61,7 +62,7 @@ export default async function JournalDayPage({
   const defaultTab = day.sessions[0]?.slug ?? "";
 
   return (
-    <div className="space-y-6">
+    <PageShell>
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div className="flex items-start gap-3">
           <div className="flex size-10 items-center justify-center border border-border bg-card text-signal">
@@ -139,6 +140,6 @@ export default async function JournalDayPage({
           ]),
         ]}
       />
-    </div>
+    </PageShell>
   );
 }

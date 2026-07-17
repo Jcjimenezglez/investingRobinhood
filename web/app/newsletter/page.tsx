@@ -60,28 +60,28 @@ export default function NewsletterPage() {
     <PageShell>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-[12px] text-muted-foreground">
             Waitlist · opening soon
           </div>
         }
-        title="Stock newsletter"
+        title="Stock Newsletter"
         subtitle="Live track record vs the S&P 500. Full theses in the letter."
         actions={
           <>
             <Button asChild size="lg">
               <Link href="#waitlist">
-                Join waitlist
+                Join Waitlist
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="/">View scoreboard</Link>
+              <Link href="/">View Scoreboard</Link>
             </Button>
           </>
         }
       />
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           title="NAV"
           value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
@@ -109,31 +109,31 @@ export default function NewsletterPage() {
         />
       </section>
 
-      <MarketingSection title="Free vs letter">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-base font-semibold">On the site</h3>
-            <ul className="mt-4 space-y-2">
+      <MarketingSection title="Free vs Letter">
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="surface-panel p-6">
+            <h3 className="text-label-14">On the Site</h3>
+            <ul className="mt-4 space-y-2.5">
               {freeItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2.5 text-copy-14 text-muted-foreground"
                 >
-                  <Check className="size-4 shrink-0 text-foreground" />
+                  <Check className="size-4 shrink-0 text-foreground" strokeWidth={1.75} />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-base font-semibold">In the newsletter</h3>
-            <ul className="mt-4 space-y-2">
+          <div className="surface-panel border-foreground/20 p-6">
+            <h3 className="text-label-14">In the Newsletter</h3>
+            <ul className="mt-4 space-y-2.5">
               {letterItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2.5 text-copy-14 text-muted-foreground"
                 >
-                  <Mail className="size-4 shrink-0 text-muted-foreground" />
+                  <Mail className="size-4 shrink-0 text-muted-foreground" strokeWidth={1.75} />
                   {item}
                 </li>
               ))}
@@ -143,7 +143,7 @@ export default function NewsletterPage() {
       </MarketingSection>
 
       <MarketingSection id="waitlist" title="Waitlist">
-        <div className="max-w-lg rounded-xl border border-border bg-card p-6">
+        <div className="surface-panel max-w-lg p-6">
           <WaitlistForm />
         </div>
       </MarketingSection>
@@ -152,7 +152,7 @@ export default function NewsletterPage() {
         <FaqSection items={newsletterFaq} title="Questions" />
       </MarketingSection>
 
-      <p className="text-xs text-muted-foreground">
+      <p className="text-[12px] text-muted-foreground">
         Not investment advice. Past performance does not guarantee future
         results.
       </p>

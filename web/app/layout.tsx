@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -11,20 +12,6 @@ import {
 } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
-
-const body = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   ...pageMetadata({
@@ -50,7 +37,7 @@ export const metadata: Metadata = {
 export const viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
 };
 
@@ -60,21 +47,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={BRAND.language} suppressHydrationWarning>
+    <html
+      lang={BRAND.language}
+      suppressHydrationWarning
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+    >
       <head>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
-      <body className={`${body.variable} ${mono.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
           <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
           <div className="flex min-h-screen flex-col">
             <SiteHeader />
-            <main className="container-page flex-1 py-10 sm:py-14">
+            <main className="container-page flex-1 py-10 sm:py-16">
               {children}
             </main>
             <SiteFooter />

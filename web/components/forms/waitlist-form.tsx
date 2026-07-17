@@ -28,14 +28,14 @@ export function WaitlistForm({
             placeholder="you@email.com"
             autoComplete="email"
             aria-disabled="true"
-            className="h-10 w-full rounded-md border border-border bg-background pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60"
+            className="h-10 w-full rounded-[6px] border border-border bg-background pl-10 pr-3 text-[14px] text-foreground placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
           />
         </div>
         <Button type="button" disabled className="h-10 shrink-0">
-          Join waitlist — opening soon
+          Join Waitlist — Opening Soon
         </Button>
       </div>
-      <p className="text-xs text-muted-foreground">{note}</p>
+      <p className="text-[12px] text-muted-foreground">{note}</p>
     </div>
   );
 }

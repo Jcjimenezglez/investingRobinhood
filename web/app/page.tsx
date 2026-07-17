@@ -52,8 +52,8 @@ export default function HomePage() {
     <PageShell>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-emerald-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-[12px] text-muted-foreground">
+            <span className="size-1.5 rounded-full bg-[#0cce6b]" />
             Live since {BRAND.inceptionDate}
           </div>
         }
@@ -63,19 +63,19 @@ export default function HomePage() {
           <>
             <Button asChild size="lg">
               <Link href="/newsletter/">
-                Join waitlist
+                Join Waitlist
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="#book">View book</Link>
+              <Link href="#book">View Book</Link>
             </Button>
           </>
         }
       />
 
       <section
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Fund snapshot"
       >
         <StatCard
@@ -105,26 +105,24 @@ export default function HomePage() {
         />
       </section>
 
-      <MarketingSection id="book" title="Live book">
-        <div className="rounded-xl border border-border bg-card">
-          <div className="border-b border-border px-5 py-4">
-            <h3 className="text-sm font-medium text-muted-foreground">
-              NAV history
-            </h3>
+      <MarketingSection id="book" title="Live Book">
+        <div className="surface-panel overflow-hidden">
+          <div className="border-b border-border px-5 py-3.5">
+            <h3 className="text-label-13 text-muted-foreground">NAV history</h3>
           </div>
           <div className="px-3 py-5 sm:px-5">
             <NavAreaChart data={navSeries} />
           </div>
         </div>
 
-        <div className="mt-6 rounded-xl border border-border bg-card">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-4">
-            <h3 className="text-sm font-medium text-muted-foreground">
+        <div className="surface-panel mt-4 overflow-hidden">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-3.5">
+            <h3 className="text-label-13 text-muted-foreground">
               Open positions
             </h3>
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="ghost" size="sm" asChild>
               <Link href="/trades/">
-                All trades
+                All Trades
                 <ArrowRight className="size-3.5" />
               </Link>
             </Button>
@@ -135,15 +133,15 @@ export default function HomePage() {
         </div>
       </MarketingSection>
 
-      <MarketingSection title="How it works">
-        <div className="grid gap-4 sm:grid-cols-3">
+      <MarketingSection title="How It Works">
+        <div className="grid gap-3 sm:grid-cols-3">
           {[
             {
-              title: "Thesis first",
+              title: "Thesis First",
               body: "Written memo before every buy.",
             },
             {
-              title: "Publish the book",
+              title: "Publish the Book",
               body: "NAV, trades, and journal stay public.",
             },
             {
@@ -151,14 +149,11 @@ export default function HomePage() {
               body: "Weekly scorecards on Performance.",
             },
           ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-5"
-            >
-              <h3 className="text-base font-semibold tracking-tight">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
+            <div key={item.title} className="surface-panel p-5">
+              <h3 className="text-label-14 text-foreground">{item.title}</h3>
+              <p className="mt-2 text-copy-14 text-muted-foreground">
+                {item.body}
+              </p>
             </div>
           ))}
         </div>
@@ -176,18 +171,18 @@ export default function HomePage() {
       </MarketingSection>
 
       <MarketingSection title="Newsletter">
-        <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="surface-panel flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-md space-y-1">
-            <p className="text-base font-semibold tracking-tight">
+            <p className="text-label-14 text-foreground">
               Full theses & weekly picks
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-copy-14 text-muted-foreground">
               Free scoreboard on the site. Waitlist for the letter.
             </p>
           </div>
           <Button asChild>
             <Link href="/newsletter/">
-              Join waitlist
+              Join Waitlist
               <ArrowRight className="size-4" />
             </Link>
           </Button>
@@ -195,12 +190,12 @@ export default function HomePage() {
       </MarketingSection>
 
       <MarketingSection title="FAQ">
-        <FaqSection items={homeFaq} title="Common questions" />
+        <FaqSection items={homeFaq} title="Common Questions" />
         <Link
           href="/faq/"
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+          className="mt-4 inline-flex items-center gap-1.5 text-label-14 text-muted-foreground transition-colors hover:text-signal"
         >
-          View all
+          View All
           <ArrowRight className="size-3.5" />
         </Link>
       </MarketingSection>

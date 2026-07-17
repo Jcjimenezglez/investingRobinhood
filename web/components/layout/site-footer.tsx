@@ -16,27 +16,25 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-8 border-t border-border bg-muted/30">
+    <footer className="mt-8 border-t border-border">
       <div className="container-page space-y-10 py-12 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
               <LogoMark size="sm" />
-              <span className="text-sm font-semibold tracking-tight">
-                {BRAND.name}
-              </span>
+              <span className="text-label-14">{BRAND.name}</span>
             </div>
-            <p className="max-w-sm text-sm text-muted-foreground">
+            <p className="max-w-sm text-copy-14 text-muted-foreground">
               {BRAND.tagline}
             </p>
             <Button asChild>
-              <Link href="/newsletter/">Join the waitlist</Link>
+              <Link href="/newsletter/">Join Waitlist</Link>
             </Button>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">Explore</p>
+            <p className="text-label-14 text-foreground">Explore</p>
             <nav
-              className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground"
+              className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-copy-14 text-muted-foreground"
               aria-label="Footer"
             >
               {footerLinks.map((link) => (
@@ -53,14 +51,14 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3 border-t border-border pt-8">
-          <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
+          <p className="max-w-3xl text-[12px] leading-relaxed text-muted-foreground">
             <span className="font-medium text-foreground">Disclaimer.</span>{" "}
             {BRAND.name} publishes a public stock-picking track record versus
             SPY. Nothing on this site is investment advice, a solicitation, or a
             recommendation to buy or sell any security. Past performance does
             not guarantee future results.
           </p>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[12px] text-muted-foreground">
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
           </p>
         </div>

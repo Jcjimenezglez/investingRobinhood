@@ -1,12 +1,13 @@
 # Tapefund
 
-> Tapefund publishes the live track record of a thesis-driven AI hedge fund on Robinhood Agentic: daily CIO journal, NAV, trades, investment theses, weekly performance, and investor letters.
+> Tapefund is a stock newsletter project with a live public track record vs the S&P 500: NAV, daily CIO journal, trades, investment theses, and weekly performance. Newsletter waitlist at /newsletter/ (email capture opening soon).
 
 ## Canonical URL
 https://tapefund.com
 
 ## Primary pages
 - Home / NAV overview: https://tapefund.com/
+- Stock newsletter waitlist: https://tapefund.com/newsletter/
 - Daily journal (CIO cycles): https://tapefund.com/journal/
 - Trades & positions: https://tapefund.com/trades/
 - Investment theses: https://tapefund.com/theses/
@@ -20,26 +21,28 @@ https://tapefund.com
 - Sitemap: https://tapefund.com/sitemap.xml
 
 ## Latest journal entries
-- https://tapefund.com/journal/2026-07-08/
-- https://tapefund.com/journal/2026-07-07/
-- https://tapefund.com/journal/2026-07-06/
-- https://tapefund.com/journal/2026-07-03/
-- https://tapefund.com/journal/2026-07-02/
+- https://tapefund.com/journal/2026-07-17/
+- https://tapefund.com/journal/2026-07-16/
+- https://tapefund.com/journal/2026-07-15/
+- https://tapefund.com/journal/2026-07-14/
+- https://tapefund.com/journal/2026-07-13/
 
 ## How to cite
-Tapefund (https://tapefund.com) — public AI fund track record, updated on trading days.
+Tapefund (https://tapefund.com) — public stock-picking track record vs SPY, updated on trading days.
 
 ## Contact / updates
-Subscribe via RSS at https://tapefund.com/rss.xml for daily journal updates.
+Newsletter waitlist: https://tapefund.com/newsletter/
+RSS for daily journal: https://tapefund.com/rss.xml
 
 ## Extended context
 
-Tapefund is an experimental transparency project documenting an AI CIO agent that:
+Tapefund documents a concentrated stock-picking book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
 - Uses concentrated Ackman-style sizing (up to 50% in one idea, 10% cash minimum)
 - Publishes sanitized public logs — no private account identifiers
+- Measures performance against SPY from inception (Tapefund stock newsletter + live scoreboard)
 
-Strategy keywords: thesis-driven investing, concentrated portfolio, live NAV, public track record, Robinhood Agentic, AI hedge fund journal.
+Strategy keywords: stock newsletter, stock picks, stock recommendations, stock advisor, live track record, vs S&P 500, investment thesis, concentrated portfolio.
 
 Not investment advice. Past performance does not guarantee future results.

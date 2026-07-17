@@ -3,6 +3,7 @@ import { LogoMark } from "@/components/brand/logo-mark";
 import { BRAND } from "@/lib/site-config";
 
 const footerLinks = [
+  { href: "/newsletter/", label: "Newsletter" },
   { href: "/journal/", label: "Journal" },
   { href: "/trades/", label: "Trades" },
   { href: "/theses/", label: "Theses" },
@@ -36,9 +37,9 @@ export function SiteFooter() {
         </div>
         <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
           <span className="font-medium text-signal">Disclaimer.</span>{" "}
-          {BRAND.name} documents an experimental AI trading agent on a small
-          Robinhood Agentic account. Not investment advice. Past performance
-          does not guarantee future results.
+          {BRAND.name} documents an experimental concentrated stock-picking book
+          with a public track record vs SPY. Not investment advice. Past
+          performance does not guarantee future results.
         </p>
         <div className="h-px w-full bg-gradient-to-r from-signal/50 via-border to-violet/40" />
         <nav

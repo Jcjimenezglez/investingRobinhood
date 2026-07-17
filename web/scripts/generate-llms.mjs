@@ -27,13 +27,14 @@ const latestJournal = journalDates.slice(0, 5);
 
 const llmsTxt = `# ${SITE_NAME}
 
-> ${SITE_NAME} publishes the live track record of a thesis-driven AI hedge fund on Robinhood Agentic: daily CIO journal, NAV, trades, investment theses, weekly performance, and investor letters.
+> ${SITE_NAME} is a stock newsletter project with a live public track record vs the S&P 500: NAV, daily CIO journal, trades, investment theses, and weekly performance. Newsletter waitlist at /newsletter/ (email capture opening soon).
 
 ## Canonical URL
 ${SITE_URL}
 
 ## Primary pages
 - Home / NAV overview: ${SITE_URL}/
+- Stock newsletter waitlist: ${SITE_URL}/newsletter/
 - Daily journal (CIO cycles): ${SITE_URL}/journal/
 - Trades & positions: ${SITE_URL}/trades/
 - Investment theses: ${SITE_URL}/theses/
@@ -50,22 +51,24 @@ ${SITE_URL}
 ${latestJournal.map((d) => `- ${SITE_URL}/journal/${d}/`).join("\n")}
 
 ## How to cite
-${SITE_NAME} (${SITE_URL}) — public AI fund track record, updated on trading days.
+${SITE_NAME} (${SITE_URL}) — public stock-picking track record vs SPY, updated on trading days.
 
 ## Contact / updates
-Subscribe via RSS at ${SITE_URL}/rss.xml for daily journal updates.
+Newsletter waitlist: ${SITE_URL}/newsletter/
+RSS for daily journal: ${SITE_URL}/rss.xml
 `;
 
 const llmsFullTxt = `${llmsTxt}
 ## Extended context
 
-${SITE_NAME} is an experimental transparency project documenting an AI CIO agent that:
+${SITE_NAME} documents a concentrated stock-picking book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
 - Uses concentrated Ackman-style sizing (up to 50% in one idea, 10% cash minimum)
 - Publishes sanitized public logs — no private account identifiers
+- Measures performance against SPY from inception (${SITE_NAME} stock newsletter + live scoreboard)
 
-Strategy keywords: thesis-driven investing, concentrated portfolio, live NAV, public track record, Robinhood Agentic, AI hedge fund journal.
+Strategy keywords: stock newsletter, stock picks, stock recommendations, stock advisor, live track record, vs S&P 500, investment thesis, concentrated portfolio.
 
 Not investment advice. Past performance does not guarantee future results.
 `;

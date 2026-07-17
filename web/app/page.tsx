@@ -49,19 +49,46 @@ export default function HomePage() {
             <h1 className="hud-title max-w-3xl text-3xl text-foreground sm:text-5xl">
               <span className="text-signal">{BRAND.name}</span>
               <span className="mt-2 block text-xl font-semibold tracking-[0.08em] text-foreground/90 sm:text-3xl">
-                Thesis-driven AI fund telemetry
+                Stock newsletter with a live track record
               </span>
             </h1>
             <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
-              {BRAND.name} publishes the live NAV, daily CIO journal, trades, and
-              investment theses of a concentrated AI hedge fund that started at $
-              {BRAND.startingNav} on {BRAND.inceptionDate}. Current NAV is $
-              {snapshot.nav.toFixed(2)} ({snapshot.returnPct >= 0 ? "+" : ""}
-              {snapshot.returnPct.toFixed(2)}% since inception) with{" "}
-              {snapshot.positions} open position
-              {snapshot.positions !== 1 ? "s" : ""} — updated on trading days from
-              live Agentic account data.
+              {BRAND.name} publishes a live stock-picking track record vs the
+              S&amp;P 500 — NAV, CIO journal, trades, and theses since{" "}
+              {BRAND.inceptionDate} (starting ${BRAND.startingNav}). Current NAV
+              is ${snapshot.nav.toFixed(2)} (
+              {snapshot.returnPct >= 0 ? "+" : ""}
+              {snapshot.returnPct.toFixed(2)}% ) with {snapshot.positions} open
+              position{snapshot.positions !== 1 ? "s" : ""}. Free scoreboard on
+              the site; join the{" "}
+              <Link href="/newsletter/" className="hud-link">
+                newsletter waitlist
+              </Link>{" "}
+              for full theses and weekly picks.
             </DirectAnswer>
+            <div className="flex flex-wrap gap-2 pt-1">
+              <Button
+                size="sm"
+                asChild
+                className="font-data uppercase tracking-[0.14em]"
+              >
+                <Link href="/newsletter/">
+                  Newsletter waitlist
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                asChild
+                className="font-data uppercase tracking-[0.14em]"
+              >
+                <Link href="/performance/">
+                  vs SPY
+                  <ArrowRight className="size-3.5" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           <div className="grid gap-3 border border-border/70 bg-background/40 p-4 backdrop-blur-sm">

@@ -1,0 +1,25 @@
+{
+  "week": "2026-W29",
+  "navUsd": 103.38,
+  "spyReturnPct": -0.61,
+  "fundReturnPct": 3.38,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.6,
+    "catalyst_proximity_days": 0.8,
+    "ackman_confluence": 0.8,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.02,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund +3.38% vs SPY −0.61% since inception (+3.99% alpha); WoW +0.99% while SPY −1.24%. Wed HWM $105.46 validated catalyst proximity into earnings; Fri pullback preserved margin of safety. MSFT marginally led AMZN on return. Catalyst proximity and ackman_confluence remain top signals; hold conviction thresholds until post-earnings. Trim social_sentiment — no weekly edge."
+}

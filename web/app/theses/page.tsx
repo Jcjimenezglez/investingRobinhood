@@ -39,7 +39,7 @@ export default function ThesesPage() {
           <FileText className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">Theses</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Theses</h1>
           <DirectAnswer className="mt-2">
             Every {BRAND.name} BUY starts with a full written memo — business
             quality, mispricing, catalyst, and kill criteria — published here

@@ -1,23 +1,23 @@
 import { cn } from "@/lib/utils";
 
-type HudPanelProps = React.HTMLAttributes<HTMLDivElement> & {
+type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
   accent?: boolean;
   scanline?: boolean;
 };
 
+/** Blocks-style surface (kept HudPanel name for existing imports). */
 export function HudPanel({
   className,
   accent = false,
-  scanline = false,
+  scanline: _scanline = false,
   children,
   ...props
-}: HudPanelProps) {
+}: SectionProps) {
   return (
     <div
       className={cn(
-        "hud-panel",
-        accent && "hud-panel-accent",
-        scanline && "hud-scanline",
+        "rounded-xl border border-border bg-card text-card-foreground",
+        accent && "border-foreground/15",
         className,
       )}
       {...props}
@@ -35,7 +35,7 @@ export function HudPanelHeader({
   return (
     <div
       className={cn(
-        "flex flex-col gap-1 border-b border-border/80 px-5 pb-4 pt-5 sm:flex-row sm:items-end sm:justify-between",
+        "flex flex-col gap-1 border-b border-border px-5 pb-4 pt-5 sm:flex-row sm:items-end sm:justify-between",
         className,
       )}
       {...props}

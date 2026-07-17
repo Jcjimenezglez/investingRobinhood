@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Orbitron, Share_Tech_Mono } from "next/font/google";
+import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -12,22 +12,16 @@ import {
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
 
-const body = IBM_Plex_Sans({
+const body = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
 
-const display = Orbitron({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const mono = Share_Tech_Mono({
-  weight: "400",
-  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -55,8 +49,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f4f6" },
-    { media: "(prefers-color-scheme: dark)", color: "#121212" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
   ],
 };
 
@@ -70,19 +64,21 @@ export default function RootLayout({
       <head>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
-      <body
-        className={`${body.variable} ${display.variable} ${mono.variable} font-sans antialiased`}
-      >
+      <body className={`${body.variable} ${mono.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
-          <SiteHeader />
-          <main className="container-page py-8 sm:py-10">{children}</main>
-          <SiteFooter />
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="container-page flex-1 py-10 sm:py-14">
+              {children}
+            </main>
+            <SiteFooter />
+          </div>
         </ThemeProvider>
       </body>
     </html>

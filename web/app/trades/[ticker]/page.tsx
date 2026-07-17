@@ -70,7 +70,7 @@ export default async function TickerPage({
           <TrendingUp className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">{upper}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{upper}</h1>
           <DirectAnswer className="mt-2 text-sm text-muted-foreground">
             {BRAND.name} history for {upper}: current position, linked
             investment theses, and every CIO journal mention — updated from live

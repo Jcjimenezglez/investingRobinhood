@@ -68,7 +68,7 @@ export default async function JournalDayPage({
             <Calendar className="size-5" strokeWidth={1.5} />
           </div>
           <div>
-            <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Journal {date}
             </h1>
             <DirectAnswer className="mt-2 text-sm text-muted-foreground">

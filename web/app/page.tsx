@@ -39,93 +39,47 @@ export default function HomePage() {
   const recentDays = getJournalDays().slice(0, 10);
   const positions = getPositions().filter((p) => p.status === "open");
   const latestLetter = getLetters()[0];
+  const returnLabel = `${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`;
 
   return (
-    <div className="space-y-7">
-      <section className="hud-panel hud-panel-accent hud-scanline relative overflow-hidden px-5 py-7 sm:px-7 sm:py-9">
-        <div className="relative z-10 grid gap-6 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
-          <div className="space-y-4">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hud-live">
-                <span className="hud-live-dot" />
-                Live track record
-              </span>
-              <span className="font-data text-[10px] uppercase tracking-[0.2em] text-violet">
-                PR // {BRAND.inceptionDate}
-              </span>
-            </div>
-            <h1 className="hud-title max-w-3xl text-3xl text-foreground sm:text-5xl">
-              <span className="text-signal">{BRAND.name}</span>
-              <span className="mt-2 block text-xl font-semibold tracking-[0.08em] text-foreground/90 sm:text-3xl">
-                Stock newsletter with a live track record
-              </span>
-            </h1>
-            <DirectAnswer className="max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground sm:text-base">
-              {BRAND.name} publishes a live stock-picking track record vs the
-              S&amp;P 500 — NAV, CIO journal, trades, and theses since{" "}
-              {BRAND.inceptionDate} (starting {formatStartingNav()}).
-              Current NAV is {formatLedgerUsd(snapshot.nav, { digits: 2 })} (
-              {snapshot.returnPct >= 0 ? "+" : ""}
-              {snapshot.returnPct.toFixed(2)}% ) with {snapshot.positions} open
-              position{snapshot.positions !== 1 ? "s" : ""}. Free scoreboard on
-              the site; join the{" "}
-              <Link href="/newsletter/" className="hud-link">
-                newsletter waitlist
-              </Link>{" "}
-              for full theses and weekly picks.
-            </DirectAnswer>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Button
-                size="sm"
-                asChild
-                className="font-data uppercase tracking-[0.14em]"
-              >
-                <Link href="/newsletter/">
-                  Newsletter waitlist
-                  <ArrowRight className="size-3.5" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                asChild
-                className="font-data uppercase tracking-[0.14em]"
-              >
-                <Link href="/performance/">
-                  vs SPY
-                  <ArrowRight className="size-3.5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          <div className="grid gap-3 border border-border/70 bg-background/40 p-4 backdrop-blur-sm">
-            <div className="flex items-center justify-between">
-              <span className="hud-label">System status</span>
-              <span className="font-data text-[10px] uppercase tracking-[0.16em] text-signal">
-                Online
-              </span>
-            </div>
-            <div className="space-y-2 font-data text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-              <div className="flex justify-between border-b border-border/60 pb-2">
-                <span>NAV sync</span>
-                <span className="text-foreground">{snapshot.lastUpdated}</span>
-              </div>
-              <div className="flex justify-between border-b border-border/60 pb-2">
-                <span>Open book</span>
-                <span className="text-foreground">{snapshot.positions} names</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Cash floor</span>
-                <span className="text-foreground">{snapshot.cashPct.toFixed(0)}%</span>
-              </div>
-            </div>
-          </div>
+    <div className="space-y-12">
+      <section className="space-y-6">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs text-muted-foreground">
+          <span className="size-1.5 rounded-full bg-emerald-600" />
+          Live track record · since {BRAND.inceptionDate}
+        </div>
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+          {BRAND.name}
+          <span className="mt-3 block text-2xl font-medium text-muted-foreground sm:text-3xl">
+            Stock newsletter with a live track record
+          </span>
+        </h1>
+        <DirectAnswer className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          Live NAV, CIO journal, trades, and theses vs the S&amp;P 500. Started at{" "}
+          {formatStartingNav()} on {BRAND.inceptionDate}. Current NAV{" "}
+          {formatLedgerUsd(snapshot.nav, { digits: 2 })} ({returnLabel}) with{" "}
+          {snapshot.positions} open position
+          {snapshot.positions !== 1 ? "s" : ""}. Join the{" "}
+          <Link href="/newsletter/" className="font-medium text-foreground underline-offset-4 hover:underline">
+            newsletter waitlist
+          </Link>{" "}
+          for full theses and weekly picks.
+        </DirectAnswer>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild>
+            <Link href="/newsletter/">
+              Newsletter waitlist
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/performance/">Performance vs SPY</Link>
+          </Button>
         </div>
       </section>
 
       <section
-        className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Fund snapshot"
       >
         <StatCard
@@ -137,7 +91,7 @@ export default function HomePage() {
         />
         <StatCard
           title="Return"
-          value={`${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`}
+          value={returnLabel}
           sub={`Since inception (${formatStartingNav()})`}
           icon={Percent}
         />
@@ -155,16 +109,13 @@ export default function HomePage() {
         />
       </section>
 
-      <HudPanel accent>
+      <HudPanel>
         <HudPanelHeader>
           <div>
-            <p className="hud-label">Telemetry</p>
-            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+            <p className="text-sm text-muted-foreground">Performance</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-tight">
               NAV history
             </h2>
-            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-              Fund value since {BRAND.inceptionDate} inception
-            </p>
           </div>
         </HudPanelHeader>
         <HudPanelBody className="pl-2 pt-4">
@@ -175,15 +126,12 @@ export default function HomePage() {
       <HudPanel>
         <HudPanelHeader>
           <div>
-            <p className="hud-label">Book</p>
-            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+            <p className="text-sm text-muted-foreground">Book</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-tight">
               Open positions
             </h2>
-            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-              Conviction-sized allocation
-            </p>
           </div>
-          <Button variant="outline" size="sm" asChild className="font-data uppercase tracking-[0.14em]">
+          <Button variant="outline" size="sm" asChild>
             <Link href="/trades/">
               All trades
               <ArrowRight className="size-3.5" />
@@ -198,15 +146,12 @@ export default function HomePage() {
       <HudPanel>
         <HudPanelHeader>
           <div>
-            <p className="hud-label">CIO feed</p>
-            <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
-              Recent journal
+            <p className="text-sm text-muted-foreground">Journal</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-tight">
+              Recent decisions
             </h2>
-            <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-              Daily decision log
-            </p>
           </div>
-          <Button variant="outline" size="sm" asChild className="font-data uppercase tracking-[0.14em]">
+          <Button variant="outline" size="sm" asChild>
             <Link href="/journal/">
               Full journal
               <ArrowRight className="size-3.5" />
@@ -219,14 +164,14 @@ export default function HomePage() {
       </HudPanel>
 
       {latestLetter && (
-        <HudPanel accent>
+        <HudPanel>
           <HudPanelHeader>
             <div>
-              <p className="hud-label">Dispatch</p>
-              <h2 className="hud-title mt-1 text-base tracking-[0.12em]">
+              <p className="text-sm text-muted-foreground">Letters</p>
+              <h2 className="mt-1 text-lg font-semibold tracking-tight">
                 Latest investor letter
               </h2>
-              <p className="mt-1 font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {latestLetter.date}
               </p>
             </div>
@@ -234,24 +179,25 @@ export default function HomePage() {
           <HudPanelBody>
             <Link
               href={`/letters/${latestLetter.slug}/`}
-              className="group flex items-center justify-between border border-border bg-background/35 px-4 py-4 transition-colors hover:border-signal/50 hover:bg-muted/40"
+              className="group flex items-center justify-between rounded-lg border border-border px-4 py-4 transition-colors hover:bg-muted/50"
             >
-              <span className="font-data text-sm uppercase tracking-[0.08em]">
-                {latestLetter.title}
-              </span>
-              <ArrowRight className="size-4 text-signal transition-transform group-hover:translate-x-0.5" />
+              <span className="text-sm font-medium">{latestLetter.title}</span>
+              <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
             </Link>
           </HudPanelBody>
         </HudPanel>
       )}
 
-      <FaqSection items={homeFaq} />
-      <p className="font-data text-xs uppercase tracking-[0.14em] text-muted-foreground">
-        <Link href="/faq/" className="hud-link">
+      <section className="space-y-4">
+        <FaqSection items={homeFaq} />
+        <Link
+          href="/faq/"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 hover:underline"
+        >
           View all FAQ
           <ArrowRight className="size-3.5" />
         </Link>
-      </p>
+      </section>
 
       <JsonLd data={faqPageJsonLd(homeFaq)} />
     </div>

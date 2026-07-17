@@ -4,17 +4,13 @@ import { cn } from "@/lib/utils";
 
 type WaitlistFormProps = {
   className?: string;
-  /** Shown under the CTA — keep honest: we are not saving emails yet. */
   note?: string;
 };
 
-/**
- * Waitlist UI only — no backend / Resend yet.
- * Email field is disabled so we never pretend to capture addresses.
- */
+/** Waitlist UI only — no backend yet. */
 export function WaitlistForm({
   className,
-  note = "Waitlist opens soon. We are not collecting emails yet — check back here.",
+  note = "Waitlist opens soon. We are not collecting emails yet.",
 }: WaitlistFormProps) {
   return (
     <div className={cn("space-y-3", className)}>
@@ -32,16 +28,14 @@ export function WaitlistForm({
             placeholder="you@email.com"
             autoComplete="email"
             aria-disabled="true"
-            className="h-10 w-full border border-border bg-background/50 pl-10 pr-3 font-data text-sm text-foreground placeholder:text-muted-foreground/70 disabled:cursor-not-allowed disabled:opacity-70"
+            className="h-10 w-full rounded-md border border-border bg-background pl-10 pr-3 text-sm text-foreground placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60"
           />
         </div>
-        <Button type="button" disabled className="h-10 shrink-0 font-data uppercase tracking-[0.14em]">
+        <Button type="button" disabled className="h-10 shrink-0">
           Join waitlist — opening soon
         </Button>
       </div>
-      <p className="font-data text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-        {note}
-      </p>
+      <p className="text-xs text-muted-foreground">{note}</p>
     </div>
   );
 }

@@ -36,65 +36,60 @@
   --font-mono: var(--font-mono);
 }
 
+/* shadcn zinc / Blocks-style — light-first, one accent */
 :root {
-  --radius: 0.125rem;
-  --background: #f3f4f6;
-  --foreground: #111318;
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #09090b;
   --card: #ffffff;
-  --card-foreground: #111318;
+  --card-foreground: #09090b;
   --popover: #ffffff;
-  --popover-foreground: #111318;
-  --primary: #111318;
-  --primary-foreground: #f8fafc;
-  --secondary: #e5e7eb;
-  --secondary-foreground: #111318;
-  --muted: #eef0f3;
-  --muted-foreground: #667085;
-  --accent: #e5e7eb;
-  --accent-foreground: #111318;
-  --destructive: #c2410c;
-  --border: #d0d5dd;
-  --input: #d0d5dd;
-  --ring: #ff5a1f;
-  --chart-1: #ff5a1f;
-  --chart-2: #7c6bb5;
-  --signal: #ff5a1f;
-  --signal-foreground: #111318;
-  --violet: #7c6bb5;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #dc2626;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+  --chart-1: #18181b;
+  --chart-2: #a1a1aa;
+  --signal: #18181b;
+  --signal-foreground: #fafafa;
+  --violet: #71717a;
   --brand: #ff4d8d;
-  --grid-line: rgba(17, 19, 24, 0.05);
-  --panel-shine: rgba(255, 90, 31, 0.07);
-  --hud-cut: 14px;
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #f2f0ea;
-  --card: #181818;
-  --card-foreground: #f2f0ea;
-  --popover: #1c1c1c;
-  --popover-foreground: #f2f0ea;
-  --primary: #f2f0ea;
-  --primary-foreground: #121212;
-  --secondary: #242424;
-  --secondary-foreground: #f2f0ea;
-  --muted: #222222;
-  --muted-foreground: #9a958c;
-  --accent: #242424;
-  --accent-foreground: #f2f0ea;
-  --destructive: #ff7a45;
-  --border: #33302c;
-  --input: #33302c;
-  --ring: #ff5a1f;
-  --chart-1: #ff5a1f;
-  --chart-2: #9b8cff;
-  --signal: #ff5a1f;
-  --signal-foreground: #121212;
-  --violet: #9b8cff;
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #09090b;
+  --popover-foreground: #fafafa;
+  --primary: #fafafa;
+  --primary-foreground: #18181b;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d4d4d8;
+  --chart-1: #fafafa;
+  --chart-2: #71717a;
+  --signal: #fafafa;
+  --signal-foreground: #18181b;
+  --violet: #a1a1aa;
   --brand: #ff4d8d;
-  --grid-line: rgba(242, 240, 234, 0.045);
-  --panel-shine: rgba(255, 90, 31, 0.12);
-  --hud-cut: 14px;
 }
 
 @layer base {
@@ -108,45 +103,32 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
     font-size: 1rem;
-    line-height: 1.65;
-    letter-spacing: 0.01em;
-    font-feature-settings: "ss01" 1, "kern" 1;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, var(--panel-shine), transparent 55%),
-      linear-gradient(var(--grid-line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 100% 100%, 28px 28px, 28px 28px;
-    background-attachment: fixed;
-  }
-
-  p {
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--signal) 55%, transparent);
-    color: var(--foreground);
+    background: color-mix(in oklab, var(--foreground) 16%, transparent);
   }
 }
 
 @layer utilities {
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
   }
 
   .font-display {
-    font-family: var(--font-display), Orbitron, ui-sans-serif, sans-serif;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
   .font-body {
-    font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
-    letter-spacing: 0.01em;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
   .font-data {
     font-family: var(--font-mono), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
   }
 
   .text-signal {
@@ -166,177 +148,87 @@
   }
 }
 
-/* HUD panel — clipped corners + technical frame */
+/* Legacy class names → Blocks-style surfaces (no HUD chrome) */
 .hud-panel {
-  position: relative;
-  background: var(--card);
-  color: var(--card-foreground);
-  border: 1px solid var(--border);
-  clip-path: polygon(
-    0 0,
-    calc(100% - var(--hud-cut)) 0,
-    100% var(--hud-cut),
-    100% 100%,
-    var(--hud-cut) 100%,
-    0 calc(100% - var(--hud-cut))
-  );
-}
-
-.hud-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, color-mix(in oklab, var(--signal) 35%, transparent) 0 10px, transparent 10px) top left / 18px 18px no-repeat,
-    linear-gradient(-45deg, color-mix(in oklab, var(--violet) 40%, transparent) 0 8px, transparent 8px) bottom right / 16px 16px no-repeat;
+  @apply rounded-xl border border-border bg-card text-card-foreground shadow-none;
 }
 
 .hud-panel-accent {
-  position: relative;
+  @apply border-border;
 }
 
-.hud-panel-accent::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 42px;
-  height: 4px;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--signal),
-    var(--signal) 3px,
-    transparent 3px,
-    transparent 6px
-  );
+.hud-panel-accent::after,
+.hud-panel::before,
+.hud-scanline::after {
+  content: none !important;
+  display: none !important;
 }
 
 .hud-label {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted-foreground);
+  @apply text-xs font-medium tracking-wide text-muted-foreground;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 .hud-title {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  text-transform: uppercase;
+  @apply font-semibold tracking-tight text-foreground;
+  text-transform: none;
+  letter-spacing: -0.025em;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.15;
 }
 
 .hud-value {
+  @apply font-semibold tabular-nums tracking-tight;
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
 }
 
 .hud-live {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--signal);
+  @apply inline-flex items-center gap-2 rounded-full border border-border bg-muted/60 px-2.5 py-1 text-xs font-medium text-muted-foreground;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 .hud-live-dot {
-  width: 0.45rem;
-  height: 0.45rem;
+  width: 0.375rem;
+  height: 0.375rem;
   border-radius: 9999px;
-  background: var(--signal);
-  box-shadow: 0 0 0 0 color-mix(in oklab, var(--signal) 70%, transparent);
-  animation: hud-pulse 1.8s ease-out infinite;
-}
-
-@keyframes hud-pulse {
-  0% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--signal) 55%, transparent);
-  }
-  70% {
-    box-shadow: 0 0 0 8px transparent;
-  }
-  100% {
-    box-shadow: 0 0 0 0 transparent;
-  }
+  background: #16a34a;
+  box-shadow: none;
+  animation: none;
 }
 
 .hud-scanline {
-  position: relative;
-  overflow: hidden;
-}
-
-.hud-scanline::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    color-mix(in oklab, var(--signal) 6%, transparent) 50%,
-    transparent 100%
-  );
-  background-size: 100% 220%;
-  animation: hud-scan 7s linear infinite;
-  opacity: 0.55;
-}
-
-@keyframes hud-scan {
-  0% {
-    background-position: 0 -40%;
-  }
-  100% {
-    background-position: 0 140%;
-  }
+  overflow: visible;
 }
 
 .hud-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--signal);
-  transition: color 160ms ease, transform 160ms ease;
+  @apply inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 hover:underline;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 .hud-link:hover {
-  color: color-mix(in oklab, var(--signal) 80%, white);
+  color: var(--foreground);
 }
 
 .prose-fund {
   @apply prose prose-neutral max-w-none dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-p:text-muted-foreground prose-strong:text-foreground prose-table:text-sm;
-  font-family: var(--font-body), "IBM Plex Sans", ui-sans-serif, sans-serif;
-  --tw-prose-links: var(--signal);
-  --tw-prose-invert-links: var(--signal);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --tw-prose-links: var(--foreground);
+  --tw-prose-invert-links: var(--foreground);
   --tw-prose-body: var(--muted-foreground);
-}
-
-.prose-fund p,
-.prose-fund li {
-  line-height: 1.75;
-  letter-spacing: 0.01em;
 }
 
 .prose-fund h1,
 .prose-fund h2,
 .prose-fund h3 {
-  font-family: var(--font-display), Orbitron, ui-sans-serif, sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  text-transform: none;
 }
 
 .prose-fund table {
@@ -349,14 +241,5 @@
 }
 
 .prose-fund th {
-  @apply bg-muted text-xs font-medium uppercase tracking-wide text-muted-foreground;
-  font-family: var(--font-mono), ui-monospace, monospace;
-  letter-spacing: 0.12em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hud-live-dot,
-  .hud-scanline::after {
-    animation: none;
-  }
+  @apply bg-muted text-xs font-medium text-muted-foreground;
 }

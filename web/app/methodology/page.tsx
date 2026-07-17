@@ -79,7 +79,7 @@ export default function MethodologyPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">Methodology</h1>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
         <DirectAnswer className="mt-3">
           {BRAND.name} runs a concentrated, thesis-driven AI fund — not day
           trading and not passive indexing. The CIO agent writes a full

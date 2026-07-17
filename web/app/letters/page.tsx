@@ -39,7 +39,7 @@ export default function LettersPage() {
           <ScrollText className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="hud-title text-2xl tracking-[0.1em] sm:text-3xl">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Investor letters
           </h1>
           <DirectAnswer className="mt-2">

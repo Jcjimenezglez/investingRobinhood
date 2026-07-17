@@ -14,10 +14,10 @@ export function DecisionBadge({
     <Badge
       variant="outline"
       className={cn(
-        "rounded-none border-border font-data text-[10px] uppercase tracking-[0.16em]",
-        d === "HOLD" && "border-violet/50 bg-violet/10 text-violet",
-        d === "BUY" && "border-signal/60 bg-signal/15 text-signal",
-        d === "SELL" && "border-foreground/40 bg-foreground/5 text-foreground",
+        "rounded-md border-border text-xs font-medium",
+        d === "HOLD" && "bg-muted text-muted-foreground",
+        d === "BUY" && "border-emerald-600/30 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
+        d === "SELL" && "border-foreground/20 bg-foreground/5 text-foreground",
         className,
       )}
     >
@@ -26,18 +26,15 @@ export function DecisionBadge({
   );
 }
 
-export function StatusBadge({
-  status,
-}: {
-  status: string;
-}) {
+export function StatusBadge({ status }: { status: string }) {
   const s = status.toLowerCase();
   return (
     <Badge
       variant="outline"
       className={cn(
-        "rounded-none font-data text-[10px] uppercase tracking-[0.16em]",
-        s === "open" && "border-signal/50 bg-signal/10 text-signal",
+        "rounded-md text-xs font-medium capitalize",
+        s === "open" &&
+          "border-emerald-600/30 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
         s !== "open" && "border-border text-muted-foreground",
       )}
     >

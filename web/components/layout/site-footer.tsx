@@ -16,25 +16,25 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-8 border-t border-border bg-muted/30">
+    <footer className="relative z-10 mt-8 border-t border-border/80">
       <div className="container-page space-y-10 py-12 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
               <LogoMark size="sm" />
-              <span className="text-sm font-semibold tracking-tight">
+              <span className="text-sm font-medium tracking-tight">
                 {BRAND.name}
               </span>
             </div>
             <p className="max-w-sm text-sm text-muted-foreground">
               {BRAND.tagline}
             </p>
-            <Button asChild>
+            <Button asChild className="rounded-full">
               <Link href="/newsletter/">Join the waitlist</Link>
             </Button>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">Explore</p>
+            <p className="text-[13px] font-medium text-foreground">Explore</p>
             <nav
               className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground"
               aria-label="Footer"
@@ -43,7 +43,7 @@ export function SiteFooter() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="transition-colors hover:text-foreground"
+                  className="transition-colors duration-200 hover:text-foreground"
                 >
                   {link.label}
                 </Link>
@@ -52,7 +52,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="space-y-3 border-t border-border pt-8">
+        <div className="space-y-3 border-t border-border/80 pt-8">
           <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
             <span className="font-medium text-foreground">Disclaimer.</span>{" "}
             {BRAND.name} publishes a public stock-picking track record versus

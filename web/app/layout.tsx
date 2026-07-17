@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -12,9 +12,8 @@ import {
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
 
-const body = DM_Sans({
+const body = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -49,8 +48,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f8f8" },
+    { media: "(prefers-color-scheme: dark)", color: "#08090a" },
   ],
 };
 
@@ -67,14 +66,18 @@ export default function RootLayout({
       <body className={`${body.variable} ${mono.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
-          <div className="flex min-h-screen flex-col">
+          <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-[420px] hero-atmosphere"
+            />
             <SiteHeader />
-            <main className="container-page flex-1 py-10 sm:py-14">
+            <main className="container-page relative z-10 flex-1 py-10 sm:py-14">
               {children}
             </main>
             <SiteFooter />

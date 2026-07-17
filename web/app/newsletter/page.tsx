@@ -60,7 +60,7 @@ export default function NewsletterPage() {
     <PageShell>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
             Waitlist · opening soon
           </div>
         }
@@ -81,7 +81,7 @@ export default function NewsletterPage() {
         }
       />
 
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           title="NAV"
           value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
@@ -110,30 +110,30 @@ export default function NewsletterPage() {
       </section>
 
       <MarketingSection title="Free vs letter">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-base font-semibold">On the site</h3>
-            <ul className="mt-4 space-y-2">
+        <div className="grid gap-3 md:grid-cols-2">
+          <div className="rounded-lg border border-border bg-card/80 p-6">
+            <h3 className="text-[15px] font-medium tracking-tight">On the site</h3>
+            <ul className="mt-4 space-y-2.5">
               {freeItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2.5 text-sm text-muted-foreground"
                 >
-                  <Check className="size-4 shrink-0 text-foreground" />
+                  <Check className="size-4 shrink-0 text-violet" strokeWidth={1.75} />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-base font-semibold">In the newsletter</h3>
-            <ul className="mt-4 space-y-2">
+          <div className="rounded-lg border border-violet/25 bg-violet/[0.04] p-6">
+            <h3 className="text-[15px] font-medium tracking-tight">In the newsletter</h3>
+            <ul className="mt-4 space-y-2.5">
               {letterItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2.5 text-sm text-muted-foreground"
                 >
-                  <Mail className="size-4 shrink-0 text-muted-foreground" />
+                  <Mail className="size-4 shrink-0 text-violet" strokeWidth={1.75} />
                   {item}
                 </li>
               ))}
@@ -143,7 +143,7 @@ export default function NewsletterPage() {
       </MarketingSection>
 
       <MarketingSection id="waitlist" title="Waitlist">
-        <div className="max-w-lg rounded-xl border border-border bg-card p-6">
+        <div className="max-w-lg rounded-lg border border-border bg-card/80 p-6">
           <WaitlistForm />
         </div>
       </MarketingSection>

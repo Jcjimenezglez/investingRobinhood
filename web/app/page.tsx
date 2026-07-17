@@ -52,8 +52,8 @@ export default function HomePage() {
     <PageShell>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
-            <span className="size-1.5 rounded-full bg-emerald-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+            <span className="size-1.5 rounded-full bg-emerald-500" />
             Live since {BRAND.inceptionDate}
           </div>
         }
@@ -75,7 +75,7 @@ export default function HomePage() {
       />
 
       <section
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4"
         aria-label="Fund snapshot"
       >
         <StatCard
@@ -106,9 +106,9 @@ export default function HomePage() {
       </section>
 
       <MarketingSection id="book" title="Live book">
-        <div className="rounded-xl border border-border bg-card">
-          <div className="border-b border-border px-5 py-4">
-            <h3 className="text-sm font-medium text-muted-foreground">
+        <div className="surface-panel overflow-hidden">
+          <div className="border-b border-border px-5 py-3.5">
+            <h3 className="text-[13px] font-medium text-muted-foreground">
               NAV history
             </h3>
           </div>
@@ -117,12 +117,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-xl border border-border bg-card">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-4">
-            <h3 className="text-sm font-medium text-muted-foreground">
+        <div className="surface-panel mt-4 overflow-hidden">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-3.5">
+            <h3 className="text-[13px] font-medium text-muted-foreground">
               Open positions
             </h3>
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="ghost" size="sm" asChild>
               <Link href="/trades/">
                 All trades
                 <ArrowRight className="size-3.5" />
@@ -136,7 +136,7 @@ export default function HomePage() {
       </MarketingSection>
 
       <MarketingSection title="How it works">
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-3">
           {[
             {
               title: "Thesis first",
@@ -153,9 +153,9 @@ export default function HomePage() {
           ].map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-border bg-card p-5"
+              className="rounded-lg border border-border bg-card/80 p-5 transition-colors duration-200 hover:border-foreground/15"
             >
-              <h3 className="text-base font-semibold tracking-tight">
+              <h3 className="text-[15px] font-medium tracking-tight">
                 {item.title}
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
@@ -176,16 +176,16 @@ export default function HomePage() {
       </MarketingSection>
 
       <MarketingSection title="Newsletter">
-        <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 rounded-lg border border-border bg-card/80 p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="max-w-md space-y-1">
-            <p className="text-base font-semibold tracking-tight">
+            <p className="text-[15px] font-medium tracking-tight">
               Full theses & weekly picks
             </p>
             <p className="text-sm text-muted-foreground">
               Free scoreboard on the site. Waitlist for the letter.
             </p>
           </div>
-          <Button asChild>
+          <Button asChild className="rounded-full">
             <Link href="/newsletter/">
               Join waitlist
               <ArrowRight className="size-4" />
@@ -198,7 +198,7 @@ export default function HomePage() {
         <FaqSection items={homeFaq} title="Common questions" />
         <Link
           href="/faq/"
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-violet"
         >
           View all
           <ArrowRight className="size-3.5" />

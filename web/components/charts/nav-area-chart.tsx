@@ -1,6 +1,6 @@
 "use client";
 
-import { Area, AreaChart, CartesianGrid } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import {
   ChartContainer,
   ChartTooltip,
@@ -19,14 +19,24 @@ const chartConfig = {
 };
 
 export function NavAreaChart({ data }: { data: NavPoint[] }) {
-  const chartData = data.map((p) => ({
-    ...p,
-  }));
-
   return (
     <ChartContainer config={chartConfig} className="aspect-[2.8/1] h-[220px] w-full">
-      <AreaChart data={chartData} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>
+      <AreaChart data={data} margin={{ left: 0, right: 8, top: 8, bottom: 0 }}>
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
+        <XAxis
+          dataKey="date"
+          tick={false}
+          tickLine={false}
+          axisLine={{ stroke: "var(--border)", strokeWidth: 1 }}
+          height={12}
+        />
+        <YAxis
+          tick={false}
+          tickLine={false}
+          axisLine={{ stroke: "var(--border)", strokeWidth: 1 }}
+          width={12}
+          domain={["dataMin - 1", "dataMax + 1"]}
+        />
         <ChartTooltip
           content={
             <ChartTooltipContent

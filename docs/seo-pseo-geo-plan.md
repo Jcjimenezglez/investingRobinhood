@@ -252,14 +252,14 @@ Use short self-contained paragraphs:
 1. Rewrite homepage message: Stock Advisor–style newsletter + live vs SPY (not “AI hedge fund telemetry”).  
 2. Update `BRAND` tagline, description, keywords.  
 3. FAQ: newsletter + free vs paid.  
-4. Single primary CTA → waitlist or `/newsletter/` (even if Substack/Ghost embed).
+4. Single primary CTA → `/newsletter/` waitlist landing (email capture deferred; UI-only for now).
 
 ### Phase 1 — Money + proof pages
 
 1. Ship `/newsletter/` (Tier A).  
 2. Strengthen `/performance/` as Fool-style vs S&P chart.  
 3. Ship `/best-stocks-to-buy-now/` (weekly update from runbook).  
-4. Connect newsletter provider (Substack/Ghost/Beehiiv).
+4. Connect newsletter provider (Substack/Ghost/Beehiiv) — **deferred**: landing + waitlist UI first; email capture later.
 
 ### Phase 2 — pSEO enrichment
 

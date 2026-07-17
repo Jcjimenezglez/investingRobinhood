@@ -6,6 +6,7 @@ import {
   HelpCircle,
   LayoutDashboard,
   LineChart,
+  Mail,
   ScrollText,
 } from "lucide-react";
 import { LogoMark } from "@/components/brand/logo-mark";
@@ -15,6 +16,7 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { href: "/", label: "Overview", icon: LayoutDashboard, exact: true },
+  { href: "/newsletter/", label: "Newsletter", icon: Mail },
   { href: "/journal/", label: "Journal", icon: BookOpen },
   { href: "/trades/", label: "Trades", icon: BarChart3 },
   { href: "/theses/", label: "Theses", icon: FileText },
@@ -36,7 +38,7 @@ export function SiteHeader() {
               {BRAND.name}
             </span>
             <span className="mt-1 block font-data text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              AI fund // live telemetry
+              Newsletter // live track record
             </span>
           </span>
         </Link>

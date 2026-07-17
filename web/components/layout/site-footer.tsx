@@ -26,10 +26,8 @@ export function SiteFooter() {
                 {BRAND.name}
               </span>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              {BRAND.tagline}. A public scoreboard for concentrated stock
-              picking — measured against the S&amp;P 500 — plus a newsletter
-              waitlist for full theses and weekly commentary.
+            <p className="max-w-sm text-sm text-muted-foreground">
+              {BRAND.tagline}
             </p>
             <Button asChild>
               <Link href="/newsletter/">Join the waitlist</Link>

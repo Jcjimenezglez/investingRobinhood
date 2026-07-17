@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-17",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-17",
+  "generated_by": "MCP get_earnings_calendar + get_earnings_results",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 5,
+      "eps_estimate": "2.87"
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 12
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 12
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 12
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 13
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 13
+    },
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "am",
+      "verified": true,
+      "days_out": 19
+    },
+    {
+      "symbol": "NVDA",
+      "report_date": "2026-08-26",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 40
+    }
+  ],
+  "highlights_14d": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "days_out": 5
+    },
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 12
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 12
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "days_out": 12
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_out": 13
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "days_out": 13
+    },
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "am",
+      "days_out": 19
+    }
+  ]
+}

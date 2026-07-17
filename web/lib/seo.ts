@@ -7,6 +7,14 @@ export function absoluteUrl(path = "/"): string {
   return `${base}${p}`;
 }
 
+const OG_IMAGE = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: `${BRAND.name} — ${BRAND.tagline}`,
+} as const;
+
 export function pageMetadata({
   title,
   description,
@@ -47,6 +55,7 @@ export function pageMetadata({
       title: fullTitle,
       description,
       url,
+      images: [OG_IMAGE],
       ...(publishedTime ? { publishedTime } : {}),
       ...(modifiedTime ? { modifiedTime } : {}),
     },
@@ -54,6 +63,7 @@ export function pageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
+      images: [OG_IMAGE],
       ...(BRAND.social.twitter ? { creator: BRAND.social.twitter } : {}),
     },
     robots: noIndex
@@ -81,6 +91,7 @@ export function organizationJsonLd() {
     url: BRAND.url,
     description: BRAND.description,
     foundingDate: BRAND.inceptionDate,
+    logo: absoluteUrl("/og.png"),
     sameAs: [] as string[],
   };
 }
@@ -138,6 +149,10 @@ export function articleJsonLd({
       "@type": "Organization",
       name: BRAND.name,
       url: BRAND.url,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/og.png"),
+      },
     },
     inLanguage: BRAND.language,
     isPartOf: { "@type": "WebSite", name: BRAND.name, url: BRAND.url },

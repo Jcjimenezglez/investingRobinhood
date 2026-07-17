@@ -22,9 +22,22 @@
       ]
     },
     {
-      "source": "/(icon.svg|apple-icon.svg|rss.xml|sitemap.xml|llms.txt|llms-full.txt)",
+      "source": "/(icon.svg|apple-icon.svg|og.png|rss.xml|sitemap.xml|llms.txt|llms-full.txt)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/og.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=604800"
+        }
       ]
     }
   ]

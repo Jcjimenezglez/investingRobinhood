@@ -66,11 +66,13 @@ Without the hook, logs still land in GitHub but tapefund.com only updates when y
 
 ## SEO checklist
 
-- [ ] Buy domain, point DNS to Vercel
-- [ ] Set `NEXT_PUBLIC_SITE_URL` to production URL
-- [ ] Google Search Console → submit `sitemap.xml`
-- [ ] Verify `/robots.txt` and `/rss.xml`
-- [ ] Add JSON-LD (future)
+- [x] Domain `tapefund.com` on Vercel (www → apex redirect)
+- [x] `NEXT_PUBLIC_SITE_URL=https://tapefund.com`
+- [x] `/robots.txt`, `/sitemap.xml`, `/rss.xml`, `/llms.txt`
+- [x] Per-page metadata + canonical + Open Graph (`/og.png`)
+- [x] JSON-LD: Organization, WebSite, FAQPage, Article, BreadcrumbList, CollectionPage
+- [ ] Google Search Console → verify property + submit `sitemap.xml`
+- [ ] Add social `sameAs` handles in `lib/site-config.ts` when available
 
 ## Privacy
 

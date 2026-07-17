@@ -42,7 +42,7 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>${escapeXml(SITE_NAME)} — Daily journal</title>
-    <link>${SITE_URL}</link>
+    <link>${SITE_URL}/</link>
     <description>${escapeXml("Daily CIO journal from Tapefund — a thesis-driven AI fund track record.")}</description>
     <language>en-us</language>${items.join("")}
   </channel>

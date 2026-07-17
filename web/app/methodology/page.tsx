@@ -58,7 +58,7 @@ const pillars = [
   {
     icon: LineChart,
     title: "Agentic account only",
-    body: "All trades on Robinhood Agentic beta via MCP. Small AUM, full public transparency.",
+    body: "All trades run on a dedicated Agentic brokerage account via MCP. Full public transparency on the scoreboard.",
   },
 ];
 

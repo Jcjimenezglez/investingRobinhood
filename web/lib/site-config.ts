@@ -44,7 +44,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is Tapefund?",
     answer:
-      "Tapefund is a stock newsletter project backed by a live public track record. It publishes NAV, daily CIO journals, investment theses, trade history, and weekly performance vs the S&P 500 (SPY) from a concentrated book run on Robinhood Agentic.",
+      "Tapefund is a stock newsletter backed by a live public track record. It publishes NAV, daily CIO journals, investment theses, trade history, and weekly performance versus the S&P 500 (SPY).",
   },
   {
     question: "What is the Tapefund newsletter?",
@@ -54,7 +54,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is free vs what is for the waitlist?",
     answer:
-      "Free on the site: live NAV, return since inception, open tickers, journal summaries, and performance vs SPY. Coming via the newsletter: deeper theses, sizing rationale, and weekly picks commentary.",
+      "Free on the site: live NAV, return since inception, open tickers, journal entries, and performance vs SPY. Coming via the newsletter: deeper theses, sizing rationale, and weekly picks commentary.",
   },
   {
     question: "Is Tapefund investment advice?",
@@ -69,17 +69,17 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "Is Tapefund the same as Motley Fool Stock Advisor?",
     answer:
-      "No. Motley Fool Stock Advisor is a large paid stock-picking service. Tapefund is a live public track record plus an upcoming newsletter — same category (stock picks with performance vs the market), different product.",
+      "No. Motley Fool Stock Advisor is a large paid stock-picking service. Tapefund is a live public track record plus an upcoming newsletter — same category (picks with performance versus the market), different product.",
   },
   {
     question: "How often is Tapefund updated?",
     answer:
-      "The CIO runbook runs at premarket, market open, and intraday. Journal entries and NAV are published after each cycle on trading days. Weekly performance reports are published every Friday.",
+      "The CIO runbook runs at premarket, market open, and midday. Journal entries and NAV are published after each cycle on trading days. Weekly performance reports are published every Friday.",
   },
   {
     question: "What is the Tapefund investment strategy?",
     answer:
-      "Tapefund follows a concentrated, Ackman-style approach: written thesis before every buy, up to 50% in one conviction idea, cash floor of 10%, and exits when the thesis breaks or fair value is reached — not on a calendar.",
+      "Tapefund follows a concentrated approach: written thesis before every buy, up to 50% in one conviction idea, cash floor of 10%, and exits when the thesis breaks or fair value is reached — not on a calendar.",
   },
   {
     question: "What stocks does Tapefund trade?",

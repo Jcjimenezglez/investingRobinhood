@@ -3,31 +3,30 @@ import Link from "next/link";
 import {
   ArrowRight,
   Check,
-  DollarSign,
-  Layers,
+  LineChart,
   Mail,
-  Percent,
+  Newspaper,
 } from "lucide-react";
 import { WaitlistForm } from "@/components/forms/waitlist-form";
 import { StatCard } from "@/components/fund/stat-card";
-import { DirectAnswer } from "@/components/seo/direct-answer";
+import {
+  Hero,
+  MarketingSection,
+  PageShell,
+} from "@/components/marketing/section";
 import { FaqSection } from "@/components/seo/faq-section";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
-import {
-  HudPanel,
-  HudPanelBody,
-  HudPanelHeader,
-} from "@/components/ui/hud-panel";
 import { getFundSnapshot } from "@/lib/content";
 import { formatLedgerUsd, formatStartingNav } from "@/lib/display-money";
 import { faqPageJsonLd, pageMetadata } from "@/lib/seo";
 import { BRAND, SITE_FAQ } from "@/lib/site-config";
+import { DollarSign, Percent } from "lucide-react";
 
 export const metadata: Metadata = pageMetadata({
   title: "Stock Newsletter with Live Track Record vs S&P 500",
   description:
-    "Join the Tapefund stock newsletter waitlist. Free live NAV and track record vs the S&P 500; upcoming Stock Advisor–style picks and full theses. Not investment advice.",
+    "Most stock newsletters sell tips without a scoreboard. Tapefund publishes a live track record vs the S&P 500 — then a Stock Advisor–style letter for full theses and weekly picks. Join the waitlist.",
   path: "/newsletter/",
 });
 
@@ -43,16 +42,16 @@ const newsletterFaq = SITE_FAQ.filter((item) =>
 
 const freeItems = [
   "Live NAV and return since inception",
-  "Open tickers on the public book",
-  "Daily CIO journal on the site",
-  "Weekly performance vs SPY",
+  "Open positions on the public book",
+  "Daily CIO journal entries",
+  "Weekly performance versus SPY",
 ];
 
-const waitlistItems = [
-  "Full investment theses",
-  "Weekly stock picks commentary",
-  "Sizing and kill-criteria detail",
-  "Investor-letter depth when published",
+const paidItems = [
+  "Full investment theses (not just the ticker)",
+  "Weekly picks commentary and sizing rationale",
+  "Kill criteria and catalyst notes",
+  "Deeper investor-letter style writeups",
 ];
 
 export default function NewsletterPage() {
@@ -60,95 +59,160 @@ export default function NewsletterPage() {
   const returnLabel = `${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`;
 
   return (
-    <div className="space-y-12">
-      <section className="space-y-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs text-muted-foreground">
-          Waitlist · opening soon
-        </div>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Stock newsletter
-          <span className="mt-3 block text-2xl font-medium text-muted-foreground sm:text-3xl">
-            with a live track record vs the S&amp;P 500
-          </span>
-        </h1>
-        <DirectAnswer className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-          {BRAND.name} publishes a live stock-picking track record and an
-          upcoming Stock Advisor–style newsletter. Since {BRAND.inceptionDate}{" "}
-          (starting {formatStartingNav()}), current NAV is{" "}
-          {formatLedgerUsd(snapshot.nav, { digits: 2 })} ({returnLabel}). Free
-          scoreboard on the site; waitlist for full theses and weekly
-          recommendations. Not investment advice.
-        </DirectAnswer>
-      </section>
-
-      <section
-        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-        aria-label="Live track record proof"
-      >
-        <StatCard
-          title="NAV"
-          value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
-          sub={`Updated ${snapshot.lastUpdated}`}
-          icon={DollarSign}
-          accent
-        />
-        <StatCard
-          title="Return"
-          value={returnLabel}
-          sub={`Since inception (${formatStartingNav()})`}
-          icon={Percent}
-        />
-        <StatCard
-          title="Open book"
-          value={String(snapshot.positions)}
-          sub="Names in the public book"
-          icon={Layers}
-        />
-        <StatCard
-          title="Benchmark"
-          value="vs SPY"
-          sub="See Performance"
-          icon={Mail}
-        />
-      </section>
-
-      <HudPanel>
-        <HudPanelHeader>
-          <div>
-            <p className="text-sm text-muted-foreground">Waitlist</p>
-            <h2 className="mt-1 text-lg font-semibold tracking-tight">
-              Get picks + full theses
-            </h2>
+    <PageShell>
+      <Hero
+        eyebrow={
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs text-muted-foreground">
+            Stock newsletter · waitlist opening soon
           </div>
-        </HudPanelHeader>
-        <HudPanelBody className="space-y-4">
-          <WaitlistForm />
-          <div className="flex flex-wrap gap-2">
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/performance/">
-                See vs SPY
-                <ArrowRight className="size-3.5" />
+        }
+        title={
+          <>
+            Tips without a track record are just noise.
+            <span className="mt-3 block text-muted-foreground">
+              This letter starts with proof.
+            </span>
+          </>
+        }
+        subtitle="A Stock Advisor–style newsletter backed by a live public book measured against the S&P 500."
+        body={
+          <>
+            <p>
+              The internet is full of stock picks. Almost none of them show you
+              a live portfolio, daily decisions, and an honest comparison to
+              SPY. That is the gap Tapefund fills.
+            </p>
+            <p>
+              Use the free site to see whether the process is working. Join the
+              waitlist for the letter — full theses and weekly commentary when
+              email capture opens.
+            </p>
+          </>
+        }
+        actions={
+          <>
+            <Button asChild size="lg">
+              <Link href="#waitlist">
+                Join the waitlist
+                <ArrowRight className="size-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/trades/">Open book</Link>
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/#proof">Inspect the live book</Link>
             </Button>
-          </div>
-        </HudPanelBody>
-      </HudPanel>
+          </>
+        }
+      />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <HudPanel>
-          <HudPanelHeader>
-            <div>
-              <p className="text-sm text-muted-foreground">Free</p>
-              <h2 className="mt-1 text-lg font-semibold tracking-tight">
-                On the site
-              </h2>
+      <MarketingSection
+        id="why"
+        eyebrow="Why this exists"
+        title="You should not have to trust a stranger’s tip"
+        description={
+          <>
+            <p>
+              Traditional stock newsletters ask you to pay for recommendations
+              first and believe the marketing chart later. Tapefund flips that:
+              the track record is public. The letter adds depth for people who
+              want the full thesis — not another anonymous “buy list.”
+            </p>
+            <p>
+              If you already manage money for yourself or want a clearer
+              process than scrolling feeds, the scoreboard is the product you
+              can evaluate today.
+            </p>
+          </>
+        }
+      >
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              icon: LineChart,
+              title: "Measured vs SPY",
+              body: "Performance is only interesting next to the market. Weekly scorecards keep that comparison honest.",
+            },
+            {
+              icon: Newspaper,
+              title: "Thesis before capital",
+              body: "No buy without a written memo: business quality, mispricing, catalyst, and kill criteria.",
+            },
+            {
+              icon: Mail,
+              title: "Letter for depth",
+              body: "The waitlist is for full writeups and weekly commentary once email capture is live.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-xl border border-border bg-card p-6"
+            >
+              <item.icon
+                className="size-5 text-muted-foreground"
+                strokeWidth={1.5}
+              />
+              <h3 className="mt-4 text-base font-semibold tracking-tight">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {item.body}
+              </p>
             </div>
-          </HudPanelHeader>
-          <HudPanelBody>
-            <ul className="space-y-3">
+          ))}
+        </div>
+      </MarketingSection>
+
+      <MarketingSection
+        id="proof"
+        eyebrow="Live numbers"
+        title="Same book the letter will explain"
+        description={
+          <p>
+            Since {BRAND.inceptionDate}, starting {formatStartingNav()}. Current
+            NAV {formatLedgerUsd(snapshot.nav, { digits: 2 })} ({returnLabel}).
+            Not investment advice — a public record you can inspect.
+          </p>
+        }
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard
+            title="NAV"
+            value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
+            sub={`Updated ${snapshot.lastUpdated}`}
+            icon={DollarSign}
+            accent
+          />
+          <StatCard
+            title="Return"
+            value={returnLabel}
+            sub={`Since inception (${formatStartingNav()})`}
+            icon={Percent}
+          />
+          <StatCard
+            title="Open book"
+            value={String(snapshot.positions)}
+            sub="Concentrated names"
+            icon={LineChart}
+          />
+          <StatCard
+            title="Benchmark"
+            value="vs SPY"
+            sub="See Performance page"
+            icon={Mail}
+          />
+        </div>
+      </MarketingSection>
+
+      <MarketingSection
+        id="free-vs-letter"
+        eyebrow="What you get"
+        title="Free scoreboard. Letter for the full why."
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h3 className="text-base font-semibold tracking-tight">
+              Free on Tapefund.com
+            </h3>
+            <ul className="mt-4 space-y-3">
               {freeItems.map((item) => (
                 <li
                   key={item}
@@ -159,20 +223,13 @@ export default function NewsletterPage() {
                 </li>
               ))}
             </ul>
-          </HudPanelBody>
-        </HudPanel>
-        <HudPanel>
-          <HudPanelHeader>
-            <div>
-              <p className="text-sm text-muted-foreground">Coming</p>
-              <h2 className="mt-1 text-lg font-semibold tracking-tight">
-                Via newsletter
-              </h2>
-            </div>
-          </HudPanelHeader>
-          <HudPanelBody>
-            <ul className="space-y-3">
-              {waitlistItems.map((item) => (
+          </div>
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h3 className="text-base font-semibold tracking-tight">
+              Coming in the newsletter
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {paidItems.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -182,42 +239,61 @@ export default function NewsletterPage() {
                 </li>
               ))}
             </ul>
-          </HudPanelBody>
-        </HudPanel>
-      </div>
-
-      <HudPanel>
-        <HudPanelHeader>
-          <div>
-            <p className="text-sm text-muted-foreground">Disclaimer</p>
-            <h2 className="mt-1 text-lg font-semibold tracking-tight">
-              Before you join
-            </h2>
           </div>
-        </HudPanelHeader>
-        <HudPanelBody className="space-y-2 text-sm leading-relaxed text-muted-foreground">
-          <p>
-            <span className="font-medium text-foreground">
-              Not investment advice.
-            </span>{" "}
-            Nothing here is a solicitation or a recommendation to buy or sell
-            any security. Past performance does not guarantee future results.
-          </p>
-        </HudPanelBody>
-      </HudPanel>
+        </div>
+      </MarketingSection>
 
-      <section className="space-y-4">
-        <FaqSection items={newsletterFaq} />
+      <MarketingSection
+        id="waitlist"
+        eyebrow="Waitlist"
+        title="Be first when email capture opens"
+        description={
+          <p>
+            We are not collecting emails yet. Leave this page bookmarked — the
+            form below will go live when the waitlist is ready. No spam, no
+            fake “you are subscribed” message.
+          </p>
+        }
+      >
+        <div className="max-w-xl rounded-xl border border-border bg-card p-6">
+          <WaitlistForm />
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/performance/">Performance vs SPY</Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/trades/">Open positions</Link>
+            </Button>
+          </div>
+        </div>
+      </MarketingSection>
+
+      <MarketingSection
+        id="disclaimer"
+        eyebrow="Disclaimer"
+        title="Read this before you join"
+        description={
+          <p>
+            Nothing on Tapefund is investment advice, a solicitation, or a
+            recommendation to buy or sell any security. Past performance does
+            not guarantee future results. The public track record documents a
+            concentrated experimental book.
+          </p>
+        }
+      />
+
+      <MarketingSection id="faq" eyebrow="FAQ" title="Newsletter questions">
+        <FaqSection items={newsletterFaq} title="Common questions" />
         <Link
           href="/faq/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
+          className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium underline-offset-4 hover:underline"
         >
           View all FAQ
           <ArrowRight className="size-3.5" />
         </Link>
-      </section>
+      </MarketingSection>
 
       <JsonLd data={faqPageJsonLd(newsletterFaq)} />
-    </div>
+    </PageShell>
   );
 }

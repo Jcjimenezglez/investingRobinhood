@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table";
 import { StatusBadge } from "@/components/fund/decision-badge";
 import { formatLedgerUsd } from "@/lib/display-money";
+import { formatConviction } from "@/lib/localize";
 import type { Position } from "@/lib/types";
 
 export function PositionsTable({
@@ -60,7 +61,7 @@ export function PositionsTable({
             <TableCell className="tabular-nums">
               {formatLedgerUsd(p.size_usd, { digits: 0 })}
             </TableCell>
-            <TableCell>{p.conviction}</TableCell>
+            <TableCell>{formatConviction(p.conviction)}</TableCell>
             <TableCell className="text-right font-medium tabular-nums">
               {p.return_pct !== null
                 ? `${p.return_pct >= 0 ? "+" : ""}${p.return_pct.toFixed(2)}%`

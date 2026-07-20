@@ -1,0 +1,68 @@
+{
+  "date": "2026-07-20",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-20",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 2,
+      "eps_estimate": "2.87"
+    }
+  ],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 9
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 9
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 9
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 10
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 10
+    },
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 16
+    },
+    {
+      "symbol": "NVDA",
+      "report_date": "2026-08-26",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 37
+    }
+  ]
+}

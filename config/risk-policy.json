@@ -7,10 +7,16 @@
   },
   "strategy": {
     "name": "ackman-concentrated-catalyst",
-    "description": "Concentrated long-only hedge fund style: high conviction, fundamental thesis, catalyst-driven. Objective is to MAKE MONEY — active PM, not passive hold.",
+    "description": "Concentrated long-only hedge fund style: high conviction, fundamental thesis, catalyst-driven. Objective is to MAKE MONEY — active PM, not passive hold. Equity is the core book; long options are a narrow asymmetric satellite when thesis+catalyst align.",
     "primaryObjective": "generate_absolute_returns",
     "secondaryObjective": "thesis_discipline_and_capital_compounding",
     "timeHorizon": "thesis-driven-3-to-12-months",
+    "returnAspiration": {
+      "softAnnualMultipleLow": 1.3,
+      "softAnnualMultiplePreferred": 1.5,
+      "softAnnualCeiling": 2.0,
+      "note": "Soft aspirations only — never force trades, size, or options to hit a multiple. Preserve capital and thesis discipline first. Prefer 1.3–1.7x over swinging for 2x."
+    },
     "positionCapacity": {
       "mode": "cash_driven",
       "note": "No fixed max position count. New entry allowed when buying_power >= minOrderUsd, cash >= minCashReservePct, invested <= maxPortfolioInvestedPct, conviction >= Media, and thesis doc exists. Prefer Ackman concentration; add names only if each gets meaningful size (>= minOrderUsd)."
@@ -20,7 +26,7 @@
     "style": "Bill Ackman — concentrated, activist mindset, quality + mispricing"
   },
   "universe": {
-    "allowedTypes": ["equity"],
+    "allowedTypes": ["equity", "option"],
     "excludeEtfsUnlessHedging": true,
     "allowEtfsForTemporaryHedge": ["SPY", "SH"],
     "minAvgDailyVolume": 5000000,
@@ -37,6 +43,56 @@
     "maxOrderUsd": 50,
     "useFractionalShares": true,
     "maxSingleAddPctOfPortfolio": 25
+  },
+  "options": {
+    "enabled": true,
+    "accountNote": "Agentic cash ••••3029 — option_level_2 verified. MCP single-leg only.",
+    "allowedStrategies": ["long_call", "long_put"],
+    "forbiddenStrategies": [
+      "covered_call",
+      "cash_secured_put",
+      "naked_short",
+      "spreads",
+      "0dte_lottery",
+      "multi_leg"
+    ],
+    "minConviction": "Alta",
+    "requireCatalyst": true,
+    "requireThesisDocument": true,
+    "underlyingMustBeInResearchUniverse": true,
+    "maxContractsPerOrder": 1,
+    "maxOpenOptionPositions": 1,
+    "maxPremiumDebitUsd": 25,
+    "maxPremiumPctOfPortfolio": 20,
+    "minCashReserveAfterDebitPct": 10,
+    "minDte": 14,
+    "maxDte": 90,
+    "preferExpirationNearCatalyst": true,
+    "liquidity": {
+      "minOpenInterest": 100,
+      "maxBidAskSpreadPctOfMid": 15,
+      "preferLimitAtOrBelowMid": true
+    },
+    "orderDefaults": {
+      "orderType": "limit",
+      "timeInForce": "gtc",
+      "onlyDuringMarketHours": true,
+      "positionEffectOpen": "buy"
+    },
+    "requireReviewBeforeOrder": true,
+    "requireChatConfirmation": true,
+    "countsTowardEquityTradeLimits": true,
+    "exitPolicy": {
+      "style": "thesis-driven-premium-risk",
+      "fullExitTriggers": [
+        "thesis_invalidated",
+        "catalyst_failed",
+        "superior_use_of_capital_in_equity",
+        "within_7_dte_without_payoff_path"
+      ],
+      "note": "Long options: premium can go to $0. Exit on thesis/catalyst break or ~7 DTE left without clear payoff. Do NOT hold to expiry hoping for lottery. Never force 2x."
+    },
+    "role": "Asymmetric satellite only when equity sizing cannot express a near-term Alta catalyst cheaply enough. Equity remains the core book."
   },
   "riskControls": {
     "maxDailyLossPct": 5,

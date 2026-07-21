@@ -59,3 +59,29 @@ Cash mínimo **10%** — el resto debe **trabajar** cuando hay tesis.
 ## Horizonte
 
 **Tesis-driven** (3–12 meses), **posición activa** — dejar correr winners si tesis intacta; exit en thesis break / fair value / rotate; stop -8% solo backup de pánico.
+
+## Return aspiration (soft)
+
+Lee `risk-policy.json` → `strategy.returnAspiration`:
+
+- Preferido: **1.3–1.7×** anual con disciplina
+- Techo aspiracional: **2×** — nunca forzar trades/size/opciones para alcanzarlo
+- Si el setup no está → cash / hold / pass
+
+## Opciones (satélite estrecho)
+
+Equity = libro core. Opciones = **solo** cuando tesis **Alta** + catalizador claro y el débito expresa mejor el asymmetry que comprar más equity.
+
+Reglas en `risk-policy.json` → `options` (resumen):
+
+| Regla | Valor |
+|-------|-------|
+| Estrategias | Solo **long call / long put** |
+| Prohibido | CC, CSP, spreads, naked, 0DTE lotería |
+| Convicción | **Alta** + catalizador + thesis doc |
+| Size | ≤1 contrato, ≤$25 débito, ≤20% NAV, max 1 posición options abierta |
+| DTE | 14–90, preferir cerca del catalizador |
+| Confirmación | **Siempre chat** antes de `place_option_order` |
+| Exit | Tesis rota / catalizador fallido / ~7 DTE sin payoff |
+
+Con $100 cash, CC/CSP casi nunca caben — y están **prohibidas por policy** aunque el broker las permita en L2.

@@ -87,6 +87,21 @@ Salidas al alza (cuando aplique):
 - **Trim parcial** — solo si el thesis memo define % y precio (ej. fair value alcanzado, margen de seguridad reducido)
 - **Exit total** — tesis realizada o rotación a mejor risk/reward (ej. Ackman GOOGL → MSFT)
 
+## Fase 4d — Opciones (satélite; no default del `go`)
+
+Solo si `risk-policy.options` cumple **todas** las puertas:
+
+1. Convicción **Alta** + catalizador datado + thesis doc
+2. Underlying en `researchUniverse`
+3. Estrategia = long call o long put (buy to open) — nunca CC/CSP/spreads
+4. 1 contrato, débito ≤ `maxPremiumDebitUsd` y ≤ `maxPremiumPctOfPortfolio`, cash post ≥ 10%
+5. DTE 14–90; liquidez (OI + bid/ask) OK
+6. `review_option_order` limpio → **pedir confirmación en chat** → `place_option_order`
+7. Journal + email; cuenta como 1 trade hacia límites diarios/semanales
+
+**No** incluir opciones en el path automático de `go` / autonomous equity cycle. Equity sigue siendo el default.
+
 ## Fase 5 — Monitoreo
 
 Cada sesión: posiciones vs. tesis + stop backup; exit/trim si tesis lo dicta; pausar tras 3 pérdidas seguidas.
+Opciones abiertas: revisar premium vs tesis/catalizador; cerrar si tesis rota, catalizador fallido, o ~7 DTE sin payoff.

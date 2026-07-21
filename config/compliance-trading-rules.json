@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-18",
+  "lastUpdated": "2026-07-21",
   "accountAgentic": {
     "type": "cash",
     "nickname": "Agentic",
@@ -36,7 +36,26 @@
       "agenticNote": "Cuenta taxable individual Agentic — relevante si hay loss harvest"
     },
     "shortSelling": "No en Agentic MCP / cash focus",
-    "options": "No aprobado en cuenta Agentic (option_level vacío)"
+    "options": {
+      "status": "option_level_2_approved",
+      "account": "Agentic cash",
+      "allowedByBroker": [
+        "buy_calls_puts",
+        "covered_calls",
+        "cash_secured_puts",
+        "exercise"
+      ],
+      "allowedByFundPolicy": ["long_call", "long_put"],
+      "forbiddenByFundPolicy": [
+        "covered_call",
+        "cash_secured_put",
+        "spreads",
+        "naked_short",
+        "0dte_lottery"
+      ],
+      "policySource": "config/risk-policy.json → options",
+      "note": "Broker L2 > fund policy. Fund solo permite long debit calls/puts con reglas estrechas (Alta + catalizador + size pequeño)."
+    }
   },
   "robinhoodAgenticBeta": [
     "Usuario responsable de todas las órdenes del agente",

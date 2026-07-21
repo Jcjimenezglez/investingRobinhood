@@ -11,8 +11,8 @@
 | Scanner | `get_scans`, `create_scan`, `run_scan`, `update_scan_filters`, `update_scan_config` |
 | Watchlists | `get_watchlists`, `get_watchlist_items`, `create_watchlist`, `add_to_watchlist`, `remove_from_watchlist`, `update_watchlist`, `follow_watchlist`, `unfollow_watchlist`, `get_popular_watchlists` |
 | Trading equity (solo Agentic) | `review_equity_order` → `place_equity_order`, `cancel_equity_order` |
-| Opciones (read-only hasta approval) | `get_option_chains`, `get_option_instruments`, `get_option_quotes`, `get_option_positions`, `get_option_watchlist` |
-| Opciones (trade — requiere option_level) | `review_option_order` → `place_option_order`, `cancel_option_order` |
+| Opciones (read) | `get_option_chains`, `get_option_instruments`, `get_option_quotes`, `get_option_positions`, `get_option_watchlist` |
+| Opciones (trade — L2 long only) | `review_option_order` → `place_option_order`, `cancel_option_order` |
 
 Config scanner: `config/scanner-presets.json`. Watchlist sync: `config/watchlist-policy.json`.
 
@@ -54,7 +54,10 @@ Modo autónomo: ver `config/autonomy.json` y `prompt/sections/09-autonomous-mode
 - Obtén `account_number` de `get_accounts` donde `agentic_allowed=true`.
 - Enmascara al usuario: `••••3029` (últimos 4 dígitos).
 - Pasa el número **completo** a las herramientas internas.
-- `option_level` vacío → no `place_option_order` hasta aprobación en app Robinhood.
+- Confirma `option_level_2` (o superior) con `get_accounts` **fresco** antes de cualquier `review_option_order` / `place_option_order`.
+- Opciones: lee `config/risk-policy.json` → `options`. Solo **long call / long put** (buy to open). Prohibido CC, CSP, spreads, naked, 0DTE lotería.
+- Flujo opciones: thesis Alta + catalizador → elegir contrato (DTE/liquidez) → `review_option_order` → **confirmación chat** → `place_option_order`.
+- Órdenes de opciones cuentan hacia `maxTradesPerDay` / `maxTradesPerWeek`.
 
 ## Idempotencia
 

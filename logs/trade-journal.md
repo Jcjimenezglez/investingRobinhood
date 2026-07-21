@@ -353,4 +353,19 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-07-20-1500-monitor.md*
 
+## 2026-07-21 — Midday monitor (12:00 ET) — HOLD
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | Monitor automation-03 — sin órdenes |
+| **NAV** | $103.90 (equity $78.90 + cash $25) |
+| **AMZN** | $247.94 (+4.76% vs entry) · stop $217.75 · tesis INTACTA |
+| **MSFT** | $398.48 (+5.86% vs entry) · stop $346.30 · tesis INTACTA |
+| **Options** | Ninguna |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | Ninguno — digest omitido |
+
+*Intel: logs/intelligence/2026-07-21-1200-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

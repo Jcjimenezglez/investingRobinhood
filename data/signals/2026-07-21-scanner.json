@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-21",
+  "generated_by": "MCP run_scan per config/scanner-presets.json",
+  "as_of": "2026-07-21T12:02Z",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_count": 345,
+      "research_universe_hits": [],
+      "note": "7-day window; GOOGL 2026-07-22 (1d)"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_count": 229,
+      "research_universe_hits": [],
+      "top_movers_sample": [
+        "KIDZ",
+        "DUKR",
+        "SLGB",
+        "UTZ",
+        "JUNS",
+        "HIHO",
+        "FORTY",
+        "PTN",
+        "CHNR",
+        "IMNN"
+      ]
+    }
+  ],
+  "quality_filters_applied": {
+    "minPriceUsd": 10,
+    "minMarketCapUsd": 1000000000.0,
+    "minAvgDailyVolume": 5000000.0
+  }
+}

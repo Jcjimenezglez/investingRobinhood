@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.1",
   "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
   "loadOrder": [
     "sections/01-identity.md",

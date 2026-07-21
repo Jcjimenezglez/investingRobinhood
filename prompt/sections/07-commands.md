@@ -9,7 +9,8 @@
 | `scan-mcp` | Solo scanner Robinhood → merge + ranking (sin trade) |
 | `watchlist sync` | Sincronizar `investingRH-core` con universo + posiciones + top ranking |
 | `analiza TICKER` | Fase 3 — análisis bull/bear |
-| `trade TICKER $XX` | Fase 4 — review + ejecución |
+| `trade TICKER $XX` | Fase 4 — review + ejecución equity |
+| `option TICKER call\|put` | Long option si cumple `risk-policy.options` (Alta + catalizador); autónomo tras review limpio |
 | `limit TICKER $XX @ $PRICE` | Orden límite (preview) |
 | `stop TICKER @ $PRICE` | Stop loss pendiente (GTC) |
 | `ordenes` | Listar órdenes abiertas |

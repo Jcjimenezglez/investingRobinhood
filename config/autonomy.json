@@ -20,7 +20,9 @@
       "consecutive_losses_halt",
       "conviction_below_medium",
       "symbol_outside_universe",
-      "mcp_auth_or_connection_failure"
+      "mcp_auth_or_connection_failure",
+      "option_premium_exceeds_max",
+      "option_outside_narrow_policy"
     ],
     "executeButNotifyImmediately": [
       "first_autonomous_trade_ever",

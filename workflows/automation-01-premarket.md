@@ -12,8 +12,9 @@
 ## Capa 1 — Robinhood (obligatorio)
 
 ```
-get_accounts → identificar Agentic
+get_accounts → identificar Agentic (notar option_level)
 get_portfolio, get_equity_positions, get_equity_orders
+get_option_positions (nonzero=true)
 get_equity_quotes + get_equity_fundamentals: posiciones abiertas + todo researchUniverse
 get_earnings_calendar (filter: high_market_cap, days: 14) → merge *-earnings.json
 run_scan × N (config/scanner-presets.json) → data/signals/YYYY-MM-DD-scanner.json
@@ -41,10 +42,10 @@ WebSearch Reddit/StockTwits solo como señal débil.
 
 Escribir `logs/intelligence/YYYY-MM-DD-0800-premarket.md`:
 
-1. **Snapshot fund** — cash, P&L, posiciones vs límites risk-policy
-2. **Posiciones abiertas** — bull/bear, P&L%, distancia stop backup (-8%), fair value vs precio (thesis memo), ¿tesis intacta?
+1. **Snapshot fund** — cash, P&L, equity + options vs límites risk-policy
+2. **Posiciones abiertas** — equity: bull/bear, P&L%, distancia stop backup (-8%), fair value vs precio; options: premium P&L, DTE, tesis/catalizador
 3. **Ranking universo** (#1–10): convicción, mispricing, catalizador 3–12m, confluencia Ackman
-4. **Decisión para sesión 9:35** — HOLD / ADD / ROTATE / EXIT (con sizing si aplica)
+4. **Decisión para sesión 9:35** — HOLD / ADD / ROTATE / EXIT / OPTION-satellite (solo si gates `risk-policy.options` — no forzar)
 5. **Riesgos del día**
 
 ## Escalación

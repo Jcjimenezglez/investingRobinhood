@@ -80,7 +80,7 @@
       "positionEffectOpen": "buy"
     },
     "requireReviewBeforeOrder": true,
-    "requireChatConfirmation": true,
+    "requireChatConfirmation": false,
     "countsTowardEquityTradeLimits": true,
     "exitPolicy": {
       "style": "thesis-driven-premium-risk",

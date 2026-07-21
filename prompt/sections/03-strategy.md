@@ -81,7 +81,7 @@ Reglas en `risk-policy.json` → `options` (resumen):
 | Convicción | **Alta** + catalizador + thesis doc |
 | Size | ≤1 contrato, ≤$25 débito, ≤20% NAV, max 1 posición options abierta |
 | DTE | 14–90, preferir cerca del catalizador |
-| Confirmación | **Siempre chat** antes de `place_option_order` |
+| Confirmación | Misma autonomía que equity: `review` limpio → execute; escalar solo si falla gate/policy |
 | Exit | Tesis rota / catalizador fallido / ~7 DTE sin payoff |
 
 Con $100 cash, CC/CSP casi nunca caben — y están **prohibidas por policy** aunque el broker las permita en L2.

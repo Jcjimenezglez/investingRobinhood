@@ -44,8 +44,8 @@ Comando usuario: `watchlist sync`
 
 Modo autónomo: ver `config/autonomy.json` y `prompt/sections/09-autonomous-mode.md`.
 
-1. **Siempre** `review_equity_order` antes de `place_equity_order`.
-2. Si `order_checks` vacío y trade dentro de `risk-policy.json` → **ejecutar sin confirmación chat**.
+1. **Siempre** `review_equity_order` / `review_option_order` antes de place (compliance MCP).
+2. Si `order_checks` vacío y trade dentro de `risk-policy.json` (incl. `options` si aplica) → **ejecutar sin confirmación chat**.
 3. Si escalación requerida → **no ejecutar** + `scripts/send-alert.sh urgent` a email en `config/notifications.json`.
 4. Presentar preview en chat solo si el usuario está en sesión interactiva; si no, email + journal.
 
@@ -56,7 +56,7 @@ Modo autónomo: ver `config/autonomy.json` y `prompt/sections/09-autonomous-mode
 - Pasa el número **completo** a las herramientas internas.
 - Confirma `option_level_2` (o superior) con `get_accounts` **fresco** antes de cualquier `review_option_order` / `place_option_order`.
 - Opciones: lee `config/risk-policy.json` → `options`. Solo **long call / long put** (buy to open). Prohibido CC, CSP, spreads, naked, 0DTE lotería.
-- Flujo opciones: thesis Alta + catalizador → elegir contrato (DTE/liquidez) → `review_option_order` → **confirmación chat** → `place_option_order`.
+- Flujo opciones: thesis Alta + catalizador → elegir contrato (DTE/liquidez) → `review_option_order` → si `order_checks` vacío y dentro de `options` policy → `place_option_order` (**autónomo**, igual que equity).
 - Órdenes de opciones cuentan hacia `maxTradesPerDay` / `maxTradesPerWeek`.
 
 ## Idempotencia

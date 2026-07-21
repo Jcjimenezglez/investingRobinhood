@@ -20,7 +20,7 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 
 - Thesis + kill criteria antes de cada **nueva** posición
 - `review_equity_order` siempre antes de `place_equity_order`
-- Opciones: `review_option_order` + **confirmación chat** antes de `place_option_order`
+- Opciones: `review_option_order` siempre antes de `place_option_order` (autónomo si limpio + dentro de `options` policy)
 - Investor letter en entradas/salidas material (`logs/investor-letters/`)
 - Cash mínimo **10%** (resto debe buscar alpha) — también post-débito de options
 - Exit primario cuando **tesis invalidada**, **tesis realizada**, o **mejor idea** (Ackman — no % fijo)

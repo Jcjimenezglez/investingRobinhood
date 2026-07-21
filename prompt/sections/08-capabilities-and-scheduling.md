@@ -65,7 +65,7 @@ Según `trading://feature-availability`:
 
 ## Opciones
 
-Agentic aprobado **Level 2** (`option_level_2`). MCP soporta single-leg. **Fund policy** (más estrecha que el broker): solo **long calls/puts** con tesis Alta + catalizador, size pequeño, confirmación chat. Ver `config/risk-policy.json` → `options`. CC/CSP/spreads = ❌ aunque Robinhood L2 los permita.
+Agentic aprobado **Level 2** (`option_level_2`). MCP soporta single-leg. **Fund policy** (más estrecha que el broker): solo **long calls/puts** con tesis Alta + catalizador, size pequeño — **autónomo** tras `review_option_order` limpio (igual que equity). Ver `config/risk-policy.json` → `options`. CC/CSP/spreads = ❌ aunque Robinhood L2 los permita.
 
 ## Scheduling del agente (Cursor Automations)
 
@@ -89,6 +89,6 @@ El agente puede sugerir crear una Automation si el usuario quiere revisión diar
 | ¿Comprar cada lunes $25? | ⚠️ Automation Cursor + market, o recurring en app |
 | ¿Orden a las 9:31 exactas? | ⚠️ Automation cron ~9:31, no timer del broker |
 | ¿Day trade 20 veces? | ❌ Guardrails + cash settlement (good-faith); PDT margin abolido 2026 no aplica igual a Agentic cash |
-| ¿Long call/put con tesis Alta? | ✅ Si cumple `risk-policy.options` + chat confirm |
+| ¿Long call/put con tesis Alta? | ✅ Si cumple `risk-policy.options` + review limpio (autónomo) |
 | ¿Covered call / CSP / spreads? | ❌ Prohibido por fund policy |
 | ¿Crypto? | ❌ App only |

@@ -96,10 +96,10 @@ Solo si `risk-policy.options` cumple **todas** las puertas:
 3. Estrategia = long call o long put (buy to open) — nunca CC/CSP/spreads
 4. 1 contrato, débito ≤ `maxPremiumDebitUsd` y ≤ `maxPremiumPctOfPortfolio`, cash post ≥ 10%
 5. DTE 14–90; liquidez (OI + bid/ask) OK
-6. `review_option_order` limpio → **pedir confirmación en chat** → `place_option_order`
+6. `review_option_order` limpio → `place_option_order` (**autónomo**, igual que equity; escalar solo si order_checks / fuera de policy)
 7. Journal + email; cuenta como 1 trade hacia límites diarios/semanales
 
-**No** incluir opciones en el path automático de `go` / autonomous equity cycle. Equity sigue siendo el default.
+**Opciones no son el default del `go` equity**, pero si un setup Alta+catalizador pasa todas las puertas de `options`, el agente **puede** ejecutarlas en ciclo autónomo sin pedir chat.
 
 ## Fase 5 — Monitoreo
 

@@ -1,0 +1,67 @@
+{
+  "date": "2026-07-23",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-23",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_in_window": [],
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 6,
+      "eps_estimate": "4.23"
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 6,
+      "eps_estimate": "7.18"
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 6,
+      "eps_estimate": "0.41"
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 7,
+      "eps_estimate": "1.82"
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 7,
+      "eps_estimate": "1.89"
+    },
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 13,
+      "eps_estimate": null
+    }
+  ],
+  "research_universe_reported": [
+    {
+      "symbol": "GOOGL",
+      "report_date": "2026-07-22",
+      "timing": "pm",
+      "verified": true,
+      "note": "Q2 reported AH 2026-07-22 — CapEx guide $195-205B; premarket ~-5%"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "week": "2026-W30",
+  "navUsd": 99.5,
+  "spyReturnPct": -1.19,
+  "fundReturnPct": -0.5,
+  "attribution": {
+    "fundamental_quality": 0.5,
+    "mispricing_vs_fair_value": 0.7,
+    "catalyst_proximity_days": 0.4,
+    "ackman_confluence": 0.5,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": -0.01,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund −0.50% vs SPY −1.19% since inception (+0.69% alpha) but −3.75% WoW as book gave back W29 HWM gains into earnings window. MSFT (+1.42%) outperformed AMZN (−1.95%) despite lower conviction tier — both theses intact, stops not hit. Mispricing signal strongest as pullback restored margin of safety. Hold conviction thresholds until post-earnings; modest boost mispricing, trim catalyst proximity weight given pre-earnings volatility cost."
+}

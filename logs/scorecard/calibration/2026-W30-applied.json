@@ -1,0 +1,57 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W30",
+  "appliedAt": "2026-07-24T21:05:00.000Z",
+  "decision": "APPLIED",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "newWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.27,
+    "catalyst_proximity_days": 0.21,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": -0.01,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "partialRejection": {
+    "social_sentiment": "Proposed delta −0.01 would breach minWeightFloor (0.05 → 0.04). Rejected; weight held at floor."
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 5.65,
+    "haltDrawdownLimitPct": 15,
+    "weeklyNavDropPct": 3.75,
+    "haltWeeklyNavDropLimitPct": 5,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": false
+  },
+  "ackmanRationale": "Mispricing_vs_fair_value was our best explanatory signal (+0.7 attribution) as pre-earnings pullbacks restored margin of safety without breaking either thesis. Since inception we lead SPY by +69bps despite a −3.75% WoW giveback into the earnings window. We apply a modest +1% mispricing boost and trim catalyst proximity −1% — pre-earnings volatility cost without thesis break. Social sentiment stays at the 0.05 policy floor. Conviction thresholds held until AMZN and MSFT report; MSFT outperformance vs AMZN is noted but insufficient to lower the Alta bar pre-print.",
+  "attributionSummary": {
+    "bestSignal": "mispricing_vs_fair_value",
+    "fundVsSpyPct": 0.69,
+    "navUsd": 99.5
+  }
+}

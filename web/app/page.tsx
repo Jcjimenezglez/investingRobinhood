@@ -100,7 +100,7 @@ export default function HomePage() {
             {
               step: "01",
               title: "Write the thesis",
-              body: "No buy without a memo: why the business, what has to go right, and what would kill the idea.",
+              body: "No buy without a memo: financials, earnings catalysts, mispricing, and kill criteria — technicals only for timing.",
             },
             {
               step: "02",
@@ -110,7 +110,7 @@ export default function HomePage() {
             {
               step: "03",
               title: "Score it every week",
-              body: "Friday scorecards compare Tapefund to SPY for the period and since inception.",
+              body: "Friday scorecards use realized P&L and compare Tapefund to SPY for the period and since inception.",
             },
           ].map((item) => (
             <li key={item.step} className="space-y-3">

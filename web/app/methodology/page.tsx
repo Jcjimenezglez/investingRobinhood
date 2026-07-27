@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BookOpen,
+  CandlestickChart,
   FileText,
   LineChart,
   Shield,
@@ -26,7 +27,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Methodology",
   description:
-    "How Tapefund invests: Ackman-style concentration, thesis-driven entries, daily CIO cycles, and full transparency on Robinhood Agentic.",
+    "How Tapefund invests: Ackman-style concentration, thesis-driven entries, broker-native research (earnings, financials, technicals, Level II), daily CIO cycles, and a public track record.",
   path: "/methodology/",
 });
 
@@ -44,7 +45,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Exit on thesis break",
-    body: "Sell when the case fails or fair value is reached — not on a calendar or profit target.",
+    body: "Sell when the case fails or fair value is reached — not on a calendar or profit target. Tax-lot aware on equity exits.",
   },
   {
     icon: BookOpen,
@@ -59,7 +60,35 @@ const pillars = [
   {
     icon: LineChart,
     title: "Agentic account only",
-    body: "All trades run on a dedicated Agentic brokerage account via MCP. Full public transparency on the scoreboard.",
+    body: "All trades run on a dedicated Agentic brokerage account. Broker-native market data feeds the CIO; the scoreboard stays public.",
+  },
+];
+
+/** Broker-native research stack (Jul 2026) — public-facing, no internal tool IDs. */
+const researchStack = [
+  {
+    title: "Earnings calendar & results",
+    body: "Upcoming reports and multi-quarter EPS history for catalyst timing and surprise context.",
+  },
+  {
+    title: "Company financials",
+    body: "Revenue, profit, and margin trends — the core of quality and mispricing analysis.",
+  },
+  {
+    title: "Technicals (timing only)",
+    body: "RSI, MACD, and moving averages as secondary timing checks — never the thesis itself.",
+  },
+  {
+    title: "Level II order book",
+    body: "Bid/ask depth before material entries and exits so size respects real liquidity.",
+  },
+  {
+    title: "Realized P&L",
+    body: "Closed-trade P&L feeds the weekly scorecard and post-mortems versus SPY.",
+  },
+  {
+    title: "Tax lots",
+    body: "Cost basis and short/long-term status inform which lots to close when trimming or exiting.",
   },
 ];
 
@@ -133,6 +162,28 @@ export default function MethodologyPage() {
       </section>
 
       <section>
+        <div className="mb-4 flex items-center gap-2">
+          <CandlestickChart className="size-4 text-signal" strokeWidth={1.5} />
+          <h2 className="hud-label !mb-0">Broker research stack</h2>
+        </div>
+        <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          The CIO pulls live market intelligence from the brokerage before every
+          ranked scan and trade. Fundamentals and catalysts still drive
+          conviction; technicals and the order book refine timing and execution.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {researchStack.map((item) => (
+            <div key={item.title} className="space-y-2 border border-border p-4">
+              <h3 className="text-sm font-semibold tracking-tight">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
         <h2 className="hud-label">Published daily on {BRAND.name}</h2>
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
           <li>
@@ -169,7 +220,7 @@ export default function MethodologyPage() {
         data={collectionPageJsonLd({
           name: "Tapefund Methodology",
           description:
-            "Investment process for the Tapefund AI hedge fund track record.",
+            "Investment process for the Tapefund AI hedge fund track record, including broker-native earnings, financials, technicals, and Level II research.",
           path: "/methodology/",
         })}
       />

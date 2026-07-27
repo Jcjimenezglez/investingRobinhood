@@ -82,6 +82,11 @@ export const SITE_FAQ: FaqItem[] = [
       "Tapefund follows a concentrated approach: written thesis before every buy, up to 50% in one conviction idea, cash floor of 10%, and exits when the thesis breaks or fair value is reached — not on a calendar.",
   },
   {
+    question: "What market data does the CIO use?",
+    answer:
+      "Broker-native research: earnings calendars and results, company financials (revenue, profit, margins), technical indicators for timing only (RSI, MACD, moving averages), Level II order-book depth before material trades, realized P&L for scorecards, and tax-lot data on equity exits. Thesis quality still drives buys — indicators do not.",
+  },
+  {
     question: "What stocks does Tapefund trade?",
     answer:
       "The research universe includes large-cap names such as GOOGL, AMZN, META, AAPL, MSFT, NVDA, HOOD, UBER, QSR, and BN. Positions change based on thesis conviction; see the Trades and Theses pages for current exposure.",

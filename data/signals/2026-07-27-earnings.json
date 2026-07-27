@@ -1,0 +1,55 @@
+{
+  "date": "2026-07-27",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-07-27",
+  "generated_by": "MCP get_earnings_calendar",
+  "research_universe_upcoming": [
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 2,
+      "eps_estimate": "4.24"
+    },
+    {
+      "symbol": "META",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 2,
+      "eps_estimate": "7.23"
+    },
+    {
+      "symbol": "HOOD",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 2
+    },
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 3,
+      "eps_estimate": "1.82"
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 3,
+      "eps_estimate": "1.88"
+    },
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "pm",
+      "verified": true,
+      "days_out": 9
+    }
+  ]
+}

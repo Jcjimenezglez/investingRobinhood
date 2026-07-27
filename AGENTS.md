@@ -24,7 +24,7 @@ config/risk-policy.json        ← números (límites, sizing)
 
 ## Comandos
 
-`snapshot` · `scan` · `analiza TICKER` · `trade TICKER $XX` · `prompt version`
+`snapshot` · `scan` · `analiza TICKER` · `trade TICKER $XX` · `pnl` · `techs TICKER` · `financials TICKER` · `book TICKER` · `taxlots TICKER` · `prompt version`
 
 ## Mejorar el agente
 

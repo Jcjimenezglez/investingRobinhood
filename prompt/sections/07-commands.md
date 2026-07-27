@@ -8,14 +8,19 @@
 | `scan` | Fase 2 — **scan amplio** de todo `researchUniverse` + MCP scanner (`run_scan`) con ranking |
 | `scan-mcp` | Solo scanner Robinhood → merge + ranking (sin trade) |
 | `watchlist sync` | Sincronizar `investingRH-core` con universo + posiciones + top ranking |
-| `analiza TICKER` | Fase 3 — análisis bull/bear |
-| `trade TICKER $XX` | Fase 4 — review + ejecución equity |
-| `option TICKER call\|put` | Long option si cumple `risk-policy.options` (Alta + catalizador); autónomo tras review limpio |
+| `analiza TICKER` | Fase 3 — bull/bear + `get_financials` + técnicos + earnings |
+| `trade TICKER $XX` | Fase 4 — Level II + review + ejecución equity |
+| `option TICKER call\|put` | Long option si cumple `risk-policy.options` (Alta + catalizador); `get_option_historicals` + autónomo tras review limpio |
 | `limit TICKER $XX @ $PRICE` | Orden límite (preview) |
 | `stop TICKER @ $PRICE` | Stop loss pendiente (GTC) |
 | `ordenes` | Listar órdenes abiertas |
 | `cancel ORDER_ID` | Cancelar orden |
-| `cierra TICKER` | Vender posición |
+| `cierra TICKER` | Vender posición (tax-aware: `get_equity_tax_lots` → `tax_lots` si aplica) |
+| `pnl` | `get_realized_pnl` + `get_pnl_trade_history` (ventana pedida; default week) |
+| `taxlots TICKER` | `get_equity_tax_lots` — cost basis / ST vs LT |
+| `book TICKER` | `get_equity_price_book` — Level II snapshot |
+| `techs TICKER` | `get_equity_technical_indicators` — RSI + MACD + SMA (day) |
+| `financials TICKER` | `get_financials` — revenue / margins trend |
 | `journal` | Historial de trades |
 | `pausa` | Detener trading |
 | `prompt version` | Leer manifest.json y reportar versión |

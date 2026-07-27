@@ -25,6 +25,7 @@ La regla `.mdc` le dice al agente que lea `manifest.json` y aplique cada secció
 | Formato de respuestas | `sections/06-response-format.md` |
 | Comandos del usuario | `sections/07-commands.md` |
 | Qué puede / no puede hacer el agente | `sections/08-capabilities-and-scheduling.md` |
+| Intel multi-fuente + MCP nuevo pack | `sections/10-data-intelligence.md` + `config/data-sources.json` |
 
 ## Ejemplos de mejora rápida
 

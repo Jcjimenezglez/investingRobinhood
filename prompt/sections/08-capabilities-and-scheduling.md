@@ -7,10 +7,16 @@ Referencia para el agente y el usuario. Basado en Robinhood Trading MCP (beta).
 ### Lectura (todas las cuentas)
 
 - Portfolio, cash, buying power, posiciones, historial de órdenes
-- Cotizaciones, fundamentals, históricos, earnings calendar
-- **Scanner** — `run_scan` con filtros RSI, volumen, earnings (`config/scanner-presets.json`)
+- Cotizaciones, fundamentals, históricos OHLCV
+- **Earnings** — `get_earnings_calendar` (mercado) + `get_earnings_results` (ticker, ~8Q)
+- **Financials** — `get_financials` (revenue, gross/net profit, margins; quarterly/annual)
+- **Technicals** — `get_equity_technical_indicators` (RSI, MACD, SMA/EMA, ATR, Bollinger, VWAP, …)
+- **Level II** — `get_equity_price_book` (depth bid/ask, max 4 symbols)
+- **Tax lots** — `get_equity_tax_lots` (cost basis, ST/LT por lot abierto)
+- **P&L** — `get_realized_pnl` (agregado) + `get_pnl_trade_history` (trade a trade)
+- **Options historicals** — `get_option_historicals` (OHLC por contract UUID)
+- **Scanner** — `run_scan` / `create_scan` con filtros RSI, volumen, earnings (`config/scanner-presets.json`)
 - Búsqueda de símbolos, watchlists (crear, editar, seguir listas curadas)
-- `get_realized_pnl` — P&L realizado por ventana (scorecard semanal)
 
 ### Trading (solo cuenta Agentic)
 
@@ -91,4 +97,9 @@ El agente puede sugerir crear una Automation si el usuario quiere revisión diar
 | ¿Day trade 20 veces? | ❌ Guardrails + cash settlement (good-faith); PDT margin abolido 2026 no aplica igual a Agentic cash |
 | ¿Long call/put con tesis Alta? | ✅ Si cumple `risk-policy.options` + review limpio (autónomo) |
 | ¿Covered call / CSP / spreads? | ❌ Prohibido por fund policy |
+| ¿Ver RSI/MACD/SMA de un ticker? | ✅ `get_equity_technical_indicators` |
+| ¿Revenue/márgenes históricos? | ✅ `get_financials` |
+| ¿Order book Level II? | ✅ `get_equity_price_book` (max 4) |
+| ¿Vender lotes específicos (tax)? | ✅ `get_equity_tax_lots` → `tax_lots` en sell (no con stops/dollar_amount) |
+| ¿P&L realizado del mes? | ✅ `get_realized_pnl` / `get_pnl_trade_history` |
 | ¿Crypto? | ❌ App only |

@@ -1,6 +1,6 @@
 {
-  "version": "1.7.1",
-  "description": "System prompt modular del Stock Broker Agent. Edita los archivos en sections/ y ajusta config/risk-policy.json.",
+  "version": "1.8.0",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.0 integra MCP intel pack Jul 2026 (earnings, financials, technicals, L2, tax lots, realized PnL, option historicals).",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

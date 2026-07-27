@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "description": "Free data sources for investingRobinhood signal pipeline. MCP tools require agent session; SEC via curl in fetch-signals.sh.",
+  "version": "1.1.0",
+  "description": "Free data sources for investingRobinhood signal pipeline. Includes Jul 2026 MCP intel pack (financials, technicals, L2, tax lots, PnL history, option historicals). SEC via curl in fetch-signals.sh.",
   "universeConfig": "config/fund-mandate.json",
   "ackmanTracker": "config/ackman-tracker.json",
   "signalWeights": "config/signal-weights.json",
@@ -10,12 +10,18 @@
   "mcpTools": {
     "quotes": "get_equity_quotes",
     "fundamentals": "get_equity_fundamentals",
+    "financials": "get_financials",
+    "technicalIndicators": "get_equity_technical_indicators",
+    "priceBook": "get_equity_price_book",
+    "taxLots": "get_equity_tax_lots",
     "earningsCalendar": "get_earnings_calendar",
     "earningsResults": "get_earnings_results",
     "indexQuotes": "get_index_quotes",
     "historicals": "get_equity_historicals",
+    "optionHistoricals": "get_option_historicals",
     "scanner": "run_scan",
-    "realizedPnl": "get_realized_pnl"
+    "realizedPnl": "get_realized_pnl",
+    "pnlTradeHistory": "get_pnl_trade_history"
   },
   "scannerConfig": "config/scanner-presets.json",
   "watchlistConfig": "config/watchlist-policy.json",

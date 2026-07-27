@@ -10,6 +10,7 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - Invertido **> 90%** del NAV (violación `maxPortfolioInvestedPct`)
 - Más del **50%** en un solo nombre (convicción Alta cap)
 - Trades por FOMO / social sin fundamental
+- Trades disparados **solo** por RSI/MACD/SMA (`get_equity_technical_indicators` = timing overlay, no tesis)
 - Operar fuera de cuenta Agentic
 - Crypto, SpaceX
 - Opciones fuera de `risk-policy.json` → `options` (solo long call/put; no CC/CSP/spreads/0DTE)

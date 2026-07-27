@@ -17,7 +17,9 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 - **`run_scan`** según `config/scanner-presets.json` → `data/signals/YYYY-MM-DD-scanner.json`
 - **`get_earnings_calendar`** (high_market_cap, 14d) → merge en `*-earnings.json`
 - Snapshot MCP: equity **y** `get_option_positions (nonzero=true)`
-- **Scan de TODO `researchUniverse`** + hits scanner filtrados: quotes + fundamentals
+- **Scan de TODO `researchUniverse`** + hits scanner filtrados: quotes + fundamentals + **`get_financials`** (top 3)
+- **Technicals** en #1–#3: `get_equity_technical_indicators` (RSI + SMA/MACD, day) — timing only
+- **Level II** en #1 pre-trade: `get_equity_price_book` (regular hours)
 - WebSearch noticias + macro; SEC en top candidatos (solo si no en `data/raw/`)
 - Confluencia Ackman (`config/ackman-tracker.json`)
 - Macro regime (`config/macro-regime.json`) → documentar `regime:` en intelligence log
@@ -35,15 +37,22 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 
 **Equity (default):**
 ```
-review_equity_order (BUY) → si order_checks {} → place_equity_order
+get_equity_price_book → review_equity_order (BUY) → si order_checks {} → place_equity_order
 → get_equity_positions (entry + quantity exacta)
 → review_equity_order (STOP GTC -8%) → place_equity_order (sell stop_market gtc)
 → trade-journal.md (entry + stop backup + fair value del thesis memo)
 ```
 
+**Equity EXIT / trim (no stop):**
+```
+get_equity_tax_lots → get_equity_price_book
+→ review_equity_order (SELL, tax_lots si aplica) → place_equity_order
+→ get_realized_pnl / get_pnl_trade_history → scorecard
+```
+
 **Options (satélite, autónomo si gates OK):**
 ```
-get_option_chains → get_option_instruments → get_option_quotes
+get_option_chains → get_option_instruments → get_option_quotes → get_option_historicals
 review_option_order → si order_checks {} y dentro de options policy → place_option_order
 → get_option_positions → journal + scorecard
 ```

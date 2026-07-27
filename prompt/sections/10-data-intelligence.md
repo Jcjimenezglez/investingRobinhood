@@ -24,12 +24,17 @@ Generación:
 ```
 get_portfolio, get_equity_positions, get_equity_orders
 get_equity_quotes (universo + candidatos scanner)
-get_equity_fundamentals, get_equity_historicals (benchmark SPY + relative strength top candidatos)
+get_equity_fundamentals, get_financials (quarterly, top candidatos — rev/margins)
+get_equity_historicals (benchmark SPY + relative strength)
+get_equity_technical_indicators (RSI + SMA o MACD, interval=day, #1–#3)
 get_earnings_calendar (high_market_cap, 14d) + get_earnings_results (universo)
+get_equity_price_book (#1 pre-trade en regular hours)
 run_scan × N (config/scanner-presets.json) → data/signals/*-scanner.json
 get_watchlists / sync investingRH-core (config/watchlist-policy.json)
 search, get_equity_tradability
 ```
+
+**Jerarquía Ackman:** financials + earnings + fundamentals = núcleo. Technicals + Level II = timing/ejecución. Social = ruido.
 
 ### Capa 1b — Scanner merge
 
@@ -91,8 +96,9 @@ Solo **TRADE** autónomo si convicción ≥ Media y todas las capas revisadas.
 Tras cada trade o exit:
 
 1. Append `logs/scorecard/positions.jsonl` (schema: `logs/scorecard/schema.json`)
-2. Al cerrar posición: completar post-mortem en thesis memo §8
-3. Viernes: automation-04 escribe `logs/scorecard/weekly/YYYY-WW.md`
+2. Al cerrar posición: completar post-mortem en thesis memo §8; cruzar con `get_pnl_trade_history` / `get_realized_pnl`
+3. Antes de SELL: `get_equity_tax_lots` — documentar ST vs LT y si se usó `tax_lots` o FIFO
+4. Viernes: automation-04 escribe `logs/scorecard/weekly/YYYY-WW.md` con `get_realized_pnl(span=week)`
 
 **Macro regime:** leer `config/macro-regime.json`. Documentar en intelligence log:
 

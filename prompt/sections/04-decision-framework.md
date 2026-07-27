@@ -16,8 +16,10 @@ Entrega snapshot en ~5 líneas: cash, posiciones, P&L, riesgo usado vs. límites
 
 ```
 get_equity_quotes (todos los del universo)        → precio, cambio %
-get_equity_fundamentals (top candidatos)          → P/E, FCF, márgenes, 52w
-get_popular_watchlists                            → movers, earnings próximos
+get_equity_fundamentals (top candidatos)          → P/E, market cap, 52w
+get_financials (top candidatos, quarterly×8)      → rev growth, margins trend
+get_earnings_calendar + get_earnings_results      → catalyst timing / EPS surprise
+get_equity_technical_indicators (#1–#3)           → RSI/MACD/SMA (timing only)
 get_equity_tradability                            → operabilidad
 data/signals/YYYY-MM-DD-universe.json (si existe) → scores pre-calculados
 WebSearch + SEC (top 3)                           → catalizador / mispricing
@@ -43,14 +45,16 @@ Solo el **#1 del ranking** pasa a Fase 3/4, y solo si convicción ≥ Media.
 
 Por candidato:
 
-- **Bull:** 2–3 bullets cuantitativos
-- **Bear:** 2–3 riesgos concretos
+- **Bull:** 2–3 bullets cuantitativos (incl. `get_financials` trend si material)
+- **Bear:** 2–3 riesgos concretos (earnings date, margin compression, etc.)
 - **Setup:** entry, stop backup ($/%), fair value range (thesis), size, R:R
+- **Technicals (secundario):** RSI/MACD/SMA latest — solo timing / red flags
 - **Convicción:** Baja / Media / Alta — operar solo Media o Alta
 
 ## Fase 4 — Ejecución (BUY)
 
 ```
+get_equity_price_book (symbol) → depth; ajustar limit si wall adversa
 review_equity_order → preview + warnings
 place_equity_order → si pasa review y risk-policy
 get_equity_positions → cantidad exacta fillada + average_buy_price
@@ -95,13 +99,21 @@ Solo si `risk-policy.options` cumple **todas** las puertas:
 2. Underlying en `researchUniverse`
 3. Estrategia = long call o long put (buy to open) — nunca CC/CSP/spreads
 4. 1 contrato, débito ≤ `maxPremiumDebitUsd` y ≤ `maxPremiumPctOfPortfolio`, cash post ≥ 10%
-5. DTE 14–90; liquidez (OI + bid/ask) OK
+5. DTE 14–90; liquidez (OI + bid/ask) OK; `get_option_historicals` en contrato elegido
 6. `review_option_order` limpio → `place_option_order` (**autónomo**, igual que equity; escalar solo si order_checks / fuera de policy)
 7. Journal + email; cuenta como 1 trade hacia límites diarios/semanales
 
 **Opciones no son el default del `go` equity**, pero si un setup Alta+catalizador pasa todas las puertas de `options`, el agente **puede** ejecutarlas en ciclo autónomo sin pedir chat.
 
-## Fase 5 — Monitoreo
+## Fase 5 — Monitoreo / EXIT tax-aware
 
 Cada sesión: posiciones vs. tesis + stop backup; exit/trim si tesis lo dicta; pausar tras 3 pérdidas seguidas.
-Opciones abiertas: revisar premium vs tesis/catalizador; cerrar si tesis rota, catalizador fallido, o ~7 DTE sin payoff.
+Opciones abiertas: revisar premium vs tesis/catalizador (`get_option_historicals` si path dudoso); cerrar si tesis rota, catalizador fallido, o ~7 DTE sin payoff.
+
+**Antes de SELL equity (trim o full, no stop):**
+```
+get_equity_tax_lots → elegir lots (LT preferido en gains; harvest ST losses si tesis rota)
+get_equity_price_book → timing de salida
+review_equity_order (tax_lots si aplica) → place_equity_order
+get_realized_pnl / get_pnl_trade_history → scorecard
+```

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.3",
-  "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes.",
+  "version": "1.0.4",
+  "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes. Technicals are timing overlays, not score drivers.",
   "weights": {
     "fundamental_quality": 0.34,
     "mispricing_vs_fair_value": 0.27,
@@ -17,7 +17,18 @@
   },
   "fundamentalQualityHints": {
     "peBelowSectorMedian": 0.1,
-    "wideMoatLanguageInThesis": 0.05
+    "wideMoatLanguageInThesis": 0.05,
+    "revenueGrowthPositiveQoQ": 0.05,
+    "netMarginExpanding": 0.05,
+    "note": "Use get_financials (quarterly) for growth/margin hints — not get_equity_fundamentals alone."
+  },
+  "technicalTimingOverlay": {
+    "enabled": true,
+    "tools": ["get_equity_technical_indicators"],
+    "defaultInterval": "day",
+    "indicators": ["rsi", "macd", "sma"],
+    "weightInScore": 0,
+    "note": "Never add technicals to composite score. Use only to delay entry, trim size, or flag overbought/oversold risk in intel log."
   },
   "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
   "lastCalibratedWeek": "2026-W30"

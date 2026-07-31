@@ -1,0 +1,44 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W31",
+  "appliedAt": "2026-07-31T21:05:00.000Z",
+  "decision": "HALTED",
+  "haltReason": "missingWeeklyReview",
+  "previousWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.27,
+    "catalyst_proximity_days": 0.21,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "newWeights": {
+    "fundamental_quality": 0.34,
+    "mispricing_vs_fair_value": 0.27,
+    "catalyst_proximity_days": 0.21,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "weeklyReviewPresent": false,
+    "weeklyMarkdownMissing": "logs/scorecard/weekly/2026-W31.md",
+    "suggestionsJsonMissing": "logs/scorecard/weekly/2026-W31-suggestions.json",
+    "haltCalibrationWhen": {
+      "missingWeeklyReview": true
+    }
+  },
+  "ackmanRationale": "Calibration halted before any weight review. Automation-04 Weekly Review did not produce the required W31 scorecard (`2026-W31.md`) or suggestions file (`2026-W31-suggestions.json`). Without structured weekly evidence, we do not move signal weights — Ackman discipline is to make few, high-conviction changes backed by attribution data. Current weights (last calibrated W30) remain in force until the weekly review completes.",
+  "attributionSummary": {
+    "bestSignal": null,
+    "fundVsSpyPct": null,
+    "navUsd": null
+  }
+}

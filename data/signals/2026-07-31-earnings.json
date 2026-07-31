@@ -1,0 +1,57 @@
+{
+  "date": "2026-07-31",
+  "generated_by": "MCP get_earnings_calendar + get_earnings_results",
+  "as_of": "2026-07-31T12:03Z",
+  "filter": "high_market_cap",
+  "days": 14,
+  "research_universe_upcoming": [
+    {
+      "symbol": "UBER",
+      "report_date": "2026-08-05",
+      "timing": "am",
+      "eps_estimate": 0.83,
+      "days_until": 5
+    },
+    {
+      "symbol": "QSR",
+      "report_date": "2026-08-06",
+      "timing": "am",
+      "eps_estimate": 1.04,
+      "days_until": 6
+    },
+    {
+      "symbol": "NVDA",
+      "report_date": "2026-08-26",
+      "timing": "pm",
+      "eps_estimate": null,
+      "days_until": 26
+    }
+  ],
+  "research_universe_reported": [
+    {
+      "symbol": "AMZN",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "eps_estimate": 1.82,
+      "eps_actual": 5.75,
+      "beat": true
+    },
+    {
+      "symbol": "AAPL",
+      "report_date": "2026-07-30",
+      "timing": "pm",
+      "eps_estimate": 1.89,
+      "eps_actual": 2.02,
+      "beat": true,
+      "guidance_note": "soft Q4 outlook / supply constraints"
+    },
+    {
+      "symbol": "MSFT",
+      "report_date": "2026-07-29",
+      "timing": "pm",
+      "eps_estimate": 4.23,
+      "eps_actual": 4.74,
+      "beat": true
+    }
+  ]
+}

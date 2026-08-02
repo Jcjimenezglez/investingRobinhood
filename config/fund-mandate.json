@@ -12,7 +12,7 @@
   "aumUsd": 100,
   "accountScope": "agentic-only",
   "scopeNote": "All decisions based solely on the $100 Agentic account. Other LP accounts are irrelevant to fund thesis.",
-  "clientMandate": "Generate absolute returns with thesis discipline. Soft aspiration 1.3–1.7x annual (ceiling 2x) — never force risk to hit a multiple. Concentrated bets on mispriced quality. Not index-hugging. Not passive hold.",
+  "clientMandate": "Generate absolute returns with thesis discipline on equity only. Soft aspiration 1.3–1.7x annual (ceiling 2x) — never force risk to hit a multiple. Options disabled by LP (2026-08-02). Concentrated bets on mispriced quality. Not index-hugging. Not passive hold.",
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN"
   ],

@@ -21,8 +21,7 @@
       "conviction_below_medium",
       "symbol_outside_universe",
       "mcp_auth_or_connection_failure",
-      "option_premium_exceeds_max",
-      "option_outside_narrow_policy"
+      "option_order_attempted_while_disabled"
     ],
     "executeButNotifyImmediately": [
       "first_autonomous_trade_ever",

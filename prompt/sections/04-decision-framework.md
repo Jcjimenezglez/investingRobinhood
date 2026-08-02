@@ -91,24 +91,14 @@ Salidas al alza (cuando aplique):
 - **Trim parcial** — solo si el thesis memo define % y precio (ej. fair value alcanzado, margen de seguridad reducido)
 - **Exit total** — tesis realizada o rotación a mejor risk/reward (ej. Ackman GOOGL → MSFT)
 
-## Fase 4d — Opciones (satélite; no default del `go`)
+## Fase 4d — Opciones — OFF
 
-Solo si `risk-policy.options` cumple **todas** las puertas:
-
-1. Convicción **Alta** + catalizador datado + thesis doc
-2. Underlying en `researchUniverse`
-3. Estrategia = long call o long put (buy to open) — nunca CC/CSP/spreads
-4. 1 contrato, débito ≤ `maxPremiumDebitUsd` y ≤ `maxPremiumPctOfPortfolio`, cash post ≥ 10%
-5. DTE 14–90; liquidez (OI + bid/ask) OK; `get_option_historicals` en contrato elegido
-6. `review_option_order` limpio → `place_option_order` (**autónomo**, igual que equity; escalar solo si order_checks / fuera de policy)
-7. Journal + email; cuenta como 1 trade hacia límites diarios/semanales
-
-**Opciones no son el default del `go` equity**, pero si un setup Alta+catalizador pasa todas las puertas de `options`, el agente **puede** ejecutarlas en ciclo autónomo sin pedir chat.
+`options.enabled=false` (LP 2026-08-02). **Skip.** No satélite, no long call/put, no `place_option_order`. Equity-only.
 
 ## Fase 5 — Monitoreo / EXIT tax-aware
 
 Cada sesión: posiciones vs. tesis + stop backup; exit/trim si tesis lo dicta; pausar tras 3 pérdidas seguidas.
-Opciones abiertas: revisar premium vs tesis/catalizador (`get_option_historicals` si path dudoso); cerrar si tesis rota, catalizador fallido, o ~7 DTE sin payoff.
+Si hubiera options legacy abiertas (hoy: ninguna): cerrar; no abrir nuevas.
 
 **Antes de SELL equity (trim o full, no stop):**
 ```

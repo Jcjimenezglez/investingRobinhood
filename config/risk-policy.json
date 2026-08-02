@@ -7,7 +7,7 @@
   },
   "strategy": {
     "name": "ackman-concentrated-catalyst",
-    "description": "Concentrated long-only hedge fund style: high conviction, fundamental thesis, catalyst-driven. Objective is to MAKE MONEY — active PM, not passive hold. Equity is the core book; long options are a narrow asymmetric satellite when thesis+catalyst align.",
+    "description": "Concentrated long-only equity hedge fund style: high conviction, fundamental thesis, catalyst-driven. Objective is to MAKE MONEY — active PM, not passive hold. Equity-only book — options disabled by LP directive (2026-08-02).",
     "primaryObjective": "generate_absolute_returns",
     "secondaryObjective": "thesis_discipline_and_capital_compounding",
     "timeHorizon": "thesis-driven-3-to-12-months",
@@ -15,7 +15,7 @@
       "softAnnualMultipleLow": 1.3,
       "softAnnualMultiplePreferred": 1.5,
       "softAnnualCeiling": 2.0,
-      "note": "Soft aspirations only — never force trades, size, or options to hit a multiple. Preserve capital and thesis discipline first. Prefer 1.3–1.7x over swinging for 2x."
+      "note": "Soft aspirations only — never force trades or size to hit a multiple. Preserve capital and thesis discipline first. Prefer 1.3–1.7x over swinging for 2x. Options are OFF — do not use premium to chase multiples."
     },
     "positionCapacity": {
       "mode": "cash_driven",
@@ -26,7 +26,7 @@
     "style": "Bill Ackman — concentrated, activist mindset, quality + mispricing"
   },
   "universe": {
-    "allowedTypes": ["equity", "option"],
+    "allowedTypes": ["equity"],
     "excludeEtfsUnlessHedging": true,
     "allowEtfsForTemporaryHedge": ["SPY", "SH"],
     "minAvgDailyVolume": 5000000,
@@ -45,10 +45,15 @@
     "maxSingleAddPctOfPortfolio": 25
   },
   "options": {
-    "enabled": true,
-    "accountNote": "Agentic cash ••••3029 — option_level_2 verified. MCP single-leg only.",
-    "allowedStrategies": ["long_call", "long_put"],
+    "enabled": false,
+    "disabledAt": "2026-08-02",
+    "disabledBy": "LP directive",
+    "disabledNote": "LP (2026-08-02): do NOT use the options satellite policy. Ignore prior long-call/put rules even though broker L2 remains. No review_option_order / place_option_order. Equity-only.",
+    "accountNote": "Agentic cash ••••3029 — option_level_2 may still show on broker; fund forbids options trading.",
+    "allowedStrategies": [],
     "forbiddenStrategies": [
+      "long_call",
+      "long_put",
       "covered_call",
       "cash_secured_put",
       "naked_short",
@@ -56,43 +61,7 @@
       "0dte_lottery",
       "multi_leg"
     ],
-    "minConviction": "Alta",
-    "requireCatalyst": true,
-    "requireThesisDocument": true,
-    "underlyingMustBeInResearchUniverse": true,
-    "maxContractsPerOrder": 1,
-    "maxOpenOptionPositions": 1,
-    "maxPremiumDebitUsd": 25,
-    "maxPremiumPctOfPortfolio": 20,
-    "minCashReserveAfterDebitPct": 10,
-    "minDte": 14,
-    "maxDte": 90,
-    "preferExpirationNearCatalyst": true,
-    "liquidity": {
-      "minOpenInterest": 100,
-      "maxBidAskSpreadPctOfMid": 15,
-      "preferLimitAtOrBelowMid": true
-    },
-    "orderDefaults": {
-      "orderType": "limit",
-      "timeInForce": "gtc",
-      "onlyDuringMarketHours": true,
-      "positionEffectOpen": "buy"
-    },
-    "requireReviewBeforeOrder": true,
-    "requireChatConfirmation": false,
-    "countsTowardEquityTradeLimits": true,
-    "exitPolicy": {
-      "style": "thesis-driven-premium-risk",
-      "fullExitTriggers": [
-        "thesis_invalidated",
-        "catalyst_failed",
-        "superior_use_of_capital_in_equity",
-        "within_7_dte_without_payoff_path"
-      ],
-      "note": "Long options: premium can go to $0. Exit on thesis/catalyst break or ~7 DTE left without clear payoff. Do NOT hold to expiry hoping for lottery. Never force 2x."
-    },
-    "role": "Asymmetric satellite only when equity sizing cannot express a near-term Alta catalyst cheaply enough. Equity remains the core book."
+    "role": "DISABLED — equity-only book per LP. Historical narrow satellite rules are inactive."
   },
   "riskControls": {
     "maxDailyLossPct": 5,

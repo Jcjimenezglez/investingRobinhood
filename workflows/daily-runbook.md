@@ -5,10 +5,10 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 ## 1. Pre-flight
 
 - [ ] MCP Robinhood autenticado
-- [ ] Cuenta Agentic activa (`option_level_2` si se consideran options)
+- [ ] Cuenta Agentic activa (equity-only — `options.enabled=false`)
 - [ ] Horario ET correcto para el tipo de sesión
 - [ ] Leer `prompt/sections/09-autonomous-mode.md` + `10-data-intelligence.md`
-- [ ] Leer `config/risk-policy.json` → `options` (gates satélite)
+- [ ] Confirmar `config/risk-policy.json` → `options.enabled=false` (no satélite)
 
 ## 2. Scan amplio + Research (Capas 0–5 + signals + scanner)
 
@@ -31,7 +31,7 @@ Ejecutar en cada sesión programada (o manual). Leer `config/autonomy.json`, `co
 - Elegir el **#1 del ranking** (puede o no ser AMZN — dejar que los datos decidan)
 - HOLD si el mejor candidato tiene convicción < Media o datos insuficientes
 - **Equity** TRADE si dentro de risk-policy y review limpio (default)
-- **Options** solo satélite: si #1 (o catalizador Alta) cumple **todas** las gates de `risk-policy.options` — nunca forzar options para “llegar a 2×”
+- **Options:** OFF (`options.enabled=false`, LP 2026-08-02) — no satélite, no `place_option_order`
 
 ## 4. Ejecución (si TRADE)
 
@@ -50,15 +50,9 @@ get_equity_tax_lots → get_equity_price_book
 → get_realized_pnl / get_pnl_trade_history → scorecard
 ```
 
-**Options (satélite, autónomo si gates OK):**
-```
-get_option_chains → get_option_instruments → get_option_quotes → get_option_historicals
-review_option_order → si order_checks {} y dentro de options policy → place_option_order
-→ get_option_positions → journal + scorecard
-```
+**Options:** disabled — skip open/close flows unless legacy position exists (none today).
 
 Sin take-profit GTC automático — exits al alza según `exitPolicy` Ackman en risk-policy.
-Options: exit por tesis/catalizador o ~7 DTE sin payoff (`options.exitPolicy`).
 
 Si stop GTC rechazado (equity): alerta + fallback monitoreo 12:00 / 15:00 ET con `check`.
 
@@ -86,7 +80,7 @@ bash scripts/send-alert.sh urgent "Motivo" "Detalle y acción sugerida"
 | Hora | Sesión |
 |------|--------|
 | 8:00 | Research only + `fetch-signals.sh` |
-| 9:35 | Full cycle (trades OK — equity default, options satélite) |
+| 9:35 | Full cycle (trades OK — equity only; options OFF) |
 | 12:00 | Monitor equity + options |
 | 15:00 | Close check + digest |
 | Vie 16:30 | Weekly scorecard ([`automation-04-weekly-review.md`](automation-04-weekly-review.md)) |

@@ -14,8 +14,8 @@
 ```
 get_accounts → Agentic
 get_equity_positions
-get_option_positions (nonzero=true)
-Si sin equity NI options → log snapshot en logs/intelligence/ y terminar
+get_option_positions (nonzero=true) — confirmar vacío (options OFF; no abrir)
+Si sin equity → log snapshot en logs/intelligence/ y terminar
 get_equity_quotes → precio por símbolo (equity)
 Leer logs/theses/TICKER-*.md → kill criteria, fair value, trim plan
 ```
@@ -34,19 +34,8 @@ Si trim plan en memo (precio ≥ X, vender Y%) → review partial sell manual
 Si no → reportar P&L %, distancia a stop backup, tesis vs fair value
 ```
 
-**No** auto-vender equity por ganancia % fija.
-
-### Options (long call/put)
-
-Por cada posición options abierta — aplicar `risk-policy.options.exitPolicy`:
-
-```
-Si tesis invalidada o catalizador fallido → AUTO CLOSE (sell to close) vía review_option_order → place_option_order
-Si ~7 DTE o menos sin payoff path claro → AUTO CLOSE
-Si no → reportar premium P&L, DTE, estado tesis/catalizador
-```
-
-**No** hold a expiry por lotería. **No** abrir options nuevas en esta automation (solo monitor/exit).
+**No** auto-vender equity por ganancia % fija.  
+**No** abrir ni gestionar options — `options.enabled=false` (LP 2026-08-02). Si aparece posición legacy inesperada → email urgent + close.
 
 ## Auto sell equity (fractional OK)
 
@@ -58,15 +47,6 @@ update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
 bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "hard_stop|thesis_break, precio, fill"
 ```
 
-## Auto close options
-
-```
-review_option_order → sell to close (position_effect=close)
-Si order_checks {} → place_option_order
-append logs/trade-journal.md + scorecard
-bash scripts/send-alert.sh trade "AUTO EXIT OPTION" "thesis_break|catalyst_fail|near_expiry, detalle"
-```
-
 ## Escalación — NO vender
 
 - `order_checks` no vacío → `send-alert.sh urgent` + no ejecutar
@@ -74,7 +54,7 @@ bash scripts/send-alert.sh trade "AUTO EXIT OPTION" "thesis_break|catalyst_fail|
 
 ## Output
 
-Escribir `logs/intelligence/YYYY-MM-DD-HHmm-monitor.md` con estado equity + options, P&L, distancia stop backup / DTE, tesis status, exits ejecutados.
+Escribir `logs/intelligence/YYYY-MM-DD-HHmm-monitor.md` con estado equity, P&L, distancia stop backup, tesis status, exits ejecutados. Nota: options OFF.
 
 1. **Persistir en disco** — el chat no sustituye el archivo en `logs/intelligence/`.
 2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD monitor" && git push origin main`

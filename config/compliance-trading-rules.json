@@ -37,7 +37,7 @@
     },
     "shortSelling": "No en Agentic MCP / cash focus",
     "options": {
-      "status": "option_level_2_approved",
+      "status": "disabled_by_fund_policy",
       "account": "Agentic cash",
       "allowedByBroker": [
         "buy_calls_puts",
@@ -45,16 +45,18 @@
         "cash_secured_puts",
         "exercise"
       ],
-      "allowedByFundPolicy": ["long_call", "long_put"],
+      "allowedByFundPolicy": [],
       "forbiddenByFundPolicy": [
+        "long_call",
+        "long_put",
         "covered_call",
         "cash_secured_put",
         "spreads",
         "naked_short",
         "0dte_lottery"
       ],
-      "policySource": "config/risk-policy.json → options",
-      "note": "Broker L2 > fund policy. Fund solo permite long debit calls/puts con reglas estrechas (Alta + catalizador + size pequeño)."
+      "policySource": "config/risk-policy.json → options.enabled=false",
+      "note": "LP directive 2026-08-02: options OFF. Broker may still show L2 — fund forbids all option orders (including former long call/put satellite)."
     }
   },
   "robinhoodAgenticBeta": [

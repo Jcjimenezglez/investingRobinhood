@@ -71,7 +71,8 @@ Según `trading://feature-availability`:
 
 ## Opciones
 
-Agentic aprobado **Level 2** (`option_level_2`). MCP soporta single-leg. **Fund policy** (más estrecha que el broker): solo **long calls/puts** con tesis Alta + catalizador, size pequeño — **autónomo** tras `review_option_order` limpio (igual que equity). Ver `config/risk-policy.json` → `options`. CC/CSP/spreads = ❌ aunque Robinhood L2 los permita.
+**DESACTIVADAS** por LP (2026-08-02): `risk-policy.json` → `options.enabled=false`.  
+Broker puede mostrar L2; el fondo **no** opera options (ni long call/put ni CC/CSP/spreads). Equity-only.
 
 ## Scheduling del agente (Cursor Automations)
 
@@ -95,8 +96,8 @@ El agente puede sugerir crear una Automation si el usuario quiere revisión diar
 | ¿Comprar cada lunes $25? | ⚠️ Automation Cursor + market, o recurring en app |
 | ¿Orden a las 9:31 exactas? | ⚠️ Automation cron ~9:31, no timer del broker |
 | ¿Day trade 20 veces? | ❌ Guardrails + cash settlement (good-faith); PDT margin abolido 2026 no aplica igual a Agentic cash |
-| ¿Long call/put con tesis Alta? | ✅ Si cumple `risk-policy.options` + review limpio (autónomo) |
-| ¿Covered call / CSP / spreads? | ❌ Prohibido por fund policy |
+| ¿Long call/put con tesis Alta? | ❌ Options OFF (LP 2026-08-02) |
+| ¿Covered call / CSP / spreads? | ❌ Prohibido |
 | ¿Ver RSI/MACD/SMA de un ticker? | ✅ `get_equity_technical_indicators` |
 | ¿Revenue/márgenes históricos? | ✅ `get_financials` |
 | ¿Order book Level II? | ✅ `get_equity_price_book` (max 4) |

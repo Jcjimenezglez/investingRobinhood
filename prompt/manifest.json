@@ -1,6 +1,6 @@
 {
-  "version": "1.8.0",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.0 integra MCP intel pack Jul 2026 (earnings, financials, technicals, L2, tax lots, realized PnL, option historicals).",
+  "version": "1.8.1",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.1: options DISABLED by LP (equity-only). v1.8.0 MCP intel pack Jul 2026 retained for equity research.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

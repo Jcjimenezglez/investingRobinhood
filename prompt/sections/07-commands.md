@@ -10,7 +10,7 @@
 | `watchlist sync` | Sincronizar `investingRH-core` con universo + posiciones + top ranking |
 | `analiza TICKER` | Fase 3 — bull/bear + `get_financials` + técnicos + earnings |
 | `trade TICKER $XX` | Fase 4 — Level II + review + ejecución equity |
-| `option TICKER call\|put` | Long option si cumple `risk-policy.options` (Alta + catalizador); `get_option_historicals` + autónomo tras review limpio |
+| `option TICKER call\|put` | ❌ Desactivado — `options.enabled=false` (LP 2026-08-02). Responder que el fondo es equity-only |
 | `limit TICKER $XX @ $PRICE` | Orden límite (preview) |
 | `stop TICKER @ $PRICE` | Stop loss pendiente (GTC) |
 | `ordenes` | Listar órdenes abiertas |

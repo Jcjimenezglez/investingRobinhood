@@ -13,9 +13,9 @@
 ## Fase 1 — Snapshot
 
 ```
-get_accounts → Agentic (confirm option_level_2 if considering options)
+get_accounts → Agentic
 get_portfolio, get_equity_positions, get_equity_orders
-get_option_positions (nonzero=true) — satélite options si hay
+get_option_positions (nonzero=true) — solo confirmar libro vacío (options OFF)
 ```
 
 ## Fase 2 — Scan + intel
@@ -27,7 +27,7 @@ get_option_positions (nonzero=true) — satélite options si hay
 - Confluencia Ackman (`config/ackman-tracker.json`)
 - `watchlist sync` → investingRH-core
 - Ranking #1–10 con convicción
-- Si candidato Alta + catalizador datado cercano: evaluar si long call/put expresa mejor el asymmetry (ver `risk-policy.options`) — equity sigue siendo default
+- **No** evaluar long call/put — `options.enabled=false` (LP 2026-08-02)
 
 ## Fase 3 — Decisión
 
@@ -35,15 +35,14 @@ get_option_positions (nonzero=true) — satélite options si hay
 |--------|-----------|
 | **HOLD** | Convicción < Media, datos insuficientes, o book OK sin señal |
 | **BUY/ADD equity** | Convicción ≥ Media, thesis en `logs/theses/`, buying_power ≥ minOrderUsd, cash ≥ 10% post-trade, invested ≤ 90% |
-| **BUY option (satélite)** | Solo si **todas** las gates de `risk-policy.options` (Alta + catalizador + long call/put + size/DTE/liquidez). Nunca forzar options |
-| **SELL/EXIT** | Tesis rota, tesis realizada, trim en memo, stop -8% backup (equity), option exit triggers, o mejor rotación |
+| **BUY option** | ❌ Prohibido — options OFF |
+| **SELL/EXIT** | Tesis rota, tesis realizada, trim en memo, stop -8% backup (equity), o mejor rotación |
 
-Sizing equity: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.  
-Options: ≤1 contrato, ≤$25 débito, ≤20% NAV, max 1 posición options abierta.
+Sizing equity: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.
 
 ## Fase 4 — Ejecución (si TRADE)
 
-**Equity (default):**
+**Equity only:**
 ```
 review_equity_order → si order_checks {} → place_equity_order
 get_equity_positions → entry price exacto
@@ -51,23 +50,16 @@ Intentar stop GTC -8% (backup). Sin take-profit mecánico.
 Si fractional rechaza GTC → log alerta + fallback monitor
 ```
 
-**Options (solo si gates OK):**
-```
-get_option_chains → get_option_instruments → get_option_quotes
-review_option_order → si order_checks {} y dentro de options policy → place_option_order
-get_option_positions → confirmar fill
-```
-
 ```
 append logs/trade-journal.md
-bash scripts/send-alert.sh trade "BUY/SELL TICKER|OPTION" "detalle"
+bash scripts/send-alert.sh trade "BUY/SELL TICKER" "detalle"
 ```
 
 ## Escalación — NO operar, email urgente
 
 - `order_checks` no vacío tras review
-- Trade > maxOrderUsd (equity) o premium > maxPremiumDebitUsd (options)
-- Option fuera de policy estrecha
+- Trade > maxOrderUsd (equity)
+- Intento de order de options (policy OFF)
 - Pérdida diaria/semanal over limit
 - 3 pérdidas consecutivas
 - Convicción Baja en candidato fuerte

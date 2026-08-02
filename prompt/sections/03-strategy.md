@@ -68,20 +68,11 @@ Lee `risk-policy.json` → `strategy.returnAspiration`:
 - Techo aspiracional: **2×** — nunca forzar trades/size/opciones para alcanzarlo
 - Si el setup no está → cash / hold / pass
 
-## Opciones (satélite estrecho)
+## Opciones — DESACTIVADAS (LP 2026-08-02)
 
-Equity = libro core. Opciones = **solo** cuando tesis **Alta** + catalizador claro y el débito expresa mejor el asymmetry que comprar más equity.
+`risk-policy.json` → `options.enabled = false`.
 
-Reglas en `risk-policy.json` → `options` (resumen):
-
-| Regla | Valor |
-|-------|-------|
-| Estrategias | Solo **long call / long put** |
-| Prohibido | CC, CSP, spreads, naked, 0DTE lotería |
-| Convicción | **Alta** + catalizador + thesis doc |
-| Size | ≤1 contrato, ≤$25 débito, ≤20% NAV, max 1 posición options abierta |
-| DTE | 14–90, preferir cerca del catalizador |
-| Confirmación | Misma autonomía que equity: `review` limpio → execute; escalar solo si falla gate/policy |
-| Exit | Tesis rota / catalizador fallido / ~7 DTE sin payoff |
-
-Con $100 cash, CC/CSP casi nunca caben — y están **prohibidas por policy** aunque el broker las permita en L2.
+- **No** abrir long calls/puts ni ninguna otra estrategia de options.
+- **No** llamar `review_option_order` / `place_option_order` (salvo cerrar una posición legacy si existiera — hoy: ninguna).
+- El broker puede seguir en L2; el **fondo** es equity-only. La policy satélite previa (Jul 2026) queda **inactiva** — no reactivarla sin mandato LP nuevo.
+- Reads MCP de options (`get_option_positions`, etc.) solo para confirmar libro vacío / monitoreo.

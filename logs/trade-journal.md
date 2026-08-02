@@ -623,4 +623,14 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-07-31-1500-monitor.md*
 
+## 2026-08-02 — LP directive: options OFF
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | Policy change — **no trade** |
+| **Cambio** | `options.enabled=false` · prompt **v1.8.1** · equity-only |
+| **Nota** | LP: no usar la policy satélite de options aunque exista del Jul-2026. Ignorar long call/put. Broker L2 irrelevante para el fondo. |
+| **Book** | Sin cambio — AMZN + MSFT equity; options abiertas: 0 |
+
 <!-- El agente appendea entradas aquí después de cada trade -->

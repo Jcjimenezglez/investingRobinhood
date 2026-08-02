@@ -13,8 +13,8 @@ Ejecutar cada **15 min** en **regular hours** (9:30–16:00 ET, lun–vie).
 ```
 get_accounts → cuenta Agentic
 get_equity_positions → posiciones equity abiertas
-get_option_positions (nonzero=true) → satélite options
-Si sin equity NI options → log snapshot + terminar
+get_option_positions (nonzero=true) → confirmar vacío (options OFF)
+Si sin equity → log snapshot + terminar
 get_equity_quotes → precio actual por símbolo (equity)
 Leer logs/theses/ del ticker → kill criteria + fair value + trim plan
 ```
@@ -33,19 +33,8 @@ Si trim plan en thesis (precio ≥ X) → review partial sell per memo (NO autom
 Si no → reportar precio, P&L %, distancia a stop backup, estado tesis vs fair value
 ```
 
-**No** vender equity automáticamente por +25% ni por % fijo de ganancia.
-
-### Options (long call/put)
-
-Por cada posición options — `risk-policy.options.exitPolicy`:
-
-```
-Si tesis invalidada o catalizador fallido → AUTO CLOSE (sell to close)
-Si ~7 DTE o menos sin payoff path → AUTO CLOSE
-Si no → reportar premium P&L, DTE, tesis/catalizador
-```
-
-No abrir options nuevas aquí (solo monitor/exit). No hold a expiry por lotería.
+**No** vender equity automáticamente por +25% ni por % fijo de ganancia.  
+**No** options — `options.enabled=false` (LP 2026-08-02).
 
 ## Auto sell equity (fractional OK)
 
@@ -55,15 +44,6 @@ Si order_checks {} → place_equity_order
 append logs/trade-journal.md
 update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
 bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "motivo: hard_stop|thesis_break, precio, fill"
-```
-
-## Auto close options
-
-```
-review_option_order → sell to close
-Si order_checks {} → place_option_order
-append journal + scorecard
-bash scripts/send-alert.sh trade "AUTO EXIT OPTION" "thesis_break|catalyst_fail|near_expiry"
 ```
 
 ## Escalación (no vender)

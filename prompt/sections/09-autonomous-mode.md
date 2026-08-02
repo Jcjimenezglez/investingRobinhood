@@ -13,7 +13,7 @@ Configuración en `config/autonomy.json` y `config/notifications.json`. El usuar
 
 2. **Siempre** llama `review_equity_order` antes de `place_equity_order` (compliance MCP).
 
-3. **Opciones:** misma autonomía que equity. Si cumple `risk-policy.options` (Alta + catalizador + size/DTE/liquidez) y `review_option_order` → `order_checks` vacío → **`place_option_order` sin confirmación chat**. Escalar por email solo si falla una gate o hay alertas en review.
+3. **Opciones:** **DESACTIVADAS** (`options.enabled=false`, LP 2026-08-02). No `place_option_order`. Equity-only.
 
 4. Tras ejecutar: append `logs/trade-journal.md` + email digest (`scripts/send-alert.sh` tipo `trade`).
 
@@ -24,8 +24,8 @@ Envía email **urgente** a `config/notifications.json` → `email.to` y **pausa*
 | Condición | Acción |
 |-----------|--------|
 | `order_checks` no vacío tras review | Email + no ejecutar |
-| Trade > `maxOrderUsd` (equity) o premium > `maxPremiumDebitUsd` (options) | Email + no ejecutar |
-| Option fuera de policy estrecha (estrategia/DTE/convicción/universo) | Email + no ejecutar |
+| Trade > `maxOrderUsd` (equity) | Email + no ejecutar |
+| Intento de order de options (policy OFF) | No ejecutar + email |
 | Pérdida diaria > `maxDailyLossPct` | Halt + email |
 | Pérdida semanal > `maxWeeklyLossPct` | Halt + email |
 | 3 pérdidas consecutivas | Halt + email |

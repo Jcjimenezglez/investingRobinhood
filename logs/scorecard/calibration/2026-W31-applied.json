@@ -1,9 +1,9 @@
 {
   "$schema": "calibration-applied-v1",
   "week": "2026-W31",
-  "appliedAt": "2026-07-31T21:05:00.000Z",
-  "decision": "HALTED",
-  "haltReason": "missingWeeklyReview",
+  "appliedAt": "2026-08-02T03:30:00.000Z",
+  "decision": "APPLIED",
+  "haltReason": null,
   "previousWeights": {
     "fundamental_quality": 0.34,
     "mispricing_vs_fair_value": 0.27,
@@ -12,9 +12,9 @@
     "social_sentiment": 0.05
   },
   "newWeights": {
-    "fundamental_quality": 0.34,
-    "mispricing_vs_fair_value": 0.27,
-    "catalyst_proximity_days": 0.21,
+    "fundamental_quality": 0.35,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.22,
     "ackman_confluence": 0.13,
     "social_sentiment": 0.05
   },
@@ -26,19 +26,33 @@
     "min_score_for_medium_conviction": 0.55,
     "min_score_for_high_conviction": 0.72
   },
+  "proposedDeltasReviewed": {
+    "fundamental_quality": 0.01,
+    "mispricing_vs_fair_value": 0.0,
+    "catalyst_proximity_days": 0.01,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "partialRejection": {
+    "social_sentiment": "Proposed delta −0.01 would breach minWeightFloor (0.05 → 0.04). Rejected; weight held at floor.",
+    "rebalance": "Net +0.02 from approved boosts (fundamental +0.01, catalyst +0.01) offset by mispricing_vs_fair_value −0.02 (lowest positive attribution non-floor weight)."
+  },
   "policyChecks": {
     "maxDeltaPerWeightPerWeek": 0.03,
-    "weeklyReviewPresent": false,
-    "weeklyMarkdownMissing": "logs/scorecard/weekly/2026-W31.md",
-    "suggestionsJsonMissing": "logs/scorecard/weekly/2026-W31-suggestions.json",
-    "haltCalibrationWhen": {
-      "missingWeeklyReview": true
-    }
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 0.0,
+    "haltDrawdownLimitPct": 15,
+    "weeklyNavDropPct": null,
+    "haltWeeklyNavDropLimitPct": 5,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": false
   },
-  "ackmanRationale": "Calibration halted before any weight review. Automation-04 Weekly Review did not produce the required W31 scorecard (`2026-W31.md`) or suggestions file (`2026-W31-suggestions.json`). Without structured weekly evidence, we do not move signal weights — Ackman discipline is to make few, high-conviction changes backed by attribution data. Current weights (last calibrated W30) remain in force until the weekly review completes.",
+  "ackmanRationale": "Catalyst_proximity_days was our best explanatory signal (+0.8 attribution) as dual earnings beats drove +13.79% WoW NAV vs SPY +1.06%. Fundamental_quality (+0.7) validated alongside — MSFT EPS $4.74 vs est $4.23, AMZN Q2 EPS $5.75 vs est $1.82. Since inception we lead SPY by +13.32%. We apply modest +1% boosts to catalyst and fundamental; mispricing trimmed −2% to maintain sum=1.0 after rejecting social_sentiment decrease at policy floor. Conviction thresholds held — Media-Alta (MSFT +23.56%) outperformed Alta (AMZN +14.74%) by ~8.8%, so lowering the Alta bar would be premature.",
   "attributionSummary": {
-    "bestSignal": null,
-    "fundVsSpyPct": null,
-    "navUsd": null
+    "bestSignal": "catalyst_proximity_days",
+    "fundVsSpyPct": 13.32,
+    "navUsd": 113.22
   }
 }

@@ -5,7 +5,7 @@ MCP en cada una: **robinhood-trading** (OAuth en [cursor.com/agents](https://cur
 
 Trigger en todas: **Add Trigger → Scheduled → Custom (cron)**
 
-**Importante:** las Agent Instructions abajo son **delgadas a propósito** — el detalle vive en `workflows/automation-*.md` + `config/risk-policy.json`. **Options OFF** desde 2026-08-02 (`options.enabled=false`). Tras mergear a `main`, **re-pegar** estos bloques en Cursor Automations si aún mencionan long call/put satélite.
+**Importante:** **Options OFF** desde 2026-08-02 (`options.enabled=false`, prompt **v1.8.1**). Equity-only. Tras mergear a `main`, **re-pegar** estos 8 bloques en Cursor Automations.
 
 ---
 
@@ -167,7 +167,7 @@ You are Bill Ackman PM — calibration approver for investingRobinhood. No human
 Follow workflows/automation-05-ackman-calibration.md and prompt/sections/13-ackman-calibration-agent.md.
 Read config/calibration-policy.json and config/signal-weights.json.
 
-Require today's logs/scorecard/weekly/YYYY-WW.md and YYYY-WW-suggestions.json from Weekly Review (#4).
+Require today's logs/scorecard/weekly/YYYY-WW.md and YYYY-WW-suggestions.json from Weekly Review (#5).
 If missing → HALTED, digest email, exit.
 
 Apply bounded weight changes per calibration-policy (max ±0.03/weight/week, sum=1.0).
@@ -180,7 +180,65 @@ Commit message MUST include [deploy-site] (see config/site-publish.json).
 Run: bash scripts/trigger-site-deploy.sh (requires VERCEL_DEPLOY_HOOK in automation env).
 Email digest: "Ackman Calibration applied" with decision APPLIED|NO_CHANGE|HALTED.
 
-NO trades.
+NO trades. Options OFF.
+```
+
+---
+
+## 7. Bench Refresh — Saturday 10:00 ET
+
+**Name:** `investingRobinhood Bench Refresh Sat 10am ET`
+
+**Trigger**
+- Cron: `0 10 * * 6`
+
+**Agent Instructions**
+
+```
+You are CIO of investingRobinhood — bench research (Agentic only, NO trades).
+
+Follow workflows/automation-06-bench-refresh.md.
+
+Load prompt/manifest.json and config/signal-weights.json.
+Read config/risk-policy.json — options.enabled=false (equity-only; do not propose options).
+get_equity_positions → exclude held tickers from bench.
+Read latest data/signals/*-universe.json from this week.
+Pick #1 ranked ticker NOT in current positions.
+Write or update logs/theses/bench/TICKER-YYYY-MM-DD.md using logs/theses/bench/bench-memo-template.md.
+
+Commit and push logs/theses/bench/ to main.
+NO place_equity_order and NO place_option_order.
+```
+
+---
+
+## 8. Monthly Close — 1st of month 6:00 PM ET
+
+**Name:** `investingRobinhood Monthly Close`
+
+**Trigger**
+- Cron (si Cursor muestra **2:00 PM** con `0 18` → el scheduler usa **UTC**): `0 22 1 * *`
+- Cron (si timezone **America/New_York** aplica al cron): `0 18 1 * *`
+- **Verificar en UI:** "Next run" debe decir **6:00 PM EDT** (ago) o **6:00 PM EST** (ene). Si dice 2:00 PM, usar `0 22 1 * *`.
+- Invierno (EST, nov–mar) con scheduler UTC: `0 23 1 * *` para 6:00 PM NY
+
+**Agent Instructions**
+
+```
+You are CIO of investingRobinhood — monthly scorecard (Agentic only, NO trades).
+
+Follow workflows/automation-07-monthly-close.md.
+
+Scorecard covers the PRIOR calendar month.
+Read logs/scorecard/positions.jsonl, logs/trade-journal.md, weekly scorecards from that month.
+Read config/risk-policy.json — options.enabled=false.
+
+MCP: get_portfolio, get_equity_positions, get_option_positions(nonzero=true) to confirm empty, get_equity_historicals SPY (first→last trading day of prior month).
+
+Write logs/scorecard/monthly/YYYY-MM.md with NAV, vs SPY, max drawdown, thesis outcomes, automation uptime.
+
+Commit and push logs/scorecard/monthly/ to main.
+NO trades. No options.
 ```
 
 ---
@@ -190,7 +248,7 @@ NO trades.
 - [ ] Repository: `Jcjimenezglez/investingRobinhood` / `main`
 - [ ] MCP: `robinhood-trading`
 - [ ] Timezone: America/New_York
-- [ ] Agent Instructions re-pasted from this file after options OFF (v1.8.1) — remove any long-call/put satellite language
+- [ ] Agent Instructions re-pasted from this file after options OFF (v1.8.1)
 - [ ] Save → Run once → check run history
 
 Si falla al guardar: [`automation-troubleshooting.md`](automation-troubleshooting.md)

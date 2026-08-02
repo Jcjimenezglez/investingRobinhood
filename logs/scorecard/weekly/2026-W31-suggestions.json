@@ -1,0 +1,25 @@
+{
+  "week": "2026-W31",
+  "navUsd": 113.22,
+  "spyReturnPct": -0.1,
+  "fundReturnPct": 13.22,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.5,
+    "catalyst_proximity_days": 0.8,
+    "ackman_confluence": 0.6,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.01,
+    "mispricing_vs_fair_value": 0.0,
+    "catalyst_proximity_days": 0.01,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund +13.22% vs SPY −0.10% since inception (+13.32% alpha); +13.79% WoW on dual earnings beats. MSFT (+23.56%) outperformed AMZN (+14.74%) despite lower conviction — both theses intact, MSFT in optional trim zone ($465 ≥ $430). Catalyst proximity strongest signal this week; modest weight boost to catalyst_proximity_days and fundamental_quality. Hold conviction thresholds; no trim automation."
+}

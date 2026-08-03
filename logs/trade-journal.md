@@ -633,4 +633,19 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 | **Nota** | LP: no usar la policy satélite de options aunque exista del Jul-2026. Ignorar long call/put. Broker L2 irrelevante para el fondo. |
 | **Book** | Sin cambio — AMZN + MSFT equity; options abiertas: 0 |
 
+## 2026-08-03 — Midday monitor (12:00 ET) — HOLD
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | Monitor automation-03 — sin órdenes |
+| **NAV** | $118.02 (equity $93.02 + cash $25) |
+| **AMZN** | $285.14 (+20.5% vs entry) · stop $217.75 · tesis INTACTA · Q2 beat 30-jul |
+| **MSFT** | $486.87 (+29.3% vs entry) · stop $346.30 · tesis INTACTA · Q4 beat 29-jul |
+| **Options** | Ninguna (options OFF) |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | Ninguno |
+
+*Intel: logs/intelligence/2026-08-03-1200-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

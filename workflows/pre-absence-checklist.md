@@ -17,8 +17,8 @@ Usar antes de ausentarte 1+ semanas. Consolida checks de [`daily-runbook.md`](da
 
 ## Portfolio
 
-- [ ] Cash ≥ 10% y buying_power ≥ minOrderUsd ($15) si se planea ADD (`config/risk-policy.json`)
-- [ ] Cash ≥ 10%
+- [ ] Cash ≥ `minCashReservePct` (lee `config/risk-policy.json`; **8%** desde LP 2026-08-04) y buying_power ≥ minOrderUsd ($15) si se planea ADD
+- [ ] Cash ≥ minCashReservePct post-trade si ADD
 - [ ] Thesis doc vigente por posición abierta en `logs/theses/`
 - [ ] `logs/scorecard/positions.jsonl` actualizado (status open/closed)
 - [ ] Fractional positions: monitoreo automation-03 activo (stops GTC no disponibles)

@@ -32,7 +32,7 @@
     "minAvgDailyVolume": 5000000,
     "minPriceUsd": 10,
     "excludePennyStocks": true,
-    "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN"],
+    "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"],
     "fundMandateConfig": "config/fund-mandate.json"
   },
   "positionSizing": {

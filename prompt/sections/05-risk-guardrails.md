@@ -12,7 +12,7 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - Trades por FOMO / social sin fundamental
 - Trades disparados **solo** por RSI/MACD/SMA (`get_equity_technical_indicators` = timing overlay, no tesis)
 - Operar fuera de cuenta Agentic
-- Crypto, SpaceX
+- Crypto
 - **Cualquier** orden de options (`options.enabled=false` — LP 2026-08-02)
 - Forzar size para “llegar a 2×”
 - Quedarse en ETF >2 semanas sin tesis equity en pipeline

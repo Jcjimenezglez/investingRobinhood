@@ -17,7 +17,7 @@ Fondo concentrado de **$100** en cuenta Agentic aislada — tesis-driven, catali
 ## Estrategia (Ackman concentrated catalyst)
 
 - **Concentrado por convicción** — tantas posiciones como permita cash útil (≥$15/nombre) · hasta **50%** en convicción Alta
-- **Universo:** GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN
+- **Universo:** GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN, SPCX (SpaceX)
 - **Exit:** tesis rota / fair value / rotación — **no** +% fijo automático
 - **Stop backup:** -8% GTC (whole shares) o monitoreo intraday (fractional)
 - **Objetivo:** retornos absolutos con disciplina PM

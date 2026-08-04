@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-04",
+  "filter": "high_market_cap",
+  "days": 14,
+  "generated_by": "MCP get_earnings_calendar",
+  "as_of": "2026-08-04T12:03Z",
+  "results": [
+    {
+      "symbol": "UBER",
+      "year": 2026,
+      "quarter": 2,
+      "eps": {
+        "estimate": "0.830000",
+        "actual": null
+      },
+      "report": {
+        "date": "2026-08-05",
+        "timing": "am",
+        "verified": true
+      }
+    },
+    {
+      "symbol": "QSR",
+      "year": 2026,
+      "quarter": 2,
+      "eps": {
+        "estimate": "1.040000",
+        "actual": null
+      },
+      "report": {
+        "date": "2026-08-06",
+        "timing": "am",
+        "verified": true
+      }
+    },
+    {
+      "symbol": "BN",
+      "year": 2026,
+      "quarter": 2,
+      "eps": {
+        "estimate": "0.670000",
+        "actual": null
+      },
+      "report": {
+        "date": "2026-08-13",
+        "timing": "am",
+        "verified": true
+      }
+    }
+  ]
+}

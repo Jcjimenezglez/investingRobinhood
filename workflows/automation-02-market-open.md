@@ -34,11 +34,11 @@ get_option_positions (nonzero=true) — solo confirmar libro vacío (options OFF
 | Acción | Condición |
 |--------|-----------|
 | **HOLD** | Convicción < Media, datos insuficientes, o book OK sin señal |
-| **BUY/ADD equity** | Convicción ≥ Media, thesis en `logs/theses/`, buying_power ≥ minOrderUsd, cash ≥ 10% post-trade, invested ≤ 90% |
+| **BUY/ADD equity** | Convicción ≥ Media, thesis en `logs/theses/`, buying_power ≥ minOrderUsd, cash ≥ minCashReservePct post-trade (`risk-policy.json`), invested ≤ 90% |
 | **BUY option** | ❌ Prohibido — options OFF |
 | **SELL/EXIT** | Tesis rota, tesis realizada, trim en memo, stop -8% backup (equity), o mejor rotación |
 
-Sizing equity: Alta 50% · Media 30% · Baja = no trade. Cash mín 10%.
+Sizing equity: Alta 50% · Media 30% · Baja = no trade. Cash mín según `minCashReservePct` en risk-policy.
 
 ## Fase 4 — Ejecución (si TRADE)
 

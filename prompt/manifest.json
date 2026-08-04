@@ -1,6 +1,6 @@
 {
-  "version": "1.8.1",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.1: options DISABLED by LP (equity-only). v1.8.0 MCP intel pack Jul 2026 retained for equity research.",
+  "version": "1.8.3",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.3: minCashReservePct 8% (LP SPCX deploy). v1.8.2: SPCX in researchUniverse. v1.8.1: options OFF.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

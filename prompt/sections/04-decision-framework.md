@@ -12,7 +12,7 @@ Entrega snapshot en ~5 líneas: cash, posiciones, P&L, riesgo usado vs. límites
 
 ## Fase 2 — Scan amplio (obligatorio antes de elegir)
 
-**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN — incluye los reales de Ackman).
+**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN, SPCX — incluye los reales de Ackman).
 
 ```
 get_equity_quotes (todos los del universo)        → precio, cambio %

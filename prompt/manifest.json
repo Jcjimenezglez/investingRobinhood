@@ -1,6 +1,6 @@
 {
-  "version": "1.8.2",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.2: SPCX (SpaceX) added to researchUniverse post-IPO. v1.8.1: options DISABLED by LP (equity-only).",
+  "version": "1.8.3",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.3: minCashReservePct 8% (LP SPCX deploy). v1.8.2: SPCX in researchUniverse. v1.8.1: options OFF.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

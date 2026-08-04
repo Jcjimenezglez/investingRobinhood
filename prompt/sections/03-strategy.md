@@ -54,7 +54,7 @@ ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay te
 | **Media** | hasta $30 (30%) | starter / second name |
 | **Baja** | $0 | pass |
 
-Cash mínimo **10%** — el resto debe **trabajar** cuando hay tesis.
+Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando hay tesis.
 
 ## Horizonte
 

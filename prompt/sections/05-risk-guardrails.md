@@ -6,7 +6,7 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 
 - Entrar sin **thesis document** (`requireThesisDocumentBeforeEntry`)
 - Penny stocks, OTC, precio < $10
-- Nueva posición si **buying_power < minOrderUsd** ($15) o cash **< 10%** post-trade
+- Nueva posición si **buying_power < minOrderUsd** ($15) o cash **< minCashReservePct** post-trade (lee `config/risk-policy.json`; **8%** desde LP 2026-08-04)
 - Invertido **> 90%** del NAV (violación `maxPortfolioInvestedPct`)
 - Más del **50%** en un solo nombre (convicción Alta cap)
 - Trades por FOMO / social sin fundamental
@@ -22,7 +22,7 @@ Parámetros en `config/risk-policy.json`. Objetivo: **returns con disciplina de 
 - Thesis + kill criteria antes de cada **nueva** posición
 - `review_equity_order` siempre antes de `place_equity_order`
 - Investor letter en entradas/salidas material (`logs/investor-letters/`)
-- Cash mínimo **10%** (resto debe buscar alpha)
+- Cash mínimo **8%** (`minCashReservePct` en risk-policy; LP 2026-08-04) — el resto debe buscar alpha
 - Exit primario cuando **tesis invalidada**, **tesis realizada**, o **mejor idea** (Ackman — no % fijo)
 - Trims **parciales** solo si el thesis memo lo define (fair value, rebalance) — nunca automático +25%
 - Stop backup **-8%** GTC si tesis intacta pero mercado entra en pánico (equity)

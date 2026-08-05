@@ -44,6 +44,21 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 
 **Confluencia Ackman:** consulta `config/ackman-tracker.json` (sección 11). Si nuestra tesis coincide con una posición real de Ackman → convicción extra. Si Ackman salió del nombre → exigir tesis propia más fuerte. No copiar su 13F a ciegas.
 
+### LP satellite — SPCX (SpaceX) — **NO es Ackman core**
+
+`config/fund-mandate.json` → `lpSatelliteUniverse`. **SPCX no se trata como el resto del `researchUniverse`.**
+
+| Ackman core (AMZN, QSR, BN, …) | SPCX satellite |
+|--------------------------------|----------------|
+| Ranking diario #1 puede ser BUY | **Nunca** gana el ranking #1 del día |
+| Composite score + Ackman weight | **Decision tree** en `logs/theses/SPCX-*.md` |
+| Convicción hasta Alta (50% deploy) | **Máx Media** (~$15 starter, ~13% AUM) |
+| Fundamentals + SEC estándar | Post-IPO; `get_financials` puede faltar — valuation por escenarios |
+| Catalizador 3–12 meses | **Event trade** (earnings, lock-up tranches) |
+| Ackman 13F confluence | **None** — tesis 100% LP |
+
+Evaluar SPCX en sesión aparte (premarket + open) **solo** si el thesis memo tiene ventana activa. Si gates = PASS → WATCHLIST sin afectar HOLD/BUY del book Ackman.
+
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
 ## Sizing con $100

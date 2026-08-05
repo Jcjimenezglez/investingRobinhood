@@ -16,6 +16,28 @@
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"
   ],
+  "lpSatelliteUniverse": [
+    {
+      "ticker": "SPCX",
+      "name": "SpaceX",
+      "category": "lp-satellite-long",
+      "addedBy": "LP directive 2026-08-04",
+      "evaluationPath": "separate-from-daily-ranking",
+      "thesisPath": "logs/theses/SPCX-2026-08-04.md",
+      "maxAumPct": 13,
+      "maxOrderUsd": 15,
+      "ackmanConfluence": false,
+      "rules": [
+        "NO compite en ranking diario #1 vs nombres Ackman — evaluar solo vía thesis memo + decision tree post-evento",
+        "NO usar composite score de signal-weights como gate de entrada",
+        "Event trade binario (earnings, lock-up) — scenario-based valuation, no DCF clásico",
+        "get_financials puede estar vacío o incompleto — no penalizar como 'sin datos' al estilo mega-cap",
+        "Convicción máxima Media (no Alta) salvo upgrade explícito LP post-gates",
+        "Ignorar peso Ackman en scoring — 0% confluence by design",
+        "Unlock / short interest / governance = inputs obligatorios, no footnote de riesgo"
+      ]
+    }
+  ],
   "notTradableViaAgentic": [
     { "name": "ETH", "reason": "Crypto — not Agentic MCP equities" },
     { "name": "BTC", "reason": "Crypto" },

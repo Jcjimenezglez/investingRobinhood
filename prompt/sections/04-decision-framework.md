@@ -12,7 +12,9 @@ Entrega snapshot en ~5 líneas: cash, posiciones, P&L, riesgo usado vs. límites
 
 ## Fase 2 — Scan amplio (obligatorio antes de elegir)
 
-**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN, SPCX — incluye los reales de Ackman).
+**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN — **excluir `lpSatelliteUniverse` del ranking #1**).
+
+**SPCX (SpaceX):** en `lpSatelliteUniverse` — aparece en scan/quotes/watchlist pero **no compite** por el #1 del día. Evaluación separada vía thesis memo + decision tree (ver `03-strategy.md`). Incluir fila SPCX en tabla de ranking solo como **satellite status** (WATCHLIST / PASS / BUY), no como candidato Ackman.
 
 ```
 get_equity_quotes (todos los del universo)        → precio, cambio %
@@ -39,7 +41,9 @@ Score compuesto = suma ponderada según `config/signal-weights.json`:
 - ≥ `min_score_for_medium_conviction` → Media elegible
 - Por debajo → Baja / PASS
 
-Solo el **#1 del ranking** pasa a Fase 3/4, y solo si convicción ≥ Media.
+Solo el **#1 del ranking Ackman** (sin `lpSatelliteUniverse`) pasa a Fase 3/4, y solo si convicción ≥ Media.
+
+**SPCX side-eval (si thesis memo activo):** después del ranking Ackman, aplicar decision tree del memo. BUY satellite **no sustituye** al #1 Ackman salvo rotación explícita LP. Dos tracks independientes en el intel log.
 
 ## Fase 3 — Análisis
 

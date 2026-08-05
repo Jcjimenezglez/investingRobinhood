@@ -51,13 +51,14 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 | Ackman core (AMZN, QSR, BN, …) | SPCX satellite |
 |--------------------------------|----------------|
 | Ranking diario #1 puede ser BUY | **Nunca** gana el ranking #1 del día |
-| Composite score + Ackman weight | **Decision tree** en `logs/theses/SPCX-*.md` |
-| Convicción hasta Alta (50% deploy) | **Máx Media** (~$15 starter, ~13% AUM) |
-| Fundamentals + SEC estándar | Post-IPO; `get_financials` puede faltar — valuation por escenarios |
-| Catalizador 3–12 meses | **Event trade** (earnings, lock-up tranches) |
+| Composite score + Ackman weight | **LP thesis** — acumulación 10y, no event trade |
+| Convicción hasta Alta (50% deploy) | **Starter ~$15** (~13% AUM); escalar solo si LP libera capital |
+| Horizonte 3–12 meses + exit por tesis | **10 años o nunca vender** (LP) — no trim/rotate |
+| Fundamentals + SEC estándar | Post-IPO; convicción LP en infra espacial/AI |
+| Catalizador earnings/unlock | **Ruido de entrada** — acumular en debilidad |
 | Ackman 13F confluence | **None** — tesis 100% LP |
 
-Evaluar SPCX en sesión aparte (premarket + open) **solo** si el thesis memo tiene ventana activa. Si gates = PASS → WATCHLIST sin afectar HOLD/BUY del book Ackman.
+Evaluar SPCX en track satélite aparte. **No** aplicar PASS/BUY del ranking Ackman ni kill criteria de corto plazo.
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 

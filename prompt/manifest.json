@@ -1,6 +1,6 @@
 {
-  "version": "1.8.4",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.4: SPCX lpSatelliteUniverse — separate eval track, no daily ranking #1. v1.8.3: minCashReservePct 8%. v1.8.2: SPCX in researchUniverse.",
+  "version": "1.8.5",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.5: SPCX 10y/never-sell LP hold (no event-trade gates). v1.8.4: lpSatelliteUniverse.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

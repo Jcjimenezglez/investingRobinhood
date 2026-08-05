@@ -26,15 +26,18 @@
       "thesisPath": "logs/theses/SPCX-2026-08-04.md",
       "maxAumPct": 13,
       "maxOrderUsd": 15,
+      "timeHorizon": "10-years-or-never-sell",
+      "exitPolicy": "no-discretionary-exit — accumulate on weakness; never trim/rotate salvo mandato LP explícito",
       "ackmanConfluence": false,
       "rules": [
-        "NO compite en ranking diario #1 vs nombres Ackman — evaluar solo vía thesis memo + decision tree post-evento",
+        "NO compite en ranking diario #1 vs nombres Ackman — evaluar solo vía thesis memo LP",
         "NO usar composite score de signal-weights como gate de entrada",
-        "Event trade binario (earnings, lock-up) — scenario-based valuation, no DCF clásico",
-        "get_financials puede estar vacío o incompleto — no penalizar como 'sin datos' al estilo mega-cap",
-        "Convicción máxima Media (no Alta) salvo upgrade explícito LP post-gates",
+        "Horizonte LP: 10 años o nunca vender — NO aplicar decision tree event-trade ni kill criteria Ackman de corto plazo",
+        "Unlock / earnings / capex headlines = ruido de entrada (DCA/acumular), no triggers de PASS",
+        "get_financials puede estar vacío o incompleto — no penalizar como mega-cap",
+        "Convicción por acumulación LP, no por catalizador 3–12m",
         "Ignorar peso Ackman en scoring — 0% confluence by design",
-        "Unlock / short interest / governance = inputs obligatorios, no footnote de riesgo"
+        "Starter $15 = toe-hold; escalar solo si LP libera más capital"
       ]
     }
   ],

@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-05",
+  "filter": "high_market_cap",
+  "days": 14,
+  "universe": [
+    {
+      "symbol": "UBER",
+      "date": "2026-08-05",
+      "timing": "am",
+      "eps_est": 0.83,
+      "eps_actual": 0.81,
+      "verified": true
+    },
+    {
+      "symbol": "QSR",
+      "date": "2026-08-06",
+      "timing": "am",
+      "eps_est": null,
+      "eps_actual": null,
+      "verified": false
+    },
+    {
+      "symbol": "BN",
+      "date": "2026-08-13",
+      "timing": "am",
+      "eps_est": null,
+      "eps_actual": null,
+      "verified": false
+    }
+  ]
+}

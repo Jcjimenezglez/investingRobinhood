@@ -1,0 +1,173 @@
+{
+  "date": "2026-08-05",
+  "regime": "neutral",
+  "generated_by": "fetch-signals.sh + MCP merge",
+  "note": "MCP quotes/fundamentals merged 2026-08-05T12:03Z",
+  "tickers": [
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "premarket": 383.0,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% \u2014 effectively EXITED",
+      "scores": {
+        "composite": 0.735,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "premarket": 93.81,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.785,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "premarket": 280.88,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "scores": {
+        "composite": 0.848,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "premarket": 597.44,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "scores": {
+        "composite": 0.798,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "premarket": 307.5,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.741,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "premarket": 496.75,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "scores": {
+        "composite": 0.871,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "premarket": 215.68,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.772,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "premarket": 69.4,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "scores": {
+        "composite": 0.758,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "QSR",
+      "quote": {
+        "premarket": 73.88,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "scores": {
+        "composite": 0.918,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "BN",
+      "quote": {
+        "premarket": 45.07,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "scores": {
+        "composite": 0.802,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "SPCX",
+      "quote": {
+        "premarket": 111.71,
+        "previous_close": null
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.62,
+        "conviction": "Media"
+      }
+    }
+  ]
+}

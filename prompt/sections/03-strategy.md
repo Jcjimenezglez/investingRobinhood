@@ -59,7 +59,25 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 | Rol en plan +25% anual | **Compounder** — checkpoint +25% desde entry; **nunca vender** al checkpoint |
 | Ackman 13F confluence | **None** — tesis 100% LP |
 
-Evaluar SPCX en track satélite aparte. Contribuye al **plan LP +25% anual** del book (blended con Ackman core), pero **no** compite por ranking #1 ni usa exit mecánico.
+Evaluar SPCX en track satélite aparte. **Funding:** al vender/trim Ackman core → **25% del proceeds** al pool SPCX (`spcxRecyclePolicy`) — deploy solo si precio/tamaño tienen sentido.
+
+### Reciclaje de ganancias → SPCX
+
+Tras cada **SELL o trim** de posición Ackman core (AMZN, MSFT, QSR, BN…):
+
+```
+1. Calcular proceeds del exit (get_realized_pnl / fill notional)
+2. Earmark recyclePct (25%) → pool SPCX
+3. Si pool >= $15 Y deployGates pasan → review_equity_order BUY SPCX
+4. Si no pasa gates → HOLD cash; documentar razón en trade-journal + scorecard
+5. Resto del proceeds → cash book o rotate a siguiente tesis Ackman
+```
+
+**Deploy gates SPCX (obligatorio — no comprar por comprar):**
+- Precio en debilidad relativa (tercio inferior 52w, o −5% vs 5d high, o post-headline sin rip)
+- Cash floor 8% post-trade
+- SPCX < maxSatelliteAumPct (25%)
+- Tesis LP 10y intacta
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
@@ -81,10 +99,10 @@ Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando 
 
 Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
 
-- **LP target:** **+25% anual** en NAV Agentic (soft — no forzar trades)
-- **Ackman core** (AMZN, MSFT, QSR, BN…): motor de alpha 12m — trims/rotate por tesis
-- **SPCX satellite:** compounder 10y — **nunca vender**; checkpoint scorecard +25% desde entry (monitoreo, no exit)
-- Si el setup no está → cash / hold / pass
+- **LP target:** **>+25% anual** en NAV vía Ackman core (alpha activo)
+- **Ackman core:** ganar dinero con tesis — trim/exit/rotate cuando toque
+- **SPCX satellite:** compounder 10y, **nunca vender**; financia con **25% proceeds** de cada venta core **solo si gates pasan**
+- Si el setup no está → cash / hold / pass (también para SPCX — no comprar por comprar)
 
 ## Opciones — DESACTIVADAS (LP 2026-08-02)
 

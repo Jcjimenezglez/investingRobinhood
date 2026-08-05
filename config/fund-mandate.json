@@ -15,8 +15,25 @@
   "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets + SPCX satellite compounder. Not index-hugging.",
   "returnPlan": {
     "annualTargetPct": 25,
-    "annualTargetNote": "Book-level soft target: NAV +25% YoY. Ackman core (AMZN, MSFT, QSR, BN…) drives near-term alpha; SPCX satellite compounds long-term — never sell, but contributes to blended return.",
+    "annualTargetNote": "Ackman core busca >25% alpha vía tesis (trim/exit/rotate). SPCX satellite: compounder 10y, nunca vender. Al vender core, reciclar % de proceeds a SPCX solo si tiene sentido.",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/"
+  },
+  "spcxRecyclePolicy": {
+    "enabled": true,
+    "recyclePctOfCoreExitProceeds": 25,
+    "appliesTo": "ackman-core SELL and partial trims only — never SPCX",
+    "minDeployUsd": 15,
+    "mandatory": false,
+    "note": "LP 2026-08-05: cada venta/trim del book Ackman → apartar 25% del proceeds para pool SPCX. Deploy solo si gates pasan — no comprar por comprar.",
+    "deployGates": [
+      "recycled_amount >= minDeployUsd ($15)",
+      "post-trade cash >= minCashReservePct (8%)",
+      "SPCX LP thesis intact (10y / never sell)",
+      "precio razonable: debilidad relativa (ej. ≤5d high −5%, o en tercio inferior 52w range, o post-corrección post-earnings) — NO perseguir rip",
+      "skip si SPCX ya > maxSatelliteAumPct sin LP override",
+      "agente documenta PASS con razón si gates no pasan — cash queda en book hasta próxima ventana"
+    ],
+    "maxSatelliteAumPct": 25
   },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"
@@ -29,7 +46,8 @@
       "addedBy": "LP directive 2026-08-04",
       "evaluationPath": "separate-from-daily-ranking",
       "thesisPath": "logs/theses/SPCX-2026-08-04.md",
-      "maxAumPct": 13,
+      "maxAumPct": 25,
+      "maxAumPctNote": "Cap blando satélite; crece vía spcxRecyclePolicy (25% proceeds en exits core)",
       "maxOrderUsd": 15,
       "timeHorizon": "10-years-or-never-sell",
       "exitPolicy": "no-discretionary-exit — accumulate on weakness; never trim/rotate salvo mandato LP explícito",
@@ -44,8 +62,9 @@
         "get_financials puede estar vacío o incompleto — no penalizar como mega-cap",
         "Convicción por acumulación LP, no por catalizador 3–12m",
         "Ignorar peso Ackman en scoring — 0% confluence by design",
-        "Starter $15 = toe-hold; escalar solo si LP libera más capital",
-        "Contribuye al plan LP +25% anual del book — checkpoint scorecard a +25% desde entry (~$144); NO vender al checkpoint"
+        "Starter $15 = toe-hold; escalar vía spcxRecyclePolicy (25% proceeds al vender/trim core)",
+        "Contribuye al plan LP +25% anual — checkpoint scorecard +25% desde entry; NO vender al checkpoint",
+        "NO comprar por comprar — evaluar deployGates en spcxRecyclePolicy antes de cada add"
       ]
     }
   ],

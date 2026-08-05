@@ -111,3 +111,16 @@ get_equity_price_book → timing de salida
 review_equity_order (tax_lots si aplica) → place_equity_order
 get_realized_pnl / get_pnl_trade_history → scorecard
 ```
+
+## Fase 5b — Post-exit SPCX recycle (solo Ackman core)
+
+Tras **cada SELL o trim** de posición Ackman (no SPCX):
+
+```
+proceeds = notional vendido
+spcx_pool = proceeds × recyclePct (25% — config/fund-mandate.json → spcxRecyclePolicy)
+Si spcx_pool >= $15 Y deployGates pasan → review_equity_order BUY SPCX
+Si no → cash queda en book; log "SPCX recycle PASS: <razón>" en trade-journal
+```
+
+**No comprar por comprar.** Gates: debilidad relativa, cash floor 8%, SPCX < 25% AUM, tesis LP intacta.

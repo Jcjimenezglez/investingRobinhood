@@ -12,10 +12,11 @@
     "secondaryObjective": "thesis_discipline_and_capital_compounding",
     "timeHorizon": "thesis-driven-3-to-12-months",
     "returnAspiration": {
-      "softAnnualMultipleLow": 1.3,
-      "softAnnualMultiplePreferred": 1.5,
-      "softAnnualCeiling": 2.0,
-      "note": "Soft aspirations only — never force trades or size to hit a multiple. Preserve capital and thesis discipline first. Prefer 1.3–1.7x over swinging for 2x. Options are OFF — do not use premium to chase multiples."
+      "softAnnualReturnPct": 25,
+      "softAnnualMultipleLow": 1.25,
+      "softAnnualMultiplePreferred": 1.25,
+      "softAnnualCeiling": 1.5,
+      "note": "LP target +25% annual on NAV (soft). Ackman core drives near-term; SPCX satellite compounds — never sell but counts toward blended return. Never force trades/size to hit target. Options OFF."
     },
     "positionCapacity": {
       "mode": "cash_driven",

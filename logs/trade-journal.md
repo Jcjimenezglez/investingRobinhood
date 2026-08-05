@@ -678,4 +678,25 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-04-1200-monitor.md*
 
+---
+
+## 2026-08-05 — SPCX starter entry (LP 10y / never-sell)
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | BUY SPCX |
+| **Tipo** | Market fractional |
+| **Notional** | $15.00 |
+| **Fill** | 0.130391 sh @ **$115.04** |
+| **Order ID** | 6a735170-2c33-49b7-964a-e57c3f916a90 |
+| **Convicción** | Media (acumulación LP) |
+| **Horizonte** | **10 años / nunca vender** — no stop GTC, no trim Ackman |
+| **Tesis** | logs/theses/SPCX-2026-08-04.md |
+| **Ackman confluencia** | None — LP satellite |
+
+**Post-trade book:** AMZN ~$54 + MSFT ~$40 + SPCX ~$15 + Cash **$10** ≈ **$117** (cash 8.6%)
+
+*Rationale: Q2 revenue/EPS beat; precio −8% por capex AI headline. Unlock = ruido de entrada en hold 10y.*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

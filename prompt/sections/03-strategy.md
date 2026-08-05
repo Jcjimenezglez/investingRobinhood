@@ -51,13 +51,33 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 | Ackman core (AMZN, QSR, BN, …) | SPCX satellite |
 |--------------------------------|----------------|
 | Ranking diario #1 puede ser BUY | **Nunca** gana el ranking #1 del día |
-| Composite score + Ackman weight | **Decision tree** en `logs/theses/SPCX-*.md` |
-| Convicción hasta Alta (50% deploy) | **Máx Media** (~$15 starter, ~13% AUM) |
-| Fundamentals + SEC estándar | Post-IPO; `get_financials` puede faltar — valuation por escenarios |
-| Catalizador 3–12 meses | **Event trade** (earnings, lock-up tranches) |
+| Composite score + Ackman weight | **LP thesis** — acumulación 10y, no event trade |
+| Convicción hasta Alta (50% deploy) | **Starter ~$15** (~13% AUM); escalar solo si LP libera capital |
+| Horizonte 3–12 meses + exit por tesis | **10 años o nunca vender** (LP) — no trim/rotate |
+| Fundamentals + SEC estándar | Post-IPO; convicción LP en infra espacial/AI |
+| Catalizador earnings/unlock | **Ruido de entrada** — acumular en debilidad |
+| Rol en plan +25% anual | **Compounder** — checkpoint +25% desde entry; **nunca vender** al checkpoint |
 | Ackman 13F confluence | **None** — tesis 100% LP |
 
-Evaluar SPCX en sesión aparte (premarket + open) **solo** si el thesis memo tiene ventana activa. Si gates = PASS → WATCHLIST sin afectar HOLD/BUY del book Ackman.
+Evaluar SPCX en track satélite aparte. **Funding:** al vender/trim Ackman core → **25% del proceeds** al pool SPCX (`spcxRecyclePolicy`) — deploy solo si precio/tamaño tienen sentido.
+
+### Reciclaje de ganancias → SPCX
+
+Tras cada **SELL o trim** de posición Ackman core (AMZN, MSFT, QSR, BN…):
+
+```
+1. Calcular proceeds del exit (get_realized_pnl / fill notional)
+2. Earmark recyclePct (25%) → pool SPCX
+3. Si pool >= $15 Y deployGates pasan → review_equity_order BUY SPCX
+4. Si no pasa gates → HOLD cash; documentar razón en trade-journal + scorecard
+5. Resto del proceeds → cash book o rotate a siguiente tesis Ackman
+```
+
+**Deploy gates SPCX (obligatorio — no comprar por comprar):**
+- Precio en debilidad relativa (tercio inferior 52w, o −5% vs 5d high, o post-headline sin rip)
+- Cash floor 8% post-trade
+- SPCX < maxSatelliteAumPct (25%)
+- Tesis LP 10y intacta
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
@@ -77,11 +97,12 @@ Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando 
 
 ## Return aspiration (soft)
 
-Lee `risk-policy.json` → `strategy.returnAspiration`:
+Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
 
-- Preferido: **1.3–1.7×** anual con disciplina
-- Techo aspiracional: **2×** — nunca forzar trades/size/opciones para alcanzarlo
-- Si el setup no está → cash / hold / pass
+- **LP target:** **>+25% anual** en NAV vía Ackman core (alpha activo)
+- **Ackman core:** ganar dinero con tesis — trim/exit/rotate cuando toque
+- **SPCX satellite:** compounder 10y, **nunca vender**; financia con **25% proceeds** de cada venta core **solo si gates pasan**
+- Si el setup no está → cash / hold / pass (también para SPCX — no comprar por comprar)
 
 ## Opciones — DESACTIVADAS (LP 2026-08-02)
 

@@ -699,4 +699,22 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Rationale: Q2 revenue/EPS beat; precio −8% por capex AI headline. Unlock = ruido de entrada en hold 10y.*
 
+---
+
+## 2026-08-05 12:00 ET — Intraday Monitor (HOLD)
+
+| Campo | Valor |
+|-------|-------|
+| **Sesión** | automation-03-intraday-monitor |
+| **Cuenta** | Agentic ••••3029 |
+| **NAV** | $115.85 |
+| **AMZN** | $272.57 (+15.2% vs entry) · stop $217.75 · tesis INTACTA |
+| **MSFT** | $488.66 (+29.8% vs entry) · stop $346.30 · tesis INTACTA · trim manual ≥$430 |
+| **SPCX** | $115.64 (+0.5% vs entry) · stop $105.84 · LP hold · unlock 06-ago watch |
+| **Options** | Ninguna (options OFF) |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | Ninguno (SPCX entry previa en sesión) |
+
+*Intel: logs/intelligence/2026-08-05-1200-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

@@ -12,7 +12,12 @@
   "aumUsd": 100,
   "accountScope": "agentic-only",
   "scopeNote": "All decisions based solely on the $100 Agentic account. Other LP accounts are irrelevant to fund thesis.",
-  "clientMandate": "Generate absolute returns with thesis discipline on equity only. Soft aspiration 1.3–1.7x annual (ceiling 2x) — never force risk to hit a multiple. Options disabled by LP (2026-08-02). Concentrated bets on mispriced quality. Not index-hugging. Not passive hold.",
+  "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets + SPCX satellite compounder. Not index-hugging.",
+  "returnPlan": {
+    "annualTargetPct": 25,
+    "annualTargetNote": "Book-level soft target: NAV +25% YoY. Ackman core (AMZN, MSFT, QSR, BN…) drives near-term alpha; SPCX satellite compounds long-term — never sell, but contributes to blended return.",
+    "scorecardBenchmark": "SPY same-period return in logs/scorecard/"
+  },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"
   ],
@@ -28,6 +33,8 @@
       "maxOrderUsd": 15,
       "timeHorizon": "10-years-or-never-sell",
       "exitPolicy": "no-discretionary-exit — accumulate on weakness; never trim/rotate salvo mandato LP explícito",
+      "returnPlanRole": "long-term-compounder — supports LP +25% annual blended return; scorecard checkpoint +25% from entry (no sell)",
+      "annualReturnCheckpointPct": 25,
       "ackmanConfluence": false,
       "rules": [
         "NO compite en ranking diario #1 vs nombres Ackman — evaluar solo vía thesis memo LP",
@@ -37,7 +44,8 @@
         "get_financials puede estar vacío o incompleto — no penalizar como mega-cap",
         "Convicción por acumulación LP, no por catalizador 3–12m",
         "Ignorar peso Ackman en scoring — 0% confluence by design",
-        "Starter $15 = toe-hold; escalar solo si LP libera más capital"
+        "Starter $15 = toe-hold; escalar solo si LP libera más capital",
+        "Contribuye al plan LP +25% anual del book — checkpoint scorecard a +25% desde entry (~$144); NO vender al checkpoint"
       ]
     }
   ],

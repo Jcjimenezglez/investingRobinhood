@@ -56,9 +56,10 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 | Horizonte 3–12 meses + exit por tesis | **10 años o nunca vender** (LP) — no trim/rotate |
 | Fundamentals + SEC estándar | Post-IPO; convicción LP en infra espacial/AI |
 | Catalizador earnings/unlock | **Ruido de entrada** — acumular en debilidad |
+| Rol en plan +25% anual | **Compounder** — checkpoint +25% desde entry; **nunca vender** al checkpoint |
 | Ackman 13F confluence | **None** — tesis 100% LP |
 
-Evaluar SPCX en track satélite aparte. **No** aplicar PASS/BUY del ranking Ackman ni kill criteria de corto plazo.
+Evaluar SPCX en track satélite aparte. Contribuye al **plan LP +25% anual** del book (blended con Ackman core), pero **no** compite por ranking #1 ni usa exit mecánico.
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
@@ -78,10 +79,11 @@ Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando 
 
 ## Return aspiration (soft)
 
-Lee `risk-policy.json` → `strategy.returnAspiration`:
+Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
 
-- Preferido: **1.3–1.7×** anual con disciplina
-- Techo aspiracional: **2×** — nunca forzar trades/size/opciones para alcanzarlo
+- **LP target:** **+25% anual** en NAV Agentic (soft — no forzar trades)
+- **Ackman core** (AMZN, MSFT, QSR, BN…): motor de alpha 12m — trims/rotate por tesis
+- **SPCX satellite:** compounder 10y — **nunca vender**; checkpoint scorecard +25% desde entry (monitoreo, no exit)
 - Si el setup no está → cash / hold / pass
 
 ## Opciones — DESACTIVADAS (LP 2026-08-02)

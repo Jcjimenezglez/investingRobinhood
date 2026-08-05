@@ -717,4 +717,22 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-05-1200-monitor.md*
 
+---
+
+## 2026-08-05 15:00 ET — Pre-Close Monitor (HOLD)
+
+| Campo | Valor |
+|-------|-------|
+| **Sesión** | automation-03-intraday-monitor (close-check) |
+| **Cuenta** | Agentic ••••3029 |
+| **NAV** | $115.02 |
+| **AMZN** | $271.39 (+14.7% vs entry) · stop $217.75 · tesis INTACTA |
+| **MSFT** | $489.94 (+30.1% vs entry) · stop $346.30 · tesis INTACTA · trim manual ≥$430 |
+| **SPCX** | $109.97 (−4.4% vs entry) · stop $105.84 · LP hold · unlock 06-ago mañana |
+| **Options** | Ninguna (options OFF) |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | SPCX BUY $15 @ $115.04 (starter LP) — digest enviado |
+
+*Intel: logs/intelligence/2026-08-05-1500-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

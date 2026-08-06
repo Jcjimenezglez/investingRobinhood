@@ -1,0 +1,184 @@
+{
+  "date": "2026-08-06",
+  "regime": "neutral",
+  "generated_by": "fetch-signals.sh + MCP merge",
+  "note": "MCP quotes/fundamentals merged 2026-08-06T12:02Z",
+  "tickers": [
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "premarket": 360.22,
+        "previous_close": 362.43,
+        "chg_pct": -0.61
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% \u2014 effectively EXITED",
+      "scores": {
+        "composite": 0.732,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "premarket": 92.15,
+        "previous_close": 92.8,
+        "chg_pct": -0.7
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.78,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "premarket": 273.52,
+        "previous_close": 272.65,
+        "chg_pct": 0.32
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "scores": {
+        "composite": 0.842,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "premarket": 591.0,
+        "previous_close": 588.77,
+        "chg_pct": 0.38
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "scores": {
+        "composite": 0.795,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "premarket": 313.84,
+        "previous_close": 311.0,
+        "chg_pct": 0.91
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.738,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "premarket": 482.25,
+        "previous_close": 487.46,
+        "chg_pct": -1.07
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "scores": {
+        "composite": 0.865,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "premarket": 221.64,
+        "previous_close": 219.22,
+        "chg_pct": 1.1
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.768,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "premarket": 68.56,
+        "previous_close": 68.18,
+        "chg_pct": 0.56
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "scores": {
+        "composite": 0.745,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "QSR",
+      "quote": {
+        "premarket": 74.5,
+        "previous_close": 74.49,
+        "chg_pct": 0.01
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "scores": {
+        "composite": 0.925,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "BN",
+      "quote": {
+        "premarket": 44.4,
+        "previous_close": 44.54,
+        "chg_pct": -0.31
+      },
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "scores": {
+        "composite": 0.805,
+        "conviction": "Alta"
+      }
+    },
+    {
+      "symbol": "SPCX",
+      "quote": {
+        "premarket": 112.16,
+        "previous_close": 108.27,
+        "chg_pct": 3.59
+      },
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": {
+        "composite": 0.62,
+        "conviction": "Media"
+      }
+    }
+  ]
+}

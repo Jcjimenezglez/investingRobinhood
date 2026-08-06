@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-06",
+  "generated_at": "2026-08-06T12:02Z",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 312
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 225
+    }
+  ],
+  "research_universe_hits": {
+    "QSR": "earnings today AM \u2014 beat $1.07 vs est $1.04",
+    "BN": "earnings 2026-08-13",
+    "NVDA": "earnings ~late Aug",
+    "UBER": "reported 2026-08-05 \u2014 EPS $0.81 vs $0.83 est"
+  },
+  "note": "Live scan results via MCP run_scan; qualityFilters applied at ranking merge"
+}

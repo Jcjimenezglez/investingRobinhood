@@ -783,4 +783,22 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 | **Book Agentic** | AMZN + MSFT + SPCX ~$15 starter — SPCX ahora bajo reglas Ackman exit/trim |
 | **TSLA** | WATCHLIST — `logs/theses/TSLA-2026-08-07.md` stub; no BUY hasta memo completo |
 
+---
+
+## 2026-08-10 — LP tranche 1 deploy (PLANNED — LP confirmed 2026-08-07)
+
+| Campo | Valor |
+|-------|-------|
+| **Tipo** | Deploy plan — **ejecutar lunes 9:35 ET** |
+| **LP confirmación** | 2026-08-07 — plan aprobado |
+| **Orden 1** | ADD AMZN market **$525.00** |
+| **Orden 2** | BUY BN market **$475.00** (starter) |
+| **Tesis BN** | `logs/theses/BN-2026-08-07.md` |
+| **Plan completo** | `logs/intelligence/2026-08-10-deploy-plan.md` |
+| **Cash pre** | ~$1,010 |
+| **Cash post (est.)** | ~$90 |
+| **Tranche 2** | ~$1,000 pending — decisión al settle |
+
+*Ejecutar vía automation-02-market-open Mon 2026-08-10 9:35 ET.*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

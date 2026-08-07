@@ -1,11 +1,11 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes. Technicals are timing overlays, not score drivers.",
   "weights": {
     "fundamental_quality": 0.35,
-    "mispricing_vs_fair_value": 0.25,
+    "mispricing_vs_fair_value": 0.26,
     "catalyst_proximity_days": 0.22,
-    "ackman_confluence": 0.13,
+    "ackman_confluence": 0.12,
     "social_sentiment": 0.05
   },
   "min_score_for_medium_conviction": 0.55,
@@ -31,5 +31,5 @@
     "note": "Never add technicals to composite score. Use only to delay entry, trim size, or flag overbought/oversold risk in intel log."
   },
   "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
-  "lastCalibratedWeek": "2026-W31"
+  "lastCalibratedWeek": "2026-W32"
 }

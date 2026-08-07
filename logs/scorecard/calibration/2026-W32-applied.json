@@ -1,0 +1,58 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W32",
+  "appliedAt": "2026-08-07T21:00:38.289Z",
+  "decision": "APPLIED",
+  "haltReason": null,
+  "previousWeights": {
+    "fundamental_quality": 0.35,
+    "mispricing_vs_fair_value": 0.25,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.13,
+    "social_sentiment": 0.05
+  },
+  "newWeights": {
+    "fundamental_quality": 0.35,
+    "mispricing_vs_fair_value": 0.26,
+    "catalyst_proximity_days": 0.22,
+    "ackman_confluence": 0.12,
+    "social_sentiment": 0.05
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.0,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "partialRejection": {
+    "social_sentiment": "Proposed delta −0.01 would breach minWeightFloor (0.05 → 0.04). Rejected; weight held at floor.",
+    "rebalance": "Net +0.01 from approved mispricing boost offset by ackman_confluence −0.01 (lowest-attribution non-floor weight among unchanged dimensions)."
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 0.0,
+    "haltDrawdownLimitPct": 15,
+    "weeklyNavDropPct": null,
+    "haltWeeklyNavDropLimitPct": 5,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": false
+  },
+  "ackmanRationale": "Catalyst_proximity_days was our best explanatory signal (+0.7 attribution) — SPCX unlock D+1 rebound (+15.7% in 2 sessions) and earnings follow-through on AMZN/MSFT drove +5.45% WoW NAV vs SPY +3.17%. Since inception we lead SPY by +15.98% alpha ($119.38 NAV, new HWM). We hold catalyst and fundamental weights; apply modest +1% to mispricing_vs_fair_value as MSFT ($499.89) exceeds FV high $450 and SPCX reaches FV low $130 — trim signals emerging. Social_sentiment decrease rejected at policy floor; rebalanced via ackman_confluence −1%. Conviction thresholds held — Media-Alta (MSFT +32.78%) still outperforms Alta (AMZN +16.05%) by ~16.8%, so lowering the Alta bar would be premature.",
+  "attributionSummary": {
+    "bestSignal": "catalyst_proximity_days",
+    "fundVsSpyPct": 15.98,
+    "navUsd": 119.38
+  }
+}

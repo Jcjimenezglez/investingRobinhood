@@ -801,4 +801,22 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 | **Book Agentic** | AMZN + MSFT + SPCX ~$15 starter — SPCX ahora bajo reglas Ackman exit/trim |
 | **TSLA** | WATCHLIST — `logs/theses/TSLA-2026-08-07.md` stub; no BUY hasta memo completo |
 
+---
+
+## 2026-08-07 15:00 ET — Pre-Close Monitor (HOLD)
+
+| Campo | Valor |
+|-------|-------|
+| **Sesión** | automation-03-intraday-monitor (close-check) |
+| **Cuenta** | Agentic ••••3029 |
+| **NAV** | $1,118.90 (+ $2k pending deposit) |
+| **AMZN** | $274.35 (+15.9% vs entry) · stop $217.75 · tesis INTACTA |
+| **MSFT** | $499.86 (+32.8% vs entry) · stop $346.30 · tesis INTACTA · trim manual ≥$430 |
+| **SPCX** | $129.63 (+12.7% vs entry) · stop $105.84 · Ackman core · unlock D+1 rebound |
+| **Options** | Ninguna (options OFF) |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | Ninguno (LP deposit $2k pending) |
+
+*Intel: logs/intelligence/2026-08-07-1500-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

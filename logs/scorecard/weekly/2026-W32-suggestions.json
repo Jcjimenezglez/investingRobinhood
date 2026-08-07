@@ -1,0 +1,25 @@
+{
+  "week": "2026-W32",
+  "navUsd": 119.38,
+  "spyReturnPct": 3.4,
+  "fundReturnPct": 19.38,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.3,
+    "catalyst_proximity_days": 0.7,
+    "ackman_confluence": 0.5,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": 0.0,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund +19.38% vs SPY +3.40% since inception (+15.98% alpha); +5.45% WoW on investment book. SPCX unlock rebound (+15.7% in 2d) validates catalyst timing; MSFT (+32.78%) still in optional trim zone ($499.89 ≥ $430). Hold catalyst/fundamental weights; modest boost to mispricing_vs_fair_value as trim signals emerge at FV. No threshold changes; LP $2k deposit pending deploy — no sizing inflation until thesis gates pass."
+}

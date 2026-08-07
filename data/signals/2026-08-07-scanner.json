@@ -1,0 +1,29 @@
+{
+  "date": "2026-08-07",
+  "generated_at": "2026-08-07T12:05:00Z",
+  "source": "Robinhood MCP run_scan",
+  "presets": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 306,
+      "mergePriority": "high"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 231,
+      "mergePriority": "low"
+    }
+  ],
+  "researchUniverse_hits": {
+    "note": "Universe tickers appearing in earnings-14d scan window",
+    "tickers": ["BN", "META", "NVDA", "UBER"]
+  },
+  "quality_filter_applied": true,
+  "minPriceUsd": 10,
+  "minMarketCapUsd": 1000000000,
+  "minAvgDailyVolume": 5000000
+}

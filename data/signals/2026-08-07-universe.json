@@ -1,0 +1,110 @@
+{
+  "date": "2026-08-07",
+  "regime": "neutral",
+  "generated_by": "fetch-signals.sh + MCP merge",
+  "prompt_version": "1.8.8",
+  "signal_weights_version": "1.0.5",
+  "calibration_week": "2026-W31",
+  "note": "Scores per config/signal-weights.json v1.0.5 (W31 APPLIED)",
+  "tickers": [
+    {
+      "symbol": "MSFT",
+      "quote": { "premarket": 497.85, "previous_close": 499.86, "chg_pct": -0.4 },
+      "fundamentals": { "pe_ratio": 27.17, "market_cap_usd": 3711809678500 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "scores": { "composite": 0.872, "conviction": "Alta" }
+    },
+    {
+      "symbol": "AMZN",
+      "quote": { "premarket": 273.10, "previous_close": 272.26, "chg_pct": 0.31 },
+      "fundamentals": { "pe_ratio": 22.84, "market_cap_usd": 2937109490000 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "scores": { "composite": 0.848, "conviction": "Alta" }
+    },
+    {
+      "symbol": "BN",
+      "quote": { "premarket": 44.44, "previous_close": 43.98, "chg_pct": 1.05 },
+      "fundamentals": { "pe_ratio": 83.86, "market_cap_usd": 110292062102 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "scores": { "composite": 0.825, "conviction": "Alta" }
+    },
+    {
+      "symbol": "QSR",
+      "quote": { "premarket": 72.92, "previous_close": 72.94, "chg_pct": -0.03 },
+      "fundamentals": { "pe_ratio": 29.02, "market_cap_usd": 33992804678 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "scores": { "composite": 0.815, "conviction": "Alta" }
+    },
+    {
+      "symbol": "META",
+      "quote": { "premarket": 588.24, "previous_close": 589.90, "chg_pct": -0.28 },
+      "fundamentals": { "pe_ratio": 22.23, "market_cap_usd": 1502774801668 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "scores": { "composite": 0.792, "conviction": "Alta" }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": { "premarket": 92.10, "previous_close": 90.71, "chg_pct": 1.53 },
+      "fundamentals": { "pe_ratio": 40.01, "market_cap_usd": 83767322380 },
+      "ackman_confluence": false,
+      "scores": { "composite": 0.778, "conviction": "Alta" }
+    },
+    {
+      "symbol": "NVDA",
+      "quote": { "premarket": 220.10, "previous_close": 218.99, "chg_pct": 0.51 },
+      "fundamentals": { "pe_ratio": 31.65, "market_cap_usd": 5386781717000 },
+      "ackman_confluence": false,
+      "scores": { "composite": 0.765, "conviction": "Alta" }
+    },
+    {
+      "symbol": "UBER",
+      "quote": { "premarket": 70.75, "previous_close": 70.47, "chg_pct": 0.40 },
+      "fundamentals": { "pe_ratio": 17.85, "market_cap_usd": 143489444000 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "scores": { "composite": 0.742, "conviction": "Alta" }
+    },
+    {
+      "symbol": "AAPL",
+      "quote": { "premarket": 312.17, "previous_close": 312.41, "chg_pct": -0.08 },
+      "fundamentals": { "pe_ratio": 34.78, "market_cap_usd": 4674465923407 },
+      "ackman_confluence": false,
+      "scores": { "composite": 0.735, "conviction": "Alta" }
+    },
+    {
+      "symbol": "GOOGL",
+      "quote": { "premarket": 357.78, "previous_close": 357.75, "chg_pct": 0.01 },
+      "fundamentals": { "pe_ratio": 18.76, "market_cap_usd": 4377606200000 },
+      "ackman_confluence": true,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% — effectively EXITED",
+      "scores": { "composite": 0.728, "conviction": "Alta" }
+    },
+    {
+      "symbol": "TSLA",
+      "quote": { "premarket": 321.37, "previous_close": 319.53, "chg_pct": 0.58 },
+      "fundamentals": { "pe_ratio": 299.25, "market_cap_usd": 1261999711500 },
+      "ackman_confluence": false,
+      "scores": { "composite": 0.710, "conviction": "Alta" }
+    },
+    {
+      "symbol": "SPCX",
+      "quote": { "premarket": 115.24, "previous_close": 114.92, "chg_pct": 0.28 },
+      "fundamentals": { "pe_ratio": null, "market_cap_usd": 1524525103134 },
+      "ackman_confluence": false,
+      "note": "Ackman core per fund-mandate; in book — excluded from ranking rotation",
+      "scores": { "composite": null, "conviction": "N/A" }
+    }
+  ]
+}

@@ -9,65 +9,43 @@
     "passive index hold",
     "cross-account correlation rules"
   ],
-  "aumUsd": 100,
+  "aumUsd": 2100,
+  "aumNote": "LP directive 2026-08-07: ~$116 NAV existente + $2,000 deposit Agentic. Personal account SPCX (~$2k) is LP-managed outside Agentic — agent ignores it for sizing/PASS/BUY.",
   "accountScope": "agentic-only",
-  "scopeNote": "All decisions based solely on the $100 Agentic account. Other LP accounts are irrelevant to fund thesis.",
-  "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets + SPCX satellite compounder. Not index-hugging.",
+  "scopeNote": "All decisions based solely on the Agentic account. LP personal account (incl. concentrated SPCX) is outside fund book — no cross-account sizing or correlation rules.",
+  "lpAccountSeparation": {
+    "personalAccount": {
+      "role": "LP-directed — concentrated SPCX (~$2k) and other self-directed holdings",
+      "agenticAccess": false,
+      "agentIgnoresForBook": true
+    },
+    "agenticAccount": {
+      "role": "Ackman thesis book — full researchUniverse including SPCX + TSLA as core names",
+      "lpDepositUsd": 2000,
+      "depositDate": "2026-08-07"
+    }
+  },
+  "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets across full universe (AMZN, MSFT, UBER, QSR, BN, SPCX, TSLA, …). Not index-hugging.",
   "returnPlan": {
     "annualTargetPct": 25,
-    "annualTargetNote": "Ackman core busca >25% alpha vía tesis (trim/exit/rotate). SPCX satellite: compounder 10y, nunca vender. Al vender core, reciclar % de proceeds a SPCX solo si tiene sentido.",
+    "annualTargetNote": "Ackman book busca >25% alpha vía tesis (trim/exit/rotate) en horizonte 3–12 meses. Proceeds de exits rotan a la siguiente tesis #1 del ranking — no pool satélite.",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/"
   },
-  "spcxRecyclePolicy": {
+  "muskClusterPolicy": {
     "enabled": true,
-    "recyclePctOfCoreExitProceeds": 25,
-    "appliesTo": "ackman-core SELL and partial trims only — never SPCX",
-    "minDeployUsd": 15,
-    "mandatory": false,
-    "note": "LP 2026-08-05: cada venta/trim del book Ackman → apartar 25% del proceeds para pool SPCX. Deploy solo si gates pasan — no comprar por comprar.",
-    "deployGates": [
-      "recycled_amount >= minDeployUsd ($15)",
-      "post-trade cash >= minCashReservePct (8%)",
-      "SPCX LP thesis intact (10y / never sell)",
-      "precio razonable: debilidad relativa (ej. ≤5d high −5%, o en tercio inferior 52w range, o post-corrección post-earnings) — NO perseguir rip",
-      "skip si SPCX ya > maxSatelliteAumPct sin LP override",
-      "agente documenta PASS con razón si gates no pasan — cash queda en book hasta próxima ventana"
-    ],
-    "maxSatelliteAumPct": 25
+    "tickers": ["TSLA", "SPCX"],
+    "maxCombinedAumPct": 50,
+    "maxHighConvictionSimultaneous": 1,
+    "note": "LP 2026-08-07: TSLA + SPCX treated as Ackman core but cap combined exposure. No Alta convicción en ambos a la vez. Personal LP SPCX outside book — this cap applies only to Agentic positions.",
+    "rationale": "Shared Musk/xAI/headline correlation; avoid double Musk cluster inside Agentic while LP holds SPCX personally."
   },
   "researchUniverse": [
-    "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"
+    "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"
   ],
-  "lpSatelliteUniverse": [
-    {
-      "ticker": "SPCX",
-      "name": "SpaceX",
-      "category": "lp-satellite-long",
-      "addedBy": "LP directive 2026-08-04",
-      "evaluationPath": "separate-from-daily-ranking",
-      "thesisPath": "logs/theses/SPCX-2026-08-04.md",
-      "maxAumPct": 25,
-      "maxAumPctNote": "Cap blando satélite; crece vía spcxRecyclePolicy (25% proceeds en exits core)",
-      "maxOrderUsd": 15,
-      "timeHorizon": "10-years-or-never-sell",
-      "exitPolicy": "no-discretionary-exit — accumulate on weakness; never trim/rotate salvo mandato LP explícito",
-      "returnPlanRole": "long-term-compounder — supports LP +25% annual blended return; scorecard checkpoint +25% from entry (no sell)",
-      "annualReturnCheckpointPct": 25,
-      "ackmanConfluence": false,
-      "rules": [
-        "NO compite en ranking diario #1 vs nombres Ackman — evaluar solo vía thesis memo LP",
-        "NO usar composite score de signal-weights como gate de entrada",
-        "Horizonte LP: 10 años o nunca vender — NO aplicar decision tree event-trade ni kill criteria Ackman de corto plazo",
-        "Unlock / earnings / capex headlines = ruido de entrada (DCA/acumular), no triggers de PASS",
-        "get_financials puede estar vacío o incompleto — no penalizar como mega-cap",
-        "Convicción por acumulación LP, no por catalizador 3–12m",
-        "Ignorar peso Ackman en scoring — 0% confluence by design",
-        "Starter $15 = toe-hold; escalar vía spcxRecyclePolicy (25% proceeds al vender/trim core)",
-        "Contribuye al plan LP +25% anual — checkpoint scorecard +25% desde entry; NO vender al checkpoint",
-        "NO comprar por comprar — evaluar deployGates en spcxRecyclePolicy antes de cada add"
-      ]
-    }
-  ],
+  "ackmanCoreNotes": {
+    "SPCX": "SpaceX — Ackman core event trade (3–12m). Same rules as AMZN/MSFT: thesis memo, catalyst, kill criteria, trim/exit. NOT LP satellite / never-sell. LP also holds personal SPCX — Agentic SPCX is tactical book only.",
+    "TSLA": "Ackman core — tesis propia (no 13F confluence). Catalyst-driven 3–12m. Memo required before first BUY."
+  },
   "notTradableViaAgentic": [
     { "name": "ETH", "reason": "Crypto — not Agentic MCP equities" },
     { "name": "BTC", "reason": "Crypto" },
@@ -80,7 +58,7 @@
     "Quality business + mispriced entry",
     "Exit when thesis breaks — not calendar",
     "Explain decisions like an investor letter",
-    "Judge only the $100 fund book — ignore external accounts"
+    "Judge only the Agentic fund book — ignore external LP accounts"
   ],
   "thesisTemplatePath": "workflows/investment-thesis-template.md",
   "lettersPath": "logs/investor-letters/",

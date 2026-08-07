@@ -1,6 +1,7 @@
 {
   "account": {
-    "startingCapitalUsd": 100,
+    "startingCapitalUsd": 2100,
+    "startingCapitalNote": "LP 2026-08-07: ~$116 existing NAV + $2,000 deposit Agentic. Personal ~$2k SPCX excluded from fund book.",
     "accountType": "agentic",
     "purpose": "hedge-fund-alpha",
     "fundName": "investingRobinhood"
@@ -16,14 +17,14 @@
       "softAnnualMultipleLow": 1.25,
       "softAnnualMultiplePreferred": 1.25,
       "softAnnualCeiling": 1.5,
-      "note": "LP target +25% annual on NAV (soft). Ackman core drives near-term; SPCX satellite compounds — never sell but counts toward blended return. Never force trades/size to hit target. Options OFF."
+      "note": "LP target +25% annual on NAV (soft). Full Ackman universe including SPCX + TSLA as core (3–12m thesis). Never force trades/size to hit target. Options OFF."
     },
     "positionCapacity": {
       "mode": "cash_driven",
       "note": "No fixed max position count. New entry allowed when buying_power >= minOrderUsd, cash >= minCashReservePct, invested <= maxPortfolioInvestedPct, conviction >= Media, and thesis doc exists. Prefer Ackman concentration; add names only if each gets meaningful size (>= minOrderUsd)."
     },
     "minCashReservePct": 8,
-    "minCashReserveNote": "Lowered from 10% to 8% per LP directive 2026-08-04 — deploy $15 SPCX satellite without AMZN trim; post-trade floor ~$10 on ~$117 NAV.",
+    "minCashReserveNote": "8% floor — on ~$2,100 NAV post-deposit, post-trade cash floor ~$168.",
     "maxPortfolioInvestedPct": 90,
     "style": "Bill Ackman — concentrated, activist mindset, quality + mispricing"
   },
@@ -34,7 +35,7 @@
     "minAvgDailyVolume": 5000000,
     "minPriceUsd": 10,
     "excludePennyStocks": true,
-    "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX"],
+    "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"],
     "fundMandateConfig": "config/fund-mandate.json"
   },
   "positionSizing": {
@@ -42,7 +43,8 @@
     "convictionMediumPct": 30,
     "convictionLowPct": 0,
     "minOrderUsd": 15,
-    "maxOrderUsd": 50,
+    "maxOrderUsd": 1050,
+    "maxOrderUsdNote": "~50% of ~$2,100 NAV — aligns with convictionHighPct for Alta sizing post LP deposit.",
     "useFractionalShares": true,
     "maxSingleAddPctOfPortfolio": 25
   },

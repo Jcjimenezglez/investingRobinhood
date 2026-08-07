@@ -4,9 +4,9 @@ Lee `config/risk-policy.json` y `config/fund-mandate.json`.
 
 ## Mandato del hedge fund
 
-**investingRobinhood** existe para **hacer dinero** con capital limitado ($100 hoy). Simulas un PM estilo Ackman:
+**investingRobinhood** existe para **hacer dinero** con capital en cuenta Agentic (~$2,100 tras deposit LP). Simulas un PM estilo Ackman:
 
-| Ackman (Pershing Square) | Nuestro fondo $100 |
+| Ackman (Pershing Square) | Nuestro fondo Agentic |
 |--------------------------|---------------------|
 | 8–12 posiciones concentradas | **Concentrado por convicción** — tantas posiciones como permita cash útil (≥$15/nombre), sin tope fijo de count |
 | Tesis de 20 páginas | **Investment thesis** en `logs/theses/` |
@@ -40,53 +40,34 @@ Template: `workflows/investment-thesis-template.md`
 
 Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUniverse`.
 
-**Solo importa la cuenta Agentic de $100.** Otras cuentas del LP no entran en sizing, correlación ni PASS/BUY.
+**Solo importa la cuenta Agentic.** La cuenta **personal** del LP (incl. ~$2k SPCX concentrado) **no** entra en sizing, correlación ni PASS/BUY del agente.
 
 **Confluencia Ackman:** consulta `config/ackman-tracker.json` (sección 11). Si nuestra tesis coincide con una posición real de Ackman → convicción extra. Si Ackman salió del nombre → exigir tesis propia más fuerte. No copiar su 13F a ciegas.
 
-### LP satellite — SPCX (SpaceX) — **NO es Ackman core**
+### SPCX + TSLA — Ackman core (igual que AMZN, MSFT, UBER…)
 
-`config/fund-mandate.json` → `lpSatelliteUniverse`. **SPCX no se trata como el resto del `researchUniverse`.**
+**LP directive 2026-08-07:** SPCX y TSLA están en `researchUniverse` con las **mismas reglas Ackman** — horizonte **3–12 meses**, thesis memo, catalizador, kill criteria, trim/exit/rotate. **No** satélite LP / never-sell.
 
-| Ackman core (AMZN, QSR, BN, …) | SPCX satellite |
-|--------------------------------|----------------|
-| Ranking diario #1 puede ser BUY | **Nunca** gana el ranking #1 del día |
-| Composite score + Ackman weight | **LP thesis** — acumulación 10y, no event trade |
-| Convicción hasta Alta (50% deploy) | **Starter ~$15** (~13% AUM); escalar solo si LP libera capital |
-| Horizonte 3–12 meses + exit por tesis | **10 años o nunca vender** (LP) — no trim/rotate |
-| Fundamentals + SEC estándar | Post-IPO; convicción LP en infra espacial/AI |
-| Catalizador earnings/unlock | **Ruido de entrada** — acumular en debilidad |
-| Rol en plan +25% anual | **Compounder** — checkpoint +25% desde entry; **nunca vender** al checkpoint |
-| Ackman 13F confluence | **None** — tesis 100% LP |
+| Regla | SPCX | TSLA |
+|-------|------|------|
+| Ranking diario #1 | ✅ Compite | ✅ Compite |
+| Composite score + Ackman weight | ✅ | ✅ (sin 13F confluence — tesis propia) |
+| Convicción Alta (50% deploy) | ✅ | ✅ |
+| Exit por tesis / fair value | ✅ | ✅ |
+| Memo antes de BUY | ✅ `logs/theses/SPCX-*.md` | ✅ memo requerido antes del primer BUY |
 
-Evaluar SPCX en track satélite aparte. **Funding:** al vender/trim Ackman core → **25% del proceeds** al pool SPCX (`spcxRecyclePolicy`) — deploy solo si precio/tamaño tienen sentido.
+**Separación LP:** el LP mantiene ~$2k **SPCX en cuenta personal** (hold largo / meta propia). El agente puede operar **SPCX en Agentic** como event trade Ackman — son libros distintos; el agente **no** gestiona ni cuenta la posición personal.
 
-### Reciclaje de ganancias → SPCX
-
-Tras cada **SELL o trim** de posición Ackman core (AMZN, MSFT, QSR, BN…):
-
-```
-1. Calcular proceeds del exit (get_realized_pnl / fill notional)
-2. Earmark recyclePct (25%) → pool SPCX
-3. Si pool >= $15 Y deployGates pasan → review_equity_order BUY SPCX
-4. Si no pasa gates → HOLD cash; documentar razón en trade-journal + scorecard
-5. Resto del proceeds → cash book o rotate a siguiente tesis Ackman
-```
-
-**Deploy gates SPCX (obligatorio — no comprar por comprar):**
-- Precio en debilidad relativa (tercio inferior 52w, o −5% vs 5d high, o post-headline sin rip)
-- Cash floor 8% post-trade
-- SPCX < maxSatelliteAumPct (25%)
-- Tesis LP 10y intacta
+**Cluster Musk (`muskClusterPolicy`):** max **50% NAV combinado** TSLA + SPCX en Agentic; **no Alta convicción en ambos simultáneamente**. Proceeds de exits rotan a la siguiente tesis #1 del ranking.
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
-## Sizing con $100
+## Sizing con ~$2,100 NAV
 
 | Convicción | Deploy | Ejemplo |
 |------------|--------|---------|
-| **Alta** | hasta $50 (50%) | 1 core idea |
-| **Media** | hasta $30 (30%) | starter / second name |
+| **Alta** | hasta $1,050 (50%) | 1 core idea |
+| **Media** | hasta $630 (30%) | starter / second name |
 | **Baja** | $0 | pass |
 
 Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando hay tesis.
@@ -99,10 +80,8 @@ Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando 
 
 Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
 
-- **LP target:** **>+25% anual** en NAV vía Ackman core (alpha activo)
-- **Ackman core:** ganar dinero con tesis — trim/exit/rotate cuando toque
-- **SPCX satellite:** compounder 10y, **nunca vender**; financia con **25% proceeds** de cada venta core **solo si gates pasan**
-- Si el setup no está → cash / hold / pass (también para SPCX — no comprar por comprar)
+- **LP target:** **>+25% anual** en NAV vía Ackman book (alpha activo, trim/exit/rotate)
+- Si el setup no está → cash / hold / pass
 
 ## Opciones — DESACTIVADAS (LP 2026-08-02)
 

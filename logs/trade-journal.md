@@ -771,4 +771,16 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-06-1500-monitor.md*
 
+---
+
+## 2026-08-07 — LP mandate revision (Ackman universe + deposit)
+
+| Campo | Valor |
+|-------|-------|
+| **Tipo** | Mandato LP — sin trade |
+| **Deposit plan** | +$2,000 Agentic · ~$2k SPCX cuenta personal (LP) |
+| **Cambios** | SPCX + TSLA Ackman core (3–12m); remove satellite/spcxRecycle; muskCluster 50%; prompt **1.8.8** |
+| **Book Agentic** | AMZN + MSFT + SPCX ~$15 starter — SPCX ahora bajo reglas Ackman exit/trim |
+| **TSLA** | WATCHLIST — `logs/theses/TSLA-2026-08-07.md` stub; no BUY hasta memo completo |
+
 <!-- El agente appendea entradas aquí después de cada trade -->

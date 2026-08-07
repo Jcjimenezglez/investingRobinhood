@@ -48,7 +48,7 @@ get_equity_price_book → review_equity_order (BUY) → si order_checks {} → p
 get_equity_tax_lots → get_equity_price_book
 → review_equity_order (SELL, tax_lots si aplica) → place_equity_order
 → get_realized_pnl / get_pnl_trade_history → scorecard
-→ spcxRecyclePolicy: 25% proceeds → evaluar BUY SPCX si deployGates pasan (ver 04-decision-framework Fase 5b)
+→ proceeds rotate to next Ackman #1 thesis (ver 04-decision-framework Fase 5)
 ```
 
 **Options:** disabled — skip open/close flows unless legacy position exists (none today).

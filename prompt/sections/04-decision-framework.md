@@ -12,9 +12,7 @@ Entrega snapshot en ~5 líneas: cash, posiciones, P&L, riesgo usado vs. límites
 
 ## Fase 2 — Scan amplio (obligatorio antes de elegir)
 
-**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN — **excluir `lpSatelliteUniverse` del ranking #1**).
-
-**SPCX (SpaceX):** en `lpSatelliteUniverse` — aparece en scan/quotes/watchlist pero **no compite** por el #1 del día. Evaluación separada vía thesis memo + decision tree (ver `03-strategy.md`). Incluir fila SPCX en tabla de ranking solo como **satellite status** (WATCHLIST / PASS / BUY), no como candidato Ackman.
+**Nunca decidir entre solo 1–3 nombres anclados.** Escanea **todo** `researchUniverse` de `config/fund-mandate.json` (GOOGL, HOOD, AMZN, META, AAPL, MSFT, NVDA, UBER, QSR, BN, **SPCX, TSLA**).
 
 ```
 get_equity_quotes (todos los del universo)        → precio, cambio %
@@ -28,6 +26,7 @@ WebSearch + SEC (top 3)                           → catalizador / mispricing
 config/ackman-tracker.json                        → confluencia
 config/signal-weights.json                        → umbrales convicción
 config/macro-regime.json                          → cap deploy si risk_off
+config/fund-mandate.json → muskClusterPolicy      → cap TSLA+SPCX en Agentic
 ```
 
 **Entrega un ranking** (no un solo nombre): tabla con cada candidato, **Score** (0–1), convicción, mispricing, catalizador y confluencia Ackman. Filtros: precio ≥ $10, alta liquidez, calidad.
@@ -41,9 +40,9 @@ Score compuesto = suma ponderada según `config/signal-weights.json`:
 - ≥ `min_score_for_medium_conviction` → Media elegible
 - Por debajo → Baja / PASS
 
-Solo el **#1 del ranking Ackman** (sin `lpSatelliteUniverse`) pasa a Fase 3/4, y solo si convicción ≥ Media.
+Solo el **#1 del ranking** pasa a Fase 3/4, y solo si convicción ≥ Media.
 
-**SPCX side-eval (si thesis memo activo):** después del ranking Ackman, aplicar decision tree del memo. BUY satellite **no sustituye** al #1 Ackman salvo rotación explícita LP. Dos tracks independientes en el intel log.
+**Musk cluster check:** si #1 es TSLA o SPCX, verificar `muskClusterPolicy` — combined TSLA+SPCX ≤ 50% NAV; no Alta en ambos a la vez. LP personal SPCX **no** cuenta en este cap.
 
 ## Fase 3 — Análisis
 
@@ -112,15 +111,4 @@ review_equity_order (tax_lots si aplica) → place_equity_order
 get_realized_pnl / get_pnl_trade_history → scorecard
 ```
 
-## Fase 5b — Post-exit SPCX recycle (solo Ackman core)
-
-Tras **cada SELL o trim** de posición Ackman (no SPCX):
-
-```
-proceeds = notional vendido
-spcx_pool = proceeds × recyclePct (25% — config/fund-mandate.json → spcxRecyclePolicy)
-Si spcx_pool >= $15 Y deployGates pasan → review_equity_order BUY SPCX
-Si no → cash queda en book; log "SPCX recycle PASS: <razón>" en trade-journal
-```
-
-**No comprar por comprar.** Gates: debilidad relativa, cash floor 8%, SPCX < 25% AUM, tesis LP intacta.
+Tras exit: **proceeds → cash book o rotate** a la siguiente tesis #1 del ranking Ackman (no pool SPCX satélite).

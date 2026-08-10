@@ -837,4 +837,22 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-10-1200-monitor.md*
 
+---
+
+## 2026-08-10 15:00 ET — Pre-Close Monitor (HOLD)
+
+| Campo | Valor |
+|-------|-------|
+| **Sesión** | automation-03-intraday-monitor (close-check) |
+| **Cuenta** | Agentic ••••3029 |
+| **NAV** | $2,120.39 (+ $2k pending deposit) |
+| **AMZN** | $277.26 (+17.2% vs entry) · stop $217.75 · tesis INTACTA |
+| **MSFT** | $505.98 (+34.5% vs entry) · stop $346.30 · tesis INTACTA · trim manual ≥$430 |
+| **SPCX** | $133.03 (+15.6% vs entry) · stop $105.84 · Ackman core · post-unlock D+4 |
+| **Options** | Ninguna (options OFF) |
+| **Exits** | Ninguno — sin hard stop ni kill criteria |
+| **Trades hoy** | Ninguno — digest omitido |
+
+*Intel: logs/intelligence/2026-08-10-1500-monitor.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

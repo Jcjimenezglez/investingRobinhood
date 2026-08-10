@@ -9,8 +9,8 @@
     "passive index hold",
     "cross-account correlation rules"
   ],
-  "aumUsd": 2100,
-  "aumNote": "LP directive 2026-08-07: ~$116 NAV existente + $2,000 deposit Agentic. Personal account SPCX (~$2k) is LP-managed outside Agentic — agent ignores it for sizing/PASS/BUY.",
+  "aumUsd": 117,
+  "aumNote": "LP directive 2026-08-10: operational book ~$117 (~$10 cash + AMZN/MSFT/SPCX). $2,000 in Agentic account is OFF-LIMITS — do not deploy. Personal account SPCX (~$2k) is LP-managed outside Agentic — agent ignores it for sizing/PASS/BUY.",
   "accountScope": "agentic-only",
   "scopeNote": "All decisions based solely on the Agentic account. LP personal account (incl. concentrated SPCX) is outside fund book — no cross-account sizing or correlation rules.",
   "lpAccountSeparation": {
@@ -21,8 +21,10 @@
     },
     "agenticAccount": {
       "role": "Ackman thesis book — full researchUniverse including SPCX + TSLA as core names",
-      "lpDepositUsd": 2000,
-      "depositDate": "2026-08-07"
+      "operationalBookUsd": 117,
+      "cashDeployableUsd": 10,
+      "forbiddenCapitalUsd": 2000,
+      "forbiddenCapitalNote": "LP directive 2026-08-10: $2k in Agentic is NOT deployable. Never size trades, ADD, or new entries using this pool. If broker cash > $10, treat excess as forbidden reserve — not buying power for the fund."
     }
   },
   "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets across full universe (AMZN, MSFT, UBER, QSR, BN, SPCX, TSLA, …). Not index-hugging.",

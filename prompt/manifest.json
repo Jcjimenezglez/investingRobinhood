@@ -1,6 +1,6 @@
 {
-  "version": "1.8.8",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.8: LP deposit $2k; SPCX+TSLA Ackman core; remove satellite/spcxRecycle; muskClusterPolicy; personal SPCX outside book.",
+  "version": "1.8.9",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.9: revoke LP $2k Agentic deposit — operational book ~$117 ($10 cash + AMZN/MSFT/SPCX); $2k forbidden reserve.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-12",
+  "generated_at": "2026-08-12T12:30:00Z",
+  "source": "Robinhood MCP get_earnings_calendar",
+  "filter": "high_market_cap",
+  "days": 14,
+  "start_date": "2026-08-12",
+  "researchUniverse": [
+    {
+      "symbol": "BN",
+      "quarter": 2,
+      "year": 2026,
+      "report_date": "2026-08-13",
+      "timing": "am",
+      "eps_estimate": "0.66",
+      "eps_actual": null,
+      "verified": true
+    },
+    {
+      "symbol": "META",
+      "note": "Earnings ~late Aug (not in 14d window start 2026-08-12)"
+    },
+    {
+      "symbol": "NVDA",
+      "note": "Earnings ~2026-08-27 per calendar"
+    },
+    {
+      "symbol": "UBER",
+      "note": "Q2 reported — EPS miss; next catalyst TBD"
+    }
+  ],
+  "macro_today": [
+    {
+      "symbol": "CSCO",
+      "report_date": "2026-08-12",
+      "timing": "pm",
+      "note": "Large-cap tech read-through"
+    }
+  ]
+}

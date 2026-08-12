@@ -1,0 +1,116 @@
+{
+  "date": "2026-08-12",
+  "regime": "neutral",
+  "generated_by": "fetch-signals.sh skeleton",
+  "note": "Agent merges MCP quote/fundamental data and computes scores per config/signal-weights.json",
+  "tickers": [
+    {
+      "symbol": "GOOGL",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 0.7,
+      "ackman_change": "CUT -94.9% \u2014 effectively EXITED",
+      "scores": null
+    },
+    {
+      "symbol": "HOOD",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": null
+    },
+    {
+      "symbol": "AMZN",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.4,
+      "ackman_change": "increased +19.2% (biggest add)",
+      "scores": null
+    },
+    {
+      "symbol": "META",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 11.1,
+      "ackman_change": "trimmed -0.5%",
+      "scores": null
+    },
+    {
+      "symbol": "AAPL",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": null
+    },
+    {
+      "symbol": "MSFT",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.3,
+      "ackman_change": "NEW position",
+      "scores": null
+    },
+    {
+      "symbol": "NVDA",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": null
+    },
+    {
+      "symbol": "UBER",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 15.7,
+      "ackman_change": "trimmed -0.8%",
+      "scores": null
+    },
+    {
+      "symbol": "QSR",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 12.2,
+      "ackman_change": "trimmed -1.0%",
+      "scores": null
+    },
+    {
+      "symbol": "BN",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": true,
+      "ackman_weight_pct": 17.6,
+      "ackman_change": "trimmed -2.8%",
+      "scores": null
+    },
+    {
+      "symbol": "SPCX",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": null
+    },
+    {
+      "symbol": "TSLA",
+      "quote": null,
+      "fundamentals": null,
+      "ackman_confluence": false,
+      "ackman_weight_pct": null,
+      "ackman_change": null,
+      "scores": null
+    }
+  ]
+}

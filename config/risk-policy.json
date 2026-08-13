@@ -1,10 +1,16 @@
 {
   "account": {
-    "startingCapitalUsd": 2100,
-    "startingCapitalNote": "LP 2026-08-07: ~$116 existing NAV + $2,000 deposit Agentic. Personal ~$2k SPCX excluded from fund book.",
+    "startingCapitalUsd": 117,
+    "startingCapitalNote": "LP 2026-08-10: operational book ~$117 (~$10 cash + AMZN/MSFT/SPCX). $2k Agentic reserve is forbidden — never deploy. Personal ~$2k SPCX excluded from fund book.",
     "accountType": "agentic",
     "purpose": "hedge-fund-alpha",
     "fundName": "investingRobinhood"
+  },
+  "deployableCapital": {
+    "operationalBookUsd": 117,
+    "cashDeployableUsd": 10,
+    "forbiddenReserveUsd": 2000,
+    "forbiddenNote": "LP directive 2026-08-10: $2k in Agentic is OFF-LIMITS. Size trades only on operational book (~$117). If broker reports cash > $10, treat excess as forbidden reserve — not fund buying power."
   },
   "strategy": {
     "name": "ackman-concentrated-catalyst",
@@ -21,10 +27,10 @@
     },
     "positionCapacity": {
       "mode": "cash_driven",
-      "note": "No fixed max position count. New entry allowed when buying_power >= minOrderUsd, cash >= minCashReservePct, invested <= maxPortfolioInvestedPct, conviction >= Media, and thesis doc exists. Prefer Ackman concentration; add names only if each gets meaningful size (>= minOrderUsd)."
+      "note": "No fixed max position count. New entry allowed when deployable cash >= minOrderUsd, cash >= minCashReservePct, invested <= maxPortfolioInvestedPct, conviction >= Media, and thesis doc exists. Forbidden $2k reserve never counts toward deployable cash."
     },
     "minCashReservePct": 8,
-    "minCashReserveNote": "8% floor — on ~$2,100 NAV post-deposit, post-trade cash floor ~$168.",
+    "minCashReserveNote": "8% floor — on ~$117 NAV, post-trade cash floor ~$9. With only ~$10 deployable cash, new entries effectively blocked until trim/exit frees capital.",
     "maxPortfolioInvestedPct": 90,
     "style": "Bill Ackman — concentrated, activist mindset, quality + mispricing"
   },
@@ -43,8 +49,8 @@
     "convictionMediumPct": 30,
     "convictionLowPct": 0,
     "minOrderUsd": 15,
-    "maxOrderUsd": 1050,
-    "maxOrderUsdNote": "~50% of ~$2,100 NAV — aligns with convictionHighPct for Alta sizing post LP deposit.",
+    "maxOrderUsd": 58,
+    "maxOrderUsdNote": "~50% of ~$117 operational NAV. Capped further by deployable cash (~$10) — no sizing inflation from forbidden $2k reserve.",
     "useFractionalShares": true,
     "maxSingleAddPctOfPortfolio": 25
   },

@@ -4,7 +4,7 @@ Lee `config/risk-policy.json` y `config/fund-mandate.json`.
 
 ## Mandato del hedge fund
 
-**investingRobinhood** existe para **hacer dinero** con capital en cuenta Agentic (~$2,100 tras deposit LP). Simulas un PM estilo Ackman:
+**investingRobinhood** existe para **hacer dinero** con capital en cuenta Agentic (~**$117** book operativo: ~$10 cash + AMZN/MSFT/SPCX). Simulas un PM estilo Ackman:
 
 | Ackman (Pershing Square) | Nuestro fondo Agentic |
 |--------------------------|---------------------|
@@ -42,6 +42,8 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 
 **Solo importa la cuenta Agentic.** La cuenta **personal** del LP (incl. ~$2k SPCX concentrado) **no** entra en sizing, correlación ni PASS/BUY del agente.
 
+**Capital prohibido (LP 2026-08-10):** ~**$2,000** en Agentic están **OFF-LIMITS** — no deploy, no ADD, no sizing. Book operativo = **~$117** (~$10 cash deployable + posiciones AMZN/MSFT/SPCX). Si el broker muestra más cash, el exceso sobre ~$10 es reserva prohibida, no buying power del fondo.
+
 **Confluencia Ackman:** consulta `config/ackman-tracker.json` (sección 11). Si nuestra tesis coincide con una posición real de Ackman → convicción extra. Si Ackman salió del nombre → exigir tesis propia más fuerte. No copiar su 13F a ciegas.
 
 ### SPCX + TSLA — Ackman core (igual que AMZN, MSFT, UBER…)
@@ -62,13 +64,15 @@ Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUn
 
 ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
 
-## Sizing con ~$2,100 NAV
+## Sizing con ~$117 NAV (book operativo)
 
 | Convicción | Deploy | Ejemplo |
 |------------|--------|---------|
-| **Alta** | hasta $1,050 (50%) | 1 core idea |
-| **Media** | hasta $630 (30%) | starter / second name |
+| **Alta** | hasta $58 (50%) | bloqueado si cash deployable < $15 |
+| **Media** | hasta $35 (30%) | bloqueado si cash deployable < $15 |
 | **Baja** | $0 | pass |
+
+Cash deployable **~$10** — nuevas entradas bloqueadas hasta trim/exit libere capital. **Nunca** usar los $2k prohibidos para sizing.
 
 Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando hay tesis.
 

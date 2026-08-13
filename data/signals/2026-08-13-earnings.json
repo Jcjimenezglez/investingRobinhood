@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-13",
+  "filter": "high_market_cap",
+  "days": 14,
+  "universe_relevant": [
+    {
+      "symbol": "BN",
+      "year": 2026,
+      "quarter": 2,
+      "eps_estimate": 0.66,
+      "eps_actual": 0.66,
+      "report_date": "2026-08-13",
+      "timing": "am",
+      "verified": true,
+      "note": "In-line print; guidance review required before ADD"
+    },
+    {
+      "symbol": "NVDA",
+      "year": 2027,
+      "quarter": 2,
+      "eps_estimate": 2.07,
+      "eps_actual": null,
+      "report_date": "2026-08-26",
+      "timing": "pm",
+      "verified": true
+    }
+  ]
+}

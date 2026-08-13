@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-13",
+  "generated_at": "2026-08-13T12:15:00Z",
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 332,
+      "universe_hits": [],
+      "note": "7-day earnings window; BN reported today AM — no longer in forward window"
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 248,
+      "universe_hits": [],
+      "note": "No researchUniverse names in top daily gainers preset"
+    }
+  ]
+}

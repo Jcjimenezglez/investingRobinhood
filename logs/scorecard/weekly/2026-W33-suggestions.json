@@ -1,0 +1,25 @@
+{
+  "week": "2026-W33",
+  "navUsd": 117.7,
+  "spyReturnPct": 3.82,
+  "fundReturnPct": 17.7,
+  "attribution": {
+    "fundamental_quality": 0.7,
+    "mispricing_vs_fair_value": 0.4,
+    "catalyst_proximity_days": 0.2,
+    "ackman_confluence": 0.4,
+    "social_sentiment": -0.1
+  },
+  "proposedDeltas": {
+    "fundamental_quality": 0.0,
+    "mispricing_vs_fair_value": 0.01,
+    "catalyst_proximity_days": -0.01,
+    "ackman_confluence": 0.0,
+    "social_sentiment": -0.01
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "ackmanNote": "Fund +17.70% vs SPY +3.82% since inception (+13.88% alpha); −1.41% WoW pullback on mega-cap tech softness. Earnings theses intact — no exits. MSFT (+31.55%) still in optional trim zone ($495.18 ≥ $430). Hold fundamental weight; modest boost to mispricing_vs_fair_value as trim signals persist post-FV. Trim catalyst_proximity weight slightly — post-earnings week showed lower predictive value. No threshold changes."
+}

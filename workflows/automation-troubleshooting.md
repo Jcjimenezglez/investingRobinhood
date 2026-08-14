@@ -74,6 +74,7 @@ Check run history for errors.
 | Midday Monitor | `0 12 * * 1-5` | automation-03-intraday-monitor.md |
 | Close Monitor | `0 15 * * 1-5` | automation-03-intraday-monitor.md |
 | Weekly Review | `30 16 * * 5` | automation-04-weekly-review.md |
+| SPCX personal watch | `0 18 * * 5` | automation-08-spcx-personal-watch.md (NO orders) |
 
 Same repo + branch + Robinhood MCP on each.
 

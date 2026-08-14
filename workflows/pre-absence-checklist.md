@@ -6,12 +6,13 @@ Usar antes de ausentarte 1+ semanas. Consolida checks de [`daily-runbook.md`](da
 
 - [ ] MCP Robinhood autenticado en **Cursor desktop** (chat local `snapshot` OK)
 - [ ] MCP `robinhood-trading` en [cursor.com/agents](https://cursor.com/agents) con OAuth (Cloud Automations)
-- [ ] **6 Automations** activas, timezone **US/Eastern**:
+- [ ] Automations activas, timezone **US/Eastern**:
   - [ ] 8:00 — [`automation-01-premarket.md`](automation-01-premarket.md)
   - [ ] 9:35 — [`automation-02-market-open.md`](automation-02-market-open.md)
   - [ ] 12:00 + 15:00 — [`automation-03-intraday-monitor.md`](automation-03-intraday-monitor.md)
   - [ ] Vie 16:30 — [`automation-04-weekly-review.md`](automation-04-weekly-review.md)
   - [ ] Vie 17:00 — [`automation-05-ackman-calibration.md`](automation-05-ackman-calibration.md)
+  - [ ] Vie 18:00 — [`automation-08-spcx-personal-watch.md`](automation-08-spcx-personal-watch.md) (info only; no Agentic)
 - [ ] `.env` con `RESEND_API_KEY` (local); Cloud secrets si aplica
 - [ ] Test: `bash scripts/send-alert.sh digest "Test pre-absence" "OK if you receive this"`
 

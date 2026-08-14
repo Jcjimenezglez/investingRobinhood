@@ -76,6 +76,14 @@
         "action": "auto-calibrate-weights",
         "workflow": "workflows/automation-05-ackman-calibration.md",
         "description": "Viernes 17:00 ET: Ackman PM auto-applies signal-weights within calibration-policy"
+      },
+      {
+        "name": "spcx-personal-watch",
+        "cron": "0 18 * * 5",
+        "action": "research-only",
+        "workflow": "workflows/automation-08-spcx-personal-watch.md",
+        "config": "config/spcx-personal-watch.json",
+        "description": "Viernes 18:00 ET: memo informativo SPCX personal + ciclo AI. Cero trades Agentic. Goal: no perder dinero."
       }
     ]
   }

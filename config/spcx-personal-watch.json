@@ -1,0 +1,97 @@
+{
+  "name": "spcx-personal-watch",
+  "purpose": "Informational Friday check for LP personal SpaceX (SPCX) — capital preservation / when to consider exiting. NOT the Agentic fund book.",
+  "doNotTrade": true,
+  "doNotTouchAgenticAccount": true,
+  "accountNote": "Personal LP SPCX is outside Agentic. This automation never calls review_equity_order, place_equity_order, cancel_*, or sizes Agentic NAV.",
+  "goal": "do_not_lose_money",
+  "goalNote": "Primary objective is capital preservation (detect disconnection of price vs fundamentals and AI-cycle risk). Not maximizing upside.",
+  "schedule": {
+    "timezone": "America/New_York",
+    "cron": "0 18 * * 5",
+    "cronUtcIfSchedulerIgnoresTz": "0 22 * * 5",
+    "description": "Friday 6:00 PM ET — after Agentic weekly review (16:30) and calibration (17:00)."
+  },
+  "position": {
+    "symbol": "SPCX",
+    "shares": 261.798568,
+    "averageCostUsd": 118.94,
+    "plannedMonthlyAddUsd": 1000,
+    "useMargin": false,
+    "cashSleeveUsd": 0,
+    "note": "Update shares/avg cost here when the personal account changes. Automation does not pull personal brokerage lots."
+  },
+  "quarterlyCheckpoints": {
+    "nextEarnings": {
+      "date": "2026-11-17",
+      "quarter": "2026Q3",
+      "verified": false
+    },
+    "firstScorecardDate": "2026-09-30",
+    "reassessEarlyIfPriceHitsTargetBeforeQuarterEnd": true,
+    "baseCasePricePath": {
+      "note": "Recalculated 2026-08-14. Previous $160→$1200 path is NOT the base case. Too high from Q4 2026 onward.",
+      "Q3_2026": 155,
+      "Q4_2026": 170,
+      "Q1_2027": 175,
+      "Q2_2027": 190,
+      "Q3_2027": 210,
+      "Q4_2027": 230
+    },
+    "legacyPathTooOptimistic": {
+      "Q3_2026": 160,
+      "Q4_2026": 200,
+      "Q1_2027": 250,
+      "Q2_2027": 310,
+      "Q3_2027": 380,
+      "Q4_2027": 450
+    }
+  },
+  "sotpBandsUsdPerShare": {
+    "bear": { "low": 65, "high": 90, "equityNote": "AI miss + multiple compression" },
+    "base": { "low": 125, "high": 175, "equityNote": "~$2.1–2.9T with cycle premium" },
+    "bull": { "low": 270, "high": 390, "equityNote": "8–10 GW partial monetization" },
+    "extremeBull": { "low": 600, "high": 900, "equityNote": "Musk $300–500B ARR scenario — not a forecast" }
+  },
+  "capitalPreservationRules": {
+    "primaryRule": "Act on valuation vs fundamentals, never on price-up alone.",
+    "stopAddingIf": [
+      "Price above bull band without GW/contracts/tenor evidence",
+      "Revenue per GW stays well below $10B/year while management repeats $30–50/W",
+      "90-day cloud termination risk materializes (churn or delayed $6.7B Oct pack)"
+    ],
+    "considerTrimIf": [
+      "Price in bull band AND AI still loss-making with 90-day contracts",
+      "Hyperscaler capex guides cut AND SPCX multiple still expanding",
+      "Price hits a listed level in sellFramework without matching fundamentals"
+    ],
+    "thesisBrokenIf": [
+      "Cloud contracts cancelled or concentrated customer exit",
+      "AI compute miss vs >2 GW YE2026 / closer-to-10-than-5 YE2027",
+      "Q3/Q4 2026 AI revenue fails Musk September crossover AND the $6.7B pack slips",
+      "Starlink operating income collapses (valuation floor gone)"
+    ]
+  },
+  "sellFramework": {
+    "160": { "holdIf": "Q3 AI run-rate rising or IFT-14 progress", "consider": "Reassess early if hit before 2026-09-30; do not auto-sell" },
+    "200": { "holdIf": "YE2026 >=2 GW and AI run-rate >=$25B", "consider": "Stop adding if $/W disclosed << $15" },
+    "300": { "holdIf": "2027 GW >=6 and AI EBITDA approaching 0 or tenor >12 months", "consider": "Trim 10–20% if only multiple" },
+    "450": { "holdIf": "10 GW path contracted and 2028E AI >=$150B", "consider": "Trim 20–25% otherwise; stop adding" },
+    "700": { "holdIf": "~$300B ARR visible in filings not slides", "consider": "Trim 25–50%" },
+    "1000": { "holdIf": "Hyperscaler-like AI FCF", "consider": "Trim >=50%" }
+  },
+  "marketBasket": ["SPY", "QQQ", "NVDA", "MSFT", "GOOGL", "AMZN", "META", "ORCL", "AVGO"],
+  "leadingIndicators": [
+    "hyperscaler_capex_guidance",
+    "nvidia_orders_or_commentary",
+    "spcx_rev_per_gw",
+    "cloud_contract_tenor_or_churn",
+    "ig_credit_spreads",
+    "real_yields_tips_10y"
+  ],
+  "scorecardGrades": ["AHEAD", "ON TRACK", "BEHIND", "BROKEN"],
+  "outputPaths": {
+    "markdown": "logs/spcx-watch/YYYY-WW.md",
+    "json": "logs/spcx-watch/YYYY-WW.json"
+  }
+}

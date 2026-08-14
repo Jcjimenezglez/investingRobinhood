@@ -85,5 +85,7 @@ bash scripts/send-alert.sh urgent "Motivo" "Detalle y acción sugerida"
 | 12:00 | Monitor equity + options |
 | 15:00 | Close check + digest |
 | Vie 16:30 | Weekly scorecard ([`automation-04-weekly-review.md`](automation-04-weekly-review.md)) |
+| Vie 17:00 | Ackman calibration ([`automation-05-ackman-calibration.md`](automation-05-ackman-calibration.md)) |
+| Vie 18:00 | **SPCX personal watch** ([`automation-08-spcx-personal-watch.md`](automation-08-spcx-personal-watch.md)) — info only, no Agentic |
 
 Configurar en **Cursor Automations** con trigger cron (timezone US/Eastern).

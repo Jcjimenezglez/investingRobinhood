@@ -23,7 +23,8 @@
       "trades_executed",
       "portfolio_snapshot",
       "next_day_plan",
-      "weekly_scorecard_summary"
+      "weekly_scorecard_summary",
+      "spcx_personal_watch_friday"
     ],
     "noEmail": [
       "routine_trade_within_policy",

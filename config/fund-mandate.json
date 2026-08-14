@@ -15,9 +15,10 @@
   "scopeNote": "All decisions based solely on the Agentic account. LP personal account (incl. concentrated SPCX) is outside fund book — no cross-account sizing or correlation rules.",
   "lpAccountSeparation": {
     "personalAccount": {
-      "role": "LP-directed — concentrated SPCX (~$2k) and other self-directed holdings",
+      "role": "LP-directed — concentrated SPCX and other self-directed holdings",
       "agenticAccess": false,
-      "agentIgnoresForBook": true
+      "agentIgnoresForBook": true,
+      "fridayWatch": "config/spcx-personal-watch.json — informational only; never trade Agentic from that session"
     },
     "agenticAccount": {
       "role": "Ackman thesis book — full researchUniverse including SPCX + TSLA as core names",

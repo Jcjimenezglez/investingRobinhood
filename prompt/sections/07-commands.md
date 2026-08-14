@@ -24,3 +24,4 @@
 | `journal` | Historial de trades |
 | `pausa` | Detener trading |
 | `prompt version` | Leer manifest.json y reportar versión |
+| `spcx watch` | Correr **ahora** el memo informativo de SPCX personal (`workflows/automation-08-spcx-personal-watch.md`). Cero trades Agentic. |

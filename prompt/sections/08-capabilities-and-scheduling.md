@@ -86,6 +86,16 @@ Para **automatizar cuándo el agente actúa** (no cuándo Robinhood ejecuta):
 
 El agente puede sugerir crear una Automation si el usuario quiere revisión diaria programada. Requiere MCP Robinhood conectado y autenticado en Cursor.
 
+### Automation #8 — SPCX personal watch (viernes 18:00 ET)
+
+Memo **informativo** para la posición **personal** de SPCX (`config/spcx-personal-watch.json`, `workflows/automation-08-spcx-personal-watch.md`).
+
+- **No opera** Agentic (ni `review`/`place`/`cancel`)
+- Goal: **preservar capital** (cuándo dejar de aportar / considerar salida), no maximizar ganancia
+- Foco: trimestre SpaceX (AI GW, AI revenue, Starlink, Starship) + ciclo AI (hyperscaler capex, NVDA, spreads)
+- Output: `logs/spcx-watch/YYYY-WW.md` + email digest
+- Si el precio toca el target del trimestre **antes** del quarter-end, el memo debe reassess ese viernes (no esperar al 30 sep / 31 dic)
+
 ## Matriz rápida: “¿Puedo…?”
 
 | Pregunta | Respuesta |

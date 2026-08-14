@@ -5,7 +5,9 @@ MCP en cada una: **robinhood-trading** (OAuth en [cursor.com/agents](https://cur
 
 Trigger en todas: **Add Trigger → Scheduled → Custom (cron)**
 
-**Importante:** **Options OFF** desde 2026-08-02 (`options.enabled=false`, prompt **v1.8.1**). Equity-only. Tras mergear a `main`, **re-pegar** estos 8 bloques en Cursor Automations.
+**Importante:** **Options OFF** desde 2026-08-02 (`options.enabled=false`, prompt **v1.8.1**). Equity-only. Tras mergear a `main`, **re-pegar** estos bloques en Cursor Automations.
+
+**#9 SPCX personal watch** es **solo email/log**. No opera Agentic. No omitir el bloque “NO orders”.
 
 ---
 
@@ -239,6 +241,40 @@ Write logs/scorecard/monthly/YYYY-MM.md with NAV, vs SPY, max drawdown, thesis o
 
 Commit and push logs/scorecard/monthly/ to main.
 NO trades. No options.
+```
+
+---
+
+## 9. SPCX personal watch — Friday 18:00 ET
+
+**Name:** `SPCX personal watch Fri 6pm ET`
+
+**Trigger**
+- Cron (timezone **America/New_York**): `0 18 * * 5`
+- Si el scheduler es UTC y “Next run” no es 6:00 PM ET: `0 22 * * 5` (EDT)
+
+**Agent Instructions**
+
+```
+You are writing an INFORMATIONAL Friday memo for a PERSONAL SpaceX (SPCX) position.
+
+This is NOT the Agentic fund. Do NOT trade. Do NOT call review_equity_order, place_equity_order, place_option_order, cancel_equity_order, get_portfolio, get_equity_positions, or get_accounts.
+
+Goal: capital preservation (know when to consider exiting or stopping monthly adds). Not maximizing gains.
+
+Follow workflows/automation-08-spcx-personal-watch.md exactly.
+Read config/spcx-personal-watch.json for shares, average cost, SOTP bands, quarterly path, and sell framework.
+
+MCP read-only market data only: get_equity_quotes, get_equity_fundamentals, get_earnings_results, get_financials for SPCX and basket SPY QQQ NVDA MSFT GOOGL AMZN META ORCL AVGO.
+
+WebSearch for latest SpaceX quarter (AI GW, AI revenue, Starlink, Starship) and hyperscaler capex / AI cycle stress. Label FACT vs COMPANY GUIDANCE vs ANALYST vs MODEL.
+
+Write logs/spcx-watch/YYYY-WW.md and logs/spcx-watch/YYYY-WW.json.
+Email: bash scripts/send-alert.sh digest "SPCX watch YYYY-WW — <ACTION>" (urgent only if thesis BROKEN).
+
+Commit and push ONLY logs/spcx-watch/ to main.
+Do NOT add [deploy-site].
+Do NOT edit risk-policy, autonomy trading sessions beyond this watch, or Agentic journals.
 ```
 
 ---

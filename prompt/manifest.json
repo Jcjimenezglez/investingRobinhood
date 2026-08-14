@@ -1,6 +1,6 @@
 {
-  "version": "1.8.8",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.8: LP deposit $2k; SPCX+TSLA Ackman core; remove satellite/spcxRecycle; muskClusterPolicy; personal SPCX outside book.",
+  "version": "1.8.9",
+  "description": "System prompt modular del Stock Broker Agent. v1.8.9: Friday SPCX personal watch automation (informational, no Agentic trades). v1.8.8: LP deposit $2k; SPCX+TSLA Ackman core; muskClusterPolicy; personal SPCX outside book.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",
@@ -30,6 +30,7 @@
     "dataSources": "config/data-sources.json",
     "scannerPresets": "config/scanner-presets.json",
     "watchlistPolicy": "config/watchlist-policy.json",
-    "runbook": "workflows/daily-runbook.md"
+    "runbook": "workflows/daily-runbook.md",
+    "spcxPersonalWatch": "config/spcx-personal-watch.json"
   }
 }

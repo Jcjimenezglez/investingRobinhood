@@ -40,6 +40,8 @@ Para escalar: `bash scripts/send-alert.sh urgent "asunto" "cuerpo markdown"`
 
 Horarios objetivo en `autonomy.json` → `schedule.sessions`. Si Automation no está activa, el usuario puede invocar manualmente o activar cron en Cursor.
 
+La sesión **spcx-personal-watch** (vie 18:00 ET) es `research-only`: memo + email. **Prohibido** tradear Agentic en esa sesión.
+
 ## Robinhood push
 
 Cada trade genera notificación en app Robinhood — no sustituye email en escalaciones.

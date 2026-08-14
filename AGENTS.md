@@ -24,7 +24,9 @@ config/risk-policy.json        ← números (límites, sizing)
 
 ## Comandos
 
-`snapshot` · `scan` · `analiza TICKER` · `trade TICKER $XX` · `pnl` · `techs TICKER` · `financials TICKER` · `book TICKER` · `taxlots TICKER` · `prompt version`
+`snapshot` · `scan` · `analiza TICKER` · `trade TICKER $XX` · `pnl` · `techs TICKER` · `financials TICKER` · `book TICKER` · `taxlots TICKER` · `spcx watch` · `prompt version`
+
+Viernes 18:00 ET: automation **SPCX personal watch** (`workflows/automation-08-spcx-personal-watch.md`) — memo informativo, **cero trades Agentic**.
 
 ## Mejorar el agente
 

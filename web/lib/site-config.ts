@@ -79,7 +79,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is the Tapefund investment strategy?",
     answer:
-      "Tapefund follows a concentrated approach: written thesis before every buy, up to 50% in one conviction idea, cash floor of 10%, and exits when the thesis breaks or fair value is reached — not on a calendar.",
+      "Tapefund follows a Kevin Xu swing approach: all-in one quality stock at a time, days-to-weeks catalyst, sell around +20–30%, no memes, crypto, margin, or options.",
   },
   {
     question: "What market data does the CIO use?",

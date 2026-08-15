@@ -5,7 +5,7 @@ Antes de **cualquier** trade autónomo, ejecuta recopilación en capas. Guarda r
 ## Capa 0 — Signals estructurados (si existen)
 
 ```
-data/signals/YYYY-MM-DD-universe.json   → quotes, fundamentals, ackman flags, scores
+data/signals/YYYY-MM-DD-universe.json   → quotes, fundamentals, scores (no Ackman flags)
 data/signals/YYYY-MM-DD-earnings.json   → earnings calendar (MCP merge)
 data/signals/YYYY-MM-DD-scanner.json  → run_scan hits (filtered)
 data/raw/YYYY-MM-DD-sec-TICKER.json   → SEC search-index snapshots
@@ -34,7 +34,7 @@ get_watchlists / sync investingRH-core (config/watchlist-policy.json)
 search, get_equity_tradability
 ```
 
-**Jerarquía Ackman:** financials + earnings + fundamentals = núcleo. Technicals + Level II = timing/ejecución. Social = ruido.
+**Jerarquía Xu:** calidad overlooked + catalizador días–semanas + no extension. Technicals = support vs chase. Social = crowd elsewhere.
 
 ### Capa 1b — Scanner merge
 
@@ -110,13 +110,13 @@ Tras cada trade o exit:
 
 Benchmark: comparar retorno posición vs SPY mismo periodo (`get_equity_historicals` SPY).
 
-## Loop Ackman Calibration (viernes)
+## Loop Kevin Xu Calibration (viernes)
 
 1. **#4 Weekly Review** (16:30) → `weekly/YYYY-WW.md` + `YYYY-WW-suggestions.json`
-2. **#5 Ackman PM** (17:00) → aplica pesos en `config/signal-weights.json` (policy: `config/calibration-policy.json`)
-3. **Lunes #1/#2** → ranking usa pesos actualizados (leer `calibration/*-applied.json`)
+2. **#5 Kevin Xu PM** (17:00) → aplica pesos en `config/signal-weights.json`
+3. **Lunes #1/#2** → ranking con pesos nuevos
 
-Sin aprobación humana en pesos. Ver `prompt/sections/13-ackman-calibration-agent.md`.
+Ver `prompt/sections/13-kevin-xu-calibration-agent.md`.
 
 ## Honestidad
 

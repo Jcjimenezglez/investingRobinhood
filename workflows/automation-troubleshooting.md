@@ -47,7 +47,7 @@ Suggested first: **Pre-Market 8:00 ET** (research only, no trades).
 ### Prompt (paste)
 
 ```
-You are CIO of investingRobinhood ($100 Agentic, Ackman mandate).
+You are CIO of investingRobinhood (~$118 Agentic, Kevin Xu mandate).
 
 Follow workflows/automation-01-premarket.md in the repo.
 

@@ -1,4 +1,7 @@
 {
+  "deprecated": true,
+  "deprecatedAt": "2026-08-15",
+  "deprecatedNote": "Ackman 13F confluence is OFF. Do not use for BUY/PASS. Mandate is Kevin Xu — config/kevin-xu-playbook.json.",
   "source": "Pershing Square Capital Management 13F-HR",
   "filedDate": "2026-05-15",
   "positionsAsOf": "2026-03-31",

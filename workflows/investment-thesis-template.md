@@ -1,72 +1,61 @@
-# Investment Thesis Template — investingRobinhood
+# Investment Thesis Template — Kevin Xu swing
 
-Copia a `logs/theses/TICKER-YYYY-MM-DD.md` antes de cada **nueva** posición.
+Copia a `logs/theses/TICKER-YYYY-MM-DD.md` antes de cada **nueva** posición (book debe quedar en 1 nombre).
 
 ---
 
-## [TICKER] — Investment Thesis
+## [TICKER] — Swing memo
 
 **Fund:** investingRobinhood  
 **Date:** YYYY-MM-DD  
+**Style:** Kevin Xu all-in  
 **PM conviction:** Alta / Media  
-**Proposed size:** $XX (XX% of AUM)  
-**Catalyst timeline:** Q_ 20__ (3–12 months)
+**Proposed size:** $XX (~92% NAV if Alta)  
+**Horizon:** days–weeks (not 3–12 months)
 
-### 1. Business quality (Ackman: "great business")
+### 1. Real business (not a meme)
 
-- **What they do:**
-- **Moat:**
-- **FCF / balance sheet:** (from `get_equity_fundamentals`)
-- **Management & capital allocation:**
+- What they do:
+- Why this is not GME-theater:
+- Liquidity / price ≥ $10:
 
-### 2. Why mispriced (variant perception)
+### 2. Why people overlook it
 
-- **Market believes:**
-- **We believe:**
-- **Evidence:**
+- Crowd is looking at:
+- We are looking at:
 
-### 3. Catalyst
+### 3. Near-term catalyst
 
-| Catalyst | Expected date | Impact if right |
-|----------|---------------|-----------------|
+| Catalyst | Window (days) | Why it can re-rate now |
+|----------|---------------|------------------------|
 | | | |
 
-### 4. Valuation sketch
+### 4. Don't chase
 
-- Current price:
-- Our fair value range:
-- Upside / downside %:
+- Last 5–10d move:
+- Support vs extension (RSI/SMA):
+- Already ran ≥20% into event? YES = PASS
 
-### 5. Kill criteria (exit triggers)
+### 5. Trade plan
 
-- [ ] Catalyst fails or delays >2 quarters
-- [ ] Fundamental deterioration (FCF, debt, competition)
-- [ ] Thesis-specific: ___
-- [ ] Hard stop: -8% from entry (backup only)
+- Entry:
+- Target: **+20–30%** from entry (sell 100%)
+- Screenshot rule: if we would post the P&L, we sell
+- Kill: catalyst priced / setup dies / becomes a meme
+- **No stop GTC**
 
-### 6. Trade plan
-
-- Entry: limit $___ / market $___
-- Fair value range (thesis): $___ – $___
-- Trim plan (opcional): vender ___% si precio ≥ $___ (margen de seguridad agotado)
-- Full exit if: thesis broken / catalyst failed / better idea elsewhere
-- Hard stop backup: -8% GTC (solo pánico con tesis intacta)
-
-### 7. Bear case (what kills us)
+### 6. Bear (typical: ugly earnings gap, not zero)
 
 1.
 2.
 3.
 
-### 8. Post-mortem (completar al cerrar posición)
+### 7. Post-mortem
 
-- **Catalyst outcome:** hit / miss / delayed
-- **Entry quality:** entry vs fair value range at time of buy
-- **Hold discipline:** exit por tesis vs stop backup vs trim plan
-- **Return:** ___% vs SPY ___% same period
-- **Thesis correct:** catalyst_hit | partial | failed
-- **Lesson for next thesis:** ___
+- Return % vs SPY:
+- Sold because: target | screenshot | dead setup | flatten
+- Lesson:
 
 ---
 
-**Decision:** BUY / PASS / WATCHLIST
+**Decision:** BUY / PASS / WAIT FOR FLATTEN

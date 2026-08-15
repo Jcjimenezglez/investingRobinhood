@@ -11,7 +11,7 @@ Usar antes de ausentarte 1+ semanas. Consolida checks de [`daily-runbook.md`](da
   - [ ] 9:35 — [`automation-02-market-open.md`](automation-02-market-open.md)
   - [ ] 12:00 + 15:00 — [`automation-03-intraday-monitor.md`](automation-03-intraday-monitor.md)
   - [ ] Vie 16:30 — [`automation-04-weekly-review.md`](automation-04-weekly-review.md)
-  - [ ] Vie 17:00 — [`automation-05-ackman-calibration.md`](automation-05-ackman-calibration.md)
+  - [ ] Vie 17:00 — [`automation-05-kevin-xu-calibration.md`](automation-05-kevin-xu-calibration.md)
   - [ ] Vie 18:00 — [`automation-08-spcx-personal-watch.md`](automation-08-spcx-personal-watch.md) (info only; no Agentic)
 - [ ] `.env` con `RESEND_API_KEY` (local); Cloud secrets si aplica
 - [ ] Test: `bash scripts/send-alert.sh digest "Test pre-absence" "OK if you receive this"`
@@ -42,6 +42,6 @@ Usar antes de ausentarte 1+ semanas. Consolida checks de [`daily-runbook.md`](da
 | Scorecard schema | `logs/scorecard/schema.json` |
 | Signal weights | `config/signal-weights.json` |
 | Calibration policy | `config/calibration-policy.json` |
-| Ackman PM workflow | `workflows/automation-05-ackman-calibration.md` |
+| Kevin Xu PM workflow | `workflows/automation-05-kevin-xu-calibration.md` |
 | Macro regime | `config/macro-regime.json` |
 | Runbook diario | `workflows/daily-runbook.md` |

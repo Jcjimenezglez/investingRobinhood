@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "source": "Public Kevin Xu (@kevinxu) rules: all-in one equity, no margin/options/crypto, swing 20–30%, don't chase, sell before rumor is fully news. LP overlay: no memes; prefer quality names the crowd overlooks.",
+  "rules": {
+    "oneNameAtATime": true,
+    "instrument": "common_stock_only",
+    "noMargin": true,
+    "noOptions": true,
+    "noCrypto": true,
+    "noMemes": true,
+    "noChase": true,
+    "buyAtSupportWithCatalyst": true,
+    "holdDaysToWeeks": true,
+    "targetGainPct": { "low": 20, "high": 30 },
+    "screenshotSellRule": true,
+    "hardStopGtc": false,
+    "hardStopNote": "Xu does not use stop-losses. Exit = thesis/setup dead, chase detected, or target hit. Fund-level halt still applies on 20% NAV drawdown."
+  },
+  "setupChecklist": [
+    "Real operating company (not meme, not penny, not crypto-proxy)",
+    "Crowd is looking elsewhere (overlooked vs already crowded run)",
+    "Near-term catalyst in days–weeks (product, print reaction window already passed, unlock, guidance, sector rotation) — not a 12-month activist story",
+    "Price near support / not extended after the move",
+    "Downside in a good stock is typically an ugly earnings gap (~20–25%), not zero",
+    "Written swing memo exists"
+  ],
+  "passIf": [
+    "Already ran hard into the catalyst (chase)",
+    "Meme / squeeze narrative is the thesis",
+    "Needs options or leverage to work",
+    "Horizon is 3–12 months with no near-term swing",
+    "Would require a second simultaneous name"
+  ]
+}

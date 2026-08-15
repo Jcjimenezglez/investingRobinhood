@@ -1,26 +1,25 @@
 {
-  "version": "1.0.6",
-  "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes. Technicals are timing overlays, not score drivers.",
+  "version": "2.0.0",
+  "description": "Kevin Xu swing scoring — overlooked quality + near-term catalyst + not extended. Not Ackman 13F confluence.",
   "weights": {
-    "fundamental_quality": 0.35,
-    "mispricing_vs_fair_value": 0.26,
-    "catalyst_proximity_days": 0.22,
-    "ackman_confluence": 0.12,
+    "overlooked_quality": 0.30,
+    "near_term_catalyst": 0.30,
+    "not_extended_support": 0.25,
+    "crowd_elsewhere": 0.10,
     "social_sentiment": 0.05
   },
   "min_score_for_medium_conviction": 0.55,
   "min_score_for_high_conviction": 0.72,
   "catalystProximityDays": {
-    "optimalMin": 14,
-    "optimalMax": 120,
-    "tooFarPenalty": 0.15
+    "optimalMin": 1,
+    "optimalMax": 21,
+    "tooFarPenalty": 0.20,
+    "note": "Days–weeks. 3–12 month activist catalysts score poorly."
   },
-  "fundamentalQualityHints": {
-    "peBelowSectorMedian": 0.1,
-    "wideMoatLanguageInThesis": 0.05,
-    "revenueGrowthPositiveQoQ": 0.05,
-    "netMarginExpanding": 0.05,
-    "note": "Use get_financials (quarterly) for growth/margin hints — not get_equity_fundamentals alone."
+  "extensionHints": {
+    "passIfUpPctIntoCatalyst": 20,
+    "preferNearSupport": true,
+    "note": "Never chase a name that already ran."
   },
   "technicalTimingOverlay": {
     "enabled": true,
@@ -28,8 +27,9 @@
     "defaultInterval": "day",
     "indicators": ["rsi", "macd", "sma"],
     "weightInScore": 0,
-    "note": "Never add technicals to composite score. Use only to delay entry, trim size, or flag overbought/oversold risk in intel log."
+    "note": "Use SMA/RSI to judge support vs extension. Do not DCF."
   },
-  "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
-  "lastCalibratedWeek": "2026-W32"
+  "calibrationNote": "Kevin Xu Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
+  "lastCalibratedWeek": "2026-W33",
+  "removedWeights": ["ackman_confluence", "mispricing_vs_fair_value", "fundamental_quality"]
 }

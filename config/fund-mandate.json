@@ -1,18 +1,27 @@
 {
   "fundName": "investingRobinhood",
-  "fundType": "concentrated-long-only",
-  "inspiration": "Bill Ackman / Pershing Square — thesis-driven, high conviction, catalyst-oriented",
-  "investmentPhilosophy": "ackman-only",
+  "fundType": "single-name-swing-long-only",
+  "inspiration": "Kevin Xu (@kevinxu) — all-in one quality stock at a time; days-to-weeks catalyst swings",
+  "investmentPhilosophy": "kevin-xu-only",
+  "supersedes": {
+    "prior": "ackman-only / Pershing Square replica",
+    "ended": "2026-08-15",
+    "lpDirective": "Replace Ackman 3–12m concentrated book with Kevin Xu swing: all-in stocks, no memes, no crypto, no margin, no options. Treat current 3-name book as if sold next regular session."
+  },
   "explicitlyExcluded": [
-    "burry-style macro shorts",
-    "dual-PM overlays",
-    "passive index hold",
-    "cross-account correlation rules"
+    "ackman-style 3-12 month activist holds",
+    "13F closet indexing",
+    "meme squeezes (GME/AMC-style)",
+    "crypto",
+    "options",
+    "margin / leverage",
+    "penny stocks",
+    "multi-name diversification as strategy"
   ],
-  "aumUsd": 2100,
-  "aumNote": "LP directive 2026-08-07: ~$116 NAV existente + $2,000 deposit Agentic. Personal account SPCX (~$2k) is LP-managed outside Agentic — agent ignores it for sizing/PASS/BUY.",
+  "aumUsd": 118,
+  "aumNote": "Live Agentic NAV ~$117.83 as of 2026-08-14 close (cash $10 + AMZN/MSFT/SPCX). Prior $2,100 LP-deposit note is stale until cash actually sits in Agentic. Size off live get_portfolio.",
   "accountScope": "agentic-only",
-  "scopeNote": "All decisions based solely on the Agentic account. LP personal account (incl. concentrated SPCX) is outside fund book — no cross-account sizing or correlation rules.",
+  "scopeNote": "All decisions based solely on the Agentic cash account (••••3029). Cash brokerage type — no margin. LP personal account (incl. SPCX) is outside the swing book.",
   "lpAccountSeparation": {
     "personalAccount": {
       "role": "LP-directed — concentrated SPCX and other self-directed holdings",
@@ -21,48 +30,56 @@
       "fridayWatch": "config/spcx-personal-watch.json — informational only; never trade Agentic from that session"
     },
     "agenticAccount": {
-      "role": "Ackman thesis book — full researchUniverse including SPCX + TSLA as core names",
-      "lpDepositUsd": 2000,
-      "depositDate": "2026-08-07"
+      "role": "Kevin Xu swing book — one quality equity at a time",
+      "brokerageType": "cash",
+      "marginAllowed": false
     }
   },
-  "clientMandate": "Generate absolute returns with thesis discipline on equity only. **LP target: +25% annual** on Agentic NAV (soft — never force risk to hit it). Options disabled by LP (2026-08-02). Concentrated Ackman bets across full universe (AMZN, MSFT, UBER, QSR, BN, SPCX, TSLA, …). Not index-hugging.",
+  "clientMandate": "All-in on **one** good stock the crowd overlooks, with a near-term catalyst (days–weeks). No memes, no crypto, no margin, no options. Rotate after +20–30% or when the setup dies. Not a 3–12 month Ackman hold.",
   "returnPlan": {
-    "annualTargetPct": 25,
-    "annualTargetNote": "Ackman book busca >25% alpha vía tesis (trim/exit/rotate) en horizonte 3–12 meses. Proceeds de exits rotan a la siguiente tesis #1 del ranking — no pool satélite.",
-    "scorecardBenchmark": "SPY same-period return in logs/scorecard/"
+    "swingTargetPctLow": 20,
+    "swingTargetPctHigh": 30,
+    "holdHorizon": "days-to-weeks",
+    "scorecardBenchmark": "SPY same-period return in logs/scorecard/",
+    "note": "Xu: sell when the move is good enough to screenshot. Do not sit for quarters waiting on activist re-rating."
   },
-  "muskClusterPolicy": {
-    "enabled": true,
-    "tickers": ["TSLA", "SPCX"],
-    "maxCombinedAumPct": 50,
-    "maxHighConvictionSimultaneous": 1,
-    "note": "LP 2026-08-07: TSLA + SPCX treated as Ackman core but cap combined exposure. No Alta convicción en ambos a la vez. Personal LP SPCX outside book — this cap applies only to Agentic positions.",
-    "rationale": "Shared Musk/xAI/headline correlation; avoid double Musk cluster inside Agentic while LP holds SPCX personally."
+  "bookPolicy": {
+    "maxSimultaneousEquityPositions": 1,
+    "allInPctOfNav": 92,
+    "cashReservePct": 8,
+    "flattenBeforeNewEntry": true,
+    "transition": {
+      "id": "exit-ackman-three-pack",
+      "asOf": "2026-08-15",
+      "action": "Next regular session: SELL all AMZN, MSFT, SPCX in Agentic (treat as if selling tomorrow). Then cash until a Kevin Xu setup qualifies. Do not add to the three-pack.",
+      "legacyTickers": ["AMZN", "MSFT", "SPCX"],
+      "reason": "Three-name Ackman book violates one-at-a-time. MSFT already ~+31% from cost — Xu would have sold."
+    }
   },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"
   ],
-  "ackmanCoreNotes": {
-    "SPCX": "SpaceX — Ackman core event trade (3–12m). Same rules as AMZN/MSFT: thesis memo, catalyst, kill criteria, trim/exit. NOT LP satellite / never-sell. LP also holds personal SPCX — Agentic SPCX is tactical book only.",
-    "TSLA": "Ackman core — tesis propia (no 13F confluence). Catalyst-driven 3–12m. Memo required before first BUY."
-  },
+  "universeNote": "Hunting ground of liquid quality names. Scanner may add overlooked quality names that pass filters. Memes and names that already ran into the catalyst are PASS.",
+  "memeBlocklist": ["GME", "AMC", "BBBY", "KOSS", "EXPR"],
   "notTradableViaAgentic": [
-    { "name": "ETH", "reason": "Crypto — not Agentic MCP equities" },
+    { "name": "ETH", "reason": "Crypto — Kevin Xu rule + not Agentic MCP equities" },
     { "name": "BTC", "reason": "Crypto" },
     { "name": "DOGE", "reason": "Crypto" }
   ],
-  "ackmanPrinciples": [
-    "Few names, large conviction weights",
-    "Write the thesis before capital goes in",
-    "Identify catalyst + timeline (3–12 months)",
-    "Quality business + mispriced entry",
-    "Exit when thesis breaks — not calendar",
-    "Explain decisions like an investor letter",
-    "Judge only the Agentic fund book — ignore external LP accounts"
+  "kevinXuPrinciples": [
+    "All in on one stock at a time — concentration makes the return",
+    "Shares only — no options, no crypto, no margin (nothing that can go to zero overnight)",
+    "Real companies — quality businesses people ignore, not memes",
+    "Buy near support with a real near-term catalyst (days–weeks)",
+    "Never chase a stock that already ran",
+    "Sell into strength around +20–30% / before rumor becomes fully priced news",
+    "If it is good enough to screenshot, it is good enough to sell",
+    "Watch like a hawk while in; rotate to the next overlooked setup",
+    "Earnings are a coin flip — do not YOLO the print unless the setup is sentiment + support, not a DCF",
+    "Judge only the Agentic cash book"
   ],
   "thesisTemplatePath": "workflows/investment-thesis-template.md",
   "lettersPath": "logs/investor-letters/",
-  "ackmanTracker": "config/ackman-tracker.json",
-  "ackmanTrackerNote": "Confluencia/hunting ground, NO copia mecánica del 13F. HHH = único vehículo directo Ackman permitido con tesis propia."
+  "playbookPath": "config/kevin-xu-playbook.json",
+  "ackmanTrackerNote": "DEPRECATED 2026-08-15. config/ackman-tracker.json is historical only — do not use for BUY/PASS."
 }

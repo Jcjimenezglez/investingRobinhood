@@ -1,55 +1,22 @@
-# Monitor Positions — Auto Exit (Cursor Automation)
+# Monitor Positions — Auto Exit (Kevin Xu)
 
-Ejecutar cada **15 min** en **regular hours** (9:30–16:00 ET, lun–vie).
+Cada **15 min** en regular hours.
 
 ## Pre-flight
 
-1. Si fuera de horario de mercado → responder `HOLD — fuera de mercado` y **no** operar.
-2. Leer `config/monitoring.json`, `config/risk-policy.json`, `config/autonomy.json`.
-3. Solo cuenta **Agentic** (`agentic_allowed=true`).
+1. Fuera de mercado → HOLD, no órdenes.
+2. Leer risk-policy + autonomy + kevin-xu-playbook.
+3. Solo Agentic.
 
-## Check loop
-
-```
-get_accounts → cuenta Agentic
-get_equity_positions → posiciones equity abiertas
-get_option_positions (nonzero=true) → confirmar vacío (options OFF)
-Si sin equity → log snapshot + terminar
-get_equity_quotes → precio actual por símbolo (equity)
-Leer logs/theses/ del ticker → kill criteria + fair value + trim plan
-```
-
-### Equity
-
-Por cada posición con `shares_available_for_sells` > 0:
+## Check
 
 ```
-entry = average_buy_price
-stop  = entry × (1 - stopLossPct/100)      # default -8% — backup only
-
-Si last_trade_price <= stop Y tesis NO rota documentada → AUTO SELL (market, toda la posición)
-Si tesis invalidada (kill criteria del memo) → AUTO SELL (market, toda la posición) + journal
-Si trim plan en thesis (precio ≥ X) → review partial sell per memo (NO automático sin memo)
-Si no → reportar precio, P&L %, distancia a stop backup, estado tesis vs fair value
+get_equity_positions
+Si count > 1 → AUTO SELL all names (flatten)
+Si count == 1:
+  pnl_pct = (last / avg_cost - 1) * 100
+  Si pnl_pct >= 20 → SELL all (band 20–30)
+  Si setup/kill en memo → SELL all
+  Else hawk-watch
+No GTC stops. No options.
 ```
-
-**No** vender equity automáticamente por +25% ni por % fijo de ganancia.  
-**No** options — `options.enabled=false` (LP 2026-08-02).
-
-## Auto sell equity (fractional OK)
-
-```
-review_equity_order → side=sell, type=market, quantity=shares_available_for_sells, market_hours=regular_hours
-Si order_checks {} → place_equity_order
-append logs/trade-journal.md
-update logs/scorecard/positions.jsonl (status=closed, exit_reason, return_pct)
-bash scripts/send-alert.sh trade "AUTO EXIT TICKER" "motivo: hard_stop|thesis_break, precio, fill"
-```
-
-## Escalación (no vender)
-
-- `order_checks` no vacío → `send-alert.sh urgent` + no ejecutar
-- MCP auth failure → urgent + no ejecutar
-- Trim parcial sin thesis memo explícito → alerta + no ejecutar
-
-Recalcular equity siempre desde `average_buy_price` del MCP.

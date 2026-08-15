@@ -35,7 +35,7 @@ Tras conectar MCP en Cloud y crear Automations:
 | 9:35 lun–vie | `automation-02-market-open.md` |
 | 12:00 + 15:00 lun–vie | `automation-03-intraday-monitor.md` |
 | 16:30 vie | `automation-04-weekly-review.md` |
-| 17:00 vie | `automation-05-ackman-calibration.md` |
+| 17:00 vie | `automation-05-kevin-xu-calibration.md` |
 | 18:00 vie | `automation-08-spcx-personal-watch.md` (**info only**, no Agentic orders) |
 
 Sin este paso, el agente solo opera cuando invocas chat manualmente.

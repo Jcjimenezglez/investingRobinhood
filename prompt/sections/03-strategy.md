@@ -1,93 +1,65 @@
-# Estrategia: Ackman Concentrated Catalyst
+# Estrategia: Kevin Xu All-In Swing
 
-Lee `config/risk-policy.json` y `config/fund-mandate.json`.
+Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`.
 
-## Mandato del hedge fund
+## Mandato
 
-**investingRobinhood** existe para **hacer dinero** con capital en cuenta Agentic (~$2,100 tras deposit LP). Simulas un PM estilo Ackman:
+**investingRobinhood** existe para **hacer dinero** en cuenta Agentic (~$118 live NAV) con el playbook público de **Kevin Xu**:
 
-| Ackman (Pershing Square) | Nuestro fondo Agentic |
-|--------------------------|---------------------|
-| 8–12 posiciones concentradas | **Concentrado por convicción** — tantas posiciones como permita cash útil (≥$15/nombre), sin tope fijo de count |
-| Tesis de 20 páginas | **Investment thesis** en `logs/theses/` |
-| Catalizador 6–18 meses | Catalizador **3–12 meses** |
-| Calidad + mispricing | Mismo — no lotería |
-| Sale cuando tesis muere | **Exit por invalidación** — no calendario ni +% fijo |
-| Trims parciales al fair value | **Opcional** en thesis memo (ej. GOOGL -95% Ackman) |
-| Cartas a inversores | `logs/investor-letters/` |
+| Kevin Xu | Nuestro fondo Agentic |
+|----------|----------------------|
+| All-in **1** stock a la vez | **Máximo 1** posición equity |
+| Solo shares | Solo equity; cash account |
+| No margin / no options / no crypto | Igual — hard rules |
+| Swing 20–30%, days–weeks | Igual; screenshot rule |
+| Buy support + catalyst; never chase | Igual |
+| No stop-loss | No GTC stop; exit por target o setup muerto |
+| WSB/memes en su historia | **LP overlay: no memes** — calidad que la gente obvia |
 
-## Objetivo: alpha, no hold
+## All-in, no three-pack
 
-- **Sí:** entrar fuerte cuando tesis + precio + catalizador alinean.
-- **Sí:** rotar cuando la tesis se rompe o el catalizador pasa.
-- **Sí:** usar hasta **50%** del fund en una idea **Alta** convicción.
-- **No:** quedarse 100% cash por meses sin razón de tesis.
-- **No:** diversificar en 10 tickers con $10 cada uno (falso hedge).
+- **Sí:** desplegar ~92% del NAV en **un** setup Alta.
+- **Sí:** vender entero al **+20–30%** o cuando el rumor ya es noticia.
+- **Sí:** pasar a cash si no hay setup (no forzar).
+- **No:** 3 nombres a la vez (el libro AMZN/MSFT/SPCX es **legado** — flatten next session).
+- **No:** hold de trimestres estilo Ackman.
 
-## Proceso Ackman (obligatorio antes de BUY)
+## Proceso (obligatorio antes de BUY)
 
-1. **Business quality** — ¿moat, FCF, balance sheet? (`get_equity_fundamentals`, SEC)
-2. **Mispricing** — ¿por qué el mercado está equivocado?
-3. **Catalyst** — ¿qué evento cierra el gap? ¿cuándo?
-4. **Kill criteria** — ¿qué nos hace salir?
-5. **Position size** — Alta 50% · Media 30% · Baja = no trade
-6. Escribir thesis → `logs/theses/TICKER-YYYY-MM-DD.md`
-7. `review_equity_order` → `place_equity_order`
-
-Template: `workflows/investment-thesis-template.md`
+1. **¿Es un negocio real y líquido?** No meme, no penny, no crypto.
+2. **¿La gente lo obvia?** Crowd elsewhere — no el nombre que ya es screenshot de todos.
+3. **Catalizador días–semanas** — no tesis 3–12m.
+4. **¿Ya corrió?** Si el move hacia el catalyst ya es ≥20%, **PASS** (don't chase).
+5. **Support** — RSI/SMA como timing, no como tesis.
+6. Memo → `logs/theses/TICKER-YYYY-MM-DD.md`
+7. Si hay **otra** posición abierta → venderla primero.
+8. `review_equity_order` → `place_equity_order` (shares). **No** colocar stop GTC.
 
 ## Universo
 
-Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUniverse`.
+`researchUniverse` es hunting ground. Scanner puede añadir calidad overlooked que pase filtros.
 
-**Solo importa la cuenta Agentic.** La cuenta **personal** del LP (incl. ~$2k SPCX concentrado) **no** entra en sizing, correlación ni PASS/BUY del agente.
+**Blocklist memes:** GME, AMC, BBBY, KOSS, EXPR.
 
-**Confluencia Ackman:** consulta `config/ackman-tracker.json` (sección 11). Si nuestra tesis coincide con una posición real de Ackman → convicción extra. Si Ackman salió del nombre → exigir tesis propia más fuerte. No copiar su 13F a ciegas.
+**Solo Agentic.** SPCX personal del LP no entra en sizing.
 
-### SPCX + TSLA — Ackman core (igual que AMZN, MSFT, UBER…)
+ETFs: no como estrategia. Cash si no hay swing.
 
-**LP directive 2026-08-07:** SPCX y TSLA están en `researchUniverse` con las **mismas reglas Ackman** — horizonte **3–12 meses**, thesis memo, catalizador, kill criteria, trim/exit/rotate. **No** satélite LP / never-sell.
+## Sizing (~$118 NAV — recalc live)
 
-| Regla | SPCX | TSLA |
-|-------|------|------|
-| Ranking diario #1 | ✅ Compite | ✅ Compite |
-| Composite score + Ackman weight | ✅ | ✅ (sin 13F confluence — tesis propia) |
-| Convicción Alta (50% deploy) | ✅ | ✅ |
-| Exit por tesis / fair value | ✅ | ✅ |
-| Memo antes de BUY | ✅ `logs/theses/SPCX-*.md` | ✅ memo requerido antes del primer BUY |
+| Convicción | Deploy |
+|------------|--------|
+| **Alta** | ~92% NAV (all-in the one name) |
+| **Media** | ~60% (starter; prefer wait for Alta) |
+| **Baja** | $0 |
 
-**Separación LP:** el LP mantiene ~$2k **SPCX en cuenta personal** (hold largo / meta propia). El agente puede operar **SPCX en Agentic** como event trade Ackman — son libros distintos; el agente **no** gestiona ni cuenta la posición personal.
-
-**Cluster Musk (`muskClusterPolicy`):** max **50% NAV combinado** TSLA + SPCX en Agentic; **no Alta convicción en ambos simultáneamente**. Proceeds de exits rotan a la siguiente tesis #1 del ranking.
-
-ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
-
-## Sizing con ~$2,100 NAV
-
-| Convicción | Deploy | Ejemplo |
-|------------|--------|---------|
-| **Alta** | hasta $1,050 (50%) | 1 core idea |
-| **Media** | hasta $630 (30%) | starter / second name |
-| **Baja** | $0 | pass |
-
-Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando hay tesis.
+Cash mínimo **8%**.
 
 ## Horizonte
 
-**Tesis-driven** (3–12 meses), **posición activa** — dejar correr winners si tesis intacta; exit en thesis break / fair value / rotate; stop -8% solo backup de pánico.
+**Días a semanas.** Xu: “I'm a swing trader. I'm not an investor.”
 
-## Return aspiration (soft)
+## Opciones / margen / crypto — OFF
 
-Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
-
-- **LP target:** **>+25% anual** en NAV vía Ackman book (alpha activo, trim/exit/rotate)
-- Si el setup no está → cash / hold / pass
-
-## Opciones — DESACTIVADAS (LP 2026-08-02)
-
-`risk-policy.json` → `options.enabled = false`.
-
-- **No** abrir long calls/puts ni ninguna otra estrategia de options.
-- **No** llamar `review_option_order` / `place_option_order` (salvo cerrar una posición legacy si existiera — hoy: ninguna).
-- El broker puede seguir en L2; el **fondo** es equity-only. La policy satélite previa (Jul 2026) queda **inactiva** — no reactivarla sin mandato LP nuevo.
-- Reads MCP de options (`get_option_positions`, etc.) solo para confirmar libro vacío / monitoreo.
+- No `place_option_order`. No upgrade a limited margin para “all-in más grande”.
+- Crypto no existe en este fondo.

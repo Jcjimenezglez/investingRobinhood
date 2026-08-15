@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
-  "description": "Guardrails for Ackman Calibration Agent (automation-05). Auto-approves weight changes within bounds — no human in loop.",
+  "version": "2.0.0",
+  "description": "Guardrails for Kevin Xu Calibration Agent (automation-05).",
   "autoApprove": true,
-  "approverPersona": "Bill Ackman PM — reviews weekly evidence and ratifies bounded signal-weight updates",
+  "approverPersona": "Kevin Xu swing PM — reviews weekly evidence and ratifies bounded signal-weight updates",
   "maxDeltaPerWeightPerWeek": 0.03,
   "minWeightFloor": 0.05,
   "maxWeightCeiling": 0.40,
@@ -11,30 +11,25 @@
   "minScoreHighFloor": 0.65,
   "maxScoreHighCeiling": 0.80,
   "haltCalibrationWhen": {
-    "weeklyNavDropPct": 5,
-    "drawdownFromHwmPct": 15,
+    "weeklyNavDropPct": 8,
+    "drawdownFromHwmPct": 20,
     "missingWeeklyReview": true
   },
   "adjustmentRules": [
     {
       "id": "outperforming_signal",
-      "if": "A signal dimension (fundamentals, catalyst, ackman_confluence, mispricing, social) had highest attribution score in weekly review AND fund beat SPY",
+      "if": "A signal dimension had highest attribution AND fund beat SPY",
       "then": "Increase that weight by +0.02 (max +0.03/week), decrease lowest-attribution non-zero weight by same amount"
     },
     {
       "id": "underperforming_signal",
       "if": "A signal dimension had negative attribution AND fund lagged SPY",
-      "then": "Decrease that weight by -0.02 (max -0.03/week), increase fundamental_quality by same amount (floor quality bias)"
-    },
-    {
-      "id": "conviction_threshold",
-      "if": "Alta conviction positions beat Media-Alta avg return by >2% over the week",
-      "then": "May lower min_score_for_high_conviction by 0.02 (not below minScoreHighFloor)"
+      "then": "Decrease that weight by -0.02; increase overlooked_quality by same amount"
     },
     {
       "id": "no_evidence",
-      "if": "Week had zero trades and zero exits and NAV move <1%",
-      "then": "NO_CHANGE — write ackman-hold memo only"
+      "if": "Week had zero completed swings",
+      "then": "NO_CHANGE"
     }
   ],
   "outputPaths": {
@@ -46,6 +41,6 @@
   },
   "notifyOnApply": {
     "emailDigest": true,
-    "subjectPrefix": "Ackman Calibration applied"
+    "subjectPrefix": "Kevin Xu Calibration applied"
   }
 }

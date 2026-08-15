@@ -41,6 +41,6 @@ Append a `logs/trade-journal.md`:
 - Action: BUY/SELL TICKER
 - Size: $XX
 - Thesis: [1 línea]
-- Entry: $XX | Stop: $XX | Target: $XX
+- Target: $XX (+20–30%)
 - Outcome: pendiente
 ```

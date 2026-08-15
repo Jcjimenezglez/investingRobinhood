@@ -1,14 +1,13 @@
-# Kevin Xu playbook (no 13F)
+# Kevin Xu playbook
 
-Datos: `config/kevin-xu-playbook.json`. Fuente pública: [@kevinxu](https://x.com/kevinxu).
+`config/kevin-xu-playbook.json` — [@kevinxu](https://x.com/kevinxu).
 
-## Cómo usarlo
+1. All-in one name.
+2. Shares only. No options / crypto / margin / pennies.
+3. **Vibes:** dónde va la atención retail (no DCF).
+4. Support + catalyst. **Don't chase.**
+5. Sell 20–30% / screenshot / rumor is news.
+6. No GTC stops.
+7. Meme/retail names: **in** if early, **out** if already ran.
 
-1. **All-in one name.** Si hay dos, hay un error — flatten.
-2. **Shares only.** Options/crypto/margin = violación.
-3. **No memes.** Overlooked quality, not squeeze theater.
-4. **Don't chase.** Extension ≥20% into the event = PASS.
-5. **Sell 20–30%.** Screenshot rule.
-6. **No GTC stops.** Hawk monitor.
-
-`config/ackman-tracker.json` está **deprecated**. Ignóralo en ranking.
+Ackman 13F deprecated.

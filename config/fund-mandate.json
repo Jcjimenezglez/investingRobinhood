@@ -1,47 +1,46 @@
 {
   "fundName": "investingRobinhood",
   "fundType": "single-name-swing-long-only",
-  "inspiration": "Kevin Xu (@kevinxu) — all-in one quality stock at a time; days-to-weeks catalyst swings",
+  "inspiration": "Kevin Xu (@kevinxu) — all-in one stock at a time; vibes + support + catalyst; days-to-weeks",
   "investmentPhilosophy": "kevin-xu-only",
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "Replace Ackman 3–12m concentrated book with Kevin Xu swing: all-in stocks, no memes, no crypto, no margin, no options. Treat current 3-name book as if sold next regular session."
+    "lpDirective": "Replace Ackman book with Kevin Xu's actual filter (not an LP overlay). Flatten AMZN/MSFT/SPCX next session."
   },
   "explicitlyExcluded": [
     "ackman-style 3-12 month activist holds",
     "13F closet indexing",
-    "meme squeezes (GME/AMC-style)",
     "crypto",
     "options",
     "margin / leverage",
-    "penny stocks",
+    "penny stocks (can go to zero overnight)",
     "multi-name diversification as strategy"
   ],
   "aumUsd": 118,
-  "aumNote": "Live Agentic NAV ~$117.83 as of 2026-08-14 close (cash $10 + AMZN/MSFT/SPCX). Prior $2,100 LP-deposit note is stale until cash actually sits in Agentic. Size off live get_portfolio.",
+  "aumNote": "Live Agentic NAV ~$117.83 as of 2026-08-14 close. Size off get_portfolio.",
   "accountScope": "agentic-only",
-  "scopeNote": "All decisions based solely on the Agentic cash account (••••3029). Cash brokerage type — no margin. LP personal account (incl. SPCX) is outside the swing book.",
+  "scopeNote": "Agentic cash ••••3029 only. No margin. LP personal book ignored.",
   "lpAccountSeparation": {
     "personalAccount": {
-      "role": "LP-directed — concentrated SPCX and other self-directed holdings",
+      "role": "LP-directed",
       "agenticAccess": false,
       "agentIgnoresForBook": true,
-      "fridayWatch": "config/spcx-personal-watch.json — informational only; never trade Agentic from that session"
+      "fridayWatch": "config/spcx-personal-watch.json — informational only"
     },
     "agenticAccount": {
-      "role": "Kevin Xu swing book — one quality equity at a time",
+      "role": "Kevin Xu swing book — one equity at a time",
       "brokerageType": "cash",
       "marginAllowed": false
     }
   },
-  "clientMandate": "All-in on **one** good stock the crowd overlooks, with a near-term catalyst (days–weeks). No memes, no crypto, no margin, no options. Rotate after +20–30% or when the setup dies. Not a 3–12 month Ackman hold.",
+  "clientMandate": "Replicate Kevin Xu's filter: all-in one listed stock, terminally online (retail attention / vibes), buy support + catalyst, never chase, sell +20–30% / before rumor is fully news. No options, no crypto, no margin, no pennies. Memes/retail darlings are allowed if HIS rules pass (he bought GME early). Not an Ackman hold.",
   "returnPlan": {
     "swingTargetPctLow": 20,
     "swingTargetPctHigh": 30,
     "holdHorizon": "days-to-weeks",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/",
-    "note": "Xu: sell when the move is good enough to screenshot. Do not sit for quarters waiting on activist re-rating."
+    "note": "Screenshot rule. Earnings are a coin flip."
   },
   "bookPolicy": {
     "maxSimultaneousEquityPositions": 1,
@@ -51,35 +50,36 @@
     "transition": {
       "id": "exit-ackman-three-pack",
       "asOf": "2026-08-15",
-      "action": "Next regular session: SELL all AMZN, MSFT, SPCX in Agentic (treat as if selling tomorrow). Then cash until a Kevin Xu setup qualifies. Do not add to the three-pack.",
+      "action": "Next regular session: SELL all AMZN, MSFT, SPCX. Then cash until a Xu setup qualifies.",
       "legacyTickers": ["AMZN", "MSFT", "SPCX"],
-      "reason": "Three-name Ackman book violates one-at-a-time. MSFT already ~+31% from cost — Xu would have sold."
+      "reason": "Three names violate one-at-a-time. MSFT already ~+31% — Xu would have sold."
     }
   },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"
   ],
-  "universeNote": "Hunting ground of liquid quality names. Scanner may add overlooked quality names that pass filters. Memes and names that already ran into the catalyst are PASS.",
-  "memeBlocklist": ["GME", "AMC", "BBBY", "KOSS", "EXPR"],
+  "universeNote": "Seed list only. Primary idea source = scanner + retail attention (Reddit/X/AfterHour-style vibes), same as Xu. Any tradable common stock that passes HIS filter can rank #1. Don't chase. No pennies.",
+  "ideaSource": "terminally_online",
   "notTradableViaAgentic": [
-    { "name": "ETH", "reason": "Crypto — Kevin Xu rule + not Agentic MCP equities" },
+    { "name": "ETH", "reason": "Crypto — Xu: can go to zero; not Agentic equities" },
     { "name": "BTC", "reason": "Crypto" },
     { "name": "DOGE", "reason": "Crypto" }
   ],
   "kevinXuPrinciples": [
-    "All in on one stock at a time — concentration makes the return",
+    "All in on one stock at a time",
     "Shares only — no options, no crypto, no margin (nothing that can go to zero overnight)",
-    "Real companies — quality businesses people ignore, not memes",
-    "Buy near support with a real near-term catalyst (days–weeks)",
-    "Never chase a stock that already ran",
-    "Sell into strength around +20–30% / before rumor becomes fully priced news",
-    "If it is good enough to screenshot, it is good enough to sell",
-    "Watch like a hawk while in; rotate to the next overlooked setup",
-    "Earnings are a coin flip — do not YOLO the print unless the setup is sentiment + support, not a DCF",
+    "No penny stocks",
+    "Terminally online: follow where retail attention is going (vibes), not DCF",
+    "Buy at support with a real near-term catalyst",
+    "Never chase a stock that has already run",
+    "Sell before the rumor becomes fully priced news; +20–30% / screenshot rule",
+    "No stop-losses — watch like a hawk",
+    "Earnings are a coin flip",
+    "Retail darlings / meme names are in-universe if early (support+catalyst), out if already ran",
     "Judge only the Agentic cash book"
   ],
   "thesisTemplatePath": "workflows/investment-thesis-template.md",
   "lettersPath": "logs/investor-letters/",
   "playbookPath": "config/kevin-xu-playbook.json",
-  "ackmanTrackerNote": "DEPRECATED 2026-08-15. config/ackman-tracker.json is historical only — do not use for BUY/PASS."
+  "ackmanTrackerNote": "DEPRECATED 2026-08-15."
 }

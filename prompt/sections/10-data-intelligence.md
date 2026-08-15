@@ -34,7 +34,7 @@ get_watchlists / sync investingRH-core (config/watchlist-policy.json)
 search, get_equity_tradability
 ```
 
-**Jerarquía Xu:** calidad overlooked + catalizador días–semanas + no extension. Technicals = support vs chase. Social = crowd elsewhere.
+**Jerarquía Xu:** vibes/retail + catalizador cercano + soporte (no chase). Technicals = support vs extension. Social = **core**, no ruido.
 
 ### Capa 1b — Scanner merge
 

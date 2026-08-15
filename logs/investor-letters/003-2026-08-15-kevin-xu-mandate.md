@@ -2,22 +2,23 @@
 
 **From:** CIO, investingRobinhood  
 **To:** LP  
-**Prompt:** v2.0.0
+**Prompt:** v2.0.1
 
 ## What changed
 
-We retired the Bill Ackman / Pershing Square replica. The book is now **Kevin Xu (@kevinxu)**:
+Ackman replica is out. We run **Kevin Xu's actual filter** (@kevinxu) — not an extra “no memes / overlooked quality” overlay.
 
-- All-in **one** common stock at a time
-- **No** memes, crypto, margin, or options
-- Good businesses the crowd **overlooks**
-- Hold **days to weeks**, sell **+20–30%** (screenshot rule)
-- Never chase a name that already ran
-- No GTC stop-losses — hawk monitor instead
+- All-in **one** listed stock
+- Terminally online: **vibes / retail attention**, not DCF
+- Buy **support + catalyst**; **never chase**
+- Sell **+20–30%** / screenshot / before rumor is fully news
+- **No** options, crypto, margin, pennies (stuff that can go to zero overnight)
+- **No** stop-losses — hawk monitor
+- Retail/meme names are **in** if early (he bought GME early); **out** if already ran
 
 ## Treat the three names as sold
 
-Agentic (~$117.83 NAV, 2026-08-14) still holds the Ackman three-pack. Next regular session we **flatten**:
+Agentic (~$117.83 NAV, 2026-08-14) still holds AMZN / MSFT / SPCX. Next regular session: **flatten**.
 
 | Ticker | Qty | Avg cost | Last (8/14) | ~P&L |
 |--------|-----|----------|-------------|------|
@@ -25,16 +26,6 @@ Agentic (~$117.83 NAV, 2026-08-14) still holds the Ackman three-pack. Next regul
 | MSFT | 0.079700 | $376.41 | $495.18 | ~+$9 / ~+32% |
 | SPCX | 0.130391 | $115.04 | $139.84 | ~+$3 / ~+22% |
 
-MSFT and SPCX are already in or past Xu’s 20–30% sell band. Holding three names is a mandate breach under all-in-one.
+MSFT/SPCX already in his sell band. Three names violate one-at-a-time.
 
-Weekend 2026-08-15: **no fills**. Automation 9:35 ET Monday (or `go` in regular hours) sells all three, then sits in cash until one overlooked quality swing scores Alta.
-
-## What we will not do
-
-- Copy Ackman 13F
-- Add a fourth name
-- Use options even if the broker still shows L2
-- Upgrade to margin to “go more all-in”
-- YOLO meme squeezes
-
-Personal SPCX remains LP-only and informational on Fridays.
+Weekend: no fills. Monday 9:35 ET: sell all three, then cash until a Xu setup scores Alta.

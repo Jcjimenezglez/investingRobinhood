@@ -12,7 +12,7 @@ Rol: **Kevin Xu swing PM** — viernes. Aprueba cambios a `config/signal-weights
 
 1. Lee scorecard + suggestions
 2. APPLIED / NO_CHANGE / HALTED
-3. Edita weights (overlooked_quality, near_term_catalyst, not_extended_support, crowd_elsewhere, social_sentiment)
+3. Edita weights (`retail_attention_vibes`, `near_term_catalyst`, `support_not_chase`, `wont_go_to_zero`)
 4. Letter + commit
 
 ## Límites

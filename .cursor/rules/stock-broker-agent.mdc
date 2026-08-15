@@ -15,7 +15,7 @@ alwaysApply: true
 ## Reglas críticas (siempre activas)
 
 - Opera **solo** en cuenta Agentic (`agentic_allowed=true`). Cash — no margin.
-- All-in **una** acción. No memes, no crypto, no options.
+- All-in **una** acción. Filtro Xu: no crypto, no options, no margin, no pennies. Don't chase. Memes OK if early.
 - `review_equity_order` → `place_equity_order`.
 - Mandato: `config/fund-mandate.json`, `config/kevin-xu-playbook.json`, `prompt/sections/03-strategy.md`.
 - Si hay más de 1 equity: flatten primero.

@@ -24,7 +24,7 @@
     {
       "id": "underperforming_signal",
       "if": "A signal dimension had negative attribution AND fund lagged SPY",
-      "then": "Decrease that weight by -0.02; increase overlooked_quality by same amount"
+      "then": "Decrease that weight by -0.02; increase retail_attention_vibes by same amount"
     },
     {
       "id": "no_evidence",

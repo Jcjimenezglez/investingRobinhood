@@ -26,7 +26,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Methodology",
   description:
-    "How Tapefund invests: Kevin Xu all-in one quality stock at a time, days-to-weeks catalysts, no memes/crypto/margin/options, broker-native research, and a public track record.",
+    "How Tapefund invests: Kevin Xu all-in one stock, retail vibes + support + catalyst, never chase, no crypto/margin/options/pennies.",
   path: "/methodology/",
 });
 
@@ -34,7 +34,7 @@ const pillars = [
   {
     icon: FileText,
     title: "Thesis before capital",
-    body: "Every BUY requires a written swing memo: real business, why it's overlooked, near-term catalyst, don't-chase check.",
+    body: "Every BUY requires a swing memo: won't-go-to-zero, retail vibes, near-term catalyst, don't-chase check.",
   },
   {
     icon: Target,
@@ -54,7 +54,7 @@ const pillars = [
   {
     icon: Zap,
     title: "Kevin Xu rules",
-    body: "Shares only. No memes, no crypto, no margin, no options. Never chase a stock that already ran.",
+    body: "Shares only. No crypto, margin, options, or pennies. Follow retail attention. Never chase a stock that already ran.",
   },
   {
     icon: LineChart,
@@ -112,10 +112,9 @@ export default function MethodologyPage() {
       <div>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
         <DirectAnswer className="mt-3">
-          {BRAND.name} runs a Kevin Xu swing book: all-in one quality stock the
-          crowd overlooks, hold days to weeks, sell around +20–30%. No memes,
-          crypto, margin, or options. Every buy has a swing memo; every session
-          is public.
+          {BRAND.name} runs a Kevin Xu swing book: all-in one listed stock,
+          follow retail attention, buy support with a catalyst, sell around
+          +20–30%. No crypto, margin, options, or pennies. Don't chase.
         </DirectAnswer>
       </div>
 

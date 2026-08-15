@@ -1,61 +1,48 @@
 # Investment Thesis Template — Kevin Xu swing
 
-Copia a `logs/theses/TICKER-YYYY-MM-DD.md` antes de cada **nueva** posición (book debe quedar en 1 nombre).
+Copia a `logs/theses/TICKER-YYYY-MM-DD.md`.
 
 ---
 
 ## [TICKER] — Swing memo
 
-**Fund:** investingRobinhood  
-**Date:** YYYY-MM-DD  
 **Style:** Kevin Xu all-in  
-**PM conviction:** Alta / Media  
-**Proposed size:** $XX (~92% NAV if Alta)  
-**Horizon:** days–weeks (not 3–12 months)
+**Conviction:** Alta / Media  
+**Size:** $XX (~92% if Alta)  
+**Horizon:** days–weeks
 
-### 1. Real business (not a meme)
+### 1. Won't go to zero overnight
 
+- Listed common stock? Not penny / options / crypto?
 - What they do:
-- Why this is not GME-theater:
-- Liquidity / price ≥ $10:
 
-### 2. Why people overlook it
+### 2. Vibes (terminally online)
 
-- Crowd is looking at:
-- We are looking at:
+- Where is retail attention going?
+- Source (scanner / Reddit / X):
 
-### 3. Near-term catalyst
+### 3. Catalyst
 
-| Catalyst | Window (days) | Why it can re-rate now |
-|----------|---------------|------------------------|
-| | | |
+| Catalyst | Window (days) |
+|----------|----------------|
+| | |
 
 ### 4. Don't chase
 
 - Last 5–10d move:
-- Support vs extension (RSI/SMA):
+- Support vs extension:
 - Already ran ≥20% into event? YES = PASS
 
-### 5. Trade plan
+### 5. Plan
 
 - Entry:
-- Target: **+20–30%** from entry (sell 100%)
-- Screenshot rule: if we would post the P&L, we sell
-- Kill: catalyst priced / setup dies / becomes a meme
+- Target +20–30% (sell 100%)
+- Screenshot rule
+- Kill: priced news / setup dead / became a chase
 - **No stop GTC**
 
-### 6. Bear (typical: ugly earnings gap, not zero)
-
-1.
-2.
-3.
+### 6. Bear (ugly gap, not zero)
 
 ### 7. Post-mortem
-
-- Return % vs SPY:
-- Sold because: target | screenshot | dead setup | flatten
-- Lesson:
-
----
 
 **Decision:** BUY / PASS / WAIT FOR FLATTEN

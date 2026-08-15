@@ -24,36 +24,31 @@ Si `positions.length > 1` → volver a Fase 0.
 
 ## Fase 2 — Scan (antes de elegir)
 
-Escanea `researchUniverse` + scanner hits (quality filters). **No** `ackman-tracker`.
+Escanea `researchUniverse` + scanner + retail-attention names. **No** ackman-tracker. Social/vibes es señal principal.
 
 ```
 get_equity_quotes
-get_equity_fundamentals / get_financials (calidad, no DCF)
 get_earnings_calendar + get_earnings_results
-get_equity_technical_indicators (#1–#3) → support vs extension
-get_equity_tradability
+get_equity_technical_indicators (#1–#3) → support vs chase
+WebSearch Reddit/X attention
 config/kevin-xu-playbook.json
 config/signal-weights.json
 ```
 
 Ranking:
 
-| Ticker | Score | Overlooked? | Catalyst (d–w) | Extended? | Call |
-|--------|-------|-------------|----------------|-----------|------|
+| Ticker | Score | Vibes | Catalyst (d–w) | Support / chase? | Won't go to 0? | Call |
 
-- Score ≥ high → Alta (all-in eligible)
-- Score ≥ medium → Media
-- Meme / chase / no catalyst cercano → PASS
-
-Solo **#1** pasa a BUY, y solo si el book está vacío (o es rotación all-out → all-in).
+- Chase / penny / no catalyst → PASS
+- Meme/retail darling **no** es PASS automático — solo si ya corrió o es penny
 
 ## Fase 3 — Análisis
 
-- **Por qué la gente lo obvia**
-- **Catalizador** (fecha, días)
+- **Vibes / retail attention**
+- **Catalizador**
 - **Por qué no es chase**
-- **Kill:** catalyst priced, extension, meme narrative
-- **Target:** +20–30% from entry
+- **Kill:** rumor is news, extension, penny-risk
+- **Target:** +20–30%
 - **Convicción:** Baja / Media / Alta
 
 ## Fase 4 — Ejecución (BUY)

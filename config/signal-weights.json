@@ -1,25 +1,29 @@
 {
-  "version": "2.0.0",
-  "description": "Kevin Xu swing scoring — overlooked quality + near-term catalyst + not extended. Not Ackman 13F confluence.",
+  "version": "2.1.0",
+  "description": "Kevin Xu scoring — HIS filter: retail vibes, catalyst, support/not-chase, can't-go-to-zero. Social is a real weight, not a 5% afterthought.",
   "weights": {
-    "overlooked_quality": 0.30,
-    "near_term_catalyst": 0.30,
-    "not_extended_support": 0.25,
-    "crowd_elsewhere": 0.10,
-    "social_sentiment": 0.05
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
   },
   "min_score_for_medium_conviction": 0.55,
   "min_score_for_high_conviction": 0.72,
   "catalystProximityDays": {
     "optimalMin": 1,
     "optimalMax": 21,
-    "tooFarPenalty": 0.20,
-    "note": "Days–weeks. 3–12 month activist catalysts score poorly."
+    "tooFarPenalty": 0.20
   },
   "extensionHints": {
     "passIfUpPctIntoCatalyst": 20,
     "preferNearSupport": true,
-    "note": "Never chase a name that already ran."
+    "note": "Never chase a stock that has already run."
+  },
+  "wontGoToZeroHints": {
+    "listedOperatingCompany": true,
+    "notPenny": true,
+    "notCrypto": true,
+    "notOptions": true
   },
   "technicalTimingOverlay": {
     "enabled": true,
@@ -27,9 +31,8 @@
     "defaultInterval": "day",
     "indicators": ["rsi", "macd", "sma"],
     "weightInScore": 0,
-    "note": "Use SMA/RSI to judge support vs extension. Do not DCF."
+    "note": "Support vs extension only. Xu does not DCF or draw fancy charts as the thesis."
   },
-  "calibrationNote": "Kevin Xu Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
-  "lastCalibratedWeek": "2026-W33",
-  "removedWeights": ["ackman_confluence", "mispricing_vs_fair_value", "fundamental_quality"]
+  "calibrationNote": "Kevin Xu Calibration Agent (automation-05).",
+  "lastCalibratedWeek": "2026-W33"
 }

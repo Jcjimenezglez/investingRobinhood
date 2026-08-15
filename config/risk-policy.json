@@ -9,8 +9,8 @@
   },
   "strategy": {
     "name": "kevin-xu-all-in-swing",
-    "description": "All-in one quality equity at a time. Days-to-weeks catalyst. No memes, crypto, margin, or options. Objective: capture 20–30% swings then rotate.",
-    "primaryObjective": "capture_overlooked_equity_swings",
+    "description": "Kevin Xu filter: all-in one listed stock; vibes + support + catalyst; no crypto/margin/options/pennies. Capture 20–30% then rotate.",
+    "primaryObjective": "capture_xu_style_swings",
     "secondaryObjective": "avoid_blowups_via_no_leverage_no_options_no_crypto",
     "timeHorizon": "days-to-weeks",
     "returnAspiration": {
@@ -32,11 +32,12 @@
     "allowedTypes": ["equity"],
     "excludeEtfsUnlessHedging": true,
     "allowEtfsForTemporaryHedge": [],
-    "minAvgDailyVolume": 5000000,
-    "minPriceUsd": 10,
+    "minAvgDailyVolume": 1000000,
+    "minPriceUsd": 5,
     "excludePennyStocks": true,
-    "excludeMemes": true,
-    "memeBlocklist": ["GME", "AMC", "BBBY", "KOSS", "EXPR"],
+    "excludeMemes": false,
+    "memeBlocklist": [],
+    "memeNote": "Xu traded GME early. Retail/meme names OK if not a penny and not a chase.",
     "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"],
     "fundMandateConfig": "config/fund-mandate.json"
   },
@@ -95,7 +96,7 @@
         "catalyst_now_fully_priced_news",
         "setup_invalidated",
         "chase_detected_after_entry",
-        "superior_overlooked_setup_requires_rotation",
+        "superior_xu_setup_requires_rotation",
         "legacy_multi_name_flatten"
       ],
       "partialTrimTriggers": [],

@@ -1,33 +1,35 @@
 {
-  "version": "1.0.0",
-  "source": "Public Kevin Xu (@kevinxu) rules: all-in one equity, no margin/options/crypto, swing 20–30%, don't chase, sell before rumor is fully news. LP overlay: no memes; prefer quality names the crowd overlooks.",
+  "version": "1.1.0",
+  "source": "Kevin Xu (@kevinxu) public rules only — no LP overlay. All-in one equity; no margin/options/crypto/pennies; vibes + support + catalyst; don't chase; sell 20–30% / before rumor is news; no stops. He traded GME early: meme/retail names are allowed if not a chase.",
   "rules": {
     "oneNameAtATime": true,
     "instrument": "common_stock_only",
     "noMargin": true,
     "noOptions": true,
     "noCrypto": true,
-    "noMemes": true,
+    "noPennies": true,
+    "noMemes": false,
     "noChase": true,
     "buyAtSupportWithCatalyst": true,
+    "terminallyOnline": true,
     "holdDaysToWeeks": true,
     "targetGainPct": { "low": 20, "high": 30 },
     "screenshotSellRule": true,
     "hardStopGtc": false,
-    "hardStopNote": "Xu does not use stop-losses. Exit = thesis/setup dead, chase detected, or target hit. Fund-level halt still applies on 20% NAV drawdown."
+    "hardStopNote": "Xu: no stop-losses. Exit = target, screenshot, rumor-is-news, or setup dead."
   },
   "setupChecklist": [
-    "Real operating company (not meme, not penny, not crypto-proxy)",
-    "Crowd is looking elsewhere (overlooked vs already crowded run)",
-    "Near-term catalyst in days–weeks (product, print reaction window already passed, unlock, guidance, sector rotation) — not a 12-month activist story",
-    "Price near support / not extended after the move",
-    "Downside in a good stock is typically an ugly earnings gap (~20–25%), not zero",
+    "Listed common stock — not options, not crypto, not a penny that can go to zero overnight",
+    "Retail attention / vibes building (Reddit, X, scanners) — Xu is terminally online, not DCF",
+    "Near-term catalyst in days–weeks",
+    "Buy near support — do not chase a name that already ran",
+    "Worst case on a real stock is typically an ugly gap (~20–25%), not zero",
     "Written swing memo exists"
   ],
   "passIf": [
     "Already ran hard into the catalyst (chase)",
-    "Meme / squeeze narrative is the thesis",
-    "Needs options or leverage to work",
+    "Penny / OTC / can go to zero overnight",
+    "Needs options, crypto, or margin to work",
     "Horizon is 3–12 months with no near-term swing",
     "Would require a second simultaneous name"
   ]

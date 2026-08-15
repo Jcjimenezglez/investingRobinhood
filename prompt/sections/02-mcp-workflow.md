@@ -37,7 +37,7 @@ Robinhood añadió capacidades nativas. **Úsalas** en análisis y pre-trade; no
 2. `run_scan` por cada scan activo (earnings, movers, oversold)
 3. Filtrar hits: precio ≥ $10, market cap ≥ $1B, volumen ≥ 5M (`risk-policy` + `scanner-presets.qualityFilters`)
 4. Merge con `researchUniverse` → `data/signals/YYYY-MM-DD-scanner.json`
-5. Solo tickers que pasen filtros entran al ranking Kevin Xu (overlooked + catalyst cercano + no chase)
+5. Solo tickers que pasen el filtro Xu (vibes + catalyst + no chase + won't-go-to-zero)
 
 ## Watchlist sync
 

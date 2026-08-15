@@ -2,7 +2,7 @@
 
 Agente modular para trading vía Robinhood MCP. System prompt en `prompt/sections/`.
 
-**Mandato vigente (prompt v2.0.0):** Kevin Xu — all-in una acción de calidad, días–semanas, sin memes/crypto/margen/options.
+**Mandato vigente (prompt v2.0.1):** Kevin Xu — all-in one listed stock, vibes + support + catalyst, no crypto/margin/options/pennies. Don't chase.
 
 ## Estructura del prompt
 

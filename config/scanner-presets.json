@@ -3,10 +3,10 @@
   "description": "Robinhood MCP scanner presets for investingRobinhood. scan_id values are account-specific — refresh via get_scans if missing.",
   "setupNote": "On first run or if scans empty: create_scan per preset below, then update scan_id fields.",
   "qualityFilters": {
-    "minPriceUsd": 10,
-    "minMarketCapUsd": 1000000000,
-    "minAvgDailyVolume": 5000000,
-    "note": "Apply when merging scanner hits into ranking — reject penny/micro-cap outside risk-policy"
+    "minPriceUsd": 5,
+    "minMarketCapUsd": 200000000,
+    "minAvgDailyVolume": 1000000,
+    "note": "Xu filter: listed stock, not a penny that can go to zero. Retail names OK. Reject chase/extension in ranking, not here."
   },
   "scans": [
     {

@@ -12,7 +12,7 @@ Leer `config/autonomy.json`, `config/risk-policy.json`, `config/kevin-xu-playboo
 
 - Signals del día si existen
 - `run_scan` + earnings calendar
-- Quotes + quality + **extension check**
+- Quotes + **vibes** + catalyst + **don't-chase** check
 - **No** ackman-tracker
 - Ranking Kevin Xu en `logs/intelligence/`
 

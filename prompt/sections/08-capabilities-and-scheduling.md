@@ -105,7 +105,7 @@ Memo **informativo** para la posición **personal** de SPCX (`config/spcx-person
 | ¿Vender automático si cae 6%? | ❌ Xu: no stop-loss. Hawk monitor; sell on dead setup |
 | ¿All-in un nombre ~92%? | ✅ Mandato Kevin Xu, convicción Alta |
 | ¿Tres acciones a la vez? | ❌ Flatten |
-| ¿Memes / crypto / margin / options? | ❌ |
+| ¿Memes / crypto / margin / options? | Memes OK si no chase/penny. Crypto/margin/options ❌ |
 | ¿Comprar cada lunes $25? | ⚠️ Automation Cursor + market, o recurring en app |
 | ¿Orden a las 9:31 exactas? | ⚠️ Automation cron ~9:31, no timer del broker |
 | ¿Day trade 20 veces? | ❌ Guardrails + cash settlement (good-faith); PDT margin abolido 2026 no aplica igual a Agentic cash |

@@ -79,7 +79,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is the Tapefund investment strategy?",
     answer:
-      "Tapefund follows a Kevin Xu swing approach: all-in one quality stock at a time, days-to-weeks catalyst, sell around +20–30%, no memes, crypto, margin, or options.",
+      "Tapefund follows Kevin Xu's swing filter: all-in one listed stock at a time, retail vibes plus support and a near-term catalyst, sell around +20–30%, never chase, no crypto, margin, options, or pennies.",
   },
   {
     question: "What market data does the CIO use?",

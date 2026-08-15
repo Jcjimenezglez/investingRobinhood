@@ -31,7 +31,7 @@ Leer intelligence logs de la semana + `data/signals/*-universe.json` si existen.
 
 Responder:
 
-- ¿Qué señal correlacionó mejor? (overlooked_quality / near_term_catalyst / not_extended_support)
+- ¿Qué señal correlacionó mejor? (retail_attention_vibes / near_term_catalyst / support_not_chase / wont_go_to_zero)
 - Escribir **`logs/scorecard/weekly/YYYY-WW-suggestions.json`** para Kevin Xu Calibration (#5):
 
 ```json
@@ -41,18 +41,16 @@ Responder:
   "spyReturnPct": 0,
   "fundReturnPct": 0,
   "attribution": {
-    "overlooked_quality": 0,
+    "retail_attention_vibes": 0,
     "near_term_catalyst": 0,
-    "not_extended_support": 0,
-    "crowd_elsewhere": 0,
-    "social_sentiment": 0
+    "support_not_chase": 0,
+    "wont_go_to_zero": 0
   },
   "proposedDeltas": {
-    "overlooked_quality": 0,
+    "retail_attention_vibes": 0,
     "near_term_catalyst": 0,
-    "not_extended_support": 0,
-    "crowd_elsewhere": 0,
-    "social_sentiment": 0
+    "support_not_chase": 0,
+    "wont_go_to_zero": 0
   },
   "proposedThresholdDeltas": {
     "min_score_for_medium_conviction": 0,

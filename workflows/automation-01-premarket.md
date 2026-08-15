@@ -13,13 +13,13 @@
 
 MCP snapshot + universe quotes + scanner + earnings. **No** ackman-tracker.
 
-Social: ¿crowd elsewhere? (peso bajo). Flag memes as PASS.
+Social: atención retail (peso alto — Xu vibes). No penalizar memes; penalizar chase y pennies.
 
 ## Output `logs/intelligence/YYYY-MM-DD-0800-premarket.md`
 
 1. NAV, cash, **position count** (must become 1 or 0)
 2. Open names: P&L% vs +20–30% target — **flatten plan if count > 1**
-3. Ranking: overlooked / catalyst days–weeks / extended?
+3. Ranking: vibes / catalyst / support vs chase / won't-go-to-zero
 4. Decision for 9:35: FLATTEN / SELL-TARGET / ALL-IN / CASH
 5. Risks
 

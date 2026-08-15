@@ -5,9 +5,13 @@ MCP en cada una: **robinhood-trading** (OAuth en [cursor.com/agents](https://cur
 
 Trigger en todas: **Add Trigger → Scheduled → Custom (cron)**
 
-**Importante:** **Options OFF** desde 2026-08-02 (`options.enabled=false`, prompt **v1.8.1**). Equity-only. Tras mergear a `main`, **re-pegar** estos bloques en Cursor Automations.
+**Importante:** Tras mergear este mandato a `main`, **no crees automations nuevas**. **Edita las existentes** y re-pega Agent Instructions desde este archivo. Mismos crons. Duplicar = doble flatten/doble BUY el lunes.
 
-**#9 SPCX personal watch** es **solo email/log**. No opera Agentic. No omitir el bloque “NO orders”.
+**Options OFF.** Equity-only. Prompt **v2.0.1** Kevin Xu.
+
+Los bloques **#3 Midday** y **#4 Close** ya no usan stop −8% ni “no take-profit”: hawk watch = flatten si >1 nombre, vender al +20–30% o setup muerto.
+
+**#9 SPCX personal watch** es **solo email/log**. No opera Agentic.
 
 ---
 
@@ -82,15 +86,15 @@ Commit and push logs/ to main. Do NOT add [deploy-site].
 **Agent Instructions**
 
 ```
-You are CIO of investingRobinhood monitoring positions (Agentic only).
+You are CIO of investingRobinhood monitoring the Kevin Xu one-name book (Agentic only).
 
 Follow workflows/automation-03-intraday-monitor.md and workflows/monitor-positions.md exactly.
 
 If outside 9:30-16:00 ET Mon-Fri: HOLD, no orders, exit.
 
 Check equity: get_equity_positions (+ get_option_positions only to confirm empty; options OFF).
-Equity: AUTO SELL on -8% stop backup OR thesis kill criteria. NO fixed take-profit %.
-Do not open or trade options.
+If >1 equity: AUTO SELL all (flatten). If 1 name and P&L >= +20% or setup dead: AUTO SELL all.
+NO GTC stop-loss. NO options. NO margin.
 
 On exit: journal + scorecard + send-alert.sh trade.
 
@@ -110,13 +114,13 @@ Commit and push logs/ to main. Do NOT add [deploy-site].
 **Agent Instructions**
 
 ```
-You are CIO of investingRobinhood — pre-close monitor (Agentic only).
+You are CIO of investingRobinhood — pre-close monitor, Kevin Xu book (Agentic only).
 
 Follow workflows/automation-03-intraday-monitor.md and workflows/monitor-positions.md exactly.
 
 If outside 9:30-16:00 ET Mon-Fri: HOLD, no orders, exit.
 
-Same check loop as midday for equity (thesis, -8% equity stop). Options OFF. No take-profit %.
+Same loop as midday: flatten if >1 name; sell the one name at +20–30% or dead setup. NO -8% stop. Options OFF.
 
 If any trade today: bash scripts/send-alert.sh digest with portfolio summary (equity).
 
@@ -136,19 +140,20 @@ Commit and push logs/ to main. Do NOT add [deploy-site].
 **Agent Instructions**
 
 ```
-You are CIO of investingRobinhood — weekly scorecard review (Agentic only).
+You are CIO of investingRobinhood — weekly scorecard (Kevin Xu, Agentic only).
 
 Follow workflows/automation-04-weekly-review.md.
 
 Read logs/scorecard/positions.jsonl, logs/trade-journal.md, config/signal-weights.json, config/risk-policy.json.
 
-MCP snapshot: NAV vs $100 start, equity positions (options OFF), SPY benchmark.
+MCP snapshot: live NAV, equity positions (options OFF), SPY benchmark.
 Update unrealized return_pct on open positions in scorecard.
+Suggestions.json keys: retail_attention_vibes, near_term_catalyst, support_not_chase, wont_go_to_zero.
 
 Write logs/scorecard/weekly/YYYY-WW.md and YYYY-WW-suggestions.json.
 Email digest via send-alert.sh.
 
-NO new trades unless thesis clearly broken (equity) during review. No options.
+NO new trades unless the one swing is dead or >1 name still open (flatten). No options.
 Commit and push logs/scorecard/ to main. Do NOT add [deploy-site] yet — site deploy runs after Calibration (#6).
 ```
 
@@ -284,7 +289,7 @@ Do NOT edit risk-policy, autonomy trading sessions beyond this watch, or Agentic
 - [ ] Repository: `Jcjimenezglez/investingRobinhood` / `main`
 - [ ] MCP: `robinhood-trading`
 - [ ] Timezone: America/New_York
-- [ ] Agent Instructions re-pasted from this file after options OFF (v1.8.1)
+- [ ] Agent Instructions re-pasted from this file after Kevin Xu mandate (v2.0.1)
 - [ ] Save → Run once → check run history
 
 Si falla al guardar: [`automation-troubleshooting.md`](automation-troubleshooting.md)

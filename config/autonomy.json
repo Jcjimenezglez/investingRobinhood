@@ -71,10 +71,10 @@
         "description": "Viernes 16:30 ET: scorecard, benchmark SPY, YYYY-WW-suggestions.json"
       },
       {
-        "name": "ackman-calibration",
+        "name": "kevin-xu-calibration",
         "cron": "0 17 * * 5",
         "action": "auto-calibrate-weights",
-        "workflow": "workflows/automation-05-ackman-calibration.md",
+        "workflow": "workflows/automation-05-kevin-xu-calibration.md",
         "description": "Viernes 17:00 ET: Kevin Xu PM auto-applies signal-weights within calibration-policy"
       },
       {

@@ -1,6 +1,6 @@
 {
-  "version": "2.0.1",
-  "description": "v2.0.1: Kevin Xu's actual filter (vibes/retail, support+catalyst, no chase). LP no-meme overlay removed. Flatten AMZN/MSFT/SPCX next session.",
+  "version": "2.0.3",
+  "description": "v2.0.3: no paid X MCP; WebSearch X/Reddit for vibes. Keywords Everywhere forbidden. Xu filter.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

@@ -8,7 +8,7 @@ Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-play
 |----------|---------|
 | All-in **1** stock | Máximo 1 equity |
 | No margin / options / crypto / pennies | Igual |
-| Terminally online — vibes, no DCF | Scanner + Reddit/X attention |
+| Terminally online — vibes, no DCF | Scanner + Reddit + WebSearch de X (sin MCP de pago). No Keywords Everywhere |
 | Buy support + catalyst | Igual |
 | Never chase | PASS si ya corrió ≥20% into the event |
 | Sell 20–30% / rumor→news / screenshot | All-out |

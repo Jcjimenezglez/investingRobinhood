@@ -1,6 +1,15 @@
 {
-  "version": "1.1.0",
-  "description": "Free data sources for investingRobinhood signal pipeline. Includes Jul 2026 MCP intel pack (financials, technicals, L2, tax lots, PnL history, option historicals). SEC via curl in fetch-signals.sh.",
+  "version": "1.2.1",
+  "description": "Signal pipeline: Robinhood MCP + SEC + WebSearch (incl. X/Reddit chatter). No paid X MCP. Keywords Everywhere forbidden.",
+  "forbiddenIntel": [
+    "keywords-everywhere",
+    "paid X MCP (api.x.com/mcp) — LP 2026-08-15: not using, not free"
+  ],
+  "xSearch": {
+    "paidMcp": false,
+    "method": "WebSearch queries for posts, cashtags, @kevinxu mirrors. site:x.com often returns empty — say so. Reddit/WSB mention trackers are valid Xu-style vibes.",
+    "doNot": ["Keywords Everywhere", "api.x.com/mcp"]
+  },
   "universeConfig": "config/fund-mandate.json",
   "ackmanTracker": "config/ackman-tracker.json",
   "signalWeights": "config/signal-weights.json",

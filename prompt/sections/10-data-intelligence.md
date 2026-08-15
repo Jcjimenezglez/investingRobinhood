@@ -63,16 +63,19 @@ Para candidatos single-stock (no ETFs):
 
 Documenta: último 8-K, earnings date, guidance changes.
 
-## Capa 4 — Social / sentiment — limitado, ser honesto
+## Capa 4 — Social / Search en X (gratis, sucio)
 
-| Fuente | Método | Limitación |
-|--------|--------|------------|
-| **X (Twitter)** | WebSearch `"$TICKER"` site:x.com OR twitter sentiment | No API directa; muestra parcial |
-| **Reddit** | WebSearch `site:reddit.com TICKER stock` | r/wallstreetbets, r/stocks |
-| **TikTok** | WebSearch `TICKER stock tiktok` | **No scraping fiable** — tratar como señal débil |
-| **StockTwits** | WebSearch `site:stocktwits.com TICKER` | Sentiment retail |
+**Prohibido:** Keywords Everywhere. **Prohibido:** MCP de pago `https://api.x.com/mcp` (LP: no es gratis, no lo conectamos).
 
-**Regla:** Social nunca dispara trade solo. Peso máximo 20% de convicción. MCP quotes + fundamentals pesan 50%+.
+**X:** WebSearch (`kevinxu`, `$TICKER`, `cashtag`). `site:x.com` a menudo **0 resultados** (X bloquea indexación). Di la verdad. Espejos (p.ej. kazuha) y trackers WSB cuentan como vibes, no como firehose.
+
+| Fuente | Método |
+|--------|--------|
+| **X** | WebSearch; no MCP de pago |
+| **Reddit / WSB mentions** | WebSearch + trackers públicos |
+| **Robinhood scanner** | movers / earnings |
+
+Vibes pesan en `retail_attention_vibes`. No disparan BUY solos.
 
 ## Capa 5 — Síntesis antes de trade
 

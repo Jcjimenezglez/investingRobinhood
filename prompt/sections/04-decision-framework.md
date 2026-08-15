@@ -30,7 +30,7 @@ Escanea `researchUniverse` + scanner + retail-attention names. **No** ackman-tra
 get_equity_quotes
 get_earnings_calendar + get_earnings_results
 get_equity_technical_indicators (#1–#3) → support vs chase
-WebSearch Reddit/X attention
+WebSearch Reddit + X chatter (no paid X MCP, no Keywords Everywhere).
 config/kevin-xu-playbook.json
 config/signal-weights.json
 ```

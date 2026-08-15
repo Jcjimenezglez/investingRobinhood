@@ -63,25 +63,19 @@ Para candidatos single-stock (no ETFs):
 
 Documenta: último 8-K, earnings date, guidance changes.
 
-## Capa 4 — Social / X MCP (Xu vibes)
+## Capa 4 — Social / Search en X (gratis, sucio)
 
-**Prohibido:** MCP **Keywords Everywhere** (créditos, keywords, traffic, backlinks). No forma parte de este fondo. No lo llames en scan, ranking, ni memos.
+**Prohibido:** Keywords Everywhere. **Prohibido:** MCP de pago `https://api.x.com/mcp` (LP: no es gratis, no lo conectamos).
 
-**X — oficial:** `https://api.x.com/mcp` (hosted Streamable HTTP). Si el servidor MCP `xapi` / X está conectado:
-
-- Search posts / cashtags (`$TICKER`)
-- Timeline / user lookup (`@kevinxu` solo como referencia de estilo, no para copiar trades a ciegas)
-- Trends + news search
-
-Si X MCP **no** está autenticado: dilo. Fallback débil = WebSearch `site:x.com`. No finjas haber leído el firehose.
+**X:** WebSearch (`kevinxu`, `$TICKER`, `cashtag`). `site:x.com` a menudo **0 resultados** (X bloquea indexación). Di la verdad. Espejos (p.ej. kazuha) y trackers WSB cuentan como vibes, no como firehose.
 
 | Fuente | Método |
 |--------|--------|
-| **X** | MCP `https://api.x.com/mcp` primero; si no, WebSearch parcial |
-| **Reddit** | WebSearch `site:reddit.com TICKER` |
-| **Robinhood scanner** | movers / earnings — atención retail en el broker |
+| **X** | WebSearch; no MCP de pago |
+| **Reddit / WSB mentions** | WebSearch + trackers públicos |
+| **Robinhood scanner** | movers / earnings |
 
-Vibes **sí** pesan en el score Xu (`retail_attention_vibes`). Siguen sin disparar un BUY solos: hace falta soporte + catalizador + no chase + won't-go-to-zero.
+Vibes pesan en `retail_attention_vibes`. No disparan BUY solos.
 
 ## Capa 5 — Síntesis antes de trade
 

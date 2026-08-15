@@ -1,26 +1,14 @@
 {
-  "version": "1.2.0",
-  "description": "Signal pipeline: Robinhood MCP + SEC + WebSearch + official X MCP (when connected). Keywords Everywhere is forbidden for this fund.",
+  "version": "1.2.1",
+  "description": "Signal pipeline: Robinhood MCP + SEC + WebSearch (incl. X/Reddit chatter). No paid X MCP. Keywords Everywhere forbidden.",
   "forbiddenIntel": [
     "keywords-everywhere",
-    "Keywords Everywhere MCP — never use for ranking, vibes, or trades"
+    "paid X MCP (api.x.com/mcp) — LP 2026-08-15: not using, not free"
   ],
-  "xMcp": {
-    "enabledWhenConnected": true,
-    "url": "https://api.x.com/mcp",
-    "docs": "https://docs.x.com/tools/mcp",
-    "setup": "workflows/automation-cloud-mcp-setup.md",
-    "useFor": [
-      "search posts / cashtags",
-      "user lookup (@kevinxu and ticker chatter)",
-      "trends",
-      "news search on X"
-    ],
-    "doNot": [
-      "publish posts",
-      "use Keywords Everywhere as a substitute"
-    ],
-    "fallbackIfDisconnected": "WebSearch site:x.com — declare as weak/partial"
+  "xSearch": {
+    "paidMcp": false,
+    "method": "WebSearch queries for posts, cashtags, @kevinxu mirrors. site:x.com often returns empty — say so. Reddit/WSB mention trackers are valid Xu-style vibes.",
+    "doNot": ["Keywords Everywhere", "api.x.com/mcp"]
   },
   "universeConfig": "config/fund-mandate.json",
   "ackmanTracker": "config/ackman-tracker.json",

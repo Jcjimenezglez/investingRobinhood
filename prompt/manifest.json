@@ -1,6 +1,6 @@
 {
-  "version": "2.0.2",
-  "description": "v2.0.2: X MCP (api.x.com/mcp) for Xu vibes; Keywords Everywhere forbidden. v2.0.1 Xu filter.",
+  "version": "2.0.3",
+  "description": "v2.0.3: no paid X MCP; WebSearch X/Reddit for vibes. Keywords Everywhere forbidden. Xu filter.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

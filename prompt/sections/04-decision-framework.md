@@ -45,10 +45,10 @@ Ranking:
 ## Fase 3 — Análisis
 
 - **Vibes / retail attention**
-- **Catalizador**
+- **Catalizador** (incl. **pre-Q run-up** si el print se espera bueno — vender el 20–30% *antes* del report)
 - **Por qué no es chase**
-- **Kill:** rumor is news, extension, penny-risk
-- **Target:** +20–30%
+- **Kill:** rumor is news, extension, penny-risk, already +20% into Q
+- **Target:** +20–30% (often filled *before* earnings)
 - **Convicción:** Baja / Media / Alta
 
 ## Fase 4 — Ejecución (BUY)
@@ -72,6 +72,7 @@ Cada sesión, para la **única** posición:
 
 - P&L% ≥ 20 (band 20–30) → SELL all
 - Screenshot / news fully priced → SELL all
+- **Earnings hoy o mañana** y (P&L ya en banda **o** default sell-before-print) → SELL all en regular hours **antes** del report
 - Setup muerto → SELL all
 - Aparece un segundo nombre → flatten (error)
 

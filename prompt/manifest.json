@@ -1,6 +1,6 @@
 {
-  "version": "2.0.3",
-  "description": "v2.0.3: no paid X MCP; WebSearch X/Reddit for vibes. Keywords Everywhere forbidden. Xu filter.",
+  "version": "2.0.4",
+  "description": "v2.0.4: Xu pre-Q run-up — sell 20–30% before the print, don't hold earnings night.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

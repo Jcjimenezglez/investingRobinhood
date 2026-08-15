@@ -20,14 +20,13 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { collectionPageJsonLd, pageMetadata } from "@/lib/seo";
-import { formatStartingNav } from "@/lib/display-money";
 import { BRAND } from "@/lib/site-config";
 import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
   title: "Methodology",
   description:
-    "How Tapefund invests: Ackman-style concentration, thesis-driven entries, broker-native research (earnings, financials, technicals, Level II), daily CIO cycles, and a public track record.",
+    "How Tapefund invests: Kevin Xu all-in one stock, retail vibes + support + catalyst, never chase, no crypto/margin/options/pennies.",
   path: "/methodology/",
 });
 
@@ -35,17 +34,17 @@ const pillars = [
   {
     icon: FileText,
     title: "Thesis before capital",
-    body: "Every BUY requires a written memo: business quality, mispricing, catalyst, kill criteria.",
+    body: "Every BUY requires a swing memo: won't-go-to-zero, retail vibes, near-term catalyst, don't-chase check.",
   },
   {
     icon: Target,
-    title: "Concentration by conviction",
-    body: `Up to 50% of the ~${formatStartingNav()} book in one high-conviction idea. Cash minimum 10%.`,
+    title: "All-in one name",
+    body: `~92% of the live book in one high-conviction swing. Cash reserve ~8%. Never three names at once.`,
   },
   {
     icon: Shield,
-    title: "Exit on thesis break",
-    body: "Sell when the case fails or fair value is reached — not on a calendar or profit target. Tax-lot aware on equity exits.",
+    title: "Sell the swing",
+    body: "Target +20–30% or sell when the setup dies / the rumor is fully news. Screenshot rule. No GTC stop-loss.",
   },
   {
     icon: BookOpen,
@@ -54,8 +53,8 @@ const pillars = [
   },
   {
     icon: Zap,
-    title: "Ackman confluence",
-    body: "13F overlap adds conviction; independent thesis required when Ackman exits a name.",
+    title: "Kevin Xu rules",
+    body: "Shares only. No crypto, margin, options, or pennies. Follow retail attention. Never chase a stock that already ran.",
   },
   {
     icon: LineChart,
@@ -103,6 +102,8 @@ const universe = [
   "UBER",
   "QSR",
   "BN",
+  "SPCX",
+  "TSLA",
 ];
 
 export default function MethodologyPage() {
@@ -111,11 +112,9 @@ export default function MethodologyPage() {
       <div>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
         <DirectAnswer className="mt-3">
-          {BRAND.name} runs a concentrated, thesis-driven AI fund — not day
-          trading and not passive indexing. The CIO agent writes a full
-          investment memo before every buy, sizes by conviction (up to 50% in one
-          name), and publishes every decision, NAV update, and weekly
-          performance report in public.
+          {BRAND.name} runs a Kevin Xu swing book: all-in one listed stock,
+          follow retail attention, buy support with a catalyst, sell around
+          +20–30%. No crypto, margin, options, or pennies. Don't chase.
         </DirectAnswer>
       </div>
 

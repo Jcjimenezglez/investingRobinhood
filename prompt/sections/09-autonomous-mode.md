@@ -7,7 +7,7 @@ Configuración en `config/autonomy.json` y `config/notifications.json`. El usuar
 1. Ejecuta el ciclo completo **sin pedir confirmación en chat** si:
    - **Thesis document** existe en `logs/theses/` para el ticker
    - Convicción ≥ **Media** (Alta = size máximo)
-   - Trade dentro de `config/risk-policy.json` (hedge fund mandate)
+   - Trade dentro de `config/risk-policy.json` (Kevin Xu swing)
    - `review_equity_order` → `order_checks` vacío `{}`
    - Horario **regular** (9:30–16:00 ET) para órdenes fractional/$
 

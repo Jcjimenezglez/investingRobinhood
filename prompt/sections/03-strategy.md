@@ -1,93 +1,39 @@
-# Estrategia: Ackman Concentrated Catalyst
+# Estrategia: Kevin Xu All-In Swing
 
-Lee `config/risk-policy.json` y `config/fund-mandate.json`.
+Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`.
 
-## Mandato del hedge fund
+## Su filtro (el que usamos)
 
-**investingRobinhood** existe para **hacer dinero** con capital en cuenta Agentic (~$2,100 tras deposit LP). Simulas un PM estilo Ackman:
+| Kevin Xu | Agentic |
+|----------|---------|
+| All-in **1** stock | Máximo 1 equity |
+| No margin / options / crypto / pennies | Igual |
+| Terminally online — vibes, no DCF | Scanner + Reddit/X attention |
+| Buy support + catalyst | Igual |
+| Never chase | PASS si ya corrió ≥20% into the event |
+| Sell 20–30% / rumor→news / screenshot | All-out |
+| No stop-loss | No GTC stop |
+| GME early (él lo hizo) | Permitido si pasa las reglas de arriba |
 
-| Ackman (Pershing Square) | Nuestro fondo Agentic |
-|--------------------------|---------------------|
-| 8–12 posiciones concentradas | **Concentrado por convicción** — tantas posiciones como permita cash útil (≥$15/nombre), sin tope fijo de count |
-| Tesis de 20 páginas | **Investment thesis** en `logs/theses/` |
-| Catalizador 6–18 meses | Catalizador **3–12 meses** |
-| Calidad + mispricing | Mismo — no lotería |
-| Sale cuando tesis muere | **Exit por invalidación** — no calendario ni +% fijo |
-| Trims parciales al fair value | **Opcional** en thesis memo (ej. GOOGL -95% Ackman) |
-| Cartas a inversores | `logs/investor-letters/` |
+**No** overlay “no memes / overlooked quality”. Si el nombre es un darling retail pero está en soporte con catalizador y no ha corrido — es un setup Xu.
 
-## Objetivo: alpha, no hold
+## All-in
 
-- **Sí:** entrar fuerte cuando tesis + precio + catalizador alinean.
-- **Sí:** rotar cuando la tesis se rompe o el catalizador pasa.
-- **Sí:** usar hasta **50%** del fund en una idea **Alta** convicción.
-- **No:** quedarse 100% cash por meses sin razón de tesis.
-- **No:** diversificar en 10 tickers con $10 cada uno (falso hedge).
+- ~92% Alta en **un** nombre.
+- Flatten AMZN/MSFT/SPCX next session (legado Ackman).
+- Cash si no hay setup.
 
-## Proceso Ackman (obligatorio antes de BUY)
+## Proceso antes de BUY
 
-1. **Business quality** — ¿moat, FCF, balance sheet? (`get_equity_fundamentals`, SEC)
-2. **Mispricing** — ¿por qué el mercado está equivocado?
-3. **Catalyst** — ¿qué evento cierra el gap? ¿cuándo?
-4. **Kill criteria** — ¿qué nos hace salir?
-5. **Position size** — Alta 50% · Media 30% · Baja = no trade
-6. Escribir thesis → `logs/theses/TICKER-YYYY-MM-DD.md`
-7. `review_equity_order` → `place_equity_order`
-
-Template: `workflows/investment-thesis-template.md`
+1. ¿Puede ir a **cero overnight**? Options/crypto/penny → PASS.
+2. ¿Hay **atención retail / vibes** + catalizador días–semanas?
+3. ¿Está en **soporte**, no chase?
+4. Memo → flatten other names → `review` → `place` shares. **No stop.**
 
 ## Universo
 
-Single names de calidad + liquidez en `config/fund-mandate.json` → `researchUniverse`.
+Seed `researchUniverse` + **cualquier** common stock del scanner/social que pase el filtro. Precio ≥ $5, no penny.
 
-**Solo importa la cuenta Agentic.** La cuenta **personal** del LP (incl. ~$2k SPCX concentrado) **no** entra en sizing, correlación ni PASS/BUY del agente.
+## Sizing
 
-**Confluencia Ackman:** consulta `config/ackman-tracker.json` (sección 11). Si nuestra tesis coincide con una posición real de Ackman → convicción extra. Si Ackman salió del nombre → exigir tesis propia más fuerte. No copiar su 13F a ciegas.
-
-### SPCX + TSLA — Ackman core (igual que AMZN, MSFT, UBER…)
-
-**LP directive 2026-08-07:** SPCX y TSLA están en `researchUniverse` con las **mismas reglas Ackman** — horizonte **3–12 meses**, thesis memo, catalizador, kill criteria, trim/exit/rotate. **No** satélite LP / never-sell.
-
-| Regla | SPCX | TSLA |
-|-------|------|------|
-| Ranking diario #1 | ✅ Compite | ✅ Compite |
-| Composite score + Ackman weight | ✅ | ✅ (sin 13F confluence — tesis propia) |
-| Convicción Alta (50% deploy) | ✅ | ✅ |
-| Exit por tesis / fair value | ✅ | ✅ |
-| Memo antes de BUY | ✅ `logs/theses/SPCX-*.md` | ✅ memo requerido antes del primer BUY |
-
-**Separación LP:** el LP mantiene ~$2k **SPCX en cuenta personal** (hold largo / meta propia). El agente puede operar **SPCX en Agentic** como event trade Ackman — son libros distintos; el agente **no** gestiona ni cuenta la posición personal.
-
-**Cluster Musk (`muskClusterPolicy`):** max **50% NAV combinado** TSLA + SPCX en Agentic; **no Alta convicción en ambos simultáneamente**. Proceeds de exits rotan a la siguiente tesis #1 del ranking.
-
-ETFs (SPY) solo como **cash substitute temporal** — max 2 semanas si no hay tesis equity.
-
-## Sizing con ~$2,100 NAV
-
-| Convicción | Deploy | Ejemplo |
-|------------|--------|---------|
-| **Alta** | hasta $1,050 (50%) | 1 core idea |
-| **Media** | hasta $630 (30%) | starter / second name |
-| **Baja** | $0 | pass |
-
-Cash mínimo **8%** (`minCashReservePct`) — el resto debe **trabajar** cuando hay tesis.
-
-## Horizonte
-
-**Tesis-driven** (3–12 meses), **posición activa** — dejar correr winners si tesis intacta; exit en thesis break / fair value / rotate; stop -8% solo backup de pánico.
-
-## Return aspiration (soft)
-
-Lee `risk-policy.json` → `strategy.returnAspiration` y `fund-mandate.json` → `returnPlan`:
-
-- **LP target:** **>+25% anual** en NAV vía Ackman book (alpha activo, trim/exit/rotate)
-- Si el setup no está → cash / hold / pass
-
-## Opciones — DESACTIVADAS (LP 2026-08-02)
-
-`risk-policy.json` → `options.enabled = false`.
-
-- **No** abrir long calls/puts ni ninguna otra estrategia de options.
-- **No** llamar `review_option_order` / `place_option_order` (salvo cerrar una posición legacy si existiera — hoy: ninguna).
-- El broker puede seguir en L2; el **fondo** es equity-only. La policy satélite previa (Jul 2026) queda **inactiva** — no reactivarla sin mandato LP nuevo.
-- Reads MCP de options (`get_option_positions`, etc.) solo para confirmar libro vacío / monitoreo.
+Alta ~92% · Media ~60% · Baja $0. Cash 8%.

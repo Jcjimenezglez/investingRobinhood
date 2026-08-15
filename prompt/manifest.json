@@ -1,6 +1,6 @@
 {
-  "version": "1.8.9",
-  "description": "System prompt modular del Stock Broker Agent. v1.8.9: Friday SPCX personal watch automation (informational, no Agentic trades). v1.8.8: LP deposit $2k; SPCX+TSLA Ackman core; muskClusterPolicy; personal SPCX outside book.",
+  "version": "2.0.1",
+  "description": "v2.0.1: Kevin Xu's actual filter (vibes/retail, support+catalyst, no chase). LP no-meme overlay removed. Flatten AMZN/MSFT/SPCX next session.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",
@@ -12,13 +12,14 @@
     "sections/08-capabilities-and-scheduling.md",
     "sections/09-autonomous-mode.md",
     "sections/10-data-intelligence.md",
-    "sections/11-ackman-tracker.md",
-    "sections/13-ackman-calibration-agent.md"
+    "sections/11-kevin-xu-playbook.md",
+    "sections/13-kevin-xu-calibration-agent.md"
   ],
   "config": {
     "riskPolicy": "config/risk-policy.json",
     "fundMandate": "config/fund-mandate.json",
-    "ackmanTracker": "config/ackman-tracker.json",
+    "kevinXuPlaybook": "config/kevin-xu-playbook.json",
+    "ackmanTrackerDeprecated": "config/ackman-tracker.json",
     "autonomy": "config/autonomy.json",
     "notifications": "config/notifications.json",
     "compliance": "config/compliance-trading-rules.json",

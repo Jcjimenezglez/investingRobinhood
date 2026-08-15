@@ -41,7 +41,7 @@
         "name": "market-open",
         "cron": "35 9 * * 1-5",
         "action": "full-cycle",
-        "description": "Letter → thesis scan → fundamentals → enter/exit/hold per Ackman mandate"
+        "description": "Flatten legacy multi-name book if needed; then one Kevin Xu swing or cash"
       },
       {
         "name": "intraday-monitor",
@@ -49,13 +49,13 @@
         "cronAlt": "*/15 10-15 * * 1-5",
         "cronClose": "0 16 * * 1-5",
         "action": "monitor-auto-exit",
-        "description": "Cada 15 min en regular hours: check posiciones; market sell si stop -8% backup o tesis rota. Ver workflows/monitor-positions.md"
+        "description": "Each 15 min: sell if +20–30% hit, setup dead, or still holding >1 name (flatten). No GTC stops."
       },
       {
         "name": "midday-check",
         "cron": "0 12 * * 1-5",
         "action": "monitor",
-        "description": "Revisar posiciones vs stop backup y tesis. Trim/exit solo por Ackman rules"
+        "description": "Watch the one swing like a hawk. Full exit on target or dead setup."
       },
       {
         "name": "close-check",
@@ -71,11 +71,11 @@
         "description": "Viernes 16:30 ET: scorecard, benchmark SPY, YYYY-WW-suggestions.json"
       },
       {
-        "name": "ackman-calibration",
+        "name": "kevin-xu-calibration",
         "cron": "0 17 * * 5",
         "action": "auto-calibrate-weights",
-        "workflow": "workflows/automation-05-ackman-calibration.md",
-        "description": "Viernes 17:00 ET: Ackman PM auto-applies signal-weights within calibration-policy"
+        "workflow": "workflows/automation-05-kevin-xu-calibration.md",
+        "description": "Viernes 17:00 ET: Kevin Xu PM auto-applies signal-weights within calibration-policy"
       },
       {
         "name": "spcx-personal-watch",

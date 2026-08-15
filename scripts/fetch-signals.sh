@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fetch free signal layers: SEC search-index + universe skeleton with Ackman merge.
+# Fetch free signal layers: SEC search-index + universe skeleton (Kevin Xu).
 # MCP quotes/fundamentals/earnings must be merged by the agent (no MCP in shell).
 #
 # Usage:
@@ -13,7 +13,6 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DATE="${2:-$(TZ=America/New_York date +%Y-%m-%d)}"
 SOURCES="$ROOT/config/data-sources.json"
 MANDATE="$ROOT/config/fund-mandate.json"
-ACKMAN="$ROOT/config/ackman-tracker.json"
 RAW_DIR="$ROOT/data/raw"
 SIGNALS_DIR="$ROOT/data/signals"
 UA="investingRobinhood research-agent"
@@ -61,20 +60,16 @@ from pathlib import Path
 root = Path("$ROOT")
 date = "$DATE"
 mandate = json.loads((root / "config/fund-mandate.json").read_text())
-ackman = json.loads((root / "config/ackman-tracker.json").read_text())
-holdings = {h["symbol"]: h for h in ackman.get("holdings", [])}
-goog = holdings.get("GOOG") or holdings.get("GOOGL")
 
 tickers = []
 for sym in mandate["researchUniverse"]:
-    h = holdings.get(sym) or (holdings.get("GOOG") if sym == "GOOGL" else None)
     tickers.append({
         "symbol": sym,
         "quote": None,
         "fundamentals": None,
-        "ackman_confluence": h is not None and h.get("weightPct", 0) > 0.5,
-        "ackman_weight_pct": h.get("weightPct") if h else None,
-        "ackman_change": h.get("change") if h else None,
+        "extended": None,
+        "catalyst_days": None,
+        "overlooked": None,
         "scores": None
     })
 

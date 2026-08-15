@@ -1,26 +1,29 @@
 {
-  "version": "1.0.6",
-  "description": "Rule-based conviction scoring — not ML. Calibrate monthly from logs/scorecard/ outcomes. Technicals are timing overlays, not score drivers.",
+  "version": "2.1.0",
+  "description": "Kevin Xu scoring — HIS filter: retail vibes, catalyst, support/not-chase, can't-go-to-zero. Social is a real weight, not a 5% afterthought.",
   "weights": {
-    "fundamental_quality": 0.35,
-    "mispricing_vs_fair_value": 0.26,
-    "catalyst_proximity_days": 0.22,
-    "ackman_confluence": 0.12,
-    "social_sentiment": 0.05
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
   },
   "min_score_for_medium_conviction": 0.55,
   "min_score_for_high_conviction": 0.72,
   "catalystProximityDays": {
-    "optimalMin": 14,
-    "optimalMax": 120,
-    "tooFarPenalty": 0.15
+    "optimalMin": 1,
+    "optimalMax": 21,
+    "tooFarPenalty": 0.20
   },
-  "fundamentalQualityHints": {
-    "peBelowSectorMedian": 0.1,
-    "wideMoatLanguageInThesis": 0.05,
-    "revenueGrowthPositiveQoQ": 0.05,
-    "netMarginExpanding": 0.05,
-    "note": "Use get_financials (quarterly) for growth/margin hints — not get_equity_fundamentals alone."
+  "extensionHints": {
+    "passIfUpPctIntoCatalyst": 20,
+    "preferNearSupport": true,
+    "note": "Never chase a stock that has already run."
+  },
+  "wontGoToZeroHints": {
+    "listedOperatingCompany": true,
+    "notPenny": true,
+    "notCrypto": true,
+    "notOptions": true
   },
   "technicalTimingOverlay": {
     "enabled": true,
@@ -28,8 +31,8 @@
     "defaultInterval": "day",
     "indicators": ["rsi", "macd", "sma"],
     "weightInScore": 0,
-    "note": "Never add technicals to composite score. Use only to delay entry, trim size, or flag overbought/oversold risk in intel log."
+    "note": "Support vs extension only. Xu does not DCF or draw fancy charts as the thesis."
   },
-  "calibrationNote": "Ackman Calibration Agent (automation-05) auto-updates weekly per config/calibration-policy.json.",
-  "lastCalibratedWeek": "2026-W32"
+  "calibrationNote": "Kevin Xu Calibration Agent (automation-05).",
+  "lastCalibratedWeek": "2026-W33"
 }

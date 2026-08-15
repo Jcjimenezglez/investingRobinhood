@@ -4,7 +4,7 @@
   "deployMarker": "[deploy-site]",
   "schedule": {
     "timezone": "America/New_York",
-    "primary": "Friday 17:00 ET — Ackman Calibration automation (#6) commits with [deploy-site] and runs scripts/trigger-site-deploy.sh",
+    "primary": "Friday 17:00 ET — Kevin Xu Calibration automation (#6) commits with [deploy-site] and runs scripts/trigger-site-deploy.sh",
     "backup": "GitHub Action deploy-site-friday.yml — Friday 21:35 UTC if hook secret is configured"
   },
   "setup": {

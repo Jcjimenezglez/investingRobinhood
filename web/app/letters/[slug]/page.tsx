@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!letter) return { title: "Letter" };
   return pageMetadata({
     title: letter.title,
-    description: `Tapefund investor letter (${letter.date}): ${letter.title}. Ackman-style allocation decision from the live AI fund track record.`,
+    description: `Tapefund investor letter (${letter.date}): ${letter.title}. CIO allocation decision from the live AI fund track record.`,
     path: `/letters/${slug}/`,
     type: "article",
     publishedTime: letter.date,

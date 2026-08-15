@@ -1,64 +1,26 @@
 # Automation #1 — Pre-Market CIO (8:00 AM ET, lun–vie)
 
-**Modo:** research only — NO colocar órdenes.
+**Modo:** research only — NO órdenes.
 
 ## Pre-flight
 
-1. Leer `prompt/manifest.json` y todas las secciones en `loadOrder`
-2. Leer `config/autonomy.json`, `config/risk-policy.json`, `config/fund-mandate.json`, `config/ackman-tracker.json`
-3. Leer `workflows/daily-runbook.md`, `prompt/sections/09-autonomous-mode.md`, `prompt/sections/10-data-intelligence.md`
-4. Cuenta **SOLO Agentic** (`agentic_allowed=true`) — ignorar otras cuentas
+1. `prompt/manifest.json` + loadOrder
+2. `config/autonomy.json`, `risk-policy.json`, `fund-mandate.json`, `kevin-xu-playbook.json`
+3. Runbook + autonomous + data-intelligence
+4. Solo Agentic
 
-## Capa 1 — Robinhood (obligatorio)
+## Capas
 
-```
-get_accounts → identificar Agentic (notar option_level)
-get_portfolio, get_equity_positions, get_equity_orders
-get_option_positions (nonzero=true)
-get_equity_quotes + get_equity_fundamentals: posiciones abiertas + todo researchUniverse
-get_earnings_calendar (filter: high_market_cap, days: 14) → merge *-earnings.json
-run_scan × N (config/scanner-presets.json) → data/signals/YYYY-MM-DD-scanner.json
-watchlist sync → investingRH-core (config/watchlist-policy.json)
-bash scripts/fetch-signals.sh all   → SEC + universe skeleton (merge MCP después)
-```
+MCP snapshot + universe quotes + scanner + earnings. **No** ackman-tracker.
 
-## Capa 2 — Mercado
+Social: atención retail (peso alto — Xu vibes). No penalizar memes; penalizar chase y pennies.
 
-WebSearch: macro del día, Fed, sector tech, earnings próximas 2 semanas.
+## Output `logs/intelligence/YYYY-MM-DD-0800-premarket.md`
 
-## Capa 3 — SEC
+1. NAV, cash, **position count** (must become 1 or 0)
+2. Open names: P&L% vs +20–30% target — **flatten plan if count > 1**
+3. Ranking: vibes / catalyst / support vs chase / won't-go-to-zero
+4. Decision for 9:35: FLATTEN / SELL-TARGET / ALL-IN / CASH
+5. Risks
 
-Para AMZN, MSFT y top 3 candidatos del ranking: 8-K recientes, guidance, material events.
-
-## Capa 4 — Ackman
-
-`config/ackman-tracker.json` — confluencia vs Pershing Square 13F.
-
-## Capa 5 — Social (peso ≤ 20%)
-
-WebSearch Reddit/StockTwits solo como señal débil.
-
-## Output obligatorio
-
-Escribir `logs/intelligence/YYYY-MM-DD-0800-premarket.md`:
-
-1. **Snapshot fund** — cash, P&L, equity + options vs límites risk-policy
-2. **Posiciones abiertas** — equity: bull/bear, P&L%, distancia stop backup (-8%), fair value vs precio; options: premium P&L, DTE, tesis/catalizador
-3. **Ranking universo** (#1–10): convicción, mispricing, catalizador 3–12m, confluencia Ackman
-4. **Decisión para sesión 9:35** — HOLD / ADD / ROTATE / EXIT / OPTION-satellite (solo si gates `risk-policy.options` — no forzar)
-5. **Riesgos del día**
-
-## Escalación
-
-Si MCP falla o límites de riesgo breached:
-
-```bash
-bash scripts/send-alert.sh urgent "motivo" "detalle"
-```
-
-## Post-run
-
-1. **Persistir en disco** — crear/actualizar el `.md` en `logs/intelligence/` (el chat no sustituye el archivo).
-2. `git add logs/intelligence/ && git commit -m "logs: intelligence YYYY-MM-DD …" && git push origin main`
-
-Do not add `[deploy-site]` — see `config/site-publish.json`.
+Commit logs. No `[deploy-site]`.

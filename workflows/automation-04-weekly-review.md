@@ -31,8 +31,8 @@ Leer intelligence logs de la semana + `data/signals/*-universe.json` si existen.
 
 Responder:
 
-- ¿Qué señal correlacionó mejor? (fundamentals / catalyst / ackman_confluence)
-- Escribir **`logs/scorecard/weekly/YYYY-WW-suggestions.json`** para Ackman Calibration (#5):
+- ¿Qué señal correlacionó mejor? (retail_attention_vibes / near_term_catalyst / support_not_chase / wont_go_to_zero)
+- Escribir **`logs/scorecard/weekly/YYYY-WW-suggestions.json`** para Kevin Xu Calibration (#5):
 
 ```json
 {
@@ -41,28 +41,26 @@ Responder:
   "spyReturnPct": 0,
   "fundReturnPct": 0,
   "attribution": {
-    "fundamental_quality": 0,
-    "mispricing_vs_fair_value": 0,
-    "catalyst_proximity_days": 0,
-    "ackman_confluence": 0,
-    "social_sentiment": 0
+    "retail_attention_vibes": 0,
+    "near_term_catalyst": 0,
+    "support_not_chase": 0,
+    "wont_go_to_zero": 0
   },
   "proposedDeltas": {
-    "fundamental_quality": 0,
-    "mispricing_vs_fair_value": 0,
-    "catalyst_proximity_days": 0,
-    "ackman_confluence": 0,
-    "social_sentiment": 0
+    "retail_attention_vibes": 0,
+    "near_term_catalyst": 0,
+    "support_not_chase": 0,
+    "wont_go_to_zero": 0
   },
   "proposedThresholdDeltas": {
     "min_score_for_medium_conviction": 0,
     "min_score_for_high_conviction": 0
   },
-  "ackmanNote": "1-2 sentences for calibration PM"
+  "xuNote": "1-2 sentences for calibration PM"
 }
 ```
 
-Scores en `attribution` = -1 a +1 (evidencia semanal). `proposedDeltas` = cambios sugeridos antes de guardrails (Ackman PM aplica límites).
+Scores en `attribution` = -1 a +1. `proposedDeltas` = sugerencias; Kevin Xu PM aplica límites.
 
 ## Fase 4 — Output
 
@@ -84,7 +82,7 @@ Escribir `logs/scorecard/weekly/YYYY-WW.md` (ISO week):
 
 ## Calibration suggestions
 
-- Ver `YYYY-WW-suggestions.json` (input para Ackman PM automation-05 @ 17:00 ET)
+- Ver `YYYY-WW-suggestions.json` (input para Kevin Xu PM automation-05 @ 17:00 ET)
 
 ## Next week focus
 - Catalysts / earnings dates

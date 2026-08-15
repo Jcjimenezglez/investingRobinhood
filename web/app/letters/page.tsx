@@ -26,7 +26,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Investor letters",
   description:
-    "Tapefund investor letters: Ackman-style write-ups documenting major capital allocation decisions and portfolio changes.",
+    "Tapefund investor letters: CIO write-ups documenting mandate changes and swing allocations.",
   path: "/letters/",
 });
 
@@ -44,9 +44,8 @@ export default function LettersPage() {
             Investor letters
           </h1>
           <DirectAnswer className="mt-2">
-            {BRAND.name} publishes Ackman-style investor letters when major
-            allocation decisions are made — explaining the thesis, sizing, and
-            portfolio context in long form.
+            {BRAND.name} publishes investor letters when the mandate or the
+            one-name book changes — setup, size, and why we sold.
           </DirectAnswer>
         </div>
       </div>

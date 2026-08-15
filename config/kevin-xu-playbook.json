@@ -1,0 +1,36 @@
+{
+  "version": "1.1.0",
+  "source": "Kevin Xu (@kevinxu) public rules only — no LP overlay. All-in one equity; no margin/options/crypto/pennies; vibes + support + catalyst; don't chase; sell 20–30% / before rumor is news; no stops. He traded GME early: meme/retail names are allowed if not a chase.",
+  "rules": {
+    "oneNameAtATime": true,
+    "instrument": "common_stock_only",
+    "noMargin": true,
+    "noOptions": true,
+    "noCrypto": true,
+    "noPennies": true,
+    "noMemes": false,
+    "noChase": true,
+    "buyAtSupportWithCatalyst": true,
+    "terminallyOnline": true,
+    "holdDaysToWeeks": true,
+    "targetGainPct": { "low": 20, "high": 30 },
+    "screenshotSellRule": true,
+    "hardStopGtc": false,
+    "hardStopNote": "Xu: no stop-losses. Exit = target, screenshot, rumor-is-news, or setup dead."
+  },
+  "setupChecklist": [
+    "Listed common stock — not options, not crypto, not a penny that can go to zero overnight",
+    "Retail attention / vibes building (Reddit, X, scanners) — Xu is terminally online, not DCF",
+    "Near-term catalyst in days–weeks",
+    "Buy near support — do not chase a name that already ran",
+    "Worst case on a real stock is typically an ugly gap (~20–25%), not zero",
+    "Written swing memo exists"
+  ],
+  "passIf": [
+    "Already ran hard into the catalyst (chase)",
+    "Penny / OTC / can go to zero overnight",
+    "Needs options, crypto, or margin to work",
+    "Horizon is 3–12 months with no near-term swing",
+    "Would require a second simultaneous name"
+  ]
+}

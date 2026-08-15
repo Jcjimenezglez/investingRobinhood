@@ -63,16 +63,25 @@ Para candidatos single-stock (no ETFs):
 
 Documenta: último 8-K, earnings date, guidance changes.
 
-## Capa 4 — Social / sentiment — limitado, ser honesto
+## Capa 4 — Social / X MCP (Xu vibes)
 
-| Fuente | Método | Limitación |
-|--------|--------|------------|
-| **X (Twitter)** | WebSearch `"$TICKER"` site:x.com OR twitter sentiment | No API directa; muestra parcial |
-| **Reddit** | WebSearch `site:reddit.com TICKER stock` | r/wallstreetbets, r/stocks |
-| **TikTok** | WebSearch `TICKER stock tiktok` | **No scraping fiable** — tratar como señal débil |
-| **StockTwits** | WebSearch `site:stocktwits.com TICKER` | Sentiment retail |
+**Prohibido:** MCP **Keywords Everywhere** (créditos, keywords, traffic, backlinks). No forma parte de este fondo. No lo llames en scan, ranking, ni memos.
 
-**Regla:** Social nunca dispara trade solo. Peso máximo 20% de convicción. MCP quotes + fundamentals pesan 50%+.
+**X — oficial:** `https://api.x.com/mcp` (hosted Streamable HTTP). Si el servidor MCP `xapi` / X está conectado:
+
+- Search posts / cashtags (`$TICKER`)
+- Timeline / user lookup (`@kevinxu` solo como referencia de estilo, no para copiar trades a ciegas)
+- Trends + news search
+
+Si X MCP **no** está autenticado: dilo. Fallback débil = WebSearch `site:x.com`. No finjas haber leído el firehose.
+
+| Fuente | Método |
+|--------|--------|
+| **X** | MCP `https://api.x.com/mcp` primero; si no, WebSearch parcial |
+| **Reddit** | WebSearch `site:reddit.com TICKER` |
+| **Robinhood scanner** | movers / earnings — atención retail en el broker |
+
+Vibes **sí** pesan en el score Xu (`retail_attention_vibes`). Siguen sin disparar un BUY solos: hace falta soporte + catalizador + no chase + won't-go-to-zero.
 
 ## Capa 5 — Síntesis antes de trade
 

@@ -38,4 +38,39 @@ Tras conectar MCP en Cloud y crear Automations:
 | 17:00 vie | `automation-05-kevin-xu-calibration.md` |
 | 18:00 vie | `automation-08-spcx-personal-watch.md` (**info only**, no Agentic orders) |
 
-Sin este paso, el agente solo opera cuando invocas chat manualmente.
+## X MCP — Cloud Agent / Automations
+
+Hosted: **`https://api.x.com/mcp`**. Docs: [docs.x.com/tools/mcp](https://docs.x.com/tools/mcp).
+
+Esto es lo que Xu usa como “terminally online”. **No** uses Keywords Everywhere.
+
+### Dashboard (Cloud Automations)
+
+1. [cursor.com/agents](https://cursor.com/agents) → **MCP Servers** → **Add custom server**
+2. Nombre: `xapi` (o `X`)
+3. URL: `https://api.x.com/mcp`
+4. Auth: OAuth / Bearer de tu **X Developer App** (pay-per-use; cada tool call cobra API). No pegues tokens en el repo.
+5. En **cada** automation de research (8:00, 9:35): **Add Tool or MCP** → `xapi`
+
+### Desktop (opcional)
+
+OAuth via `xurl` (no commitear `CLIENT_SECRET`):
+
+```json
+"xapi": {
+  "command": "npx",
+  "args": ["-y", "@xdevplatform/xurl", "mcp", "https://api.x.com/mcp"],
+  "env": { "CLIENT_ID": "...", "CLIENT_SECRET": "..." }
+}
+```
+
+App-only read:
+
+```json
+"xapi": {
+  "url": "https://api.x.com/mcp",
+  "headers": { "Authorization": "Bearer YOUR_APP_ONLY_BEARER_TOKEN" }
+}
+```
+
+Hasta que el servidor aparezca en el tool list del agente, el CIO declara X MCP **offline** y usa WebSearch como fallback débil.

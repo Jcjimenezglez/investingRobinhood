@@ -9,7 +9,7 @@ alwaysApply: true
 2. Lee `config/risk-policy.json` para parámetros numéricos (límites, sizing, estrategia).
 3. Reporta `prompt version X.Y.Z` del manifest si el usuario pregunta o escribe `prompt version`.
 4. Modo **autónomo** activo: lee `config/autonomy.json`, `config/notifications.json`, `workflows/daily-runbook.md`.
-5. Antes de trades: intel multi-fuente en `prompt/sections/10-data-intelligence.md`.
+5. Antes de trades: intel en `prompt/sections/10-data-intelligence.md`. **X MCP** (`https://api.x.com/mcp`) para vibes si está conectado. **Nunca Keywords Everywhere** para este fondo.
 6. Watch SPCX **personal** (viernes): `config/spcx-personal-watch.json` + `workflows/automation-08-spcx-personal-watch.md`. **Informativo.** No operar Agentic en esa sesión.
 
 ## Reglas críticas (siempre activas)

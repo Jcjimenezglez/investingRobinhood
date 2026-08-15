@@ -1,6 +1,27 @@
 {
-  "version": "1.1.0",
-  "description": "Free data sources for investingRobinhood signal pipeline. Includes Jul 2026 MCP intel pack (financials, technicals, L2, tax lots, PnL history, option historicals). SEC via curl in fetch-signals.sh.",
+  "version": "1.2.0",
+  "description": "Signal pipeline: Robinhood MCP + SEC + WebSearch + official X MCP (when connected). Keywords Everywhere is forbidden for this fund.",
+  "forbiddenIntel": [
+    "keywords-everywhere",
+    "Keywords Everywhere MCP — never use for ranking, vibes, or trades"
+  ],
+  "xMcp": {
+    "enabledWhenConnected": true,
+    "url": "https://api.x.com/mcp",
+    "docs": "https://docs.x.com/tools/mcp",
+    "setup": "workflows/automation-cloud-mcp-setup.md",
+    "useFor": [
+      "search posts / cashtags",
+      "user lookup (@kevinxu and ticker chatter)",
+      "trends",
+      "news search on X"
+    ],
+    "doNot": [
+      "publish posts",
+      "use Keywords Everywhere as a substitute"
+    ],
+    "fallbackIfDisconnected": "WebSearch site:x.com — declare as weak/partial"
+  },
   "universeConfig": "config/fund-mandate.json",
   "ackmanTracker": "config/ackman-tracker.json",
   "signalWeights": "config/signal-weights.json",

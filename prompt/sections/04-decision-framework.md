@@ -30,7 +30,7 @@ Escanea `researchUniverse` + scanner + retail-attention names. **No** ackman-tra
 get_equity_quotes
 get_earnings_calendar + get_earnings_results
 get_equity_technical_indicators (#1–#3) → support vs chase
-WebSearch Reddit/X attention
+WebSearch Reddit/X attention. If X MCP (`https://api.x.com/mcp`) is connected, search cashtags there. Never Keywords Everywhere.
 config/kevin-xu-playbook.json
 config/signal-weights.json
 ```

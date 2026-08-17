@@ -986,4 +986,28 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-14-1500-monitor.md*
 
+---
+
+## 2026-08-17 09:35 ET — FLATTEN Ackman three-pack (Xu mandate)
+
+| Campo | Valor |
+|-------|-------|
+| **Sesión** | automation-02-market-open |
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | SELL ALL AMZN / MSFT / SPCX (legacy count>1) |
+| **Tipo** | Market fractional · regular_hours · gfd · **no stop GTC** |
+| **NAV post** | **$117.45** cash · BP **$10** · unsettled **$107.45** |
+| **Options** | 0 · policy OFF |
+| **order_checks** | empty ×3 |
+
+| Ticker | Qty | Cost | Fill | Order ID | Realized |
+|--------|-----|------|------|----------|----------|
+| AMZN | 0.190134 | $236.68 | **$262.3359** | 6a830eba-0c3b-47f9-b256-7c95c3e7e52c | **+$4.88 (+10.8%)** |
+| MSFT | 0.079700 | $376.41 | **$489.82** | 6a830eba-d752-4122-a667-d90fd98dede5 | **+$9.04 (+30.1%)** |
+| SPCX | 0.130391 | $115.04 | **$142.084** | 6a830ebb-5024-48af-9ce0-238db3523227 | **+$3.53 (+23.5%)** |
+
+**Post-trade book:** 0 equity. **CASH.** No BUY (trades-at-cap + unsettled + NVDA chase into 8/26).
+
+*Intel: logs/intelligence/2026-08-17-0935-open.md*
+
 <!-- El agente appendea entradas aquí después de cada trade -->

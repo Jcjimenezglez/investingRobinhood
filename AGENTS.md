@@ -41,3 +41,4 @@ Dev workflow for `web/` (run all commands from `web/`; standard scripts live in 
 - Building locally will show `web/public/{rss.xml,llms.txt,llms-full.txt}` as modified (they are committed but regenerated from current `logs/`). Do not commit these incidental regenerations unless log content actually changed.
 - Lint: `npm run lint` is **not usable** — ESLint is not configured/installed, so `next lint` drops into an interactive setup prompt. Do not rely on it; use the build's type-check + content verification instead.
 - Node 22 is used (Next.js 15 / React 19). Output is a static export (`web/out/`), so there is no long-running production server — deploy is via Vercel (`vercel.json` at repo root, root dir `web`).
+- **Always merge the PR** when the work is done (do not leave it open as draft-only). Use a merge commit unless the user specifies otherwise.

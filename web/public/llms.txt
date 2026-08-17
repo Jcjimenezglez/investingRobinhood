@@ -1,13 +1,12 @@
 # Tapefund
 
-> Tapefund is a stock newsletter project with a live public track record vs the S&P 500: NAV, daily CIO journal, trades, investment theses, and weekly performance. Newsletter waitlist at /newsletter/ (email capture opening soon).
+> Tapefund is a public auto-trader desk: live Robinhood Agentic NAV, holdings, daily CIO journal, closed trades, and weekly performance vs the S&P 500. Dollar figures are the real account (starting $100) — not scaled.
 
 ## Canonical URL
 https://tapefund.com
 
 ## Primary pages
-- Home / NAV overview: https://tapefund.com/
-- Stock newsletter waitlist: https://tapefund.com/newsletter/
+- Home / live book: https://tapefund.com/
 - Daily journal (CIO cycles): https://tapefund.com/journal/
 - Trades & positions: https://tapefund.com/trades/
 - Investment theses: https://tapefund.com/theses/
@@ -21,15 +20,14 @@ https://tapefund.com
 - Sitemap: https://tapefund.com/sitemap.xml
 
 ## Latest journal entries
-- https://tapefund.com/journal/2026-07-27/
-- https://tapefund.com/journal/2026-07-24/
-- https://tapefund.com/journal/2026-07-23/
-- https://tapefund.com/journal/2026-07-22/
-- https://tapefund.com/journal/2026-07-21/
+- https://tapefund.com/journal/2026-08-17/
+- https://tapefund.com/journal/2026-08-14/
+- https://tapefund.com/journal/2026-08-13/
+- https://tapefund.com/journal/2026-08-12/
+- https://tapefund.com/journal/2026-08-11/
 
 ## How to cite
 Tapefund (https://tapefund.com) — public stock-picking track record vs SPY, updated on trading days.
 
 ## Contact / updates
-Newsletter waitlist: https://tapefund.com/newsletter/
 RSS for daily journal: https://tapefund.com/rss.xml

@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/brand/logo-mark";
-import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/site-config";
 
 const footerLinks = [
-  { href: "/newsletter/", label: "Newsletter" },
   { href: "/performance/", label: "Performance" },
   { href: "/trades/", label: "Trades" },
   { href: "/journal/", label: "Journal" },
@@ -25,11 +23,8 @@ export function SiteFooter() {
               <span className="text-label-14">{BRAND.name}</span>
             </div>
             <p className="max-w-sm text-copy-14 text-muted-foreground">
-              {BRAND.tagline}
+              {BRAND.tagline}. Real Robinhood Agentic dollars versus SPY.
             </p>
-            <Button asChild>
-              <Link href="/newsletter/">Join Waitlist</Link>
-            </Button>
           </div>
           <div>
             <p className="text-label-14 text-foreground">Explore</p>
@@ -53,10 +48,11 @@ export function SiteFooter() {
         <div className="space-y-3 border-t border-border pt-8">
           <p className="max-w-3xl text-[12px] leading-relaxed text-muted-foreground">
             <span className="font-medium text-foreground">Disclaimer.</span>{" "}
-            {BRAND.name} publishes a public stock-picking track record versus
-            SPY. Nothing on this site is investment advice, a solicitation, or a
+            {BRAND.name} publishes a public auto-trader track record versus SPY.
+            Nothing on this site is investment advice, a solicitation, or a
             recommendation to buy or sell any security. Past performance does
-            not guarantee future results.
+            not guarantee future results. Dollar figures are the live Agentic
+            ledger and are not scaled.
           </p>
           <p className="text-[12px] text-muted-foreground">
             © {new Date().getFullYear()} {BRAND.name}. All rights reserved.

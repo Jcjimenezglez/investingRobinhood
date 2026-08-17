@@ -18,7 +18,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Trades",
   description:
-    "Tapefund trade history: open and closed positions sized by conviction, with returns, fair value targets, and links to investment theses.",
+    "Tapefund trade history from the live Robinhood Agentic account: open and closed positions at real dollar size, with returns and links to theses.",
   path: "/trades/",
 });
 
@@ -34,9 +34,9 @@ export default function TradesPage() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Trades</h1>
           <DirectAnswer className="mt-2">
-            {BRAND.name} publishes every position — open and closed — with
-            conviction sizing, return since entry, and links to the written
-            thesis behind each trade.
+            {BRAND.name} publishes every Agentic position — open and closed —
+            at real dollar size, with conviction, return since entry, and the
+            written thesis behind each trade.
           </DirectAnswer>
         </div>
       </div>

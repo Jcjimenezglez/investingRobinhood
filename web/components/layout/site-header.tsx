@@ -6,11 +6,11 @@ import { BRAND } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 const nav = [
-  { href: "/newsletter/", label: "Newsletter" },
   { href: "/performance/", label: "Performance" },
   { href: "/trades/", label: "Trades" },
   { href: "/journal/", label: "Journal" },
   { href: "/theses/", label: "Theses" },
+  { href: "/methodology/", label: "Methodology" },
   { href: "/faq/", label: "FAQ" },
 ];
 
@@ -42,7 +42,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-1">
           <ThemeToggle />
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="/newsletter/">Join Waitlist</Link>
+            <Link href="/#desk">Live book</Link>
           </Button>
         </div>
       </div>

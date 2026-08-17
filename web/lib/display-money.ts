@@ -1,6 +1,6 @@
 import { BRAND } from "@/lib/site-config";
 
-/** Multiply ledger USD for public UI. Share prices and % stay unscaled. */
+/** Ledger USD for public UI (scale is 1 — real account dollars). */
 export function scaleUsd(amount: number): number {
   return amount * BRAND.displayUsdScale;
 }

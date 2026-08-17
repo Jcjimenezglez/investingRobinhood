@@ -24,7 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     "",
-    "/newsletter/",
     "/journal/",
     "/trades/",
     "/theses/",
@@ -36,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: "daily" as const,
-    priority: path === "" ? 1 : path === "/newsletter/" ? 0.95 : 0.8,
+    priority: path === "" ? 1 : 0.8,
   }));
 
   const journal = getJournalDays().map((d) => ({

@@ -204,34 +204,114 @@ export function getWeeklyReport(slug: string): ContentItem | null {
   return getWeeklyReports().find((w) => w.slug === slug) ?? null;
 }
 
+function parseBenchmarkFromWeekly(): {
+  spyReturnPct: number | null;
+  alphaPct: number | null;
+  asOf: string | null;
+} {
+  const latest = getWeeklyReports()[0];
+  if (!latest) {
+    return { spyReturnPct: null, alphaPct: null, asOf: null };
+  }
+  const spy = latest.content.match(
+    /SPY same period[^\n|]*\|\s*\*\*([+\-]?\d[\d.]*)%/i,
+  );
+  const alpha = latest.content.match(
+    /Alpha vs SPY[^\n|]*\|\s*\*\*([+\-]?\d[\d.]*)%/i,
+  );
+  return {
+    spyReturnPct: spy ? parseFloat(spy[1]) : null,
+    alphaPct: alpha ? parseFloat(alpha[1]) : null,
+    asOf: latest.slug,
+  };
+}
+
 export function getFundSnapshot(): FundSnapshot {
   const days = getJournalDays();
   const latest = days[0];
   const positions = getPositions().filter((p) => p.status === "open");
+  const start = BRAND.startingNav;
 
-  const nav = latest?.nav ?? 100;
-  const returnPct = ((nav - 100) / 100) * 100;
+  const nav = latest?.nav ?? start;
+  const returnPct = ((nav - start) / start) * 100;
+  const bench = parseBenchmarkFromWeekly();
 
-  const cashMatch = latest?.sessions[0]?.content.match(
-    /Cash\*\*\s*\|\s*\*\*\$([\d.]+)/,
+  const latestContent =
+    latest?.sessions[latest.sessions.length - 1]?.content ??
+    latest?.sessions[0]?.content ??
+    "";
+  const cashMatch = latestContent.match(
+    /Cash(?: \(marked\))?\*\*\s*\|\s*\*\*\$([\d.]+)/i,
   );
-  const cashPctMatch = latest?.sessions[0]?.content.match(
-    /Cash\*\*[^|]*\|[^|]*\(([\d.]+)%\)/,
+  const cashPctMatch = latestContent.match(
+    /Cash(?: \(marked\))?\*\*[^|]*\|[^|]*\(([\d.]+)%\)/i,
   );
 
   return {
     nav,
     returnPct,
-    cash: cashMatch ? parseFloat(cashMatch[1]) : 25,
-    cashPct: cashPctMatch ? parseFloat(cashPctMatch[1]) : 25,
+    pnlUsd: nav - start,
+    cash: cashMatch ? parseFloat(cashMatch[1]) : nav,
+    cashPct: cashPctMatch ? parseFloat(cashPctMatch[1]) : positions.length === 0 ? 100 : 0,
     positions: positions.length,
-    lastUpdated: latest?.date ?? "2026-06-18",
+    lastUpdated: latest?.date ?? BRAND.inceptionDate,
+    spyReturnPct: bench.spyReturnPct,
+    alphaPct: bench.alphaPct,
+    benchmarkAsOf: bench.asOf,
   };
+}
+
+/** Latest published session, for the public "what the desk is thinking" panel. */
+export function getLatestThinking(): {
+  date: string;
+  title: string;
+  sessionType: string;
+  brief: string;
+} | null {
+  const day = getJournalDays()[0];
+  if (!day) return null;
+  const session = day.sessions[day.sessions.length - 1] ?? day.sessions[0];
+  if (!session) return null;
+  return {
+    date: day.date,
+    title: session.title,
+    sessionType: session.sessionType,
+    brief: extractThinkingBrief(session.content),
+  };
+}
+
+function extractThinkingBrief(content: string): string {
+  const hawk = content.match(/\*\*Hawk-watch:\*\*\s*(.+)/i);
+  if (hawk) return hawk[1].replace(/\*\*/g, "").trim();
+
+  const decision = content.match(
+    /(?:Decisión|Decision)[^.\n]{0,160}/i,
+  );
+  if (decision) return decision[0].replace(/\*\*/g, "").trim();
+
+  const lines = content
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(
+      (l) =>
+        l.length > 40 &&
+        !l.startsWith("#") &&
+        !l.startsWith("|") &&
+        !l.startsWith("*Fuente") &&
+        !l.startsWith("**Prompt") &&
+        !l.startsWith("**Fund") &&
+        !l.startsWith("**Ses"),
+    );
+  return (lines[0] ?? "See the latest journal for the full session.")
+    .replace(/\*\*/g, "")
+    .slice(0, 280);
 }
 
 export function getNavSeries(): NavPoint[] {
   const days = getJournalDays().slice().reverse();
-  const points: NavPoint[] = [{ date: "2026-06-18", nav: 100 }];
+  const points: NavPoint[] = [
+    { date: BRAND.inceptionDate, nav: BRAND.startingNav },
+  ];
 
   for (const day of days) {
     if (day.nav !== null) {

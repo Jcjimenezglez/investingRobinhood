@@ -9,7 +9,7 @@ import { BRAND, SITE_FAQ } from "@/lib/site-config";
 export const metadata: Metadata = pageMetadata({
   title: "FAQ",
   description:
-    "Frequently asked questions about Tapefund — a stock newsletter with a live public track record versus the S&P 500.",
+    "Frequently asked questions about Tapefund — a public auto-trader desk with a live Robinhood Agentic track record versus the S&P 500.",
   path: "/faq/",
 });
 
@@ -20,10 +20,9 @@ export default function FaqPage() {
         title="Frequently asked questions"
         body={
           <DirectAnswer className="text-base text-muted-foreground sm:text-lg">
-            {BRAND.name} is a public scoreboard and upcoming newsletter for
-            concentrated stock picking. This FAQ covers what the site is, what
-            is free, how performance versus SPY works, and how to follow
-            updates.
+            {BRAND.name} is a public auto-trader desk. This FAQ covers the live
+            Agentic book, how performance versus SPY is measured, and that
+            dollar figures are unscaled.
           </DirectAnswer>
         }
       />

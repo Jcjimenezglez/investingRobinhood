@@ -27,14 +27,13 @@ const latestJournal = journalDates.slice(0, 5);
 
 const llmsTxt = `# ${SITE_NAME}
 
-> ${SITE_NAME} is a stock newsletter project with a live public track record vs the S&P 500: NAV, daily CIO journal, trades, investment theses, and weekly performance. Newsletter waitlist at /newsletter/ (email capture opening soon).
+> ${SITE_NAME} is a public auto-trader desk: live Robinhood Agentic NAV, holdings, daily CIO journal, closed trades, and weekly performance vs the S&P 500. Dollar figures are the real account (starting $100) — not scaled.
 
 ## Canonical URL
 ${SITE_URL}
 
 ## Primary pages
-- Home / NAV overview: ${SITE_URL}/
-- Stock newsletter waitlist: ${SITE_URL}/newsletter/
+- Home / live book: ${SITE_URL}/
 - Daily journal (CIO cycles): ${SITE_URL}/journal/
 - Trades & positions: ${SITE_URL}/trades/
 - Investment theses: ${SITE_URL}/theses/
@@ -54,21 +53,20 @@ ${latestJournal.map((d) => `- ${SITE_URL}/journal/${d}/`).join("\n")}
 ${SITE_NAME} (${SITE_URL}) — public stock-picking track record vs SPY, updated on trading days.
 
 ## Contact / updates
-Newsletter waitlist: ${SITE_URL}/newsletter/
 RSS for daily journal: ${SITE_URL}/rss.xml
 `;
 
 const llmsFullTxt = `${llmsTxt}
 ## Extended context
 
-${SITE_NAME} documents a concentrated stock-picking book that:
+${SITE_NAME} documents a concentrated auto-trader book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
-- Uses concentrated Ackman-style sizing (up to 50% in one idea, 10% cash minimum)
+- Runs all-in one listed stock at a time (Kevin Xu filter)
 - Publishes sanitized public logs — no private account identifiers
-- Measures performance against SPY from inception (${SITE_NAME} stock newsletter + live scoreboard)
+- Measures performance against SPY from inception at real dollar scale (start $100)
 
-Strategy keywords: stock newsletter, stock picks, stock recommendations, stock advisor, live track record, vs S&P 500, investment thesis, concentrated portfolio.
+Strategy keywords: public auto trader, live track record, vs S&P 500, investment thesis, concentrated portfolio, Robinhood Agentic.
 
 Not investment advice. Past performance does not guarantee future results.
 `;

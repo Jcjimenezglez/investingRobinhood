@@ -2,11 +2,11 @@
 export const BRAND = {
   name: "Tapefund",
   legalName: "Tapefund",
-  tagline: "Stock newsletter with a live track record",
+  tagline: "Public auto-trader desk",
   shortDescription:
-    "Tapefund is a stock newsletter backed by a live public track record vs the S&P 500 — NAV, journal, and theses updated from a concentrated CIO book.",
+    "Tapefund is a public auto-trader desk: live Robinhood Agentic NAV, holdings, journals, and performance versus the S&P 500 — shown at real dollar scale.",
   description:
-    "Tapefund publishes a live stock-picking track record and a Stock Advisor–style newsletter. Performance is measured against the S&P 500 (SPY) since inception. The public site shows NAV, positions, and CIO notes; the newsletter waitlist is for full theses and weekly stock recommendations.",
+    "Tapefund publishes the live book of an autonomous equity desk on Robinhood Agentic. Portfolio value, P&L, closed trades, and CIO notes are real account figures versus SPY since inception — not a scaled marketing NAV.",
   /** Vibrant pink — matches favicon / isotype */
   color: "#FF4D8D",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tapefund.com",
@@ -16,17 +16,14 @@ export const BRAND = {
   /** Real account starting NAV (source of truth in logs). */
   startingNav: 100,
   /**
-   * Public UI multiplies ledger USD (NAV, size, cash) by this factor.
+   * Public UI uses ledger USD as-is (NAV, size, cash).
    * Share prices and percentages are never scaled.
    */
-  displayUsdScale: 100,
+  displayUsdScale: 1,
   keywords: [
-    "stock newsletter",
-    "stock picks",
-    "stock recommendations",
-    "stock advisor",
-    "stock picking service",
+    "public auto trader",
     "live track record",
+    "Robinhood Agentic",
     "vs S&P 500",
     "investment thesis",
     "concentrated portfolio",
@@ -44,17 +41,12 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is Tapefund?",
     answer:
-      "Tapefund is a stock newsletter backed by a live public track record. It publishes NAV, daily CIO journals, investment theses, trade history, and weekly performance versus the S&P 500 (SPY).",
+      "Tapefund is a public auto-trader desk. It shows the live Robinhood Agentic book: NAV, cash, holdings, daily CIO journals, theses, closed trades, and weekly performance versus the S&P 500 (SPY). Dollar amounts are the real account — they are not scaled.",
   },
   {
-    question: "What is the Tapefund newsletter?",
+    question: "Is Tapefund a newsletter?",
     answer:
-      "A Stock Advisor–style email for full investment theses and weekly stock recommendations. The public site is the free scoreboard (NAV, book, vs SPY). Join the waitlist on /newsletter/ — email capture opens soon.",
-  },
-  {
-    question: "What is free vs what is for the waitlist?",
-    answer:
-      "Free on the site: live NAV, return since inception, open tickers, journal entries, and performance vs SPY. Coming via the newsletter: deeper theses, sizing rationale, and weekly picks commentary.",
+      "No. The product is the public desk itself. Theses, journals, and the scoreboard are on the site. There is no paid letter or waitlist.",
   },
   {
     question: "Is Tapefund investment advice?",
@@ -67,9 +59,9 @@ export const SITE_FAQ: FaqItem[] = [
       "Fund return is measured against SPY from the same inception date (2026-06-18). Weekly performance reports publish fund return, SPY return for the period, and alpha. See the Performance page for the latest scorecard.",
   },
   {
-    question: "Is Tapefund the same as Motley Fool Stock Advisor?",
+    question: "Are the dollar figures real?",
     answer:
-      "No. Motley Fool Stock Advisor is a large paid stock-picking service. Tapefund is a live public track record plus an upcoming newsletter — same category (picks with performance versus the market), different product.",
+      "Yes. Starting NAV was $100 in a dedicated Robinhood Agentic cash account. The site prints that ledger as-is — no 100x or 1000x display multiplier.",
   },
   {
     question: "How often is Tapefund updated?",
@@ -94,6 +86,6 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "How can I follow Tapefund updates?",
     answer:
-      "Join the newsletter waitlist at /newsletter/, subscribe to the RSS feed at /rss.xml, bookmark the Daily Journal, or check the homepage for the latest NAV and recent CIO decisions.",
+      "Bookmark the homepage, read the Daily Journal, subscribe to the RSS feed at /rss.xml, or check Performance every Friday.",
   },
 ];

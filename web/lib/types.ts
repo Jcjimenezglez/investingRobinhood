@@ -41,10 +41,14 @@ export interface ContentItem {
 export interface FundSnapshot {
   nav: number;
   returnPct: number;
+  pnlUsd: number;
   cash: number;
   cashPct: number;
   positions: number;
   lastUpdated: string;
+  spyReturnPct: number | null;
+  alphaPct: number | null;
+  benchmarkAsOf: string | null;
 }
 
 export interface NavPoint {

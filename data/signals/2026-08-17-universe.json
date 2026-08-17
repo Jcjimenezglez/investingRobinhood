@@ -1,0 +1,411 @@
+{
+  "date": "2026-08-17",
+  "regime": "neutral",
+  "generated_by": "CIO merge MCP quotes/fundamentals + Xu signal-weights v2.1.0",
+  "prompt_version": "2.0.4",
+  "weights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "note": "No Ackman flags. Social/vibes is 35% of score. Flatten 3-name book before any new entry.",
+  "tickers": [
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "last_rth": 225.17,
+        "premarket": 226.64,
+        "prev_close": 225.16,
+        "chg_pct_vs_close": 0.657,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 5539000000000.0,
+        "pe_ratio": 34.48,
+        "high_52w": 236.54,
+        "low_52w": 164.07,
+        "avg_volume": 114157785,
+        "pct_below_52w_high": 4.19
+      },
+      "extended": {
+        "rsi_14d": 63.03
+      },
+      "catalyst_days": 9,
+      "catalyst": "Q2 FY27 EPS est $2.07 \u2014 2026-08-26 pm",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.95,
+        "near_term_catalyst": 0.95,
+        "support_not_chase": 0.55,
+        "wont_go_to_zero": 0.95,
+        "total": 0.85,
+        "conviction": "Alta",
+        "note": "WSB/X heavy; print 8/26; ~4% off 52w high / YTD ~+21% = late into Q"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "last_rth": 95.535,
+        "premarket": 95.81,
+        "prev_close": 95.56,
+        "chg_pct_vs_close": 0.262,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 85890000000.0,
+        "pe_ratio": 42.32,
+        "high_52w": 153.86,
+        "low_52w": 63.515,
+        "avg_volume": 15272066,
+        "pct_below_52w_high": 37.73
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": 79,
+      "catalyst": "Q3 tentative 2026-11-04 pm",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.8,
+        "near_term_catalyst": 0.3,
+        "support_not_chase": 0.72,
+        "wont_go_to_zero": 0.9,
+        "total": 0.67,
+        "conviction": "Media",
+        "note": "Retail darling; ~38% off 52w high; next Q Nov \u2014 catalyst far"
+      }
+    },
+    {
+      "symbol": "TSLA",
+      "quote": {
+        "last_rth": 342.305,
+        "premarket": 341.54,
+        "prev_close": 342.27,
+        "chg_pct_vs_close": -0.213,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1352000000000.0,
+        "pe_ratio": 318.01,
+        "high_52w": 498.83,
+        "low_52w": 297.38,
+        "avg_volume": 32213997,
+        "pct_below_52w_high": 31.53
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "No earnings in 14d high-cap calendar",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.85,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.68,
+        "wont_go_to_zero": 0.9,
+        "total": 0.665,
+        "conviction": "Media",
+        "note": "Always vibes; no 14d print; 31% off 52w high"
+      }
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "last_rth": 75.92,
+        "premarket": 77.3,
+        "prev_close": 75.95,
+        "chg_pct_vs_close": 1.777,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 155100000000.0,
+        "pe_ratio": 16.69,
+        "high_52w": 101.99,
+        "low_52w": 65.41,
+        "avg_volume": 23631335,
+        "pct_below_52w_high": 24.21
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "Post Q2",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.55,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.8,
+        "wont_go_to_zero": 0.9,
+        "total": 0.59,
+        "conviction": "Media",
+        "note": "Near 52w low cluster; no near-term catalyst"
+      }
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "last_rth": 589.75,
+        "premarket": 589.0,
+        "prev_close": 589.85,
+        "chg_pct_vs_close": -0.144,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1502000000000.0,
+        "pe_ratio": 22.22,
+        "high_52w": 796.25,
+        "low_52w": 520.26,
+        "avg_volume": 14607946,
+        "pct_below_52w_high": 26.03
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": 72,
+      "catalyst": "Q3 tentative 2026-10-28 pm",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.6,
+        "near_term_catalyst": 0.18,
+        "support_not_chase": 0.76,
+        "wont_go_to_zero": 0.95,
+        "total": 0.588,
+        "conviction": "Media",
+        "note": "26% off 52w; next Q Oct (too far); Jul print already miss"
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "last_rth": 262.63,
+        "premarket": 265.99,
+        "prev_close": 262.65,
+        "chg_pct_vs_close": 1.272,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 2833000000000.0,
+        "pe_ratio": 21.13,
+        "high_52w": 287.2,
+        "low_52w": 196.0,
+        "avg_volume": 42722294,
+        "pct_below_52w_high": 7.39
+      },
+      "extended": {
+        "rsi_14d": 53.49
+      },
+      "catalyst_days": null,
+      "catalyst": "Post Q2 (reported 2026-07-30)",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.55,
+        "near_term_catalyst": 0.22,
+        "support_not_chase": 0.7,
+        "wont_go_to_zero": 0.95,
+        "total": 0.565,
+        "conviction": "Media",
+        "note": "Book name; +12% vs cost \u2014 below 20% target but flatten still"
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "last_rth": 345.9,
+        "premarket": 347.36,
+        "prev_close": 345.9,
+        "chg_pct_vs_close": 0.422,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 4230000000000.0,
+        "pe_ratio": 17.38,
+        "high_52w": 408.61,
+        "low_52w": 196.595,
+        "avg_volume": 27515732,
+        "pct_below_52w_high": 14.99
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "Post Q2 (reported 2026-07-22)",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.5,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.72,
+        "wont_go_to_zero": 0.95,
+        "total": 0.547,
+        "conviction": "Baja",
+        "note": "15% off 52w; post-print; no swing catalyst"
+      }
+    },
+    {
+      "symbol": "SPCX",
+      "quote": {
+        "last_rth": 139.84,
+        "premarket": 139.99,
+        "prev_close": 140.0,
+        "chg_pct_vs_close": -0.007,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1843000000000.0,
+        "pe_ratio": null,
+        "high_52w": 225.64,
+        "low_52w": 104.83,
+        "avg_volume": 158353112,
+        "pct_below_52w_high": 37.96
+      },
+      "extended": {
+        "rsi_14d": 55.07
+      },
+      "catalyst_days": null,
+      "catalyst": "No earnings in 14d high-cap calendar",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.7,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.45,
+        "wont_go_to_zero": 0.85,
+        "total": 0.535,
+        "conviction": "Baja",
+        "note": "Book +22% already in 20\u201330% band; flatten not add"
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "last_rth": 305.98,
+        "premarket": 307.46,
+        "prev_close": 305.93,
+        "chg_pct_vs_close": 0.5,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 4466000000000.0,
+        "pe_ratio": 35.07,
+        "high_52w": 344.57,
+        "low_52w": 223.78,
+        "avg_volume": 46559446,
+        "pct_below_52w_high": 10.77
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "Post Q3 (reported 2026-07-30)",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.5,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.66,
+        "wont_go_to_zero": 0.95,
+        "total": 0.532,
+        "conviction": "Baja",
+        "note": "11% off 52w; post-print"
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "last_rth": 495.18,
+        "premarket": 492.4,
+        "prev_close": 495.4,
+        "chg_pct_vs_close": -0.606,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 3677000000000.0,
+        "pe_ratio": 27.61,
+        "high_52w": 553.72,
+        "low_52w": 349.2,
+        "avg_volume": 33840822,
+        "pct_below_52w_high": 11.07
+      },
+      "extended": {
+        "rsi_14d": 70.92
+      },
+      "catalyst_days": null,
+      "catalyst": "Post FY Q4 (reported 2026-07-29)",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.55,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.22,
+        "wont_go_to_zero": 0.95,
+        "total": 0.44,
+        "conviction": "Baja",
+        "note": "RSI 70.9; book +31% \u2014 Xu already sold"
+      }
+    },
+    {
+      "symbol": "BN",
+      "quote": {
+        "last_rth": 43.855,
+        "premarket": 43.88,
+        "prev_close": 43.85,
+        "chg_pct_vs_close": 0.068,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 107500000000.0,
+        "pe_ratio": 78.19,
+        "high_52w": 49.565,
+        "low_52w": 37.93,
+        "avg_volume": 5106329,
+        "pct_below_52w_high": 11.47
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "Q2 reported 2026-08-13 in-line",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.25,
+        "near_term_catalyst": 0.15,
+        "support_not_chase": 0.7,
+        "wont_go_to_zero": 0.9,
+        "total": 0.435,
+        "conviction": "Baja",
+        "note": "Print done 8/13; low retail vibes"
+      }
+    },
+    {
+      "symbol": "QSR",
+      "quote": {
+        "last_rth": 77.61,
+        "premarket": 77.1,
+        "prev_close": 77.64,
+        "chg_pct_vs_close": -0.696,
+        "source": "MCP get_equity_quotes 2026-08-17T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 35270000000.0,
+        "pe_ratio": 22.95,
+        "high_52w": 81.96,
+        "low_52w": 61.33,
+        "avg_volume": 2533361,
+        "pct_below_52w_high": 5.93
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": null,
+      "catalyst": "Post Q2 (reported 2026-08-06)",
+      "overlooked": null,
+      "scores": {
+        "retail_attention_vibes": 0.2,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.65,
+        "wont_go_to_zero": 0.9,
+        "total": 0.417,
+        "conviction": "Baja",
+        "note": "Thin premarket; no near catalyst"
+      }
+    }
+  ]
+}

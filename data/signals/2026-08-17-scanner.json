@@ -1,0 +1,250 @@
+{
+  "date": "2026-08-17",
+  "generated_by": "MCP run_scan",
+  "qualityFilters": {
+    "minPriceUsd": 5,
+    "minMarketCapUsd": 200000000,
+    "minAvgDailyVolume": 1000000
+  },
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 270,
+      "returned": 200,
+      "quality_hits": 72,
+      "universe_intersection": [],
+      "sample_quality": [
+        {
+          "ticker": "XPEV",
+          "last": 11.92,
+          "pct_change": 0.018803418803418858,
+          "market_cap": 11097865893.0,
+          "volume": 4973912.081853,
+          "earnings_date": "2.0260824e+07",
+          "name": "XPeng"
+        },
+        {
+          "ticker": "BEKE",
+          "last": 16.96,
+          "pct_change": -0.0029394473838918697,
+          "market_cap": 18511403183.0,
+          "volume": 2321081.06844,
+          "earnings_date": "2.0260821e+07",
+          "name": "KE Holdings"
+        },
+        {
+          "ticker": "BHK",
+          "last": 9.01,
+          "pct_change": 0.0,
+          "market_cap": 650740258.0,
+          "volume": 75564.92086,
+          "earnings_date": "2.0260821e+07",
+          "name": "BlackRock Core Bond Trust"
+        },
+        {
+          "ticker": "BJ",
+          "last": 93.32,
+          "pct_change": -0.0009634942725618607,
+          "market_cap": 11927895325.0,
+          "volume": 1150215.06676,
+          "earnings_date": "2.0260821e+07",
+          "name": "BJs"
+        },
+        {
+          "ticker": "BKE",
+          "last": 44.99,
+          "pct_change": 0.01995012468827936,
+          "market_cap": 2272462773.0,
+          "volume": 299459.763994,
+          "earnings_date": "2.0260821e+07",
+          "name": "Buckle"
+        },
+        {
+          "ticker": "BTX",
+          "last": 9.19,
+          "pct_change": 0.008781558726673994,
+          "market_cap": 1063230814.0,
+          "volume": 587593.295276,
+          "earnings_date": "2.0260821e+07",
+          "name": "BlackRock Technology and Private Equity Term Trust"
+        },
+        {
+          "ticker": "FFA",
+          "last": 23.61,
+          "pct_change": 0.0,
+          "market_cap": 471918686.0,
+          "volume": 65214.16799,
+          "earnings_date": "2.0260821e+07",
+          "name": "First Trust Enhanced Equity Income Fund"
+        },
+        {
+          "ticker": "FRA",
+          "last": 10.95,
+          "pct_change": 0.0,
+          "market_cap": 388010600.0,
+          "volume": 129695.1326,
+          "earnings_date": "2.0260821e+07",
+          "name": "BlackRock Floating Rate Income Strategies Fund"
+        },
+        {
+          "ticker": "MNSO",
+          "last": 11.0,
+          "pct_change": -0.06779661016949158,
+          "market_cap": 3523899344.0,
+          "volume": 597534.412771,
+          "earnings_date": "2.0260821e+07",
+          "name": "MINISO Group"
+        },
+        {
+          "ticker": "MZTI",
+          "last": 115.69,
+          "pct_change": -0.003102111158983192,
+          "market_cap": 3182367315.0,
+          "volume": 211011.112248,
+          "earnings_date": "2.0260821e+07",
+          "name": "The Marzetti Company"
+        },
+        {
+          "ticker": "NEGG",
+          "last": 18.7,
+          "pct_change": 0.0,
+          "market_cap": 391154338.0,
+          "volume": 52780.864093,
+          "earnings_date": "2.0260821e+07",
+          "name": "Newegg Commerce"
+        },
+        {
+          "ticker": "NMM",
+          "last": 81.88,
+          "pct_change": 0.0,
+          "market_cap": 2327407803.0,
+          "volume": 201236.092257,
+          "earnings_date": "2.0260821e+07",
+          "name": "Navios Maritime"
+        }
+      ]
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 241,
+      "returned": 200,
+      "quality_hits_mcap_ge_1b": 23,
+      "universe_intersection": [],
+      "sample_quality_mcap_ge_1b": [
+        {
+          "ticker": "BRBI",
+          "last": 11.61,
+          "pct_change": 0.2351063829787233,
+          "market_cap": 2220659141.0,
+          "volume": 1520.821622,
+          "earnings_date": null,
+          "name": "BRBI BR Partners S.A. ADSs"
+        },
+        {
+          "ticker": "ARGX",
+          "last": 947.6,
+          "pct_change": 0.11313418459044516,
+          "market_cap": 52688318994.0,
+          "volume": 278706.077965,
+          "earnings_date": null,
+          "name": "argenx SE"
+        },
+        {
+          "ticker": "OCUL",
+          "last": 11.14,
+          "pct_change": 0.10956175298804796,
+          "market_cap": 2206041394.0,
+          "volume": 1634137.148678,
+          "earnings_date": null,
+          "name": "Ocular Therapeutix"
+        },
+        {
+          "ticker": "MESO",
+          "last": 17.01,
+          "pct_change": 0.09073420968259063,
+          "market_cap": 2024513203.0,
+          "volume": 165758.15544,
+          "earnings_date": null,
+          "name": "Mesoblast"
+        },
+        {
+          "ticker": "PURR",
+          "last": 7.22,
+          "pct_change": 0.08083832335329343,
+          "market_cap": 1338762637.0,
+          "volume": 5444178.379887,
+          "earnings_date": null,
+          "name": "Hyperliquid Strategies"
+        },
+        {
+          "ticker": "HCM",
+          "last": 13.0,
+          "pct_change": 0.06557377049180334,
+          "market_cap": 2168881554.0,
+          "volume": 13091.442251,
+          "earnings_date": null,
+          "name": "Hutchmed"
+        },
+        {
+          "ticker": "HBNB",
+          "last": 5.75,
+          "pct_change": 0.06481481481481474,
+          "market_cap": 1263774884.0,
+          "volume": 706.5349,
+          "earnings_date": null,
+          "name": "Hotel101"
+        },
+        {
+          "ticker": "VIST",
+          "last": 71.9651,
+          "pct_change": 0.05350753915971314,
+          "market_cap": 7559690367.0,
+          "volume": 641073.85117,
+          "earnings_date": null,
+          "name": "Vista Energy"
+        },
+        {
+          "ticker": "ALM",
+          "last": 15.86,
+          "pct_change": 0.05102717031146452,
+          "market_cap": 4354616921.0,
+          "volume": 6350608.963573,
+          "earnings_date": null,
+          "name": "Almonty Industries Inc."
+        },
+        {
+          "ticker": "ALAB",
+          "last": 337.5,
+          "pct_change": 0.04940766767202508,
+          "market_cap": 55794544297.0,
+          "volume": 2528734.136418,
+          "earnings_date": null,
+          "name": "Astera Labs, Inc."
+        },
+        {
+          "ticker": "ATAT",
+          "last": 35.8,
+          "pct_change": 0.04708979233694061,
+          "market_cap": 4649956438.0,
+          "volume": 847390.612241,
+          "earnings_date": null,
+          "name": "Atour Lifestyle"
+        },
+        {
+          "ticker": "ETSY",
+          "last": 83.6025,
+          "pct_change": 0.046339173967459325,
+          "market_cap": 7333361665.0,
+          "volume": 1987640.895787,
+          "earnings_date": null,
+          "name": "Etsy"
+        }
+      ]
+    }
+  ],
+  "note": "Universe intersection empty on both scans (mega-caps already reported except NVDA 8/26 which sits just outside the scan 0-7d earnings window). NVDA catalyst from get_earnings_results / get_earnings_calendar."
+}

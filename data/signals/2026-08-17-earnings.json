@@ -1,0 +1,68 @@
+{
+  "date": "2026-08-17",
+  "source": "MCP get_earnings_calendar high_market_cap 14d + get_earnings_results",
+  "window": {
+    "start": "2026-08-17",
+    "days": 14,
+    "filter": "high_market_cap"
+  },
+  "universe": {
+    "NVDA": {
+      "report": "2026-08-26",
+      "timing": "pm",
+      "eps_est": 2.07,
+      "verified": true,
+      "note": "Q2 FY27 \u2014 primary Xu catalyst in seed list"
+    },
+    "META": {
+      "next": "2026-10-28",
+      "timing": "pm",
+      "verified": false,
+      "last": "2026-07-29 miss 6.18 vs 7.18"
+    },
+    "HOOD": {
+      "next": "2026-11-04",
+      "timing": "pm",
+      "verified": false,
+      "last": "2026-07-29 beat 0.62 vs 0.41"
+    }
+  },
+  "this_week_retail": [
+    {
+      "symbol": "HD",
+      "date": "2026-08-18",
+      "timing": "am",
+      "eps_est": 4.73
+    },
+    {
+      "symbol": "LOW",
+      "date": "2026-08-19",
+      "timing": "am",
+      "eps_est": 4.38
+    },
+    {
+      "symbol": "TGT",
+      "date": "2026-08-19",
+      "timing": "am",
+      "eps_est": 2.24
+    },
+    {
+      "symbol": "TJX",
+      "date": "2026-08-19",
+      "timing": "am",
+      "eps_est": 1.19
+    },
+    {
+      "symbol": "WMT",
+      "date": "2026-08-20",
+      "timing": "am",
+      "eps_est": 0.74
+    }
+  ],
+  "mega_week_of_aug_26": [
+    "NVDA",
+    "CRM",
+    "CRWD",
+    "INTU"
+  ]
+}

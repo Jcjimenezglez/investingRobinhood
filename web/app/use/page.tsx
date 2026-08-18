@@ -5,7 +5,7 @@ import { BRAND } from "@/lib/site-config";
 export const metadata: Metadata = pageMetadata({
   title: "MCP server for Cursor and Claude",
   description:
-    "Tapefund Desk MCP: MCP tools so other AI agents can read the public swing-trading book, trading journal, and holdings. Remote-style MCP server for Cursor and Claude — not a brokerage.",
+    "Tapefund MCP: npx tapefund-mcp — MCP tools for the public Robinhood Agentic swing-trading book, trading journal, and holdings. Same install pattern as Rosetta. Not a brokerage.",
   path: "/use/",
   keywords: [
     "mcp server",
@@ -13,91 +13,83 @@ export const metadata: Metadata = pageMetadata({
     "cursor mcp",
     "mcp tools",
     "claude mcp",
-    "remote mcp server",
+    "npx mcp",
   ],
 });
 
-const packs = [
-  {
-    name: "Scout",
-    price: "$9",
-    credits: "500 calls",
-    note: "Enough to wire a client and pull the book for a week.",
-  },
-  {
-    name: "Desk",
-    price: "$29",
-    credits: "2,500 calls",
-    note: "Daily CIO cycles in another agent. Default pack.",
-  },
-  {
-    name: "Fund",
-    price: "$99",
-    credits: "12,000 calls",
-    note: "Always-on scanners and research desks.",
-  },
-];
-
 const tools = [
-  ["get_book_snapshot", "NAV, cash, return vs SPY, open count — real Agentic dollars."],
-  ["get_closed_trades", "Finished trades with size, return, and exit reason."],
-  ["get_holdings", "What is still open. Empty when the book is cash."],
-  ["get_latest_thinking", "Latest CIO stance in plain English."],
-  ["get_all_in_rules", "Hard rules the desk cannot waive."],
-  ["get_journal_day", "One published session by date."],
+  ["get_book_snapshot", "GET /api/v1/snapshot.json", "NAV, cash, return vs $100."],
+  ["get_closed_trades", "GET /api/v1/closed-trades.json", "Finished trades."],
+  ["get_holdings", "GET /api/v1/holdings.json", "Open names, or empty if cash."],
+  ["get_latest_thinking", "GET /api/v1/thinking.json", "Latest CIO journal markdown."],
+  ["get_all_in_rules", "GET /api/v1/rules.json", "Hard rules the desk cannot waive."],
+  ["get_journal_day", "GET /api/v1/journal/{date}.json", "One published day."],
+  ["get_credit_usage", "GET /api/v1/credit-usage.json", "Access status."],
 ];
 
-export default function UsePage() {
-  const mcpUrl = `${BRAND.url.replace(/\/$/, "")}/use/`;
-  const cursorSnippet = `{
+const npxSnippet = `{
   "mcpServers": {
-    "tapefund-desk": {
-      "command": "node",
-      "args": ["mcp/server.mjs"],
+    "tapefund": {
+      "command": "npx",
+      "args": ["-y", "tapefund-mcp"],
       "env": {
-        "TAPEFUND_API_KEY": "tf_live_..."
+        "TAPEFUND_API_URL": "https://tapefund.com"
       }
     }
   }
 }`;
+
+export default function UsePage() {
+  const restIndex = `${BRAND.url.replace(/\/$/, "")}/api/v1/index.json`;
 
   return (
     <>
       <section className="panel section">
         <div className="section-head">
           <div>
-            <h2>MCP server for other agents</h2>
+            <h2>MCP server for agent builders</h2>
             <p>
-              Other AIs can subscribe to this Robinhood Agentic book as an MCP
-              server (Cursor, Claude, or any MCP client). They pay in prepaid
-              credits. They do not get your Robinhood login, and they cannot
-              place orders on the Agentic account.
+              Same pattern as Rosetta: an npm stdio MCP that calls HTTPS REST.
+              Other agents read this Robinhood Agentic book. They cannot place
+              orders and they do not get brokerage credentials.
             </p>
           </div>
         </div>
         <div className="strategy-grid">
           <article className="strategy-card">
-            <h3>What they buy</h3>
+            <h3>Install (recommended)</h3>
             <p>
-              Structured tools: live NAV, closed trades, holdings, the all-in
-              rules, and the latest CIO note. Same public ledger as this site,
-              machine-readable.
+              Local stdio via npm — <code>npx -y tapefund-mcp</code>. No API
+              key for the public ledger. Point{" "}
+              <code>TAPEFUND_API_URL</code> at this site.
             </p>
-            <ul>
-              {tools.map(([name, blurb]) => (
-                <li key={name}>
-                  <strong>{name}</strong> — {blurb}
-                </li>
-              ))}
-            </ul>
+            <pre
+              style={{
+                margin: "14px 0 0",
+                padding: 16,
+                background: "var(--ink-2)",
+                border: "1px solid var(--line)",
+                overflow: "auto",
+                fontFamily: "var(--font-plex-mono), ui-monospace, monospace",
+                fontSize: 12,
+                lineHeight: 1.5,
+                color: "var(--paper)",
+              }}
+            >
+              {npxSnippet}
+            </pre>
           </article>
           <article className="strategy-card">
-            <h3>What they do not buy</h3>
-            <p>This is not a copy-trading API and not a hosted hedge fund.</p>
+            <h3>What they do not get</h3>
+            <p>Not copy trading. Not a hosted hedge fund. Not Streamable HTTP on this static site.</p>
             <ul>
               <li>No order placement on Tapefund&apos;s Agentic account.</li>
-              <li>No credentials, account IDs, or raw MCP dumps.</li>
-              <li>No advice. Past marks are not a promise.</li>
+              <li>No credentials or account IDs.</li>
+              <li>
+                Remote <code>/api/mcp</code> (Rosetta-style Streamable HTTP)
+                is not on tapefund.com while the site stays a static export.
+                Use npx stdio.
+              </li>
             </ul>
           </article>
         </div>
@@ -106,64 +98,21 @@ export default function UsePage() {
       <section className="panel section">
         <div className="section-head">
           <div>
-            <h2>Credits</h2>
+            <h2>MCP tools</h2>
             <p>
-              One successful tool call = one credit. Failed auth does not
-              deduct. Stripe checkout comes next — packs below are the price
-              list.
+              Each tool is a GET on the public JSON API ({" "}
+              <a href={restIndex}>{restIndex}</a>).
             </p>
           </div>
         </div>
-        <div className="grid">
-          {packs.map((p) => (
-            <div className="tile" key={p.name}>
-              <div className="k">{p.name}</div>
-              <div className="v">{p.price}</div>
-              <div className="s">
-                {p.credits}. {p.note}
-              </div>
-            </div>
+        <ul>
+          {tools.map(([name, rest, blurb]) => (
+            <li key={name}>
+              <strong>{name}</strong> — {blurb}{" "}
+              <span className="muted">{rest}</span>
+            </li>
           ))}
-        </div>
-        <p className="muted" style={{ marginTop: 16 }}>
-          To take live payments: create three Stripe Payment Links (or a
-          metered product) and set <code>STRIPE_CREDITS_PAYMENT_LINK</code>.
-          Checkout emails an API key. The MCP server in{" "}
-          <code>mcp/server.mjs</code> deducts credits per call.
-        </p>
-      </section>
-
-      <section className="panel section">
-        <div className="section-head">
-          <div>
-            <h2>Wire it into Cursor MCP / Claude</h2>
-            <p>
-              Run the local MCP server from this repo until the hosted remote
-              MCP URL ships. Point another agent at it with a key. Docs live at{" "}
-              {mcpUrl}
-            </p>
-          </div>
-        </div>
-        <pre
-          style={{
-            margin: 0,
-            padding: 16,
-            background: "var(--ink-2)",
-            border: "1px solid var(--line)",
-            overflow: "auto",
-            fontFamily: "var(--font-plex-mono), ui-monospace, monospace",
-            fontSize: 12,
-            lineHeight: 1.5,
-            color: "var(--paper)",
-          }}
-        >
-          {cursorSnippet}
-        </pre>
-        <p className="muted" style={{ marginTop: 14 }}>
-          Local: <code>node mcp/server.mjs</code> (stdio). HTTP:{" "}
-          <code>node mcp/server.mjs --http --port 8787</code> then URL{" "}
-          <code>http://127.0.0.1:8787/mcp</code>.
-        </p>
+        </ul>
       </section>
     </>
   );

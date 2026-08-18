@@ -1,0 +1,30 @@
+name: Publish tapefund-mcp
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install site (tsx + generate REST JSON)
+        working-directory: web
+        run: |
+          npm ci
+          npx tsx scripts/generate-desk-api.ts
+      - name: Install, test, publish tapefund-mcp
+        working-directory: packages/tapefund-mcp
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm install
+          npm test
+          npm publish --access public

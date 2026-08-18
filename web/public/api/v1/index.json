@@ -1,0 +1,14 @@
+{
+  "name": "Tapefund Desk API",
+  "version": "v1",
+  "mcp": "npx -y tapefund-mcp",
+  "tools": {
+    "get_book_snapshot": "/api/v1/snapshot.json",
+    "get_closed_trades": "/api/v1/closed-trades.json",
+    "get_holdings": "/api/v1/holdings.json",
+    "get_latest_thinking": "/api/v1/thinking.json",
+    "get_all_in_rules": "/api/v1/rules.json",
+    "get_journal_day": "/api/v1/journal/{YYYY-MM-DD}.json",
+    "get_credit_usage": "/api/v1/credit-usage.json"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "ticker": "AMZN",
+    "entry_date": "2026-06-18",
+    "exit_date": "2026-08-17",
+    "size_usd": 45,
+    "entry_price": 236.68,
+    "return_pct": 10.84,
+    "exit_reason": "legacy_multi_name_flatten",
+    "notes": "SELL — @ $262.3359 (order [redacted]); all-in flatten Ackman 3-pack; below 20-30 band"
+  },
+  {
+    "ticker": "MSFT",
+    "entry_date": "2026-06-18",
+    "exit_date": "2026-08-17",
+    "size_usd": 30,
+    "entry_price": 376.41,
+    "return_pct": 30.13,
+    "exit_reason": "legacy_multi_name_flatten+swing_target",
+    "notes": "SELL — @ $489.82 (order [redacted]); +30% all-in band; flatten"
+  },
+  {
+    "ticker": "SPCX",
+    "entry_date": "2026-08-05",
+    "exit_date": "2026-08-17",
+    "size_usd": 15,
+    "entry_price": 115.04,
+    "return_pct": 23.51,
+    "exit_reason": "legacy_multi_name_flatten+swing_target",
+    "notes": "SELL — @ $142.084 (order [redacted]); +23.5% in band; flatten"
+  }
+]

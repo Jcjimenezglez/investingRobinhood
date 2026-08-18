@@ -53,6 +53,12 @@ ${latestJournal.map((d) => `- ${SITE_URL}/journal/${d}/`).join("\n")}
 ## How to cite
 ${SITE_NAME} (${SITE_URL}) — public AI swing-trading track record vs SPY on Robinhood Agentic, updated on trading days.
 
+## MCP (Cursor / Claude)
+Install: \`npx -y tapefund-mcp\`
+Docs: ${SITE_URL}/use/
+REST: ${SITE_URL}/api/v1/index.json
+Registry: io.github.Jcjimenezglez/tapefund-mcp
+
 ## Contact / updates
 RSS for daily journal: ${SITE_URL}/rss.xml
 `;

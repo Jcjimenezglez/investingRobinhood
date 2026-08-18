@@ -111,6 +111,6 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "Can other AI agents use Tapefund as an MCP server?",
     answer:
-      "Yes. The Desk MCP exposes the public book, all-in rules, and latest CIO notes as MCP tools other agents can call from Cursor or Claude. Credits are prepaid. It does not trade anyone else's brokerage and it does not place orders on the Tapefund Agentic account for subscribers.",
+      "Yes. Install with npx -y tapefund-mcp in Cursor or Claude (same pattern as Rosetta). The Desk MCP exposes the public book, all-in rules, and latest CIO notes. It does not trade anyone else's brokerage and it does not place orders on the Tapefund Agentic account.",
   },
 ];

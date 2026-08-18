@@ -1,0 +1,57 @@
+{
+  "name": "tapefund-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.Jcjimenezglez/tapefund-mcp",
+  "description": "MCP server for Tapefund — public Robinhood Agentic swing-trading book, journal, and holdings for Cursor and Claude",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "tapefund-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test test/*.test.js",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cursor",
+    "tapefund",
+    "robinhood-agentic",
+    "swing-trading"
+  ],
+  "author": "Julio Jimenez <jcjimenezglez@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jcjimenezglez/investingRobinhood.git",
+    "directory": "packages/tapefund-mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/Jcjimenezglez/investingRobinhood/issues"
+  },
+  "homepage": "https://tapefund.com/use/"
+}

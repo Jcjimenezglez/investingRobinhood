@@ -1,0 +1,166 @@
+{
+  "date": "2026-08-18",
+  "regime": "neutral",
+  "generated_by": "CIO merge MCP quotes/fundamentals + Xu signal-weights v2.1.0",
+  "prompt_version": "2.0.4",
+  "weights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "note": "No Ackman flags. Cash book after 8/17 flatten. NVDA Alta score is chase into 8/26 print \u2014 PASS. No BUY.",
+  "tickers": [
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "last_rth": 220.95,
+        "prev_close": 225.01,
+        "chg_pct_vs_close": -1.8,
+        "source": "MCP get_equity_quotes 2026-08-18T13:36Z"
+      },
+      "fundamentals": {
+        "market_cap": 5434012912830,
+        "pe_ratio": 34.46,
+        "high_52w": 236.54,
+        "low_52w": 164.07,
+        "avg_volume": 110684965,
+        "pct_below_52w_high": 6.59
+      },
+      "extended": {
+        "rsi_14d": 62.85
+      },
+      "catalyst_days": 8,
+      "catalyst": "Q2 FY27 EPS est $2.07 \u2014 2026-08-26 pm",
+      "scores": {
+        "retail_attention_vibes": 0.9,
+        "near_term_catalyst": 0.95,
+        "support_not_chase": 0.3,
+        "wont_go_to_zero": 0.95,
+        "total": 0.768,
+        "conviction": "Alta",
+        "note": "Print 8/26; RSI 63; ~6.6% off 52w high; run-up already happened \u2014 PASS chase / do not hold coin-flip night"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "last_rth": 92.97,
+        "prev_close": 96.25,
+        "chg_pct_vs_close": -3.41,
+        "source": "MCP get_equity_quotes 2026-08-18T13:36Z"
+      },
+      "fundamentals": {
+        "market_cap": 83864865244,
+        "pe_ratio": 42.32,
+        "high_52w": 153.86,
+        "low_52w": 63.52,
+        "avg_volume": 14443695,
+        "pct_below_52w_high": 39.6
+      },
+      "extended": {
+        "rsi_14d": 49.72
+      },
+      "catalyst_days": 22,
+      "catalyst": "NFL season 2026-09-09 prediction-market volume (soft); next Q ~2026-11-04 pm (unverified)",
+      "scores": {
+        "retail_attention_vibes": 0.75,
+        "near_term_catalyst": 0.4,
+        "support_not_chase": 0.7,
+        "wont_go_to_zero": 0.85,
+        "total": 0.662,
+        "conviction": "Media",
+        "note": "Dip from ~$100; RSI ~50; no 1\u201321d hard catalyst; crypto slump overlay"
+      }
+    },
+    {
+      "symbol": "TSLA",
+      "quote": {
+        "last_rth": 336.0,
+        "prev_close": 339.3,
+        "chg_pct_vs_close": -0.97,
+        "source": "MCP get_equity_quotes 2026-08-18T13:36Z"
+      },
+      "fundamentals": {
+        "market_cap": 1329379034500,
+        "pe_ratio": 318.0,
+        "high_52w": 498.83,
+        "low_52w": 297.38,
+        "avg_volume": 30989570,
+        "pct_below_52w_high": 32.6
+      },
+      "extended": {},
+      "catalyst_days": null,
+      "catalyst": "None in 14d earnings window",
+      "scores": {
+        "retail_attention_vibes": 0.8,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.55,
+        "wont_go_to_zero": 0.95,
+        "total": 0.62,
+        "conviction": "Media",
+        "note": "Vibes without swing event"
+      }
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "last_rth": 552.39,
+        "prev_close": 568.97,
+        "chg_pct_vs_close": -2.91,
+        "source": "MCP get_equity_quotes 2026-08-18T13:36Z"
+      },
+      "fundamentals": {
+        "market_cap": 1408440590945,
+        "pe_ratio": 22.22,
+        "high_52w": 790.8,
+        "low_52w": 520.26,
+        "avg_volume": 13736700,
+        "pct_below_52w_high": 30.1
+      },
+      "extended": {
+        "rsi_14d": 41.88
+      },
+      "catalyst_days": null,
+      "catalyst": "No print in 14d window",
+      "scores": {
+        "retail_attention_vibes": 0.55,
+        "near_term_catalyst": 0.3,
+        "support_not_chase": 0.7,
+        "wont_go_to_zero": 0.95,
+        "total": 0.582,
+        "conviction": "Media",
+        "note": "RSI 42 / down 2.9% vs Mon \u2014 dip without near catalyst"
+      }
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "last_rth": 75.78,
+        "prev_close": 74.99,
+        "chg_pct_vs_close": 1.05,
+        "source": "MCP get_equity_quotes 2026-08-18T13:36Z"
+      },
+      "fundamentals": {
+        "market_cap": 154979249293,
+        "pe_ratio": 16.48,
+        "high_52w": 101.99,
+        "low_52w": 65.41,
+        "avg_volume": 24144497,
+        "pct_below_52w_high": 25.7
+      },
+      "extended": {},
+      "catalyst_days": null,
+      "catalyst": "Post-print; none 14d",
+      "scores": {
+        "retail_attention_vibes": 0.45,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.6,
+        "wont_go_to_zero": 0.95,
+        "total": 0.518,
+        "conviction": "Baja",
+        "note": "Needs catalyst"
+      }
+    }
+  ]
+}

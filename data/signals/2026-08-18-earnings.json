@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-18",
+  "source": "MCP get_earnings_calendar high_market_cap days=14",
+  "highlights": {
+    "today_am": [
+      "HD",
+      "BIDU",
+      "KLAR",
+      "AS"
+    ],
+    "today_pm": [
+      "TOL",
+      "JKHY",
+      "KEYS"
+    ],
+    "wed_am": [
+      "TGT",
+      "LOW",
+      "TJX",
+      "EL",
+      "ADI"
+    ],
+    "thu_am": [
+      "WMT",
+      "DE",
+      "BABA",
+      "NTES"
+    ],
+    "nvda": "2026-08-26 pm est EPS 2.07"
+  }
+}

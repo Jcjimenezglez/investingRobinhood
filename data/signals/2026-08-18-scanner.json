@@ -1,0 +1,217 @@
+{
+  "date": "2026-08-18",
+  "generated_by": "MCP run_scan",
+  "qualityFilters": {
+    "minPriceUsd": 5,
+    "minMarketCapUsd": 200000000,
+    "minAvgDailyVolume": 1000000
+  },
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 289,
+      "returned": 200,
+      "quality_hits": 79,
+      "universe_intersection": [],
+      "sample_quality": [
+        {
+          "ticker": "BMO",
+          "last": 184.835,
+          "pct_change": -0.002401770293609635,
+          "market_cap": 129777931169.0,
+          "volume": 9674.575547,
+          "earnings_date": "2.0260825e+07",
+          "name": "Bank of Montreal"
+        },
+        {
+          "ticker": "BNS",
+          "last": 91.25,
+          "pct_change": -0.0010946907498631015,
+          "market_cap": 111337232312.0,
+          "volume": 34099.263398,
+          "earnings_date": "2.0260825e+07",
+          "name": "Bank Of Nova Scotia"
+        },
+        {
+          "ticker": "BOX",
+          "last": 32.71,
+          "pct_change": 0.013007122948281255,
+          "market_cap": 4473218751.0,
+          "volume": 27203.11799,
+          "earnings_date": "2.0260825e+07",
+          "name": "Box"
+        },
+        {
+          "ticker": "CDLR",
+          "last": 23.4,
+          "pct_change": 0.0008554319931565259,
+          "market_cap": 2248775255.0,
+          "volume": 3818.065953,
+          "earnings_date": "2.0260825e+07",
+          "name": "Cadeler"
+        },
+        {
+          "ticker": "CTRN",
+          "last": 72.0,
+          "pct_change": -0.009219760561442159,
+          "market_cap": 604830263.0,
+          "volume": 2750.325108,
+          "earnings_date": "2.0260825e+07",
+          "name": "Citi Trends"
+        },
+        {
+          "ticker": "DKS",
+          "last": 196.235,
+          "pct_change": -2.5479005299609927e-05,
+          "market_cap": 17563977859.0,
+          "volume": 40792.371908,
+          "earnings_date": "2.0260825e+07",
+          "name": "Dicks Sporting Goods"
+        },
+        {
+          "ticker": "ELMD",
+          "last": 40.37,
+          "pct_change": 0.0034799900571712795,
+          "market_cap": 333106974.0,
+          "volume": 3121.963071,
+          "earnings_date": "2.0260825e+07",
+          "name": "Electromed"
+        },
+        {
+          "ticker": "FSCO",
+          "last": 5.075,
+          "pct_change": -0.004901960784313621,
+          "market_cap": 1031575189.0,
+          "volume": 42385.120225,
+          "earnings_date": "2.0260825e+07",
+          "name": "FS Credit Opportunities"
+        },
+        {
+          "ticker": "GASS",
+          "last": 9.56,
+          "pct_change": -0.004166666666666578,
+          "market_cap": 356982585.0,
+          "volume": 1976.855261,
+          "earnings_date": "2.0260825e+07",
+          "name": "StealthGas"
+        },
+        {
+          "ticker": "GFI",
+          "last": 41.62,
+          "pct_change": 0.0028915662650601795,
+          "market_cap": 37216844292.0,
+          "volume": 392972.12962,
+          "earnings_date": "2.0260825e+07",
+          "name": "Gold Fields"
+        },
+        {
+          "ticker": "INTU",
+          "last": 346.37,
+          "pct_change": 0.03209177592371865,
+          "market_cap": 91799017200.0,
+          "volume": 240229.304004,
+          "earnings_date": "2.0260825e+07",
+          "name": "Intuit"
+        },
+        {
+          "ticker": "MAGH",
+          "last": 6.98,
+          "pct_change": null,
+          "market_cap": 225446000.0,
+          "volume": 0.0,
+          "earnings_date": "2.0260825e+07",
+          "name": "Magnitude International"
+        }
+      ]
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 238,
+      "returned": 200,
+      "quality_hits": 54,
+      "top_quality_gainers": [
+        {
+          "ticker": "AMLX",
+          "last": 30.36,
+          "pct_change": 0.4167055529631358,
+          "market_cap": 2391138610.0,
+          "volume": 5957814.037763,
+          "earnings_date": null,
+          "name": "Amylyx Pharmaceuticals"
+        },
+        {
+          "ticker": "WEAV",
+          "last": 7.295,
+          "pct_change": 0.31916817359855326,
+          "market_cap": 442395128.0,
+          "volume": 8863367.414076,
+          "earnings_date": null,
+          "name": "Weave Communications"
+        },
+        {
+          "ticker": "VOGX",
+          "last": 18.7,
+          "pct_change": 0.18730158730158725,
+          "market_cap": 220682554.0,
+          "volume": 222324.414067,
+          "earnings_date": null,
+          "name": "Vogenx Inc"
+        },
+        {
+          "ticker": "DUOT",
+          "last": 12.12,
+          "pct_change": 0.17898832684824903,
+          "market_cap": 322613522.0,
+          "volume": 1112635.451865,
+          "earnings_date": null,
+          "name": "Duos Technologies"
+        },
+        {
+          "ticker": "HAE",
+          "last": 104.04,
+          "pct_change": 0.15254237288135605,
+          "market_cap": 4107018793.0,
+          "volume": 210611.559918,
+          "earnings_date": null,
+          "name": "Haemonetics"
+        },
+        {
+          "ticker": "ENRD",
+          "last": 6.975,
+          "pct_change": 0.13230519480519473,
+          "market_cap": 868835150.0,
+          "volume": 3307997.544775,
+          "earnings_date": null,
+          "name": "Einride AB"
+        },
+        {
+          "ticker": "EYPT",
+          "last": 5.4698,
+          "pct_change": 0.1231622176591376,
+          "market_cap": 419422051.0,
+          "volume": 2909825.232179,
+          "earnings_date": null,
+          "name": "EyePoint"
+        },
+        {
+          "ticker": "KURA",
+          "last": 12.52,
+          "pct_change": 0.10992907801418442,
+          "market_cap": 1003475782.0,
+          "volume": 499799.326038,
+          "earnings_date": null,
+          "name": "Kura Oncology"
+        }
+      ]
+    },
+    {
+      "key": "oversold-quality",
+      "scan_id": null,
+      "note": "not created \u2014 skip"
+    }
+  ]
+}

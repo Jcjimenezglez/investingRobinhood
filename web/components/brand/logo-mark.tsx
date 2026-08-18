@@ -12,7 +12,7 @@ const sizes = {
   lg: "size-10",
 } as const;
 
-/** Pink circle isotype — favicon matches this mark. */
+/** Monochrome isotype — favicon matches this mark. */
 export function LogoMark({ size = "md", className }: LogoMarkProps) {
   return (
     <span

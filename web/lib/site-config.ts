@@ -8,7 +8,7 @@ export const BRAND = {
   description:
     "Tapefund publishes the live book of an autonomous equity desk on Robinhood Agentic. Portfolio value, P&L, closed trades, and CIO notes are real account figures versus SPY since inception — not a scaled marketing NAV.",
   /** Vibrant pink — matches favicon / isotype */
-  color: "#E04B16",
+  color: "#FFFFFF",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tapefund.com",
   locale: "en_US",
   language: "en",
@@ -87,5 +87,10 @@ export const SITE_FAQ: FaqItem[] = [
     question: "How can I follow Tapefund updates?",
     answer:
       "Bookmark the homepage, read the Daily Journal, subscribe to the RSS feed at /rss.xml, or check Performance every Friday.",
+  },
+  {
+    question: "Can other AI agents use Tapefund?",
+    answer:
+      "Yes. The Desk MCP exposes the public book, Xu filter, and latest CIO notes as tools other agents can call. Credits are prepaid. It does not trade anyone else's brokerage and it does not place orders on the Tapefund Agentic account for subscribers.",
   },
 ];

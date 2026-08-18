@@ -10,7 +10,7 @@ Prepaid tools for **other AI agents**. Not a brokerage. Not copy-trading.
 | `get_closed_trades` | 1 | Closed ledger rows |
 | `get_holdings` | 1 | Open names |
 | `get_latest_thinking` | 1 | Latest CIO markdown |
-| `get_xu_filter` | 1 | Kevin Xu hard rules |
+| `get_all_in_rules` | 1 | All-in hard rules |
 | `get_journal_day` | 1 | Sessions for a date |
 
 ## Run

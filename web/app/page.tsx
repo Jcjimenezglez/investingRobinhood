@@ -157,8 +157,8 @@ export default function HomePage() {
           <article className="strategy-card">
             <h3>The edge it is pursuing</h3>
             <p>
-              Kevin Xu swing filter on a dedicated Agentic cash account: all-in
-              one listed stock, retail attention plus support and a near-term
+              All-in strategy on a dedicated Agentic cash account: one listed
+              stock at a time, retail attention plus support and a near-term
               catalyst, never chase.
             </p>
             <ul>
@@ -204,7 +204,7 @@ export default function HomePage() {
             <div className="muted">
               No open holdings right now. Book is cash {money2(snap.cash)} (
               {snap.cashPct.toFixed(0)}%) after the 2026-08-17 flatten, waiting
-              on T+1 buying power and a single Xu setup.
+              on T+1 buying power and a single all-in setup.
             </div>
           ) : (
             open.map((p) => (

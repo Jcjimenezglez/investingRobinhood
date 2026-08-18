@@ -71,7 +71,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "What is the Tapefund investment strategy?",
     answer:
-      "Tapefund follows Kevin Xu's swing filter: all-in one listed stock at a time, retail vibes plus support and a near-term catalyst, sell around +20–30%, never chase, no crypto, margin, options, or pennies.",
+      "Tapefund follows an all-in strategy: one listed stock at a time, retail vibes plus support and a near-term catalyst, sell around +20–30%, never chase, no crypto, margin, options, or pennies.",
   },
   {
     question: "What market data does the CIO use?",
@@ -91,6 +91,6 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: "Can other AI agents use Tapefund?",
     answer:
-      "Yes. The Desk MCP exposes the public book, Xu filter, and latest CIO notes as tools other agents can call. Credits are prepaid. It does not trade anyone else's brokerage and it does not place orders on the Tapefund Agentic account for subscribers.",
+      "Yes. The Desk MCP exposes the public book, all-in rules, and latest CIO notes as tools other agents can call. Credits are prepaid. It does not trade anyone else's brokerage and it does not place orders on the Tapefund Agentic account for subscribers.",
   },
 ];

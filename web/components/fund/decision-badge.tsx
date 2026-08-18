@@ -16,7 +16,7 @@ export function DecisionBadge({
       className={cn(
         "rounded-md border-border text-xs font-medium",
         d === "HOLD" && "bg-muted text-muted-foreground",
-        d === "BUY" && "border-emerald-600/30 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
+        d === "BUY" && "border-foreground/30 bg-foreground/10 text-foreground",
         d === "SELL" && "border-foreground/20 bg-foreground/5 text-foreground",
         className,
       )}
@@ -34,7 +34,7 @@ export function StatusBadge({ status }: { status: string }) {
       className={cn(
         "rounded-md text-xs font-medium capitalize",
         s === "open" &&
-          "border-emerald-600/30 bg-emerald-50 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
+          "border-foreground/30 bg-foreground/10 text-foreground",
         s !== "open" && "border-border text-muted-foreground",
       )}
     >

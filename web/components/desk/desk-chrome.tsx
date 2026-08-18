@@ -37,7 +37,7 @@ export function DeskChrome({
         </div>
         <nav className="nav" aria-label="Site navigation">
           <div className="stamp">Updated {updated}</div>
-          <Link href="/methodology/">How the desk works</Link>
+          <Link href="/use/">Desk MCP</Link>
         </nav>
       </header>
 
@@ -48,7 +48,7 @@ export function DeskChrome({
           </Link>
         ))}
         <Link href="/journal/">Journal</Link>
-        <Link href="/performance/">Scorecards</Link>
+        <Link href="/use/">MCP</Link>
       </nav>
 
       {children}

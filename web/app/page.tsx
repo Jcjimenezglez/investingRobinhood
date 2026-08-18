@@ -1,258 +1,360 @@
 import Link from "next/link";
-import { ArrowRight, Banknote, LineChart, Percent, Wallet } from "lucide-react";
-import { NavAreaChart } from "@/components/charts/nav-area-chart";
-import { PositionsTable } from "@/components/fund/positions-table";
-import { StatCard } from "@/components/fund/stat-card";
-import {
-  MarketingSection,
-  PageShell,
-} from "@/components/marketing/section";
-import { FaqSection } from "@/components/seo/faq-section";
+import { ClosedList, ImprovementList, ReasonList } from "@/components/desk/desk-lists";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Button } from "@/components/ui/button";
 import {
+  getClosedPositions,
   getFundSnapshot,
+  getImprovements,
   getLatestThinking,
-  getNavSeries,
-  getPositions,
+  getOpenPositions,
+  getTradeReasons,
 } from "@/lib/content";
-import { formatLedgerUsd } from "@/lib/display-money";
+import {
+  money2,
+  signedMoney2,
+  signedPct,
+  toneClass,
+} from "@/lib/display-money";
 import { faqPageJsonLd } from "@/lib/seo";
 import { BRAND, SITE_FAQ } from "@/lib/site-config";
+import { formatConviction } from "@/lib/localize";
 
 const homeFaq = SITE_FAQ.filter((item) =>
   [
     "What is Tapefund?",
-    "Is Tapefund a newsletter?",
     "Are the dollar figures real?",
     "How does Tapefund compare to the S&P 500?",
     "Is Tapefund investment advice?",
   ].includes(item.question),
 );
 
-const rules = [
-  {
-    title: "All-in one name",
-    body: "One listed stock at a time. Flatten before a new entry. Cash reserve ~8% when invested.",
-  },
-  {
-    title: "Hard limits",
-    body: "Shares only. No crypto, options, margin, or pennies. Don't chase a name that already ran.",
-  },
-  {
-    title: "How it exits",
-    body: "Sell around +20–30% or when the setup dies. Earnings are a coin flip. No mechanical stop-loss.",
-  },
-];
+function fmtDay(iso: string): string {
+  const d = new Date(`${iso}T12:00:00Z`);
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
 
 export default function HomePage() {
-  const snapshot = getFundSnapshot();
-  const navSeries = getNavSeries();
-  const open = getPositions().filter((p) => p.status === "open");
-  const closed = getPositions().filter((p) => p.status === "closed");
+  const snap = getFundSnapshot();
+  const open = getOpenPositions();
+  const closed = getClosedPositions();
   const thinking = getLatestThinking();
-  const returnLabel = `${snapshot.returnPct >= 0 ? "+" : ""}${snapshot.returnPct.toFixed(2)}%`;
-  const alphaLabel =
-    snapshot.alphaPct !== null
-      ? `${snapshot.alphaPct >= 0 ? "+" : ""}${snapshot.alphaPct.toFixed(2)}%`
-      : "—";
-  const spyLabel =
-    snapshot.spyReturnPct !== null
-      ? `${snapshot.spyReturnPct >= 0 ? "+" : ""}${snapshot.spyReturnPct.toFixed(2)}% SPY`
-      : "same window as the book";
+  const reasons = getTradeReasons();
+  const improvements = getImprovements();
+  const up = snap.pnlUsd >= 0;
+
+  const tiles: [string, string, string, string][] = [
+    [
+      "Realized P/L",
+      signedMoney2(snap.realizedPnlUsd),
+      "Locked in from closed Agentic trades.",
+      toneClass(snap.realizedPnlUsd),
+    ],
+    [
+      "Open P/L",
+      signedMoney2(snap.openPnlUsd),
+      "Remaining open P/L so the total stays broker-true.",
+      toneClass(snap.openPnlUsd),
+    ],
+    [
+      "Capital deployed",
+      money2(snap.deployedUsd),
+      "Cost basis of open positions.",
+      "blue",
+    ],
+    [
+      "Closed trades",
+      String(snap.closedCount),
+      snap.winRatePct == null
+        ? "Win rate not meaningful yet."
+        : `${snap.winRatePct.toFixed(0)}% win rate so far.`,
+      "amber",
+    ],
+  ];
+  if (snap.spyReturnPct != null) {
+    tiles.push([
+      "S&P 500 (SPY)",
+      signedPct(snap.spyReturnPct),
+      `Buy-and-hold SPY from the first trade day (${fmtDay(snap.firstTradeAt)}), last Friday scorecard.`,
+      toneClass(snap.spyReturnPct),
+    ]);
+  }
 
   return (
-    <PageShell fullBleed>
-      <section className="border-b border-border">
-        <div className="container-page space-y-8 py-12 sm:py-16">
-          <div className="max-w-2xl space-y-3">
-            <p className="text-label-13 text-muted-foreground">
-              Robinhood Agentic · since {BRAND.inceptionDate}
-            </p>
-            <h1 className="text-heading-40 text-foreground sm:text-heading-48">
-              {BRAND.name}
-            </h1>
-            <p className="text-[1.15rem] font-medium tracking-tight text-foreground">
-              {BRAND.tagline}
-            </p>
-            <p className="max-w-xl text-copy-16 text-muted-foreground">
-              Live book of the autonomous equity agent. Portfolio value, P&amp;L,
-              and trade sizes are the real Agentic cash account — starting{" "}
-              {formatLedgerUsd(BRAND.startingNav, { digits: 0 })}. Updated{" "}
-              {snapshot.lastUpdated}.
-            </p>
+    <>
+      <section className="hero" id="performance">
+        <div className="panel big-number">
+          <div>
+            <div className="label">Portfolio value</div>
+            <div className="value">{money2(snap.nav)}</div>
+            <div className={`answer ${up ? "" : "red"}`}>
+              {up ? "Portfolio is up so far" : "Portfolio is down so far"}
+            </div>
           </div>
-
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <StatCard
-              title="Portfolio value"
-              value={formatLedgerUsd(snapshot.nav, { digits: 2 })}
-              sub={`${snapshot.cashPct.toFixed(0)}% cash · ${snapshot.positions} open`}
-              icon={Wallet}
-              accent
-            />
-            <StatCard
-              title="Total return"
-              value={returnLabel}
-              sub={`Since the first trade, from ${formatLedgerUsd(BRAND.startingNav, { digits: 0 })}.`}
-              icon={Percent}
-            />
-            <StatCard
-              title="vs S&P 500"
-              value={alphaLabel}
-              sub={`Desk return minus SPY (${spyLabel}${snapshot.benchmarkAsOf ? `, ${snapshot.benchmarkAsOf}` : ""}).`}
-              icon={LineChart}
-            />
-            <StatCard
-              title="Profit or loss"
-              value={formatLedgerUsd(snapshot.pnlUsd, {
-                digits: 2,
-                signed: true,
-              })}
-              sub="Dollars gained or lost so far."
-              icon={Banknote}
-            />
+          <div className="muted" id="baselineCopy">
+            Started with {money2(BRAND.startingNav)} · Broker-synced to Robinhood
+            Agentic. Last CIO mark {snap.lastUpdated}.
+          </div>
+        </div>
+        <div className="stack">
+          <div className="panel metric">
+            <div className="label">Total return</div>
+            <div className={`n ${toneClass(snap.returnPct)}`}>
+              {signedPct(snap.returnPct)}
+            </div>
+            <div className="muted">
+              Since first trade on {fmtDay(snap.firstTradeAt)}.
+            </div>
+          </div>
+          <div className="panel metric">
+            <div className="label">vs S&amp;P 500</div>
+            <div
+              className={`n ${snap.alphaPct == null ? "amber" : toneClass(snap.alphaPct)}`}
+            >
+              {snap.alphaPct == null ? "n/a" : signedPct(snap.alphaPct)}
+            </div>
+            <div className="muted">
+              {snap.spyReturnPct == null
+                ? "Desk return minus SPY over the same window."
+                : `Desk return minus SPY. SPY returned ${signedPct(snap.spyReturnPct)} through ${snap.benchmarkAsOf ?? "the last scorecard"}.`}
+            </div>
+          </div>
+          <div className="panel metric">
+            <div className="label">Profit or loss</div>
+            <div className={`n ${toneClass(snap.pnlUsd)}`}>
+              {signedMoney2(snap.pnlUsd)}
+            </div>
+            <div className="muted">Dollars gained or lost so far.</div>
           </div>
         </div>
       </section>
 
-      <MarketingSection
-        id="desk"
-        eyebrow="Live book"
-        title="NAV history"
-        description={
-          <p>
-            Marks from published CIO sessions. Not a scaled demo — this is the
-            Agentic ledger.
-          </p>
-        }
-      >
-        <div className="surface-panel overflow-hidden">
-          <div className="px-3 py-5 sm:px-5">
-            <NavAreaChart data={navSeries} />
+      <section className="grid" id="metrics">
+        {tiles.map(([k, v, s, c]) => (
+          <div className="tile" key={k}>
+            <div className="k">{k}</div>
+            <div className={`v ${c}`}>{v}</div>
+            <div className="s">{s}</div>
           </div>
-        </div>
-      </MarketingSection>
+        ))}
+      </section>
 
-      <MarketingSection
-        eyebrow="How the desk tries to win"
-        title="The edge, the limits, the sell rule"
-        description={
-          <p>
-            Kevin Xu filter on a dedicated cash account. The methodology page
-            is the long version; this is the contract the agent cannot waive.
-          </p>
-        }
-      >
-        <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
-          {rules.map((item, i) => (
-            <li key={item.title} className="space-y-3">
-              <p className="font-data text-[13px] text-muted-foreground">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="text-heading-20 text-foreground">{item.title}</h3>
-              <p className="text-copy-14 text-muted-foreground sm:text-copy-16">
-                {item.body}
-              </p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-10">
-          <Button variant="outline" asChild>
-            <Link href="/methodology/">
-              Read methodology
-              <ArrowRight className="size-4" />
-            </Link>
-          </Button>
-        </div>
-      </MarketingSection>
-
-      <MarketingSection
-        eyebrow="Current holdings"
-        title="What is still open"
-        description={
-          <p>
-            Names that can still change the final result. Cash is a holding.
-          </p>
-        }
-      >
-        <div className="surface-panel overflow-hidden">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-3.5">
-            <h3 className="text-label-13 text-muted-foreground">
-              {open.length === 0
-                ? `Cash ${formatLedgerUsd(snapshot.cash, { digits: 2 })}`
-                : "Open positions"}
-            </h3>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/trades/">
-                All trades
-                <ArrowRight className="size-3.5" />
-              </Link>
-            </Button>
-          </div>
-          <div className="px-2 py-2 sm:px-4 sm:py-4">
-            {open.length === 0 ? (
-              <p className="px-3 py-8 text-sm text-muted-foreground">
-                No open equity. The book is 100% cash after flattening, waiting
-                for a single-name Xu setup.
-              </p>
-            ) : (
-              <PositionsTable positions={open} />
-            )}
-          </div>
-        </div>
-      </MarketingSection>
-
-      {thinking && (
-        <MarketingSection
-          eyebrow="What the desk is thinking"
-          title={thinking.title}
-          description={
+      <section className="panel section" id="strategy">
+        <div className="section-head">
+          <div>
+            <h2>How the desk tries to win</h2>
             <p>
-              Latest published session ({thinking.date} · {thinking.sessionType}
-              ). Plain English from the live runbook.
+              The edge it is pursuing, the limits it cannot waive, and how it
+              learns without grading its own homework.
             </p>
-          }
-        >
-          <div className="surface-panel space-y-4 px-5 py-6">
-            <p className="text-copy-16 text-foreground">{thinking.brief}</p>
-            <Button variant="outline" asChild>
-              <Link href={`/journal/${thinking.date}/`}>
-                Read the journal
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
           </div>
-        </MarketingSection>
-      )}
-
-      <MarketingSection
-        eyebrow="Closed results"
-        title="Trades that are finished"
-        description={
-          <p>
-            Locked-in outcomes from the Agentic account. Size is the real USD
-            put on at entry.
-          </p>
-        }
-      >
-        <div className="surface-panel overflow-hidden px-2 py-2 sm:px-4 sm:py-4">
-          <PositionsTable positions={closed} />
         </div>
-      </MarketingSection>
+        <div className="strategy-grid">
+          <article className="strategy-card">
+            <h3>The edge it is pursuing</h3>
+            <p>
+              Kevin Xu swing filter on a dedicated Agentic cash account: all-in
+              one listed stock, retail attention plus support and a near-term
+              catalyst, never chase.
+            </p>
+            <ul>
+              <li>One name at a time. Flatten before a new entry.</li>
+              <li>Buy near support with a real catalyst in days-to-weeks.</li>
+              <li>Sell around +20–30%, or when the rumor is fully news.</li>
+              <li>Memes are allowed if early. Already-ran names are not.</li>
+            </ul>
+          </article>
+          <article className="strategy-card">
+            <h3>Hard limits and evidence</h3>
+            <p>
+              Code and mandate — not vibes — decide what the agent is allowed
+              to touch.
+            </p>
+            <ul>
+              <li>Shares only. No options, crypto, margin, or pennies.</li>
+              <li>No GTC stop-loss. Hawk watch instead.</li>
+              <li>Agentic cash account only. No personal book.</li>
+              <li>Every session is published in the journal.</li>
+            </ul>
+            <p style={{ marginTop: 14 }}>
+              <strong>Learning sample:</strong> {snap.closedCount} closed
+              Agentic trades since {fmtDay(snap.firstTradeAt)}. Too small to
+              claim a durable edge — the scoreboard stays public anyway.
+            </p>
+          </article>
+        </div>
+      </section>
 
-      <MarketingSection title="FAQ">
-        <FaqSection items={homeFaq} title="Common questions" />
-        <Link
-          href="/faq/"
-          className="mt-6 inline-flex items-center gap-1.5 text-label-14 text-muted-foreground transition-colors hover:text-signal"
-        >
-          View all questions
-          <ArrowRight className="size-3.5" />
-        </Link>
-      </MarketingSection>
+      <section className="panel section" id="holdings-section">
+        <div className="section-head">
+          <div>
+            <h2>Current holdings</h2>
+            <div className="muted">
+              Each line uses the real Agentic size, never a scaled price.
+            </div>
+            <p>What is still open and can still change the final result.</p>
+          </div>
+        </div>
+        <div className="holdings">
+          {open.length === 0 ? (
+            <div className="muted">
+              No open holdings right now. Book is cash {money2(snap.cash)} (
+              {snap.cashPct.toFixed(0)}%) after the 2026-08-17 flatten, waiting
+              on T+1 buying power and a single Xu setup.
+            </div>
+          ) : (
+            open.map((p) => (
+              <div className="holding" key={p.ticker}>
+                <div>
+                  <h3>{p.ticker}</h3>
+                  <p>{formatConviction(p.conviction)} conviction</p>
+                </div>
+                <div className="cell">
+                  <div className="k">Cost basis</div>
+                  <div className="v">{money2(p.size_usd)}</div>
+                </div>
+                <div className="cell">
+                  <div className="k">Avg cost</div>
+                  <div className="v">{money2(p.entry_price)}</div>
+                </div>
+                <div className="cell">
+                  <div className="k">Opened</div>
+                  <div className="v">{p.entry_date}</div>
+                </div>
+                <div className="cell">
+                  <div className="k">Open P/L</div>
+                  <div className={`v ${toneClass(p.return_pct)}`}>
+                    {p.return_pct == null ? "n/a" : signedPct(p.return_pct)}
+                  </div>
+                </div>
+                <div className="cell">
+                  <div className="k">Stop zone</div>
+                  <div className="v">
+                    {p.stop_backup == null ? "n/a" : money2(p.stop_backup)}
+                  </div>
+                </div>
+                <div className="cell">
+                  <div className="k">Fair value</div>
+                  <div className="v">
+                    {p.fair_value_low != null && p.fair_value_high != null
+                      ? `${money2(p.fair_value_low)} to ${money2(p.fair_value_high)}`
+                      : "n/a"}
+                  </div>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
+
+      <section className="panel section" id="thinking-section">
+        <div className="section-head">
+          <div>
+            <h2>What the desk is thinking</h2>
+            <p>
+              Plain English from the latest CIO session: what it owns, what
+              would make it buy or sell, and why it is patient right now.
+            </p>
+          </div>
+        </div>
+        <div className="thinking-box">
+          {thinking ? (
+            <>
+              <div className="thinking-head">
+                <div>
+                  <div className="thinking-stance">{thinking.stance}</div>
+                  <div
+                    style={{
+                      marginTop: 10,
+                      fontSize: 26,
+                      fontWeight: 700,
+                      letterSpacing: "-.04em",
+                    }}
+                  >
+                    {thinking.headline}
+                  </div>
+                </div>
+                <div className="muted">
+                  Last checked: {thinking.asOf}
+                  <br />
+                  {thinking.sessionType} · journal session, not a 15-minute poll
+                </div>
+              </div>
+              <div>
+                <strong>In plain English</strong>
+                <p style={{ margin: "8px 0 0", lineHeight: 1.55 }}>
+                  {thinking.thinking}
+                </p>
+              </div>
+              {thinking.waitingFor.length > 0 && (
+                <div>
+                  <strong>What would make it do something</strong>
+                  <ul className="thinking-list">
+                    {thinking.waitingFor.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <div className="muted">
+                {thinking.note}{" "}
+                <Link href={`/journal/${thinking.date}/`}>Read the journal</Link>
+                .
+              </div>
+            </>
+          ) : (
+            <div className="muted">No live thought cycle published yet.</div>
+          )}
+        </div>
+      </section>
+
+      <section className="panel section" id="trades-section">
+        <div className="section-head">
+          <div>
+            <h2>Trade reasoning</h2>
+            <p>
+              The simple version first, then the technical map behind each
+              executed trade.
+            </p>
+          </div>
+        </div>
+        <div className="reason-list">
+          <ReasonList items={reasons} />
+        </div>
+      </section>
+
+      <section className="panel section">
+        <div className="section-head">
+          <div>
+            <h2>Closed results</h2>
+            <p>Trades that are finished and locked in.</p>
+          </div>
+        </div>
+        <div className="closed-list">
+          <ClosedList items={closed} />
+        </div>
+      </section>
+
+      <section className="panel section" id="improvements-section">
+        <div className="section-head">
+          <div>
+            <h2>What improved</h2>
+            <p>
+              Public change log from investor letters. Retired experiments stay
+              visible instead of being quietly erased.
+            </p>
+          </div>
+        </div>
+        <div className="improvement-list">
+          <ImprovementList items={improvements} />
+        </div>
+      </section>
 
       <JsonLd data={faqPageJsonLd(homeFaq)} />
-    </PageShell>
+    </>
   );
 }

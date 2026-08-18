@@ -28,6 +28,21 @@ export function displayStartingNav(): number {
   return scaleUsd(BRAND.startingNav);
 }
 
-export function formatStartingNav(): string {
-  return formatLedgerUsd(BRAND.startingNav, { digits: 0 });
+export function money2(n: number): string {
+  return `$${n.toFixed(2)}`;
+}
+
+export function signedMoney2(n: number): string {
+  const sign = n < 0 ? "-" : "+";
+  return `${sign}$${Math.abs(n).toFixed(2)}`;
+}
+
+export function signedPct(n: number): string {
+  const sign = n < 0 ? "-" : "+";
+  return `${sign}${Math.abs(n).toFixed(2)}%`;
+}
+
+export function toneClass(n: number | null | undefined): "green" | "red" | "amber" {
+  if (n == null || Number.isNaN(n)) return "amber";
+  return n >= 0 ? "green" : "red";
 }

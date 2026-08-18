@@ -49,9 +49,46 @@ export interface FundSnapshot {
   spyReturnPct: number | null;
   alphaPct: number | null;
   benchmarkAsOf: string | null;
+  realizedPnlUsd: number;
+  openPnlUsd: number;
+  deployedUsd: number;
+  closedCount: number;
+  winRatePct: number | null;
+  firstTradeAt: string;
 }
 
 export interface NavPoint {
   date: string;
   nav: number;
+}
+
+export interface DeskThinking {
+  date: string;
+  asOf: string;
+  sessionType: string;
+  stance: string;
+  headline: string;
+  thinking: string;
+  waitingFor: string[];
+  note: string;
+}
+
+export interface TradeReason {
+  ticker: string;
+  title: string;
+  side: string;
+  date: string;
+  amountUsd: number;
+  simple: string;
+  technical: string[];
+  risk: string;
+}
+
+export interface ImprovementItem {
+  date: string;
+  status: string;
+  title: string;
+  summary: string;
+  why: string;
+  slug: string;
 }

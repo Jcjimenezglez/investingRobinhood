@@ -8,7 +8,7 @@ export const BRAND = {
   description:
     "Tapefund publishes the live book of an autonomous equity desk on Robinhood Agentic. Portfolio value, P&L, closed trades, and CIO notes are real account figures versus SPY since inception — not a scaled marketing NAV.",
   /** Vibrant pink — matches favicon / isotype */
-  color: "#FF4D8D",
+  color: "#E04B16",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tapefund.com",
   locale: "en_US",
   language: "en",

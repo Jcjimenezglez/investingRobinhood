@@ -2,11 +2,14 @@ import fs from "fs";
 import path from "path";
 import type {
   ContentItem,
+  DeskThinking,
   FundSnapshot,
+  ImprovementItem,
   JournalDay,
   JournalSession,
   NavPoint,
   Position,
+  TradeReason,
 } from "./types";
 import { sanitizeForPublic } from "./sanitize";
 
@@ -229,8 +232,18 @@ function parseBenchmarkFromWeekly(): {
 export function getFundSnapshot(): FundSnapshot {
   const days = getJournalDays();
   const latest = days[0];
-  const positions = getPositions().filter((p) => p.status === "open");
+  const allPositions = getPositions();
+  const positions = allPositions.filter((p) => p.status === "open");
+  const closed = allPositions.filter((p) => p.status === "closed");
   const start = BRAND.startingNav;
+  const realizedPnlUsd = closed.reduce(
+    (sum, p) => sum + p.size_usd * ((p.return_pct ?? 0) / 100),
+    0,
+  );
+  const deployedUsd = positions.reduce((sum, p) => sum + p.size_usd, 0);
+  const wins = closed.filter((p) => (p.return_pct ?? 0) > 0).length;
+  const firstTradeAt =
+    allPositions.map((p) => p.entry_date).sort()[0] ?? BRAND.inceptionDate;
 
   const nav = latest?.nav ?? start;
   const returnPct = ((nav - start) / start) * 100;
@@ -252,59 +265,116 @@ export function getFundSnapshot(): FundSnapshot {
     returnPct,
     pnlUsd: nav - start,
     cash: cashMatch ? parseFloat(cashMatch[1]) : nav,
-    cashPct: cashPctMatch ? parseFloat(cashPctMatch[1]) : positions.length === 0 ? 100 : 0,
+    cashPct: cashPctMatch
+      ? parseFloat(cashPctMatch[1])
+      : positions.length === 0
+        ? 100
+        : 0,
     positions: positions.length,
     lastUpdated: latest?.date ?? BRAND.inceptionDate,
     spyReturnPct: bench.spyReturnPct,
     alphaPct: bench.alphaPct,
     benchmarkAsOf: bench.asOf,
+    realizedPnlUsd,
+    openPnlUsd: nav - start - realizedPnlUsd,
+    deployedUsd,
+    closedCount: closed.length,
+    winRatePct: closed.length ? (wins / closed.length) * 100 : null,
+    firstTradeAt,
   };
 }
 
-/** Latest published session, for the public "what the desk is thinking" panel. */
-export function getLatestThinking(): {
-  date: string;
-  title: string;
-  sessionType: string;
-  brief: string;
-} | null {
+function stripMd(s: string): string {
+  return s.replace(/\*\*/g, "").replace(/`/g, "").trim();
+}
+
+export function getLatestThinking(): DeskThinking | null {
   const day = getJournalDays()[0];
   if (!day) return null;
   const session = day.sessions[day.sessions.length - 1] ?? day.sessions[0];
   if (!session) return null;
+  const content = session.content;
+
+  const accion = content.match(/\*\*ACCIÓN:\*\*\s*\*\*([^*]+)\*\*/i);
+  const razon = content.match(/\*\*Razón:\*\*\s*(.+)/i);
+  const hawk = content.match(/\*\*Hawk-watch:\*\*\s*(.+)/i);
+  const nextItems = [...content.matchAll(/^\d+\.\s+(.+)$/gm)].map((m) =>
+    stripMd(m[1]),
+  );
+
+  const stance = accion ? stripMd(accion[1]) : (day.decision ?? "HOLD");
+  const thinking = stripMd(razon?.[1] ?? hawk?.[1] ?? "");
+
   return {
     date: day.date,
-    title: session.title,
+    asOf: `${day.date} ${session.time}`,
     sessionType: session.sessionType,
-    brief: extractThinkingBrief(session.content),
+    stance,
+    headline: stripMd(session.title),
+    thinking:
+      thinking ||
+      "See the latest journal for the full session.",
+    waitingFor: nextItems.slice(0, 6),
+    note: "Published from the Agentic CIO runbook. Not a 15-minute live tick — updated each scheduled session.",
   };
 }
 
-function extractThinkingBrief(content: string): string {
-  const hawk = content.match(/\*\*Hawk-watch:\*\*\s*(.+)/i);
-  if (hawk) return hawk[1].replace(/\*\*/g, "").trim();
+export function getClosedPositions(): Position[] {
+  return getPositions()
+    .filter((p) => p.status === "closed")
+    .slice()
+    .sort((a, b) => (b.exit_date ?? "").localeCompare(a.exit_date ?? ""));
+}
 
-  const decision = content.match(
-    /(?:Decisión|Decision)[^.\n]{0,160}/i,
-  );
-  if (decision) return decision[0].replace(/\*\*/g, "").trim();
+export function getOpenPositions(): Position[] {
+  return getPositions().filter((p) => p.status === "open");
+}
 
-  const lines = content
-    .split("\n")
-    .map((l) => l.trim())
-    .filter(
-      (l) =>
-        l.length > 40 &&
-        !l.startsWith("#") &&
-        !l.startsWith("|") &&
-        !l.startsWith("*Fuente") &&
-        !l.startsWith("**Prompt") &&
-        !l.startsWith("**Fund") &&
-        !l.startsWith("**Ses"),
+export function getTradeReasons(): TradeReason[] {
+  return getClosedPositions().map((p) => {
+    const pnl = p.size_usd * ((p.return_pct ?? 0) / 100);
+    const proceeds = p.size_usd + pnl;
+    const notes = stripMd(p.notes ?? "").replace(/order \[redacted\]/gi, "").trim();
+    return {
+      ticker: p.ticker,
+      title: `${p.ticker} ${p.exit_reason ? "exit" : "trade"}`,
+      side: "SELL",
+      date: p.exit_date ?? p.entry_date,
+      amountUsd: proceeds,
+      simple:
+        notes ||
+        `Closed ${p.ticker} after ${p.entry_date}. Return ${p.return_pct ?? 0}%.`,
+      technical: [
+        p.exit_reason ? `Exit reason: ${p.exit_reason}` : "",
+        `Entry ${p.entry_date} at $${p.entry_price.toFixed(2)} · size $${p.size_usd.toFixed(2)}`,
+        p.return_pct != null ? `Realized ${p.return_pct >= 0 ? "+" : ""}${p.return_pct.toFixed(2)}% (${pnl >= 0 ? "+" : ""}$${Math.abs(pnl).toFixed(2)})` : "",
+      ].filter(Boolean),
+      risk: p.stop_backup
+        ? `Backup stop was $${p.stop_backup.toFixed(2)} (not used — Xu book does not place GTC stops).`
+        : "No GTC stop. Exit is target, dead setup, or flatten.",
+    };
+  });
+}
+
+export function getImprovements(): ImprovementItem[] {
+  return getLetters().map((letter) => {
+    const whyMatch = letter.content.match(
+      /(?:Why it matters|## What changed)\s*\n+([\s\S]{0,400})/i,
     );
-  return (lines[0] ?? "See the latest journal for the full session.")
-    .replace(/\*\*/g, "")
-    .slice(0, 280);
+    const summary = letter.content
+      .split("\n")
+      .map((l) => l.trim())
+      .find((l) => l.length > 40 && !l.startsWith("#") && !l.startsWith("*") && !l.startsWith("|"))
+      ?? letter.title;
+    return {
+      date: letter.date,
+      status: "live",
+      title: letter.title,
+      summary: stripMd(summary).slice(0, 280),
+      why: stripMd(whyMatch?.[1] ?? "").split("\n")[0] ?? "",
+      slug: letter.slug,
+    };
+  });
 }
 
 export function getNavSeries(): NavPoint[] {

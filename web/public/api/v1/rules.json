@@ -1,0 +1,14 @@
+{
+  "strategy": "All-in one listed stock",
+  "style": "swing trading",
+  "account": "Robinhood Agentic cash",
+  "rules": [
+    "One equity at a time. Flatten before a new name.",
+    "Cash only. No margin, options, crypto, or pennies.",
+    "Retail attention plus support plus a near-term catalyst.",
+    "Never chase a name that already ran.",
+    "Sell around +20–30% or when the rumor is fully news.",
+    "No GTC stop-loss. Watch and exit when the setup dies.",
+    "Memes are allowed if early."
+  ]
+}

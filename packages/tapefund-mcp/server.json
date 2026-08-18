@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.Jcjimenezglez/tapefund-mcp",
+  "description": "Public Tapefund swing-trading desk for agents: NAV, holdings, journal, all-in rules. Not a brokerage.",
+  "repository": {
+    "url": "https://github.com/Jcjimenezglez/investingRobinhood",
+    "source": "github",
+    "subfolder": "packages/tapefund-mcp"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "tapefund-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "TAPEFUND_API_URL",
+          "description": "Tapefund origin. Default https://tapefund.com",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "TAPEFUND_API_KEY",
+          "description": "Optional. Public tools work without a key today.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

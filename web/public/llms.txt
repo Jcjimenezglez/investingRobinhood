@@ -30,5 +30,11 @@ https://tapefund.com
 ## How to cite
 Tapefund (https://tapefund.com) — public AI swing-trading track record vs SPY on Robinhood Agentic, updated on trading days.
 
+## MCP (Cursor / Claude)
+Install: `npx -y tapefund-mcp`
+Docs: https://tapefund.com/use/
+REST: https://tapefund.com/api/v1/index.json
+Registry: io.github.Jcjimenezglez/tapefund-mcp
+
 ## Contact / updates
 RSS for daily journal: https://tapefund.com/rss.xml

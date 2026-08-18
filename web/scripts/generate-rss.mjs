@@ -34,16 +34,16 @@ const items = dates.slice(0, 30).map((date) => {
       <link>${link}</link>
       <guid>${link}</guid>
       <pubDate>${new Date(date).toUTCString()}</pubDate>
-      <description>${escapeXml(`CIO cycle for ${date}.`)}</description>
+      <description>${escapeXml(`Tapefund trading journal for ${date} — Robinhood Agentic swing trading session.`)}</description>
     </item>`;
 });
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>${escapeXml(SITE_NAME)} — Daily journal</title>
+    <title>${escapeXml(SITE_NAME)} — Daily trading journal</title>
     <link>${SITE_URL}</link>
-    <description>${escapeXml("Daily CIO journal from Tapefund — a thesis-driven AI fund track record.")}</description>
+    <description>${escapeXml("Daily trading journal from Tapefund — swing trading on Robinhood Agentic versus SPY. Not paper trading.")}</description>
     <language>en-us</language>${items.join("")}
   </channel>
 </rss>`;

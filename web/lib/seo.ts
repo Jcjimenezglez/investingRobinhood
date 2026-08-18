@@ -15,6 +15,7 @@ export function pageMetadata({
   publishedTime,
   modifiedTime,
   noIndex = false,
+  keywords,
 }: {
   title: string;
   description: string;
@@ -23,15 +24,19 @@ export function pageMetadata({
   publishedTime?: string;
   modifiedTime?: string;
   noIndex?: boolean;
+  keywords?: readonly string[];
 }): Metadata {
   const url = absoluteUrl(path);
   const fullTitle =
     title === BRAND.name ? `${BRAND.name} — ${BRAND.tagline}` : title;
+  const mergedKeywords = [
+    ...new Set([...BRAND.keywords, ...(keywords ?? [])]),
+  ];
 
   return {
     title: fullTitle,
     description,
-    keywords: [...BRAND.keywords],
+    keywords: mergedKeywords,
     authors: [{ name: BRAND.name, url: BRAND.url }],
     creator: BRAND.name,
     publisher: BRAND.name,

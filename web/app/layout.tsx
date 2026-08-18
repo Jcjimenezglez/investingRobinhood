@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     path: "/",
   }),
   title: {
-    default: `${BRAND.name}, public auto-trader desk`,
+    default: `${BRAND.name} — ${BRAND.tagline}`,
     template: `%s · ${BRAND.name}`,
   },
   applicationName: BRAND.name,

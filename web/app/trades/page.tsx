@@ -16,10 +16,11 @@ import { BRAND } from "@/lib/site-config";
 import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Trades",
+  title: "Trades and stock holdings",
   description:
-    "Tapefund trade history from the live Robinhood Agentic account: open and closed positions at real dollar size, with returns and links to theses.",
+    "Tapefund stock holdings and closed trades from the live Robinhood Agentic account: real dollar size, returns, and links to each investment thesis. Not copy trading.",
   path: "/trades/",
+  keywords: ["stock holdings", "closed trades", "current holdings"],
 });
 
 export default function TradesPage() {
@@ -32,11 +33,13 @@ export default function TradesPage() {
           <BarChart3 className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Trades</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Trades and holdings
+          </h1>
           <DirectAnswer className="mt-2">
-            {BRAND.name} publishes every Agentic position — open and closed —
-            at real dollar size, with conviction, return since entry, and the
-            written thesis behind each trade.
+            {BRAND.name} publishes every Robinhood Agentic position — open stock
+            holdings and closed trades — at real dollar size, with conviction,
+            return since entry, and the investment thesis behind each swing.
           </DirectAnswer>
         </div>
       </div>
@@ -56,7 +59,7 @@ export default function TradesPage() {
       <JsonLd
         data={collectionPageJsonLd({
           name: "Tapefund Trades",
-          description: "Position history for the Tapefund AI fund.",
+          description: "Position history and stock holdings for the Tapefund AI trading agent.",
           path: "/trades/",
         })}
       />

@@ -16,10 +16,11 @@ import { BRAND } from "@/lib/site-config";
 import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Daily journal",
+  title: "Daily trading journal",
   description:
-    "Tapefund daily CIO journal: premarket, market open, and intraday sessions with NAV, market snapshot, and HOLD/BUY/SELL decisions.",
+    "Tapefund daily trading journal: premarket, open, and intraday CIO sessions with live Robinhood Agentic NAV and HOLD/BUY/SELL decisions. Not a private log — a public stock trading journal.",
   path: "/journal/",
+  keywords: ["trading journal", "daily trading journal", "stock journal"],
 });
 
 export default function JournalIndexPage() {
@@ -32,11 +33,14 @@ export default function JournalIndexPage() {
           <BookOpen className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Daily journal</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Daily trading journal
+          </h1>
           <DirectAnswer className="mt-2">
-            The {BRAND.name} journal archives every CIO cycle — premarket,
-            open, and intraday — with live NAV and trading decisions from the
-            Agentic account runbook.
+            The {BRAND.name} trading journal archives every CIO cycle —
+            premarket, open, and intraday — with live NAV and swing-trading
+            decisions from the Robinhood Agentic account. This is a public
+            journal, not a private notebook.
           </DirectAnswer>
         </div>
       </div>
@@ -55,9 +59,9 @@ export default function JournalIndexPage() {
 
       <JsonLd
         data={collectionPageJsonLd({
-          name: "Tapefund Daily Journal",
+          name: "Tapefund daily trading journal",
           description:
-            "Archive of daily CIO cycles from the Tapefund AI fund.",
+            "Archive of daily CIO trading-journal cycles from the Tapefund AI trading agent.",
           path: "/journal/",
         })}
       />

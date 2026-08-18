@@ -48,7 +48,7 @@ export function SiteFooter() {
         <div className="space-y-3 border-t border-border pt-8">
           <p className="max-w-3xl text-[12px] leading-relaxed text-muted-foreground">
             <span className="font-medium text-foreground">Disclaimer.</span>{" "}
-            {BRAND.name} publishes a public auto-trader track record versus SPY.
+            {BRAND.name} publishes a public AI swing-trading track record versus SPY.
             Nothing on this site is investment advice, a solicitation, or a
             recommendation to buy or sell any security. Past performance does
             not guarantee future results. Dollar figures are the live Agentic

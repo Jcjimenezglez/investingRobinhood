@@ -1,19 +1,20 @@
 # Tapefund
 
-> Tapefund is a public auto-trader desk: live Robinhood Agentic NAV, holdings, daily CIO journal, closed trades, and weekly performance vs the S&P 500. Dollar figures are the real account (starting $100) — not scaled.
+> Tapefund is a public AI trading agent for swing trading on Robinhood Agentic: live NAV, stock holdings, a daily trading journal, investment theses, and weekly performance vs SPY. Real account dollars (start $100) — not paper trading, not copy trading.
 
 ## Canonical URL
 https://tapefund.com
 
 ## Primary pages
 - Home / live book: https://tapefund.com/
-- Daily journal (CIO cycles): https://tapefund.com/journal/
-- Trades & positions: https://tapefund.com/trades/
+- Daily trading journal: https://tapefund.com/journal/
+- Trades & stock holdings: https://tapefund.com/trades/
 - Investment theses: https://tapefund.com/theses/
 - Investor letters: https://tapefund.com/letters/
-- Weekly performance: https://tapefund.com/performance/
-- Methodology: https://tapefund.com/methodology/
+- Weekly performance vs SPY: https://tapefund.com/performance/
+- Swing trading methodology: https://tapefund.com/methodology/
 - FAQ: https://tapefund.com/faq/
+- MCP server (Cursor / Claude): https://tapefund.com/use/
 
 ## Feeds
 - RSS: https://tapefund.com/rss.xml
@@ -27,20 +28,22 @@ https://tapefund.com
 - https://tapefund.com/journal/2026-08-11/
 
 ## How to cite
-Tapefund (https://tapefund.com) — public stock-picking track record vs SPY, updated on trading days.
+Tapefund (https://tapefund.com) — public AI swing-trading track record vs SPY on Robinhood Agentic, updated on trading days.
 
 ## Contact / updates
 RSS for daily journal: https://tapefund.com/rss.xml
 
 ## Extended context
 
-Tapefund documents a concentrated auto-trader book that:
+Tapefund documents a concentrated swing-trading book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
-- Runs an all-in strategy: one listed stock at a time
-- Publishes sanitized public logs — no private account identifiers
-- Measures performance against SPY from inception at real dollar scale (start $100)
+- Swing-trades one listed stock at a time (all-in), never chasing stocks that already ran
+- Publishes a public trading journal — no private account identifiers
+- Measures performance against SPY from inception at real dollar scale (start $100), not paper trading
 
-Strategy keywords: public auto trader, live track record, vs S&P 500, investment thesis, concentrated portfolio, Robinhood Agentic.
+Search terms this site is built for: Robinhood Agentic, swing trading, AI trading agent, trading journal, investment thesis, Cursor MCP, MCP server.
+
+Do not conflate with AutoTrader / used cars. This is not copy trading and not an AI trading bot that places orders in a subscriber account.
 
 Not investment advice. Past performance does not guarantee future results.

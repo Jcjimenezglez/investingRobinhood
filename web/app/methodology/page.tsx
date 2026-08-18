@@ -26,7 +26,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Methodology",
   description:
-    "How Tapefund invests: Kevin Xu all-in one stock, retail vibes + support + catalyst, never chase, no crypto/margin/options/pennies.",
+    "How Tapefund invests: all-in one listed stock, retail vibes + support + catalyst, never chase, no crypto/margin/options/pennies.",
   path: "/methodology/",
 });
 
@@ -53,7 +53,7 @@ const pillars = [
   },
   {
     icon: Zap,
-    title: "Kevin Xu rules",
+    title: "All-in rules",
     body: "Shares only. No crypto, margin, options, or pennies. Follow retail attention. Never chase a stock that already ran.",
   },
   {
@@ -112,7 +112,7 @@ export default function MethodologyPage() {
       <div>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
         <DirectAnswer className="mt-3">
-          {BRAND.name} runs a Kevin Xu swing book: all-in one listed stock,
+          {BRAND.name} runs an all-in swing book: one listed stock at a time,
           follow retail attention, buy support with a catalyst, sell around
           +20–30%. No crypto, margin, options, or pennies. Don't chase.
         </DirectAnswer>

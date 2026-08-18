@@ -55,7 +55,16 @@ function parseIntelligenceFilename(filename: string): {
 
 function extractTitle(content: string): string {
   const line = content.split("\n").find((l) => l.startsWith("# "));
-  return line ? line.replace(/^#\s+/, "").trim() : "Session";
+  const raw = line ? line.replace(/^#\s+/, "").trim() : "Session";
+  return sanitizeMarkdown(raw);
+}
+
+function toPublicSlug(slug: string): string {
+  return slug
+    .replace(/kevin-xu/gi, "all-in")
+    .replace(/-xu-/gi, "-")
+    .replace(/^xu-/i, "")
+    .replace(/-xu$/i, "");
 }
 
 function extractNav(content: string): number | null {
@@ -86,7 +95,13 @@ export function getPositions(): Position[] {
     .trim()
     .split("\n")
     .filter(Boolean)
-    .map((line) => JSON.parse(line) as Position);
+    .map((line) => {
+      const row = JSON.parse(line) as Position;
+      return {
+        ...row,
+        notes: row.notes ? sanitizeMarkdown(row.notes) : row.notes,
+      };
+    });
 }
 
 export function getJournalDays(): JournalDay[] {
@@ -152,7 +167,7 @@ export function getLetters(): ContentItem[] {
       const content = readFileSafe(path.join(dir, file)) ?? "";
       const slug = slugFromFilename(file);
       return {
-        slug,
+        slug: toPublicSlug(slug),
         title: extractTitle(content),
         date: extractDateFromSlug(slug),
         content: sanitizeMarkdown(content),
@@ -162,7 +177,8 @@ export function getLetters(): ContentItem[] {
 }
 
 export function getLetter(slug: string): ContentItem | null {
-  return getLetters().find((l) => l.slug === slug) ?? null;
+  const wanted = toPublicSlug(slug);
+  return getLetters().find((l) => l.slug === wanted || l.slug === slug) ?? null;
 }
 
 export function getTheses(): ContentItem[] {
@@ -350,7 +366,7 @@ export function getTradeReasons(): TradeReason[] {
         p.return_pct != null ? `Realized ${p.return_pct >= 0 ? "+" : ""}${p.return_pct.toFixed(2)}% (${pnl >= 0 ? "+" : ""}$${Math.abs(pnl).toFixed(2)})` : "",
       ].filter(Boolean),
       risk: p.stop_backup
-        ? `Backup stop was $${p.stop_backup.toFixed(2)} (not used — Xu book does not place GTC stops).`
+        ? `Backup stop was $${p.stop_backup.toFixed(2)} (not used — the all-in desk does not place GTC stops).`
         : "No GTC stop. Exit is target, dead setup, or flatten.",
     };
   });

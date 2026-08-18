@@ -62,7 +62,7 @@ const llmsFullTxt = `${llmsTxt}
 ${SITE_NAME} documents a concentrated auto-trader book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
-- Runs all-in one listed stock at a time (Kevin Xu filter)
+- Runs an all-in strategy: one listed stock at a time
 - Publishes sanitized public logs — no private account identifiers
 - Measures performance against SPY from inception at real dollar scale (start $100)
 

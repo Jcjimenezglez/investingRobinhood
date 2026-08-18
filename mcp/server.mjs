@@ -41,6 +41,44 @@ function navFrom(md) {
   return m ? Number(m[1]) : null;
 }
 
+function publicize(text) {
+  return String(text ?? "")
+    .replace(/@kevinxu/gi, "")
+    .replace(/Kevin Xu's/gi, "the all-in")
+    .replace(/Kevin Xu/gi, "all-in")
+    .replace(/kevin-xu/gi, "all-in")
+    .replace(/Xu-style/gi, "all-in")
+    .replace(/Xu-filtered/gi, "all-in")
+    .replace(/Xu filter/gi, "all-in rules")
+    .replace(/Xu swing/gi, "all-in swing")
+    .replace(/Xu book/gi, "all-in book")
+    .replace(/Xu rules/gi, "all-in rules")
+    .replace(/Xu mandate/gi, "all-in mandate")
+    .replace(/Xu setup/gi, "all-in setup")
+    .replace(/Xu pass/gi, "all-in pass")
+    .replace(/Xu already/gi, "the desk already")
+    .replace(/Xu would/gi, "the desk would")
+    .replace(/Xu does/gi, "the desk does")
+    .replace(/Xu is /gi, "the desk is ")
+    .replace(/Xu:\s*/g, "")
+    .replace(/\bXu\b/g, "all-in");
+}
+
+function allInRules() {
+  return {
+    strategy: "All-in one listed stock",
+    rules: [
+      "One equity at a time. Flatten before a new name.",
+      "Cash only. No margin, options, crypto, or pennies.",
+      "Retail attention plus support plus a near-term catalyst.",
+      "Never chase a name that already ran.",
+      "Sell around +20–30% or when the rumor is fully news.",
+      "No GTC stop-loss. Watch and exit when the setup dies.",
+      "Memes are allowed if early.",
+    ],
+  };
+}
+
 const TOOLS = [
   {
     name: "get_book_snapshot",
@@ -63,8 +101,8 @@ const TOOLS = [
     inputSchema: { type: "object", properties: {} },
   },
   {
-    name: "get_xu_filter",
-    description: "Kevin Xu hard rules this desk cannot waive.",
+    name: "get_all_in_rules",
+    description: "All-in hard rules this desk cannot waive.",
     inputSchema: { type: "object", properties: {} },
   },
   {
@@ -107,6 +145,7 @@ function callTool(name, args = {}) {
         entry_price: p.entry_price,
         return_pct: p.return_pct,
         exit_reason: p.exit_reason,
+        notes: publicize(p.notes || ""),
       }));
     case "get_holdings":
       return open.map((p) => ({
@@ -118,16 +157,20 @@ function callTool(name, args = {}) {
         return_pct: p.return_pct,
       }));
     case "get_latest_thinking":
-      return j;
+      return j ? { file: j.file, content: publicize(j.content) } : null;
+    case "get_all_in_rules":
     case "get_xu_filter":
-      return JSON.parse(read("config/kevin-xu-playbook.json") || "{}");
+      return allInRules();
     case "get_journal_day": {
       const date = String(args.date || "");
       const dir = path.join(REPO, "logs", "intelligence");
       const files = fs.existsSync(dir)
         ? fs.readdirSync(dir).filter((f) => f.startsWith(date) && f.endsWith(".md"))
         : [];
-      return files.map((f) => ({ file: f, content: read(path.join("logs", "intelligence", f)) }));
+      return files.map((f) => ({
+        file: f,
+        content: publicize(read(path.join("logs", "intelligence", f))),
+      }));
     }
     default:
       throw new Error(`Unknown tool: ${name}`);

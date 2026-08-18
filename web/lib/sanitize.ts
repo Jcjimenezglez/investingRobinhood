@@ -17,6 +17,10 @@ export const FORBIDDEN_PATTERNS: { name: string; pattern: RegExp }[] = [
   { name: "email", pattern: /@[a-z0-9.-]+\.[a-z]{2,}/i },
   { name: "lp_personal_reference", pattern: /your reported/i },
   { name: "lp_you_already", pattern: /\byou already\b/i },
+  { name: "kevin_xu_name", pattern: /kevin\s*xu/i },
+  { name: "kevinxu_handle", pattern: /@kevinxu/i },
+  { name: "bare_xu", pattern: /\bXu\b/ },
+  { name: "kevin_xu_slug", pattern: /kevin-xu/i },
 ];
 
 function escapeRegex(s: string): string {
@@ -35,8 +39,33 @@ function stripInternalSections(content: string): string {
   return result.replace(/\n---\n(\s*\n---\n)+/g, "\n---\n");
 }
 
-function redactLinePatterns(content: string): string {
+function redactAttribution(content: string): string {
   return (
+    content
+      .replace(/@kevinxu/gi, "")
+      .replace(/Kevin Xu's/gi, "the all-in")
+      .replace(/Kevin Xu/gi, "all-in")
+      .replace(/kevin-xu/gi, "all-in")
+      .replace(/Xu-style/gi, "all-in")
+      .replace(/Xu-filtered/gi, "all-in")
+      .replace(/Xu filter/gi, "all-in rules")
+      .replace(/Xu swing/gi, "all-in swing")
+      .replace(/Xu book/gi, "all-in book")
+      .replace(/Xu rules/gi, "all-in rules")
+      .replace(/Xu mandate/gi, "all-in mandate")
+      .replace(/Xu setup/gi, "all-in setup")
+      .replace(/Xu pass/gi, "all-in pass")
+      .replace(/Xu already/gi, "the desk already")
+      .replace(/Xu would/gi, "the desk would")
+      .replace(/Xu does/gi, "the desk does")
+      .replace(/Xu is /gi, "the desk is ")
+      .replace(/Xu:\s*/g, "")
+      .replace(/\bXu\b/g, "all-in")
+  );
+}
+
+function redactLinePatterns(content: string): string {
+  return redactAttribution(
     content
       // Account identifiers
       .replace(/••••\d{4}/g, "[account]")
@@ -83,7 +112,7 @@ function redactLinePatterns(content: string): string {
       .replace(/not cited as your biggest winner[^\n]*/gi, "selected on variant perception")
       // MCP / tool audit noise
       .replace(/\*Quotes:\s*`get_[^`]+\`[^\n]*\n/gi, "")
-      .replace(/MCP refresh:[^\n]*\n/gi, "")
+      .replace(/MCP refresh:[^\n]*\n/gi, ""),
   );
 }
 

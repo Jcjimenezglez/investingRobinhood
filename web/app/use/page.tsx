@@ -35,7 +35,7 @@ const tools = [
   ["get_closed_trades", "Finished trades with size, return, and exit reason."],
   ["get_holdings", "What is still open. Empty when the book is cash."],
   ["get_latest_thinking", "Latest CIO stance in plain English."],
-  ["get_xu_filter", "Hard rules the desk cannot waive."],
+  ["get_all_in_rules", "Hard rules the desk cannot waive."],
   ["get_journal_day", "One published session by date."],
 ];
 
@@ -70,8 +70,8 @@ export default function UsePage() {
           <article className="strategy-card">
             <h3>What they buy</h3>
             <p>
-              Structured tools: live NAV, closed trades, holdings, the Xu
-              filter, and the latest CIO note. Same public ledger as this site,
+              Structured tools: live NAV, closed trades, holdings, the all-in
+              rules, and the latest CIO note. Same public ledger as this site,
               machine-readable.
             </p>
             <ul>

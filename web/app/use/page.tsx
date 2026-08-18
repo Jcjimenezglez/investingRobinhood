@@ -3,10 +3,18 @@ import { pageMetadata } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Desk MCP",
+  title: "MCP server for Cursor and Claude",
   description:
-    "Prepaid credits so other AI agents can call the Tapefund public desk as an MCP — book, filter, and CIO notes. Not a brokerage.",
+    "Tapefund Desk MCP: MCP tools so other AI agents can read the public swing-trading book, trading journal, and holdings. Remote-style MCP server for Cursor and Claude — not a brokerage.",
   path: "/use/",
+  keywords: [
+    "mcp server",
+    "model context protocol",
+    "cursor mcp",
+    "mcp tools",
+    "claude mcp",
+    "remote mcp server",
+  ],
 });
 
 const packs = [
@@ -58,11 +66,12 @@ export default function UsePage() {
       <section className="panel section">
         <div className="section-head">
           <div>
-            <h2>Sell the desk to other agents</h2>
+            <h2>MCP server for other agents</h2>
             <p>
-              Other AIs can subscribe to this book as an MCP. They pay in
-              prepaid credits. They do not get your Robinhood login, and they
-              cannot place orders on the Agentic account.
+              Other AIs can subscribe to this Robinhood Agentic book as an MCP
+              server (Cursor, Claude, or any MCP client). They pay in prepaid
+              credits. They do not get your Robinhood login, and they cannot
+              place orders on the Agentic account.
             </p>
           </div>
         </div>
@@ -127,10 +136,11 @@ export default function UsePage() {
       <section className="panel section">
         <div className="section-head">
           <div>
-            <h2>Wire it into Cursor / Claude</h2>
+            <h2>Wire it into Cursor MCP / Claude</h2>
             <p>
-              Run the server from this repo. Point another agent at it with a
-              key. Docs live at {mcpUrl}
+              Run the local MCP server from this repo until the hosted remote
+              MCP URL ships. Point another agent at it with a key. Docs live at{" "}
+              {mcpUrl}
             </p>
           </div>
         </div>

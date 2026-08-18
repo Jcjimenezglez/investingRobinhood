@@ -26,8 +26,9 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Investment theses",
   description:
-    "Tapefund investment memos: written theses before every BUY covering business quality, mispricing, catalyst, and kill criteria.",
+    "Tapefund investment theses: a written memo before every BUY covering quality, mispricing, catalyst, and kill criteria. Read investment thesis examples from live swing trades.",
   path: "/theses/",
+  keywords: ["investment thesis example", "stock thesis"],
 });
 
 export default function ThesesPage() {
@@ -40,11 +41,14 @@ export default function ThesesPage() {
           <FileText className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Theses</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Investment theses
+          </h1>
           <DirectAnswer className="mt-2">
-            Every {BRAND.name} BUY starts with a full written memo — business
-            quality, mispricing, catalyst, and kill criteria — published here
-            before capital is deployed.
+            Every {BRAND.name} BUY starts with a written investment thesis —
+            business quality, mispricing, catalyst, and kill criteria —
+            published here before capital is deployed. These are live swing
+            memos, not backtests.
           </DirectAnswer>
         </div>
       </div>
@@ -87,7 +91,7 @@ export default function ThesesPage() {
       <JsonLd
         data={collectionPageJsonLd({
           name: "Tapefund Investment Theses",
-          description: "Written investment memos from the Tapefund AI fund.",
+          description: "Written investment thesis memos from the Tapefund AI trading agent.",
           path: "/theses/",
         })}
       />

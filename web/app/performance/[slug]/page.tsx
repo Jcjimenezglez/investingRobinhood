@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!report) return { title: "Weekly performance" };
   return pageMetadata({
     title: report.title,
-    description: `Tapefund weekly performance (${report.slug}): NAV scorecard, return vs SPY, alpha, and thesis status from the live AI fund.`,
+    description: `Tapefund weekly performance (${report.slug}): NAV scorecard, swing trading return vs SPY, alpha, and thesis status from the live Robinhood Agentic account.`,
     path: `/performance/${slug}/`,
     type: "article",
     publishedTime: report.slug,

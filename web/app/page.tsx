@@ -22,7 +22,8 @@ import { formatConviction } from "@/lib/localize";
 const homeFaq = SITE_FAQ.filter((item) =>
   [
     "What is Tapefund?",
-    "Are the dollar figures real?",
+    "Is Tapefund paper trading?",
+    "Is Tapefund copy trading or an AI trading bot?",
     "How does Tapefund compare to the S&P 500?",
     "Is Tapefund investment advice?",
   ].includes(item.question),
@@ -96,8 +97,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="muted" id="baselineCopy">
-            Started with {money2(BRAND.startingNav)} · Broker-synced to Robinhood
-            Agentic. Last CIO mark {snap.lastUpdated}.
+            Started with {money2(BRAND.startingNav)} on a live Robinhood Agentic
+            cash account — not paper trading. Last CIO mark {snap.lastUpdated}.
           </div>
         </div>
         <div className="stack">
@@ -146,10 +147,10 @@ export default function HomePage() {
       <section className="panel section" id="strategy">
         <div className="section-head">
           <div>
-            <h2>How the desk tries to win</h2>
+            <h2>Swing trading strategy</h2>
             <p>
-              The edge it is pursuing, the limits it cannot waive, and how it
-              learns without grading its own homework.
+              One listed stock at a time — swing trading, not day trading —
+              on a Robinhood Agentic cash account, with a public trading journal.
             </p>
           </div>
         </div>
@@ -157,9 +158,9 @@ export default function HomePage() {
           <article className="strategy-card">
             <h3>The edge it is pursuing</h3>
             <p>
-              All-in strategy on a dedicated Agentic cash account: one listed
-              stock at a time, retail attention plus support and a near-term
-              catalyst, never chase.
+              All-in swing trading on a dedicated Robinhood Agentic cash
+              account: one listed stock, retail attention plus support and a
+              near-term catalyst. Never chasing stocks that already ran.
             </p>
             <ul>
               <li>One name at a time. Flatten before a new entry.</li>
@@ -178,7 +179,7 @@ export default function HomePage() {
               <li>Shares only. No options, crypto, margin, or pennies.</li>
               <li>No GTC stop-loss. Hawk watch instead.</li>
               <li>Agentic cash account only. No personal book.</li>
-              <li>Every session is published in the journal.</li>
+              <li>Every session is published in the trading journal.</li>
             </ul>
             <p style={{ marginTop: 14 }}>
               <strong>Learning sample:</strong> {snap.closedCount} closed

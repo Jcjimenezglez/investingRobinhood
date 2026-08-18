@@ -31,7 +31,7 @@ export function DeskChrome({
           <h1>{BRAND.name}</h1>
           <p className="subtitle">
             {home
-              ? "Public auto-trader desk on Robinhood Agentic. The CIO proposes. Automations clerk. The ledger is the receipt."
+              ? "Public AI trading agent for swing trading on Robinhood Agentic. The CIO proposes. Automations clerk. The ledger is the receipt — not paper trading."
               : BRAND.tagline}
           </p>
         </div>

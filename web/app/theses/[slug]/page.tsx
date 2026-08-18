@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (!thesis) return { title: "Thesis" };
   return pageMetadata({
     title: thesis.title,
-    description: `Tapefund investment thesis (${thesis.date}): ${thesis.title}. Full written memo with business quality, mispricing, catalyst, and kill criteria.`,
+    description: `Tapefund investment thesis (${thesis.date}): ${thesis.title}. Written memo with quality, mispricing, catalyst, and kill criteria — an investment thesis example from a live swing trade.`,
     path: `/theses/${slug}/`,
     type: "article",
     publishedTime: thesis.date,
@@ -61,7 +61,7 @@ export default async function ThesisPage({
             {thesis.title}
           </h1>
           <DirectAnswer className="mt-2 text-sm text-muted-foreground tabular-nums">
-            {BRAND.name} investment memo published {thesis.date} — written
+            {BRAND.name} investment thesis published {thesis.date} — written
             before capital deployment with catalyst, fair value, and kill
             criteria.
           </DirectAnswer>

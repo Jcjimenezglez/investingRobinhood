@@ -27,20 +27,21 @@ const latestJournal = journalDates.slice(0, 5);
 
 const llmsTxt = `# ${SITE_NAME}
 
-> ${SITE_NAME} is a public auto-trader desk: live Robinhood Agentic NAV, holdings, daily CIO journal, closed trades, and weekly performance vs the S&P 500. Dollar figures are the real account (starting $100) — not scaled.
+> ${SITE_NAME} is a public AI trading agent for swing trading on Robinhood Agentic: live NAV, stock holdings, a daily trading journal, investment theses, and weekly performance vs SPY. Real account dollars (start $100) — not paper trading, not copy trading.
 
 ## Canonical URL
 ${SITE_URL}
 
 ## Primary pages
 - Home / live book: ${SITE_URL}/
-- Daily journal (CIO cycles): ${SITE_URL}/journal/
-- Trades & positions: ${SITE_URL}/trades/
+- Daily trading journal: ${SITE_URL}/journal/
+- Trades & stock holdings: ${SITE_URL}/trades/
 - Investment theses: ${SITE_URL}/theses/
 - Investor letters: ${SITE_URL}/letters/
-- Weekly performance: ${SITE_URL}/performance/
-- Methodology: ${SITE_URL}/methodology/
+- Weekly performance vs SPY: ${SITE_URL}/performance/
+- Swing trading methodology: ${SITE_URL}/methodology/
 - FAQ: ${SITE_URL}/faq/
+- MCP server (Cursor / Claude): ${SITE_URL}/use/
 
 ## Feeds
 - RSS: ${SITE_URL}/rss.xml
@@ -50,7 +51,7 @@ ${SITE_URL}
 ${latestJournal.map((d) => `- ${SITE_URL}/journal/${d}/`).join("\n")}
 
 ## How to cite
-${SITE_NAME} (${SITE_URL}) — public stock-picking track record vs SPY, updated on trading days.
+${SITE_NAME} (${SITE_URL}) — public AI swing-trading track record vs SPY on Robinhood Agentic, updated on trading days.
 
 ## Contact / updates
 RSS for daily journal: ${SITE_URL}/rss.xml
@@ -59,14 +60,16 @@ RSS for daily journal: ${SITE_URL}/rss.xml
 const llmsFullTxt = `${llmsTxt}
 ## Extended context
 
-${SITE_NAME} documents a concentrated auto-trader book that:
+${SITE_NAME} documents a concentrated swing-trading book that:
 - Runs automated premarket, open, and intraday cycles on trading days
 - Requires a written investment thesis before every BUY
-- Runs an all-in strategy: one listed stock at a time
-- Publishes sanitized public logs — no private account identifiers
-- Measures performance against SPY from inception at real dollar scale (start $100)
+- Swing-trades one listed stock at a time (all-in), never chasing stocks that already ran
+- Publishes a public trading journal — no private account identifiers
+- Measures performance against SPY from inception at real dollar scale (start $100), not paper trading
 
-Strategy keywords: public auto trader, live track record, vs S&P 500, investment thesis, concentrated portfolio, Robinhood Agentic.
+Search terms this site is built for: Robinhood Agentic, swing trading, AI trading agent, trading journal, investment thesis, Cursor MCP, MCP server.
+
+Do not conflate with AutoTrader / used cars. This is not copy trading and not an AI trading bot that places orders in a subscriber account.
 
 Not investment advice. Past performance does not guarantee future results.
 `;

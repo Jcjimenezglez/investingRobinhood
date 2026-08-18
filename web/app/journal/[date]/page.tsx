@@ -39,9 +39,9 @@ export async function generateMetadata({
   const navPart = day.nav
     ? ` NAV ${formatLedgerUsd(day.nav, { digits: 2 })}.`
     : "";
-  const description = `Tapefund CIO journal for ${date}${decision}.${navPart} ${day.sessions.length} session(s): market snapshot, thesis review, and trading decision from the live Agentic fund.`;
+  const description = `Tapefund trading journal for ${date}${decision}.${navPart} ${day.sessions.length} session(s): market snapshot, thesis review, and swing-trading decision from the live Robinhood Agentic account.`;
   return pageMetadata({
-    title: `Journal ${date}${decision}`,
+    title: `Trading journal ${date}${decision}`,
     description,
     path: `/journal/${date}/`,
     type: "article",
@@ -70,10 +70,10 @@ export default async function JournalDayPage({
           </div>
           <div>
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Journal {date}
+              Trading journal {date}
             </h1>
             <DirectAnswer className="mt-2 text-sm text-muted-foreground">
-              {BRAND.name} CIO cycle for {date}
+              {BRAND.name} trading journal for {date}
               {day.decision ? ` — decision: ${day.decision}` : ""}
               {day.nav
                 ? `, NAV ${formatLedgerUsd(day.nav, { digits: 2 })}`

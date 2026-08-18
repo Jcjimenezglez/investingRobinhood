@@ -24,10 +24,16 @@ import { BRAND } from "@/lib/site-config";
 import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Methodology",
+  title: "Swing trading methodology",
   description:
-    "How Tapefund invests: all-in one listed stock, retail vibes + support + catalyst, never chase, no crypto/margin/options/pennies.",
+    "Tapefund swing trading strategy on Robinhood Agentic: all-in one listed stock, investment thesis before every BUY, never chasing stocks, no crypto/margin/options/pennies. Not day trading.",
   path: "/methodology/",
+  keywords: [
+    "swing trading strategy",
+    "swing trading stocks",
+    "chasing stocks",
+    "robinhood agentic account",
+  ],
 });
 
 const pillars = [
@@ -48,13 +54,13 @@ const pillars = [
   },
   {
     icon: BookOpen,
-    title: "Daily CIO cycle",
-    body: "Automated runbook at premarket, open, and intraday. Each session is published on Tapefund.",
+    title: "Daily trading journal",
+    body: "Automated runbook at premarket, open, and intraday. Each session is published as a trading journal entry.",
   },
   {
     icon: Zap,
     title: "All-in rules",
-    body: "Shares only. No crypto, margin, options, or pennies. Follow retail attention. Never chase a stock that already ran.",
+    body: "Shares only. No crypto, margin, options, or pennies. Follow retail attention. Never chasing stocks that already ran.",
   },
   {
     icon: LineChart,
@@ -110,11 +116,14 @@ export default function MethodologyPage() {
   return (
     <PageShell>
       <div>
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Methodology</h1>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Swing trading methodology
+        </h1>
         <DirectAnswer className="mt-3">
-          {BRAND.name} runs an all-in swing book: one listed stock at a time,
-          follow retail attention, buy support with a catalyst, sell around
-          +20–30%. No crypto, margin, options, or pennies. Don't chase.
+          {BRAND.name} is a public AI trading agent for swing trading stocks —
+          not day trading. All-in one listed name on Robinhood Agentic: follow
+          retail attention, buy support with a catalyst, sell around +20–30%.
+          No crypto, margin, options, or pennies. Never chase.
         </DirectAnswer>
       </div>
 
@@ -187,7 +196,7 @@ export default function MethodologyPage() {
         <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
           <li>
             <Link href="/journal/" className="text-signal hover:underline">
-              Journal
+              Trading journal
             </Link>{" "}
             — CIO cycles with NAV and HOLD/BUY/SELL decisions
           </li>
@@ -217,9 +226,9 @@ export default function MethodologyPage() {
 
       <JsonLd
         data={collectionPageJsonLd({
-          name: "Tapefund Methodology",
+          name: "Tapefund swing trading methodology",
           description:
-            "Investment process for the Tapefund AI hedge fund track record, including broker-native earnings, financials, technicals, and Level II research.",
+            "Swing trading process for the Tapefund AI trading agent, including broker-native earnings, financials, technicals, and Level II research.",
           path: "/methodology/",
         })}
       />

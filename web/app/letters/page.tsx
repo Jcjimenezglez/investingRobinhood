@@ -26,7 +26,7 @@ import { PageShell } from "@/components/marketing/section";
 export const metadata: Metadata = pageMetadata({
   title: "Investor letters",
   description:
-    "Tapefund investor letters: CIO write-ups documenting mandate changes and swing allocations.",
+    "Tapefund investor letters: CIO write-ups on mandate changes, all-in swing allocations, and the public Robinhood Agentic book.",
   path: "/letters/",
 });
 
@@ -86,7 +86,7 @@ export default function LettersPage() {
       <JsonLd
         data={collectionPageJsonLd({
           name: "Tapefund Investor Letters",
-          description: "Investor letters from the Tapefund AI fund.",
+          description: "Investor letters from the Tapefund AI trading agent.",
           path: "/letters/",
         })}
       />

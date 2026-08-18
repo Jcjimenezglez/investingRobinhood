@@ -25,10 +25,11 @@ import { BRAND } from "@/lib/site-config";
 import { PageShell } from "@/components/marketing/section";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Performance",
+  title: "Performance vs SPY",
   description:
-    "Tapefund weekly performance: NAV scorecards, return vs SPY benchmark, alpha, and thesis status updates every Friday.",
+    "Tapefund weekly performance versus the S&P 500 (SPY): live NAV scorecards, alpha, cash, and thesis status every Friday. Real Robinhood Agentic dollars — not paper trading.",
   path: "/performance/",
+  keywords: ["fund nav", "realized pnl", "swing trading vs day trading"],
 });
 
 export default function PerformancePage() {
@@ -42,11 +43,14 @@ export default function PerformancePage() {
           <LineChart className="size-5" strokeWidth={1.5} />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Performance</h1>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Performance vs SPY
+          </h1>
           <DirectAnswer className="mt-2">
-            {BRAND.name} publishes weekly NAV scorecards every Friday with return
-            vs the SPY benchmark, alpha, cash allocation, and thesis status for
-            each open position.
+            {BRAND.name} publishes weekly NAV scorecards every Friday: swing
+            trading return versus SPY, alpha, cash, and thesis status. Use this
+            page to judge whether the book is ahead of buy-and-hold — the sample
+            is still small.
           </DirectAnswer>
         </div>
       </div>
@@ -102,7 +106,7 @@ export default function PerformancePage() {
       <JsonLd
         data={collectionPageJsonLd({
           name: "Tapefund Performance",
-          description: "Weekly performance reports for the Tapefund AI fund.",
+          description: "Weekly performance versus SPY for the Tapefund AI trading agent.",
           path: "/performance/",
         })}
       />

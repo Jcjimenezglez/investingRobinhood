@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { ThemeProvider } from "@/components/theme/theme-provider";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { DeskChrome } from "@/components/desk/desk-chrome";
 import { JsonLd } from "@/components/seo/json-ld";
+import { getFundSnapshot } from "@/lib/content";
 import {
   organizationJsonLd,
   pageMetadata,
@@ -12,6 +10,20 @@ import {
 } from "@/lib/seo";
 import { BRAND } from "@/lib/site-config";
 import "./globals.css";
+import "./desk.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   ...pageMetadata({
@@ -20,7 +32,7 @@ export const metadata: Metadata = {
     path: "/",
   }),
   title: {
-    default: `${BRAND.name} — ${BRAND.tagline}`,
+    default: `${BRAND.name}, public auto-trader desk`,
     template: `%s · ${BRAND.name}`,
   },
   applicationName: BRAND.name,
@@ -29,16 +41,10 @@ export const metadata: Metadata = {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
   },
-  other: {
-    "msapplication-TileColor": BRAND.color,
-  },
 };
 
 export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
+  themeColor: "#0e0d0b",
 };
 
 export default function RootLayout({
@@ -46,29 +52,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const snap = getFundSnapshot();
+
   return (
     <html
       lang={BRAND.language}
-      suppressHydrationWarning
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`dark ${archivo.variable} ${plexMono.variable}`}
     >
       <head>
         <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       </head>
-      <body className="font-sans antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
-          <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-          </div>
-        </ThemeProvider>
+      <body className="desk-root">
+        <JsonLd data={[organizationJsonLd(), webSiteJsonLd()]} />
+        <DeskChrome updated={snap.lastUpdated}>{children}</DeskChrome>
       </body>
     </html>
   );

@@ -95,7 +95,13 @@ export function getPositions(): Position[] {
     .trim()
     .split("\n")
     .filter(Boolean)
-    .map((line) => JSON.parse(line) as Position);
+    .map((line) => {
+      const row = JSON.parse(line) as Position;
+      return {
+        ...row,
+        notes: row.notes ? sanitizeMarkdown(row.notes) : row.notes,
+      };
+    });
 }
 
 export function getJournalDays(): JournalDay[] {

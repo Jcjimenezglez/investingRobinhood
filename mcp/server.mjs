@@ -145,6 +145,7 @@ function callTool(name, args = {}) {
         entry_price: p.entry_price,
         return_pct: p.return_pct,
         exit_reason: p.exit_reason,
+        notes: publicize(p.notes || ""),
       }));
     case "get_holdings":
       return open.map((p) => ({

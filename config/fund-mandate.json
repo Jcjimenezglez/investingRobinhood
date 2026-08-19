@@ -6,7 +6,7 @@
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "2026-08-19: Dual-gate all-in (Ackman quality AND Xu timing). No GTC stop. If dual-gate fails in live scorecard, LP may switch later to Ackman-only — still all-in ONE stock, never split across 2+ names like the AMZN/MSFT/SPCX book."
+    "lpDirective": "2026-08-19: Dual-gate on AVGO until 2026-09-19. MSFT +30%/~60d (~15%/mo) is the bar. If AVGO is not working by then, Ackman-only all-in ONE name — never 2+ stocks."
   },
   "explicitlyExcluded": [
     "ackman-style 3–12 month activist *multi-name* book / 13F replica",
@@ -58,8 +58,20 @@
   "fallbackIfDualGateFails": {
     "asOf": "2026-08-19",
     "status": "standby_not_active",
-    "reviewAfter": "scorecard evidence that dual-gate (Ackman+Xu) is not working",
-    "then": "Ackman-only process, still all-in ONE listed stock (~92% NAV). Never split into 2+ names like AMZN/MSFT/SPCX.",
+    "liveTest": "AVGO dual-gate all-in",
+    "entryDate": "2026-08-19",
+    "reviewDate": "2026-09-19",
+    "benchmarkTrade": {
+      "symbol": "MSFT",
+      "hold": "2026-06-18 → 2026-08-17 (~60d)",
+      "returnPct": 30.1,
+      "paceNote": "~15% per month. LP: that pace is good. Dual-gate should be judged against it, not against 2-day lottery."
+    },
+    "avgoNotWorkingIf": [
+      "By 2026-09-19 AVGO is not roughly on that ~15%/month path (and thesis is not clearly intact toward +20–30% in ~60d)",
+      "Quality thesis broken before then"
+    ],
+    "then": "Resume prior *process*: Ackman-style quality all-in (MSFT 60-day), still ONE listed stock ~92% NAV. Never split 2+ names (not AMZN+MSFT+SPCX).",
     "stillForbidden": ["second simultaneous equity", "13F copy", "GTC stop required", "options", "margin"]
   },
   "researchUniverse": [

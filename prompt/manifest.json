@@ -1,6 +1,6 @@
 {
-  "version": "2.2.1",
-  "description": "v2.2.1: Dual-gate live. No GTC stop. Fallback later = Ackman-only still all-in one name — never split the book.",
+  "version": "2.2.2",
+  "description": "v2.2.2: AVGO dual-gate review 2026-09-19 vs MSFT ~15%/mo. Fail → Ackman all-in one name, not a split book.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

@@ -5,7 +5,7 @@
 ## Pre-flight
 
 1. Leer `prompt/manifest.json` + secciones en `loadOrder`
-2. Leer `config/signal-weights.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`, `config/risk-policy.json` (`options.enabled=false`)
+2. Leer `config/signal-weights.json`, `config/fund-mandate.json`, `config/ackman-quality-screen.json`, `config/kevin-xu-playbook.json`, `config/risk-policy.json` (`options.enabled=false`)
 3. Leer `logs/theses/bench/bench-memo-template.md`
 
 ## Fase 1 — Ranking

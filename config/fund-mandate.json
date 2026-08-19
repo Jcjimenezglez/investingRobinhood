@@ -6,7 +6,7 @@
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "2026-08-19: All-in only if Ackman quality AND Xu timing both pass. May hold through earnings / 1 month+ when the quality thesis is the wait. Still one name. 13F is not a BUY."
+    "lpDirective": "2026-08-19: Dual-gate all-in (Ackman quality AND Xu timing). No GTC stop. If dual-gate fails in live scorecard, LP may switch later to Ackman-only — still all-in ONE stock, never split across 2+ names like the AMZN/MSFT/SPCX book."
   },
   "explicitlyExcluded": [
     "ackman-style 3–12 month activist *multi-name* book / 13F replica",
@@ -40,7 +40,7 @@
     "swingTargetPctHigh": 30,
     "holdHorizon": "days-to-weeks, up to ~1–2 months when dual-gate quality hold",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/",
-    "note": "Target +20–30%. May hold through a print if Ackman quality AND Xu entry both passed. Still one name. Screenshot / dead setup = exit."
+    "note": "Target +20–30%. May hold through a print if both gates passed. No GTC stop. Screenshot / dead setup = exit."
   },
   "bookPolicy": {
     "maxSimultaneousEquityPositions": 1,
@@ -54,6 +54,13 @@
       "legacyTickers": ["AMZN", "MSFT", "SPCX"],
       "reason": "Three names violate one-at-a-time. MSFT already ~+31% — Xu would have sold."
     }
+  },
+  "fallbackIfDualGateFails": {
+    "asOf": "2026-08-19",
+    "status": "standby_not_active",
+    "reviewAfter": "scorecard evidence that dual-gate (Ackman+Xu) is not working",
+    "then": "Ackman-only process, still all-in ONE listed stock (~92% NAV). Never split into 2+ names like AMZN/MSFT/SPCX.",
+    "stillForbidden": ["second simultaneous equity", "13F copy", "GTC stop required", "options", "margin"]
   },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"

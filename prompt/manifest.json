@@ -1,6 +1,6 @@
 {
-  "version": "2.2.0",
-  "description": "v2.2.0: All-in only if Ackman AND Xu pass. May hold through Q / ~1 month+ if quality thesis owns the wait. Still one name, don't chase.",
+  "version": "2.2.1",
+  "description": "v2.2.1: Dual-gate live. No GTC stop. Fallback later = Ackman-only still all-in one name — never split the book.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

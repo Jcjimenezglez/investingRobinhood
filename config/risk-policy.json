@@ -9,7 +9,7 @@
   },
   "strategy": {
     "name": "kevin-xu-all-in-swing",
-    "description": "Kevin Xu filter: all-in one listed stock; vibes + support + catalyst; no crypto/margin/options/pennies. Capture 20–30% then rotate.",
+    "description": "Ackman quality check + Kevin Xu execution: all-in one listed stock; vibes + support + catalyst; no crypto/margin/options/pennies. Capture 20–30% then rotate.",
     "primaryObjective": "capture_xu_style_swings",
     "secondaryObjective": "avoid_blowups_via_no_leverage_no_options_no_crypto",
     "timeHorizon": "days-to-weeks",

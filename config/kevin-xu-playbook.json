@@ -1,6 +1,6 @@
 {
   "version": "1.1.0",
-  "source": "Kevin Xu (@kevinxu) public rules only — no LP overlay. All-in one equity; no margin/options/crypto/pennies; vibes + support + catalyst; don't chase; sell 20–30% / before rumor is news; no stops. He traded GME early: meme/retail names are allowed if not a chase.",
+  "source": "Kevin Xu (@kevinxu) public rules for *execution*. Quality checklist is separate: config/ackman-quality-screen.json. All-in one equity; no margin/options/crypto/pennies; vibes + support + catalyst; don't chase; sell 20–30% / before rumor is news; no stops. He traded GME early: meme/retail names are allowed if not a chase.",
   "rules": {
     "oneNameAtATime": true,
     "instrument": "common_stock_only",

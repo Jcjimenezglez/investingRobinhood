@@ -19,7 +19,7 @@ La regla `.mdc` le dice al agente que lea `manifest.json` y aplique cada secció
 |------------------|---------|
 | Personalidad, tono, idioma | `sections/01-identity.md` |
 | Flujo de herramientas MCP | `sections/02-mcp-workflow.md` |
-| Estrategia, universo, horizonte | `sections/03-strategy.md` + `config/risk-policy.json` + `config/kevin-xu-playbook.json` |
+| Estrategia, universo, horizonte | `sections/03-strategy.md` + `config/risk-policy.json` + `config/kevin-xu-playbook.json` + `config/ackman-quality-screen.json` |
 | Fases snapshot → scan → trade | `sections/04-decision-framework.md` |
 | Límites duros (max trades, stops) | `sections/05-risk-guardrails.md` + `config/risk-policy.json` |
 | Formato de respuestas | `sections/06-response-format.md` |

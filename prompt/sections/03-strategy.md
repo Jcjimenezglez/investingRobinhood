@@ -1,6 +1,12 @@
-# Estrategia: Kevin Xu All-In Swing
+# Estrategia: calidad Ackman + timing Xu
 
-Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`.
+Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`, `config/ackman-quality-screen.json`.
+
+**Capa 1 (Ackman / Pershing):** ¿es un negocio real que no se va a cero? Checklist 6 puntos. Hunting ground 13F opcional.
+
+**Capa 2 (Xu):** ¿compramos **ahora**, all-in **uno**, en soporte + catalizador, sin chase? Vender +20–30%.
+
+Xu gana en count / size / exit. El checklist no es un segundo book.
 
 ## Su filtro (el que usamos)
 
@@ -15,7 +21,7 @@ Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-play
 | No stop-loss | No GTC stop |
 | GME early (él lo hizo) | Permitido si pasa las reglas de arriba |
 
-**No** overlay “no memes / overlooked quality”. Si el nombre es un darling retail pero está en soporte con catalizador y no ha corrido — es un setup Xu.
+Darling retail / meme: **in** si pasa Xu (early) **y** calidad ≥2/6 (no penny). Calidad ≥4/6 + Xu Alta = all-in. 13F **no** es overlay de BUY.
 
 ## All-in
 
@@ -34,10 +40,11 @@ Si el mercado **espera un Q bueno**, la acción suele subir **días antes** del 
 
 ## Proceso antes de BUY
 
-1. ¿Puede ir a **cero overnight**? Options/crypto/penny → PASS.
-2. ¿Hay **atención retail / vibes** + catalizador días–semanas?
-3. ¿Está en **soporte**, no chase?
-4. Memo → flatten other names → `review` → `place` shares. **No stop.**
+1. Checklist Ackman ≥2/6 (Alta pide ≥4/6). 13F no autoriza.
+2. ¿Puede ir a **cero overnight**? Options/crypto/penny → PASS.
+3. ¿Hay **atención retail / vibes** + catalizador días–semanas?
+4. ¿Está en **soporte**, no chase?
+5. Memo → flatten other names → `review` → `place` shares. **No stop.**
 
 ## Universo
 

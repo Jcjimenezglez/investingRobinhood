@@ -9,7 +9,7 @@
 - P&L hoy: +/-$Z
 
 🔍 CANDIDATOS
-1. TICKER — Convicción: Media — [tesis 1 línea]
+1. TICKER — Convicción: Media — Quality n/6 — [tesis 1 línea]
 
 ⚖️ RECOMENDACIÓN
 [Acción o HOLD con razón]

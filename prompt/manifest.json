@@ -1,6 +1,6 @@
 {
-  "version": "2.2.2",
-  "description": "v2.2.2: AVGO dual-gate review 2026-09-19 vs MSFT ~15%/mo. Fail → Ackman all-in one name, not a split book.",
+  "version": "2.2.3",
+  "description": "v2.2.3: Agent instructions aligned to live dual-gate AVGO; review 2026-09-19 vs MSFT ~15%/mo.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

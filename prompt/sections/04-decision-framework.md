@@ -48,9 +48,9 @@ Ranking:
 - **Vibes / retail attention**
 - **Catalizador** (incl. **pre-Q run-up** si el print se espera bueno — vender el 20–30% *antes* del report)
 - **Por qué no es chase**
-- **Kill:** rumor is news, extension, penny-risk, already +20% into Q
-- **Target:** +20–30% (often filled *before* earnings)
-- **Convicción:** Baja / Media / Alta
+- **Kill:** extension/chase, penny, quality thesis broken, already +20% into Q *before entry*
+- **Target:** +20–30% (puede ser pre-Q o post-Q si dual-gate hold)
+- **Convicción Alta:** Ackman ≥4/6 **y** Xu Alta. Si falta una capa → no all-in.
 
 ## Fase 4 — Ejecución (BUY)
 
@@ -73,7 +73,7 @@ Cada sesión, para la **única** posición:
 
 - P&L% ≥ 20 (band 20–30) → SELL all
 - Screenshot / news fully priced → SELL all
-- **Earnings hoy o mañana** y (P&L ya en banda **o** default sell-before-print) → SELL all en regular hours **antes** del report
+- Dual-gate all-in: **no** vender solo porque el Q es mañana. Vender si el target ya está o la tesis de calidad se rompió.
 - Setup muerto → SELL all
 - Aparece un segundo nombre → flatten (error)
 

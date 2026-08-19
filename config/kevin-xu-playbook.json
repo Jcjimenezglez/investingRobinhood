@@ -14,10 +14,11 @@
     "terminallyOnline": true,
     "holdDaysToWeeks": true,
     "targetGainPct": { "low": 20, "high": 30 },
-    "sellBeforeEarningsPrint": true,
+    "sellBeforeEarningsPrint": false,
+    "sellBeforeEarningsPrintNote": "LP 2026-08-19: not required when Ackman quality AND Xu entry both passed. Still sell if +20–30% already in before the print (screenshot).",
     "preEarningsRunUp": {
       "enabled": true,
-      "note": "Xu: if the street expects a good Q, the stock often runs BEFORE the print. Sell into that +20–30%. Do not need the actual earnings night. The print is a coin flip — holding it is optional only if still below target AND setup intact; default is sell before rumor becomes the 8-K."
+      "note": "Buying washout before an expected-good Q is valid Xu entry. Holding the print is allowed on dual-gate all-in. If +20–30% hits before the 8-K, sell — rumor is already news."
     },
     "hardStopGtc": false,
     "hardStopNote": "Xu: no stop-losses. Exit = target, screenshot, rumor-is-news, or setup dead."
@@ -27,8 +28,8 @@
     "Retail attention / vibes building (Reddit, X, scanners) — Xu is terminally online, not DCF",
     "Near-term catalyst in days–weeks",
     "Buy near support — do not chase a name that already ran",
-    "Pre-Q run-up is a valid swing: expected-good print → drift up in the days before → sell 20–30% BEFORE the report",
-    "Do not YOLO the earnings print for the extra %",
+    "Pre-Q washout + expected-good print is a valid entry",
+    "Do not chase a name that already ran ≥20% into the event",
     "Worst case on a real stock is typically an ugly gap (~20–25%), not zero",
     "Written swing memo exists"
   ],

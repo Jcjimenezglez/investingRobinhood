@@ -6,7 +6,7 @@
   "hierarchy": {
     "qualityCheck": "Ackman-style: durable operating company, simple business, not going to zero, identifiable catalyst path",
     "buyDecision": "Kevin Xu: one name, vibes + support + catalyst, don't chase, sell +20–30% / before rumor is news",
-    "conflictRule": "Xu wins on size, count, horizon, and exit. Ackman never authorizes a second name, a 3–12 month hold, or holding the earnings night."
+    "conflictRule": "ALL-IN requires BOTH gates. Xu: one name, don't chase, support+catalyst. Ackman: quality ≥4/6. If both pass, holding through the Q or ~1 month+ is allowed when the quality thesis is 'own the business until the tape reprices.' Xu still vetoes chase/pennies/second name. 13F never authorizes a BUY."
   },
   "hardProhibitions": [
     "Do not copy the 13F into the Agentic book",
@@ -44,7 +44,7 @@
   "scoring": {
     "passMinYes": 4,
     "use": "Memo + ranking column. Soft input to wont_go_to_zero. Never a second scoring system that can override Xu PASS (chase/penny/no catalyst).",
-    "altaRequires": "Xu Alta AND quality checklist ≥4/6. Quality 2–3/6 can still be Media if Xu early-meme rules pass. Quality 0–1/6 → no all-in."
+    "altaRequires": "Xu Alta AND quality checklist ≥4/6. No all-in if either gate fails. Quality 2–3/6 = no all-in (Media max / usually cash). Quality 0–1/6 → cash."
   },
   "pershing13F": {
     "file": "config/ackman-tracker.json",

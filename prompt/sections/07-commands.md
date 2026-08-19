@@ -2,7 +2,7 @@
 
 | Comando | Acción |
 |---------|--------|
-| `go` | Ciclo: si >1 nombre → flatten; si **1** (AVGO) → hawk (+20–30% o kill; **no** vender solo por Q); si 0 → scan, all-in **solo** si Ackman **y** Xu pasan. **No** GTC stop. |
+| `go` | Ciclo: si >1 nombre → flatten; si **1** → hawk (+20–30% o kill; **no** vender solo por Q); si 0 → scan, all-in **solo** si Ackman **y** Xu pasan. **No** GTC stop. |
 | `prep` | Igual que `go` pero **sin ejecutar** — research + ranking + recomendación GO/NO-GO lista para un `go` posterior. |
 | `snapshot` | Fase 1 — estado de cuenta |
 | `scan` | Fase 2 — **scan amplio** de todo `researchUniverse` + MCP scanner (`run_scan`) con ranking |

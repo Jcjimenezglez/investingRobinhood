@@ -20,7 +20,7 @@ Universe + scanner. Don't chase. Quality n/6. 13F no es BUY.
 |--------|-----------|
 | **FLATTEN** | count > 1 |
 | **SELL** | unique name ≥ +20% or setup/quality dead |
-| **HOLD** | AVGO (or one name), P&L < 20, tesis intacta — **incluye** hold through Q |
+| **HOLD** | one name, P&L < 20, tesis intacta — **incluye** hold through Q |
 | **BUY** | count 0, Xu Alta **y** quality ≥4/6, memo, not chase, cash ≥ 8% post |
 | **CASH** | no dual-gate setup |
 

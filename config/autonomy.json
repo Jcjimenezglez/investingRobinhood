@@ -41,7 +41,7 @@
         "name": "market-open",
         "cron": "35 9 * * 1-5",
         "action": "full-cycle",
-        "description": "Hawk AVGO / dual-gate all-in if flat and both gates pass; flatten if >1 name"
+        "description": "Hawk the open name / dual-gate all-in if flat and both gates pass; flatten if >1 name"
       },
       {
         "name": "intraday-monitor",
@@ -68,7 +68,7 @@
         "cron": "30 16 * * 5",
         "action": "scorecard-review",
         "workflow": "workflows/automation-04-weekly-review.md",
-        "description": "Viernes 16:30 ET: scorecard, SPY, AVGO vs MSFT ~15%/mo clock, YYYY-WW-suggestions.json"
+        "description": "Viernes 16:30 ET: scorecard, SPY, open swing vs ~15%/mo, YYYY-WW-suggestions.json"
       },
       {
         "name": "kevin-xu-calibration",

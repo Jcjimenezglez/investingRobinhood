@@ -2,12 +2,14 @@
 
 Leer `config/autonomy.json`, `config/risk-policy.json`, `config/fund-mandate.json`, `config/ackman-quality-screen.json`, `config/kevin-xu-playbook.json`, `config/notifications.json`.
 
+El ticker abierto = `get_equity_positions`. No hardcodear un nombre.
+
 ## 1. Pre-flight
 
 - [ ] MCP autenticado
 - [ ] Solo Agentic cash (`options.enabled=false`, no margin)
 - [ ] Si `positions.length > 1` → flatten
-- [ ] Live esperado: **AVGO** (hasta salida o revisión 2026-09-19)
+- [ ] Si hay 1 nombre: leer su memo en `logs/theses/` y `fallbackIfDualGateFails` si aplica
 
 ## 2. Scan
 
@@ -24,7 +26,7 @@ Leer `config/autonomy.json`, `config/risk-policy.json`, `config/fund-mandate.jso
 | >1 posición | SELL all |
 | 1 posición, P&L ≥ +20% | SELL all |
 | 1 posición, setup/calidad muerta | SELL all |
-| 1 posición, AVGO, tesis intacta | HOLD (incluye hold through 2-sep Q) |
+| 1 posición, tesis intacta | HOLD (incluye hold through Q si dual-gate al entrar) |
 | 0 posiciones, #1 Alta **y** quality ≥4/6, no chase | BUY all-in (~92%) |
 | Else | cash / hold |
 
@@ -39,8 +41,8 @@ SELL: tax lots → review → place → scorecard.
 | Hora | Sesión |
 |------|--------|
 | 8:00 | Research only |
-| 9:35 | Hawk AVGO / flatten / all-in dual-gate |
+| 9:35 | Hawk el nombre abierto / flatten / all-in dual-gate |
 | 12:00 / 15:00 | Hawk — target or kill, no pre-print auto-sell |
-| Vie 16:30 | Weekly scorecard (+ distancia a $417 / banda) |
-| Vie 17:00 | Calibration (pesos Xu; no flatten AVGO) |
+| Vie 16:30 | Weekly scorecard vs +20–30% y ritmo ~15%/mes |
+| Vie 17:00 | Calibration (pesos Xu; no flatten el swing abierto) |
 | Vie 18:00 | SPCX personal watch (info only) |

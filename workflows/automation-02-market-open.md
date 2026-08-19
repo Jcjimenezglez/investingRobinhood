@@ -1,30 +1,30 @@
 # Automation #2 — Market Open Cycle (9:35 AM ET)
 
-**Modo:** trades OK (regular hours).
+**Modo:** trades OK (regular hours). Dual-gate.
 
 ## Pre-flight
 
-Kevin Xu mandate. `config/kevin-xu-playbook.json`. Solo Agentic.
+`config/fund-mandate.json` + `ackman-quality-screen.json` + `kevin-xu-playbook.json`. Solo Agentic.
 
 ## Fase 1 — Snapshot
 
-Si **>1 equity** → Fase flatten (SELL all). No BUY.
+Si **>1 equity** → flatten (SELL all). No BUY.
 
 ## Fase 2 — Scan
 
-Universe + scanner. Don't chase. No 13F.
+Universe + scanner. Don't chase. Quality n/6. 13F no es BUY.
 
 ## Fase 3
 
 | Acción | Condición |
 |--------|-----------|
-| **FLATTEN** | count > 1 (AMZN/MSFT/SPCX legacy) |
-| **SELL** | unique name ≥ +20% or setup dead |
-| **BUY** | count 0, #1 Alta, memo, not extended, cash ≥ 8% post |
-| **CASH** | no setup |
-| **HOLD** | one name, P&L < 20, setup intact |
+| **FLATTEN** | count > 1 |
+| **SELL** | unique name ≥ +20% or setup/quality dead |
+| **HOLD** | AVGO (or one name), P&L < 20, tesis intacta — **incluye** hold through Q |
+| **BUY** | count 0, Xu Alta **y** quality ≥4/6, memo, not chase, cash ≥ 8% post |
+| **CASH** | no dual-gate setup |
 
-Sizing: Alta ~92% · Media ~60% · Baja = 0. **No stop GTC.**
+Sizing: Alta ~92% · Media no all-in en dual-gate · Baja = 0. **No stop GTC.**
 
 ## Output
 

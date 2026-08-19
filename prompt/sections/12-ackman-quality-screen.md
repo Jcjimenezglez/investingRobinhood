@@ -13,4 +13,4 @@
 
 ## 13F Pershing
 
-Hunting ground only. AVGO puede pasar calidad **sin** estar en el 13F.
+Hunting ground only. Un nombre puede pasar calidad **sin** estar en el 13F.

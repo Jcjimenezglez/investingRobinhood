@@ -5,7 +5,7 @@
 ## Pre-flight
 
 1. Leer `prompt/manifest.json` + secciones en `loadOrder`
-2. Leer `config/signal-weights.json`, `config/macro-regime.json`, `config/fund-mandate.json` (reloj AVGO 2026-09-19)
+2. Leer `config/signal-weights.json`, `config/macro-regime.json`, `config/fund-mandate.json` (`fallbackIfDualGateFails`)
 3. Leer `logs/scorecard/positions.jsonl`, `logs/trade-journal.md`
 4. Cuenta **SOLO Agentic** (`agentic_allowed=true`)
 

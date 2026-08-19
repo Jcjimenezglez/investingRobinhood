@@ -6,10 +6,10 @@
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "Replace Ackman *book* with Kevin Xu execution. 2026-08-19: restore Ackman only as a quality checklist (not a second book / not 13F copy)."
+    "lpDirective": "2026-08-19: All-in only if Ackman quality AND Xu timing both pass. May hold through earnings / 1 month+ when the quality thesis is the wait. Still one name. 13F is not a BUY."
   },
   "explicitlyExcluded": [
-    "ackman-style 3-12 month activist holds as the trading book",
+    "ackman-style 3–12 month activist *multi-name* book / 13F replica",
     "13F closet indexing / copying Pershing Square line items",
     "crypto",
     "options",
@@ -34,13 +34,13 @@
       "marginAllowed": false
     }
   },
-  "clientMandate": "Two layers, one book: (1) Ackman/Pershing *quality checklist* — durable listed business, not zero overnight; 13F is hunting ground only. (2) Kevin Xu *execution* — all-in one listed stock, vibes + support + catalyst, never chase, sell +20–30% / before rumor is fully news. No options, no crypto, no margin, no pennies. Memes OK if Xu-early AND not a zero-overnight story. Not an Ackman 3-name hold.",
+  "clientMandate": "All-in requires BOTH: (1) Ackman/Pershing quality checklist ≥4/6 (durable listed business). (2) Xu timing — one name, vibes + support + catalyst, never chase. Target +20–30%. Holding through a Q or ~1 month+ is allowed when Ackman quality owns the wait (do not sell-before-print just because Xu default said so). Still sell at +20–30%, screenshot, or dead setup. 13F is hunting ground only. No options/crypto/margin/pennies. One name.",
   "returnPlan": {
     "swingTargetPctLow": 20,
     "swingTargetPctHigh": 30,
-    "holdHorizon": "days-to-weeks",
+    "holdHorizon": "days-to-weeks, up to ~1–2 months when dual-gate quality hold",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/",
-    "note": "Screenshot rule. Earnings are a coin flip."
+    "note": "Target +20–30%. May hold through a print if Ackman quality AND Xu entry both passed. Still one name. Screenshot / dead setup = exit."
   },
   "bookPolicy": {
     "maxSimultaneousEquityPositions": 1,

@@ -2,11 +2,7 @@
 
 Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-playbook.json`, `config/ackman-quality-screen.json`.
 
-**Capa 1 (Ackman / Pershing):** ¿es un negocio real que no se va a cero? Checklist 6 puntos. Hunting ground 13F opcional.
-
-**Capa 2 (Xu):** ¿compramos **ahora**, all-in **uno**, en soporte + catalizador, sin chase? Vender +20–30%.
-
-Xu gana en count / size / exit. El checklist no es un segundo book.
+**Capa 1 (Ackman):** calidad ≥4/6. **Capa 2 (Xu):** no chase + catalizador + un nombre. All-in **solo si ambas** pasan. Hold through Q / ~1 mes+ permitido en ese caso.
 
 ## Su filtro (el que usamos)
 

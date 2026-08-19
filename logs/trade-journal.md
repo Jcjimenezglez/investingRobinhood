@@ -1010,4 +1010,24 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 
 *Intel: logs/intelligence/2026-08-17-0935-open.md*
 
+---
+
+## 2026-08-19 11:44 ET — BUY AVGO all-in (dual-gate)
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | BUY AVGO |
+| **Tipo** | Market fractional · regular_hours · gfd · **no stop GTC** |
+| **Notional** | $108.00 |
+| **Fill** | 0.297756 sh @ **$362.7121** |
+| **Order ID** | 6a85cf5a-a5dc-49e2-8fcb-d343966e6e04 |
+| **Ackman** | 6/6 quality — washout vs June high; 13F N/A |
+| **Xu** | Alta entry — not chase, Q 2-sep, one name |
+| **Tesis** | logs/theses/AVGO-2026-08-19.md |
+| **Target** | +20% ~$435 · +30% ~$471 |
+| **Hold through Q** | Allowed (LP dual-gate). Sell if band hits first. |
+
+**Post-trade book:** 1 equity AVGO. Cash residual ~8%.
+
 <!-- El agente appendea entradas aquí después de cada trade -->

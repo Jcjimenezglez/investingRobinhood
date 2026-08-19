@@ -89,15 +89,14 @@
       "autoTakeProfit": true,
       "takeProfitPctLow": 20,
       "takeProfitPctHigh": 30,
-      "note": "Sell the whole name around +20–30%, or into the pre-Q run-up before the print. Default: do not hold the earnings night (coin flip). Screenshot / rumor-is-news also full exit.",
+      "note": "Sell 100% at +20–30%, screenshot, or dead setup. Dual-gate: if Ackman quality AND Xu entry both passed, do NOT auto-sell just because earnings is tonight — hold is allowed (~1 month+). If only Xu passed and quality <4/6, that trade should not have been all-in.",
       "fullExitTriggers": [
         "swing_target_20_to_30_pct",
         "screenshot_rule",
-        "pre_earnings_runup_target_hit",
-        "sell_before_earnings_print_if_in_band_or_default",
         "setup_invalidated",
         "chase_detected_after_entry",
-        "superior_xu_setup_requires_rotation",
+        "quality_thesis_broken",
+        "superior_dual_gate_setup_requires_rotation",
         "legacy_multi_name_flatten"
       ],
       "partialTrimTriggers": [],

@@ -22,9 +22,8 @@
 
 ```
 ¿>1 nombre? → flatten
-¿calidad Ackman ≥2/6 y no penny?
+¿calidad Ackman ≥4/6? NO → no all-in
+¿Xu: vibes + catalyst + support + no chase?
   NO → cash
-¿#1 vibes + catalyst + support + won't-go-to-zero (Xu)?
-  NO → cash
-  SÍ → all-in (Alta solo si quality ≥4/6) → hawk → sell 20–30% or kill
+  SÍ ambas → all-in → hawk → sell 20–30% or kill (hold through Q allowed)
 ```

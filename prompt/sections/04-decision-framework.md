@@ -24,7 +24,7 @@ Si `positions.length > 1` → volver a Fase 0.
 
 ## Fase 2 — Scan (antes de elegir)
 
-Escanea `researchUniverse` + scanner + retail-attention names. **No** ackman-tracker. Social/vibes es señal principal.
+Escanea `researchUniverse` + scanner + retail-attention names. Corre el checklist Ackman (`config/ackman-quality-screen.json`). El 13F es hunting ground, **no** señal de BUY. Social/vibes sigue siendo la señal de **timing**.
 
 ```
 get_equity_quotes
@@ -37,13 +37,14 @@ config/signal-weights.json
 
 Ranking:
 
-| Ticker | Score | Vibes | Catalyst (d–w) | Support / chase? | Won't go to 0? | Call |
+| Ticker | Score | Vibes | Catalyst (d–w) | Support / chase? | Quality n/6 | Won't go to 0? | Call |
 
 - Chase / penny / no catalyst → PASS
 - Meme/retail darling **no** es PASS automático — solo si ya corrió o es penny
 
 ## Fase 3 — Análisis
 
+- **Quality (Ackman n/6)** — negocio simple, duradero, no-cero; no DCF 12 meses
 - **Vibes / retail attention**
 - **Catalizador** (incl. **pre-Q run-up** si el print se espera bueno — vender el 20–30% *antes* del report)
 - **Por qué no es chase**

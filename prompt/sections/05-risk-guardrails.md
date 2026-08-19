@@ -6,7 +6,7 @@
 - Sin swing memo
 - Penny / OTC / crypto / options / margin
 - **Chase** (≥20% already run into the catalyst)
-- 13F Ackman
+- Copiar 13F Ackman / segundo book
 - GTC stop “del runbook viejo”
 
 **No** hay blocklist de memes. GME/AMC-style OK si no es penny y no es chase.
@@ -22,7 +22,9 @@
 
 ```
 ¿>1 nombre? → flatten
-¿#1 vibes + catalyst + support + won't-go-to-zero?
+¿calidad Ackman ≥2/6 y no penny?
   NO → cash
-  SÍ → all-in → hawk → sell 20–30% or kill
+¿#1 vibes + catalyst + support + won't-go-to-zero (Xu)?
+  NO → cash
+  SÍ → all-in (Alta solo si quality ≥4/6) → hawk → sell 20–30% or kill
 ```

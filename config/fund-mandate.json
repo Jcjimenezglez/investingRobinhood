@@ -2,15 +2,15 @@
   "fundName": "investingRobinhood",
   "fundType": "single-name-swing-long-only",
   "inspiration": "Kevin Xu (@kevinxu) — all-in one stock at a time; vibes + support + catalyst; days-to-weeks",
-  "investmentPhilosophy": "kevin-xu-only",
+  "investmentPhilosophy": "xu-execution-ackman-quality-check",
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "Replace Ackman book with Kevin Xu's actual filter (not an LP overlay). Flatten AMZN/MSFT/SPCX next session."
+    "lpDirective": "Replace Ackman *book* with Kevin Xu execution. 2026-08-19: restore Ackman only as a quality checklist (not a second book / not 13F copy)."
   },
   "explicitlyExcluded": [
-    "ackman-style 3-12 month activist holds",
-    "13F closet indexing",
+    "ackman-style 3-12 month activist holds as the trading book",
+    "13F closet indexing / copying Pershing Square line items",
     "crypto",
     "options",
     "margin / leverage",
@@ -34,7 +34,7 @@
       "marginAllowed": false
     }
   },
-  "clientMandate": "Replicate Kevin Xu's filter: all-in one listed stock, terminally online (retail attention / vibes), buy support + catalyst, never chase, sell +20–30% / before rumor is fully news. No options, no crypto, no margin, no pennies. Memes/retail darlings are allowed if HIS rules pass (he bought GME early). Not an Ackman hold.",
+  "clientMandate": "Two layers, one book: (1) Ackman/Pershing *quality checklist* — durable listed business, not zero overnight; 13F is hunting ground only. (2) Kevin Xu *execution* — all-in one listed stock, vibes + support + catalyst, never chase, sell +20–30% / before rumor is fully news. No options, no crypto, no margin, no pennies. Memes OK if Xu-early AND not a zero-overnight story. Not an Ackman 3-name hold.",
   "returnPlan": {
     "swingTargetPctLow": 20,
     "swingTargetPctHigh": 30,
@@ -76,10 +76,11 @@
     "No stop-losses — watch like a hawk",
     "Earnings are a coin flip",
     "Retail darlings / meme names are in-universe if early (support+catalyst), out if already ran",
-    "Judge only the Agentic cash book"
+    "Ackman quality checklist is research, not a second simultaneous book"
   ],
   "thesisTemplatePath": "workflows/investment-thesis-template.md",
   "lettersPath": "logs/investor-letters/",
   "playbookPath": "config/kevin-xu-playbook.json",
-  "ackmanTrackerNote": "DEPRECATED 2026-08-15."
+  "ackmanQualityScreenPath": "config/ackman-quality-screen.json",
+  "ackmanTrackerNote": "13F hunting ground only. BUY/PASS is Xu. Quality checklist: config/ackman-quality-screen.json."
 }

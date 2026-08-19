@@ -1,6 +1,6 @@
 {
-  "version": "2.0.4",
-  "description": "v2.0.4: Xu pre-Q run-up — sell 20–30% before the print, don't hold earnings night.",
+  "version": "2.1.0",
+  "description": "v2.1.0: Ackman quality checklist (research) + Xu buy/exit (execution). Not two books.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",
@@ -13,12 +13,14 @@
     "sections/09-autonomous-mode.md",
     "sections/10-data-intelligence.md",
     "sections/11-kevin-xu-playbook.md",
+    "sections/12-ackman-quality-screen.md",
     "sections/13-kevin-xu-calibration-agent.md"
   ],
   "config": {
     "riskPolicy": "config/risk-policy.json",
     "fundMandate": "config/fund-mandate.json",
     "kevinXuPlaybook": "config/kevin-xu-playbook.json",
+    "ackmanQualityScreen": "config/ackman-quality-screen.json",
     "ackmanTrackerDeprecated": "config/ackman-tracker.json",
     "autonomy": "config/autonomy.json",
     "notifications": "config/notifications.json",

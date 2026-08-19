@@ -1,4 +1,4 @@
-# Ackman tracker — RETIRADO
+# Ackman 13F — hunting ground only
 
-Mandato Kevin Xu desde **2026-08-15**. Lee `prompt/sections/11-kevin-xu-playbook.md`.
-No uses 13F para BUY/PASS.
+No uses el 13F para BUY/PASS. Checklist de calidad: `prompt/sections/12-ackman-quality-screen.md`.
+Holdings snapshot: `config/ackman-tracker.json` (Q1 2026, stale).

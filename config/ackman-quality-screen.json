@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "role": "research_quality_checklist",
+  "notAStrategy": true,
+  "source": "Bill Ackman / Pershing Square Capital Management (PSCM) public process — quality screen only. Execution is Kevin Xu.",
+  "hierarchy": {
+    "qualityCheck": "Ackman-style: durable operating company, simple business, not going to zero, identifiable catalyst path",
+    "buyDecision": "Kevin Xu: one name, vibes + support + catalyst, don't chase, sell +20–30% / before rumor is news",
+    "conflictRule": "Xu wins on size, count, horizon, and exit. Ackman never authorizes a second name, a 3–12 month hold, or holding the earnings night."
+  },
+  "hardProhibitions": [
+    "Do not copy the 13F into the Agentic book",
+    "Do not hold 8–11 (or even 2) names because Pershing does",
+    "Do not use 13F confluence as a BUY",
+    "Do not stretch horizon to fair-value 12 months",
+    "Do not skip Xu chase/penny/options/margin filters because PSCM owns the name"
+  ],
+  "checklist": [
+    {
+      "id": "simple_business",
+      "prompt": "Can you explain what they do in two sentences?"
+    },
+    {
+      "id": "durable_demand",
+      "prompt": "Is demand likely still there in 5–10 years (quality), even if we only hold days–weeks?"
+    },
+    {
+      "id": "not_zero_overnight",
+      "prompt": "Listed operating company — not penny, crypto, options, or a story that can go to zero overnight?"
+    },
+    {
+      "id": "identifiable_mispricing_or_catalyst",
+      "prompt": "Is there a near-term reason the tape can reprice (Q, product, attention) — not a 12-month DCF?"
+    },
+    {
+      "id": "worst_case_ugly_gap",
+      "prompt": "Worst case is an ugly gap (~20–25%), not zero?"
+    },
+    {
+      "id": "would_ackman_own_the_business",
+      "prompt": "Would a concentrated quality investor own the *business* (not the 2-day tape)?"
+    }
+  ],
+  "scoring": {
+    "passMinYes": 4,
+    "use": "Memo + ranking column. Soft input to wont_go_to_zero. Never a second scoring system that can override Xu PASS (chase/penny/no catalyst).",
+    "altaRequires": "Xu Alta AND quality checklist ≥4/6. Quality 2–3/6 can still be Media if Xu early-meme rules pass. Quality 0–1/6 → no all-in."
+  },
+  "pershing13F": {
+    "file": "config/ackman-tracker.json",
+    "use": "Optional hunting ground + quality examples. Stale (~45d). Never BUY because it is on the list. Never PASS a Xu setup only because it is not on the list (HOOD, GME-early, scanner names).",
+    "asOf": "2026-03-31",
+    "filed": "2026-05-15",
+    "portfolioValueUsd": 13714299861,
+    "topWeights": [
+      { "symbol": "BN", "weightPct": 17.6 },
+      { "symbol": "AMZN", "weightPct": 17.4 },
+      { "symbol": "UBER", "weightPct": 15.7 },
+      { "symbol": "MSFT", "weightPct": 15.3 },
+      { "symbol": "QSR", "weightPct": 12.2 },
+      { "symbol": "META", "weightPct": 11.1 },
+      { "symbol": "HHH", "weightPct": 8.7 }
+    ],
+    "note": "Q1 2026 13F: new MSFT, AMZN +19%, GOOG/GOOGL ~−95%, HLT exited. Refresh after next 13F. Do not wait for 13F to trade."
+  }
+}

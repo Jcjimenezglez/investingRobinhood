@@ -1,0 +1,251 @@
+{
+  "date": "2026-08-19",
+  "generated_by": "MCP run_scan",
+  "qualityFilters": {
+    "minPriceUsd": 5,
+    "minMarketCapUsd": 200000000,
+    "minAvgDailyVolume": 1000000
+  },
+  "scans": [
+    {
+      "key": "earnings-14d",
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 333,
+      "returned": 200,
+      "quality_hits": 91,
+      "universe_intersection": [
+        "NVDA"
+      ],
+      "sample_quality": [
+        {
+          "ticker": "A",
+          "last": 147.16,
+          "pct_change": -0.00862301266504986,
+          "market_cap": 41924197767.0,
+          "volume": 1798436.163644,
+          "earnings_date": "2.0260826e+07",
+          "name": "Agilent"
+        },
+        {
+          "ticker": "ANF",
+          "last": 111.0,
+          "pct_change": 0.07370864770748699,
+          "market_cap": 4593350179.0,
+          "volume": 1212077.605207,
+          "earnings_date": "2.0260826e+07",
+          "name": "Abercrombie & Fitch"
+        },
+        {
+          "ticker": "BBWI",
+          "last": 20.1268,
+          "pct_change": 0.004331337325349312,
+          "market_cap": 4039298712.0,
+          "volume": 8473689.318622,
+          "earnings_date": "2.0260826e+07",
+          "name": "Bath & Body Works"
+        },
+        {
+          "ticker": "CAF",
+          "last": 19.57,
+          "pct_change": 0.0,
+          "market_cap": 329124893.0,
+          "volume": 20416.225374,
+          "earnings_date": "2.0260826e+07",
+          "name": "Morgan Stanley China A Share Fund"
+        },
+        {
+          "ticker": "CLM",
+          "last": 6.8398,
+          "pct_change": -2.92397660818032e-05,
+          "market_cap": 2037786363.0,
+          "volume": 3923335.273336,
+          "earnings_date": "2.0260826e+07",
+          "name": "Cornerstone Strategic Investment Fund"
+        },
+        {
+          "ticker": "CRF",
+          "last": 6.53,
+          "pct_change": 0.0,
+          "market_cap": 1059164465.0,
+          "volume": 3223406.56556,
+          "earnings_date": "2.0260826e+07",
+          "name": "Cornerstone Total Return Fund"
+        },
+        {
+          "ticker": "CRM",
+          "last": 195.4201,
+          "pct_change": -0.003670337514020575,
+          "market_cap": 160638660000.0,
+          "volume": 14158846.209325,
+          "earnings_date": "2.0260826e+07",
+          "name": "Salesforce"
+        },
+        {
+          "ticker": "CRWD",
+          "last": 212.95,
+          "pct_change": 0.00014089798985535007,
+          "market_cap": 216807765897.0,
+          "volume": 6895532.150876,
+          "earnings_date": "2.0260826e+07",
+          "name": "CrowdStrike Holdings"
+        },
+        {
+          "ticker": "DCI",
+          "last": 93.97,
+          "pct_change": 0.0,
+          "market_cap": 10892161932.0,
+          "volume": 535902.456533,
+          "earnings_date": "2.0260826e+07",
+          "name": "Donaldson"
+        },
+        {
+          "ticker": "EH",
+          "last": 5.66,
+          "pct_change": -0.0017636684303350594,
+          "market_cap": 430043201.0,
+          "volume": 325518.648352,
+          "earnings_date": "2.0260826e+07",
+          "name": "EHang"
+        },
+        {
+          "ticker": "EMD",
+          "last": 10.62,
+          "pct_change": 0.0,
+          "market_cap": 617345304.0,
+          "volume": 359881.1665,
+          "earnings_date": "2.0260826e+07",
+          "name": "Western Asset Emerging Markets Debt Fund, Inc"
+        },
+        {
+          "ticker": "GGAL",
+          "last": 42.5,
+          "pct_change": 0.00902184235517575,
+          "market_cap": 7179008302.0,
+          "volume": 920226.831365,
+          "earnings_date": "2.0260826e+07",
+          "name": "Grupo Financiero Galicia"
+        }
+      ]
+    },
+    {
+      "key": "daily-movers",
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 203,
+      "returned": 200,
+      "quality_hits": 48,
+      "universe_intersection": [],
+      "sample_quality": [
+        {
+          "ticker": "MRNA",
+          "last": 133.0,
+          "pct_change": 1.1124523506988562,
+          "market_cap": 25135891571.0,
+          "volume": 4312677.390226,
+          "earnings_date": null,
+          "name": "Moderna"
+        },
+        {
+          "ticker": "ARCT",
+          "last": 11.09,
+          "pct_change": 0.35079171741778303,
+          "market_cap": 233353396.0,
+          "volume": 403151.38707,
+          "earnings_date": null,
+          "name": "Arcturus Therapeutics Holdings"
+        },
+        {
+          "ticker": "WSO.B",
+          "last": 367.54,
+          "pct_change": 0.17635385994110878,
+          "market_cap": 12931897887.0,
+          "volume": 1955.1269,
+          "earnings_date": null,
+          "name": "Watsco"
+        },
+        {
+          "ticker": "EIKN",
+          "last": 13.5,
+          "pct_change": 0.15879828326180254,
+          "market_cap": 631564249.0,
+          "volume": 747878.80869,
+          "earnings_date": null,
+          "name": "Eikon Therapeutics"
+        },
+        {
+          "ticker": "BNTX",
+          "last": 107.25,
+          "pct_change": 0.15633423180592992,
+          "market_cap": 23299204946.0,
+          "volume": 921618.487583,
+          "earnings_date": null,
+          "name": "BioNTech SE"
+        },
+        {
+          "ticker": "GBLI",
+          "last": 28.3,
+          "pct_change": 0.11681136543015,
+          "market_cap": 370993158.0,
+          "volume": 5972.342315,
+          "earnings_date": null,
+          "name": "Global Indemnity Group"
+        },
+        {
+          "ticker": "SIM",
+          "last": 30.0,
+          "pct_change": 0.09090909090909091,
+          "market_cap": 4766775965.0,
+          "volume": 1148.52256,
+          "earnings_date": null,
+          "name": "Groupo Simec"
+        },
+        {
+          "ticker": "EL",
+          "last": 91.5,
+          "pct_change": 0.08579565681737278,
+          "market_cap": 30488457486.0,
+          "volume": 3334852.982073,
+          "earnings_date": null,
+          "name": "Estee Lauder"
+        },
+        {
+          "ticker": "GLIBA",
+          "last": 28.7,
+          "pct_change": 0.0822021116138763,
+          "market_cap": 1040224179.0,
+          "volume": 34637.372627,
+          "earnings_date": null,
+          "name": "Liberty Capital Corporation Series A"
+        },
+        {
+          "ticker": "MRVI",
+          "last": 6.21,
+          "pct_change": 0.08188153310104525,
+          "market_cap": 855199988.0,
+          "volume": 1715706.512449,
+          "earnings_date": null,
+          "name": "Maravai LifeSciences"
+        },
+        {
+          "ticker": "KC",
+          "last": 11.72,
+          "pct_change": 0.08118081180811816,
+          "market_cap": 3377412711.0,
+          "volume": 1659315.809831,
+          "earnings_date": null,
+          "name": "Kingsoft Cloud"
+        },
+        {
+          "ticker": "MRK",
+          "last": 146.0619,
+          "pct_change": 0.08057927054819873,
+          "market_cap": 333487590308.0,
+          "volume": 10284737.128446,
+          "earnings_date": null,
+          "name": "Merck"
+        }
+      ]
+    }
+  ]
+}

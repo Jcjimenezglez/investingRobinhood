@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-19",
+  "source": "MCP get_earnings_calendar high_market_cap days=14 start_date=2026-08-19",
+  "highlights": {
+    "today_am": ["TGT", "LOW", "TJX", "EL", "ADI", "SQM", "YMM", "FLNG", "VIK"],
+    "today_pm": ["BILL", "COTY", "NDSN", "WOLF", "BULL"],
+    "thu_am": ["WMT", "DE", "BABA", "NTES", "AAP", "FUTU"],
+    "thu_pm": ["ROST"],
+    "nvda": "2026-08-26 pm est EPS 2.07 (now inside scanner 0–7d window)",
+    "mega_week": ["INTU 8/25 pm", "NVDA/CRM/CRWD/OKTA 8/26 pm"]
+  }
+}

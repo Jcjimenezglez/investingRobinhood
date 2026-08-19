@@ -2,7 +2,7 @@
 
 Agente modular para trading vía Robinhood MCP. System prompt en `prompt/sections/`.
 
-**Mandato vigente (prompt v2.2.0):** all-in solo si Ackman quality Y Xu timing pasan. Un listed stock. Hold through Q / ~1 mes+ permitido en dual-gate.
+**Mandato vigente (prompt v2.2.1):** all-in solo si Ackman quality Y Xu timing pasan. Un listed stock. Si el dual-gate no funciona, más adelante Ackman solo — **sigue all-in un nombre**, nunca 2+. Sin stop GTC.
 
 ## Estructura del prompt
 

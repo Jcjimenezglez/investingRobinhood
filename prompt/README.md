@@ -9,9 +9,12 @@ El agente broker carga instrucciones desde archivos modulares en `prompt/section
 prompt/manifest.json                   ← Orden de carga + versión
 prompt/sections/*.md                   ← Contenido editable
 config/risk-policy.json                ← Números (límites, sizing)
+config/fund-mandate.json               ← Dual-gate + reloj AVGO
+config/ackman-quality-screen.json      ← Checklist Ackman
+config/kevin-xu-playbook.json          ← Timing Xu
 ```
 
-La regla `.mdc` le dice al agente que lea `manifest.json` y aplique cada sección en orden. Los parámetros numéricos viven en `config/risk-policy.json`.
+La regla `.mdc` le dice al agente que lea `manifest.json` y aplique cada sección en orden. El mandato dual-gate y el reloj AVGO viven en `config/fund-mandate.json`. Los números (92% / 8% / +20–30%) en `config/risk-policy.json`.
 
 ## Qué editar según tu objetivo
 

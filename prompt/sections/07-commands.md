@@ -2,7 +2,7 @@
 
 | Comando | Acción |
 |---------|--------|
-| `go` | **Ciclo one-tap (9:35+ ET hoy):** si >1 nombre → flatten; si no → scan → all-in #1 (no stop GTC); sell si ya +20–30% |
+| `go` | Ciclo: si >1 nombre → flatten; si **1** (AVGO) → hawk (+20–30% o kill; **no** vender solo por Q); si 0 → scan, all-in **solo** si Ackman **y** Xu pasan. **No** GTC stop. |
 | `prep` | Igual que `go` pero **sin ejecutar** — research + ranking + recomendación GO/NO-GO lista para un `go` posterior. |
 | `snapshot` | Fase 1 — estado de cuenta |
 | `scan` | Fase 2 — **scan amplio** de todo `researchUniverse` + MCP scanner (`run_scan`) con ranking |
@@ -12,7 +12,7 @@
 | `trade TICKER $XX` | Fase 4 — Level II + review + ejecución equity |
 | `option TICKER call\|put` | ❌ Desactivado — `options.enabled=false` (LP 2026-08-02). Responder que el fondo es equity-only |
 | `limit TICKER $XX @ $PRICE` | Orden límite (preview) |
-| `stop TICKER @ $PRICE` | Stop loss pendiente (GTC) |
+| `stop TICKER @ $PRICE` | ❌ No GTC stops (dual-gate / Xu). Hawk + target/kill only |
 | `ordenes` | Listar órdenes abiertas |
 | `cancel ORDER_ID` | Cancelar orden |
 | `cierra TICKER` | Vender posición (tax-aware: `get_equity_tax_lots` → `tax_lots` si aplica) |

@@ -1,0 +1,23 @@
+{
+  "week": "2026-W34",
+  "navUsd": 119.16,
+  "spyReturnPct": 2.4,
+  "fundReturnPct": 19.16,
+  "attribution": {
+    "retail_attention_vibes": 0.3,
+    "near_term_catalyst": 0.6,
+    "support_not_chase": 0.7,
+    "wont_go_to_zero": 0.5
+  },
+  "proposedDeltas": {
+    "retail_attention_vibes": -0.01,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.01,
+    "wont_go_to_zero": 0.0
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "xuNote": "W34: flattened the 3-name book then all-in AVGO (dual-gate). Live +1.58% vs SPY −0.61% since 8/19; +20–30% still 18–28 pp away. support_not_chase correlated best (washout vs NVDA/HOOD chase). Do not raise vibes weight. Fallback standby until 2026-09-19."
+}

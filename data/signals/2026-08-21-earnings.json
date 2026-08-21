@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-21",
+  "source": "MCP get_earnings_calendar high_market_cap 14d + get_earnings_results",
+  "highlights": [
+    {
+      "symbol": "NVDA",
+      "report": "2026-08-26 pm",
+      "eps_est": 2.07,
+      "note": "highest-attention print in window; chase for new all-in"
+    },
+    {
+      "symbol": "AVGO",
+      "report": "2026-09-02 pm",
+      "eps_est": 3.16,
+      "note": "open book catalyst; dual-gate hold-through allowed"
+    },
+    {
+      "symbol": "INTU",
+      "report": "2026-08-25 pm",
+      "eps_est": 3.3
+    },
+    {
+      "symbol": "CRM",
+      "report": "2026-08-26 pm",
+      "eps_est": 3.09
+    },
+    {
+      "symbol": "CRWD",
+      "report": "2026-08-26 pm",
+      "eps_est": 0.24
+    },
+    {
+      "symbol": "MRVL",
+      "report": "2026-08-27 pm",
+      "eps_est": 0.87,
+      "note": "Google custom-chip warrant news vs AVGO"
+    },
+    {
+      "symbol": "DELL",
+      "report": "2026-09-01 pm",
+      "eps_est": 4.84
+    },
+    {
+      "symbol": "PANW",
+      "report": "2026-09-01 pm",
+      "eps_est": 0.88
+    }
+  ],
+  "jackson_hole": "2026-08-21\u201322 / symposium week"
+}

@@ -1,0 +1,1021 @@
+{
+  "date": "2026-08-21",
+  "generated_by": "CIO MCP run_scan",
+  "filters_note": "qualityFilters minPrice $5 / minMktCap $1B applied to filtered arrays; pennies dropped",
+  "scans": {
+    "earnings-14d": {
+      "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
+      "title": "investingRH-earnings-14d",
+      "total_items": 360,
+      "sorted_by": "Earnings date desc",
+      "quality_filters": {
+        "minPriceUsd": 5,
+        "minMarketCapUsd": 1000000000
+      },
+      "filtered": [
+        {
+          "symbol": "BBY",
+          "name": "Best Buy",
+          "last": 85.35,
+          "market_cap": 18069065711.0,
+          "pct_change": -0.004432520704537614,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BURL",
+          "name": "Burlington Coat Factory",
+          "last": 340.1,
+          "market_cap": 20974231305.0,
+          "pct_change": 0.020616391081235197,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BWLP",
+          "name": "BW LPG Limited",
+          "last": 24.38,
+          "market_cap": 3564647288.0,
+          "pct_change": 0.03700552956188845,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "CHA",
+          "name": "Chagee Holdings Limited",
+          "last": 10.6,
+          "market_cap": 2025906521.0,
+          "pct_change": -0.0018832391713747246,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "DOO",
+          "name": "BRP",
+          "last": 66.79,
+          "market_cap": 4887255642.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "EOS",
+          "name": "Eaton Vance Enhanced Equity Income Fund II",
+          "last": 21.37,
+          "market_cap": 1138830080.0,
+          "pct_change": 0.0004681647940075638,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ESTC",
+          "name": "Elastic N.V.",
+          "last": 85.9,
+          "market_cap": 8929445274.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ETV",
+          "name": "Eaton Vance Tax-Managed Buy-Write Opportunities Fund",
+          "last": 15.16,
+          "market_cap": 1769999250.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ETW",
+          "name": "Eaton Vance Tax-Managed Global Buy-Write Opportunities Fund",
+          "last": 9.8,
+          "market_cap": 1064258302.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "HAFN",
+          "name": "Hafnia LTD",
+          "last": 8.08,
+          "market_cap": 3945571862.0,
+          "pct_change": 0.02408111533586824,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "HMY",
+          "name": "Harmony Gold",
+          "last": 23.6,
+          "market_cap": 13585966389.0,
+          "pct_change": 0.07175295186194378,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "HUBG",
+          "name": "Hub Group",
+          "last": 40.0,
+          "market_cap": 2447363470.0,
+          "pct_change": -0.0012484394506865708,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "IREN",
+          "name": "IREN Limited",
+          "last": 43.37,
+          "market_cap": 15224331512.0,
+          "pct_change": 0.018075117370891926,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "KEN",
+          "name": "Kenon",
+          "last": 65.35,
+          "market_cap": 3397467484.0,
+          "pct_change": 0.0023006134969323845,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "LI",
+          "name": "Li Auto Inc",
+          "last": 13.01,
+          "market_cap": 12640333261.0,
+          "pct_change": 0.00696594427244581,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "MESO",
+          "name": "Mesoblast",
+          "last": 17.001,
+          "market_cap": 2318508764.0,
+          "pct_change": -0.024612736660929346,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "MNSO",
+          "name": "MINISO Group",
+          "last": 11.18,
+          "market_cap": 3350256237.0,
+          "pct_change": 0.004492362982928925,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "NAT",
+          "name": "Nordic American Tankers",
+          "last": 7.0,
+          "market_cap": 1480137134.0,
+          "pct_change": 0.0014306151645207133,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ULTA",
+          "name": "Ulta Beauty",
+          "last": 515.15,
+          "market_cap": 22145513668.0,
+          "pct_change": 1.9412198625598682e-05,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ADSK",
+          "name": "Autodesk",
+          "last": 250.76,
+          "market_cap": 53001680906.0,
+          "pct_change": -0.0010357740419090881,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "AFRM",
+          "name": "Affirm",
+          "last": 76.4489,
+          "market_cap": 25134137303.0,
+          "pct_change": 0.018639573617588244,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "ANAB",
+          "name": "AnaptysBio",
+          "last": 56.79,
+          "market_cap": 1675677177.0,
+          "pct_change": 0.0017639795378373863,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "BILI",
+          "name": "Bilibili",
+          "last": 17.03,
+          "market_cap": 6949644301.0,
+          "pct_change": 0.02220888355342143,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "BMA",
+          "name": "Banco Macro",
+          "last": 73.98,
+          "market_cap": 4928022673.0,
+          "pct_change": 0.015232606010703984,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "CM",
+          "name": "Canadian Imperial",
+          "last": 115.69,
+          "market_cap": 105591223946.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "CMBT",
+          "name": "CMB.TECH",
+          "last": 18.06,
+          "market_cap": 5121372215.0,
+          "pct_change": 0.02497162315550498,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "CSIQ",
+          "name": "Canadian Solar Inc",
+          "last": 14.88,
+          "market_cap": 1000119112.0,
+          "pct_change": 0.010183299389002061,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "DG",
+          "name": "Dollar General",
+          "last": 120.81,
+          "market_cap": 26598337895.0,
+          "pct_change": 0.0019074473378670094,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "DLTR",
+          "name": "Dollar Tree",
+          "last": 128.75,
+          "market_cap": 24684825828.0,
+          "pct_change": 0.0023355391202803536,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "ELVR",
+          "name": "Elevra Lithium Limited",
+          "last": 64.5,
+          "market_cap": 1204931180.0,
+          "pct_change": 0.047758284600389826,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "GAP",
+          "name": "Gap",
+          "last": 19.81,
+          "market_cap": 7073586033.0,
+          "pct_change": 0.008142493638676853,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "HQY",
+          "name": "HealthEquity",
+          "last": 104.3,
+          "market_cap": 8713852824.0,
+          "pct_change": 0.00028771458712957836,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "HRL",
+          "name": "Hormel",
+          "last": 24.2,
+          "market_cap": 13251584212.0,
+          "pct_change": 0.004983388704318978,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "MRVL",
+          "name": "Marvell Technology",
+          "last": 253.4956,
+          "market_cap": 225292625617.0,
+          "pct_change": 0.009902394326919268,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "PLAB",
+          "name": "Photronics",
+          "last": 31.29,
+          "market_cap": 1797803152.0,
+          "pct_change": 0.025229357798165125,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "PUK",
+          "name": "Prudential",
+          "last": 28.01,
+          "market_cap": 34162405406.0,
+          "pct_change": 0.015959376133478465,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "RBRK",
+          "name": "Rubrik",
+          "last": 97.1693,
+          "market_cap": 20072401755.0,
+          "pct_change": -0.003596185397866993,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "RQI",
+          "name": "Cohen & Steers Quality Income Realty Fund",
+          "last": 12.34,
+          "market_cap": 1668140178.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "RVT",
+          "name": "Royce Small-Cap Trust, Inc.",
+          "last": 18.55,
+          "market_cap": 2304813830.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        },
+        {
+          "symbol": "RY",
+          "name": "Royal Bank of Canada",
+          "last": 205.21,
+          "market_cap": 285074574650.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260827e+07"
+        }
+      ],
+      "raw_top": [
+        {
+          "symbol": "AACG",
+          "name": "ATA Creativity Global",
+          "last": 0.92,
+          "market_cap": 43640333.0,
+          "pct_change": -0.08910891089108908,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ADUR",
+          "name": "Aduro Clean Technologies",
+          "last": 15.98,
+          "market_cap": 560203789.0,
+          "pct_change": 0.008201892744479545,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "AIXI",
+          "name": "Xiao-I Corporation",
+          "last": 0.523,
+          "market_cap": 515897.0,
+          "pct_change": -0.06623817175504378,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ALAR",
+          "name": "Alarum Technologies",
+          "last": 1.71,
+          "market_cap": 12561884.0,
+          "pct_change": 0.017857142857142873,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "ANPA",
+          "name": "Rich Sparkle Holdings Limited",
+          "last": 3.9,
+          "market_cap": 61313125.0,
+          "pct_change": -0.032258064516129115,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "AWF",
+          "name": "AllianceBernstein Global High Income Fund",
+          "last": 10.14,
+          "market_cap": 874368924.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BBW",
+          "name": "Build A Bear",
+          "last": 40.0,
+          "market_cap": 473664596.0,
+          "pct_change": 0.05876124933827419,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BBY",
+          "name": "Best Buy",
+          "last": 85.35,
+          "market_cap": 18069065711.0,
+          "pct_change": -0.004432520704537614,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BGH",
+          "name": "Barings Global Short Duration High Yield Fund",
+          "last": 14.09,
+          "market_cap": 282961170.0,
+          "pct_change": 0.0,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BGIN",
+          "name": "Bgin Blockchain Limited",
+          "last": 2.22,
+          "market_cap": 244373632.0,
+          "pct_change": 0.0277777777777778,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BIT",
+          "name": "BlackRock Multi-Sector Income Trust",
+          "last": 11.99,
+          "market_cap": 677904982.0,
+          "pct_change": 0.00925925925925921,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BMRA",
+          "name": "Biomerica",
+          "last": 1.58,
+          "market_cap": 4898076.0,
+          "pct_change": -0.0031545741324920462,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BURL",
+          "name": "Burlington Coat Factory",
+          "last": 340.1,
+          "market_cap": 20974231305.0,
+          "pct_change": 0.020616391081235197,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BWLP",
+          "name": "BW LPG Limited",
+          "last": 24.38,
+          "market_cap": 3564647288.0,
+          "pct_change": 0.03700552956188845,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        },
+        {
+          "symbol": "BZUN",
+          "name": "Baozun",
+          "last": 3.0,
+          "market_cap": 166845721.0,
+          "pct_change": 0.0714285714285715,
+          "asset_type": "STOCK",
+          "earnings_date": "2.0260828e+07"
+        }
+      ]
+    },
+    "daily-movers": {
+      "scan_id": "16be2390-db7b-4ccd-9dcd-9c942e6af39d",
+      "title": "investingRH-daily-movers",
+      "total_items": 217,
+      "sorted_by": "% Change desc",
+      "quality_filters": {
+        "minPriceUsd": 5,
+        "minMarketCapUsd": 1000000000
+      },
+      "filtered": [
+        {
+          "symbol": "SFBS",
+          "name": "ServisFirst Bank",
+          "last": 87.28,
+          "market_cap": 4771816672.0,
+          "pct_change": 1.0,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SBSW",
+          "name": "Sibanye-Stillwater",
+          "last": 12.8,
+          "market_cap": 8349486423.0,
+          "pct_change": 0.08291032148900172,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HBNB",
+          "name": "Hotel101",
+          "last": 5.75,
+          "market_cap": 1305900713.0,
+          "pct_change": 0.08286252354048972,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ROST",
+          "name": "Ross",
+          "last": 247.9,
+          "market_cap": 73455658593.0,
+          "pct_change": 0.08258002532861695,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ASST",
+          "name": "Strive, Inc.",
+          "last": 17.3,
+          "market_cap": 1387778793.0,
+          "pct_change": 0.07253564786112844,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HMY",
+          "name": "Harmony Gold",
+          "last": 23.6,
+          "market_cap": 13585966389.0,
+          "pct_change": 0.07175295186194378,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "IMC",
+          "name": "IMC Rare Earths Ltd",
+          "last": 11.775,
+          "market_cap": 1162700000.0,
+          "pct_change": 0.07045454545454549,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "NTES",
+          "name": "NetEase",
+          "last": 128.05,
+          "market_cap": 78963491325.0,
+          "pct_change": 0.06877556130540029,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BTDR",
+          "name": "Bitdeer Technologies",
+          "last": 11.14,
+          "market_cap": 2834688814.0,
+          "pct_change": 0.06807286673058494,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BKE",
+          "name": "Buckle",
+          "last": 45.5,
+          "market_cap": 2196731187.0,
+          "pct_change": 0.06707317073170731,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "MSTR",
+          "name": "Strategy Inc.",
+          "last": 119.86,
+          "market_cap": 44650485766.0,
+          "pct_change": 0.06646498798825518,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "DRD",
+          "name": "DRDGOLD",
+          "last": 31.44,
+          "market_cap": 2558612686.0,
+          "pct_change": 0.06540155879362927,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "GFI",
+          "name": "Gold Fields",
+          "last": 48.35,
+          "market_cap": 40254885996.0,
+          "pct_change": 0.06380638063806376,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HYMC",
+          "name": "Hycroft Mining",
+          "last": 27.64,
+          "market_cap": 2435303232.0,
+          "pct_change": 0.057383320581484314,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SKM",
+          "name": "SK Telecom Co., Ltd. American Depositary Shares (Each representing 5/9th of a Ordinary Share of SK Telecom Co., LTD.)",
+          "last": 40.5065,
+          "market_cap": 14808356347.0,
+          "pct_change": 0.057334899504045946,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "DHC",
+          "name": "Diversified Healthcare Trust",
+          "last": 8.51,
+          "market_cap": 1951559643.0,
+          "pct_change": 0.054522924411400185,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "VMET",
+          "name": "Versamet Royalties Corporation",
+          "last": 11.07,
+          "market_cap": 1137023994.0,
+          "pct_change": 0.05428571428571431,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SMTC",
+          "name": "Semtech",
+          "last": 131.5,
+          "market_cap": 11635512394.0,
+          "pct_change": 0.05301089045483668,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BSTZ",
+          "name": "BlackRock Science and Technology Term Trust",
+          "last": 32.0,
+          "market_cap": 2089134718.0,
+          "pct_change": 0.052977953274103304,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "MARA",
+          "name": "MARA Holdings",
+          "last": 11.7405,
+          "market_cap": 4307237161.0,
+          "pct_change": 0.05295964125560542,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "CRCL",
+          "name": "Circle Internet Group",
+          "last": 87.96,
+          "market_cap": 21239256204.0,
+          "pct_change": 0.05139851781018405,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "MUX",
+          "name": "McEwen",
+          "last": 21.3,
+          "market_cap": 1243738132.0,
+          "pct_change": 0.0508140108534781,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "XXI",
+          "name": "Twenty One Capital",
+          "last": 6.5041,
+          "market_cap": 3481084054.0,
+          "pct_change": 0.05074313408723745,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "IE",
+          "name": "Ivanhoe Electric",
+          "last": 10.8079,
+          "market_cap": 1642183765.0,
+          "pct_change": 0.05033041788143838,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "WTTR",
+          "name": "Select Water Solutions",
+          "last": 20.96,
+          "market_cap": 2573700124.0,
+          "pct_change": 0.0501002004008016,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BEKE",
+          "name": "KE Holdings",
+          "last": 17.84,
+          "market_cap": 18626580818.0,
+          "pct_change": 0.050029429075927105,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "COIN",
+          "name": "Coinbase",
+          "last": 180.9,
+          "market_cap": 45472293678.0,
+          "pct_change": 0.04960835509138388,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "IQMX",
+          "name": "IQM Quantum Computers Oyj",
+          "last": 10.16,
+          "market_cap": 2639366745.0,
+          "pct_change": 0.049586776859504175,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "AU",
+          "name": "AngloGold Ashanti plc",
+          "last": 120.04,
+          "market_cap": 58234272135.0,
+          "pct_change": 0.04911728718755466,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ELVR",
+          "name": "Elevra Lithium Limited",
+          "last": 64.5,
+          "market_cap": 1204931180.0,
+          "pct_change": 0.047758284600389826,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SGML",
+          "name": "Sigma Lithium",
+          "last": 11.23,
+          "market_cap": 1208687261.0,
+          "pct_change": 0.046598322460391424,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HOOD",
+          "name": "Robinhood Markets",
+          "last": 99.5059,
+          "market_cap": 85502724161.0,
+          "pct_change": 0.04632912723449004,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BLSH",
+          "name": "Bullish",
+          "last": 29.72,
+          "market_cap": 4312878960.0,
+          "pct_change": 0.04500703234880441,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "LUNR",
+          "name": "Intuitive Machines",
+          "last": 18.73,
+          "market_cap": 2876909900.0,
+          "pct_change": 0.04461795872838822,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "AAUC",
+          "name": "Allied Gold Corporation",
+          "last": 23.94,
+          "market_cap": 3194243013.0,
+          "pct_change": 0.0445026178010471,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "MDGL",
+          "name": "Madrigal Pharmaceuticals",
+          "last": 541.91,
+          "market_cap": 11982954949.0,
+          "pct_change": 0.043961548093779376,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "INIO",
+          "name": "Innio NV",
+          "last": 24.0,
+          "market_cap": 17257500000.0,
+          "pct_change": 0.043478260869565216,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ALB",
+          "name": "Albemarle",
+          "last": 139.99,
+          "market_cap": 15835098598.0,
+          "pct_change": 0.04322229674342359,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "USAS",
+          "name": "Americas Gold and Silver",
+          "last": 5.4754,
+          "market_cap": 1775063172.0,
+          "pct_change": 0.042933333333333254,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        }
+      ],
+      "raw_top": [
+        {
+          "symbol": "RFAI",
+          "name": "RF Acquisition Corp II",
+          "last": 68.0,
+          "market_cap": 106216128.0,
+          "pct_change": 4.171102661596958,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "DUKR",
+          "name": "Duke Robotics Corp.",
+          "last": 12.34,
+          "market_cap": 18774359.0,
+          "pct_change": 1.251824817518248,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SFBS",
+          "name": "ServisFirst Bank",
+          "last": 87.28,
+          "market_cap": 4771816672.0,
+          "pct_change": 1.0,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HOWL",
+          "name": "Werewolf Therapeutics",
+          "last": 0.7528,
+          "market_cap": 20955917.0,
+          "pct_change": 0.74582560296846,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "JUNS",
+          "name": "Jupiter Neurosciences",
+          "last": 8.7,
+          "market_cap": 3981318.0,
+          "pct_change": 0.6893203883495143,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "SUGP",
+          "name": "SU Group Holdings Limited",
+          "last": 4.16,
+          "market_cap": 4487748.0,
+          "pct_change": 0.4990990990990992,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "EUDA",
+          "name": "EUDA Health Holdings",
+          "last": 20.0,
+          "market_cap": 42519415.0,
+          "pct_change": 0.3651877133105802,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "GOSS",
+          "name": "Gossamer Bio",
+          "last": 0.2062,
+          "market_cap": 76993358.0,
+          "pct_change": 0.30920634920634915,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ADXN",
+          "name": "Addex Therapeutics",
+          "last": 5.8,
+          "market_cap": 7880911.0,
+          "pct_change": 0.26914660831509835,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "USDE",
+          "name": "StablecoinX Inc. Class A",
+          "last": 4.7904,
+          "market_cap": 95877206.0,
+          "pct_change": 0.1976,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "HUHU",
+          "name": "HUHUTECH International Group",
+          "last": 5.44,
+          "market_cap": 120923807.0,
+          "pct_change": 0.1673819742489271,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "EOSEW",
+          "name": "Eos Energy Enterprises, Inc. Warrant",
+          "last": 3.25,
+          "market_cap": 0,
+          "pct_change": 0.16071428571428578,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "THCH",
+          "name": "TH International",
+          "last": 1.28,
+          "market_cap": 35880912.0,
+          "pct_change": 0.1531531531531531,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "BNR",
+          "name": "Burning Rock Biotech",
+          "last": 10.56,
+          "market_cap": 114849673.0,
+          "pct_change": 0.14162162162162167,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        },
+        {
+          "symbol": "ZOOZ",
+          "name": "ZOOZ Strategy Ltd.",
+          "last": 6.1401,
+          "market_cap": 44734911.0,
+          "pct_change": 0.13916512059369215,
+          "asset_type": "STOCK",
+          "earnings_date": null
+        }
+      ]
+    }
+  },
+  "universe_hits": [
+    "NVDA",
+    "AVGO"
+  ],
+  "note": "NVDA prints 2026-08-26 pm. AVGO prints 2026-09-02 pm. Daily movers are mostly sub-$5 / sub-$1B \u2014 Xu pennies, ignore."
+}

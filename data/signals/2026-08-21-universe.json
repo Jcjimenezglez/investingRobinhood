@@ -1,0 +1,330 @@
+{
+  "date": "2026-08-21",
+  "regime": "risk-off-week / Friday bounce",
+  "generated_by": "CIO merge MCP quotes/fundamentals + Xu signal-weights v2.1.0",
+  "prompt_version": "2.2.3",
+  "weights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "note": "Open book AVGO dual-gate (fill 2026-08-19). Scores are hunting-ground ranking only — no second name. Options OFF.",
+  "tickers": [
+    {
+      "symbol": "AVGO",
+      "quote": {
+        "last_rth": 364.24,
+        "premarket": 368.7,
+        "prev_close": 364.03,
+        "chg_pct_vs_close": 1.28,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1732888120463,
+        "pe_ratio": 60.34,
+        "high_52w": 495.0,
+        "low_52w": 286.17,
+        "avg_volume": 19773036,
+        "pct_below_52w_high": 25.5
+      },
+      "extended": {
+        "rsi_14d": 36.07,
+        "sma_50d": 388.58
+      },
+      "catalyst_days": 12,
+      "catalyst": "Q3 FY26 EPS est $3.16 — 2026-09-02 pm",
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.7,
+        "near_term_catalyst": 0.95,
+        "support_not_chase": 0.82,
+        "wont_go_to_zero": 0.95,
+        "total": 0.83,
+        "conviction": "Alta",
+        "note": "Live all-in. RSI 36 / below SMA50. Marvell-Google news is share-of-wallet fear, not a broken quality thesis. Hold through Q allowed."
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "quote": {
+        "last_rth": 216.99,
+        "premarket": 217.92,
+        "prev_close": 216.85,
+        "chg_pct_vs_close": 0.49,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 5337585117000,
+        "pe_ratio": 33.32,
+        "high_52w": 236.54,
+        "low_52w": 164.07,
+        "avg_volume": 99218220,
+        "pct_below_52w_high": 7.87
+      },
+      "extended": {
+        "rsi_14d": null
+      },
+      "catalyst_days": 5,
+      "catalyst": "Q2 FY27 EPS est $2.07 — 2026-08-26 pm",
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.95,
+        "near_term_catalyst": 0.95,
+        "support_not_chase": 0.45,
+        "wont_go_to_zero": 0.95,
+        "total": 0.825,
+        "conviction": "Alta-score / FAIL chase",
+        "note": "~8% off 52w into 5d print. WSB heavy. Would be chase if book were cash. Cannot rotate while AVGO open."
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "quote": {
+        "last_rth": 95.11,
+        "premarket": 99.53,
+        "prev_close": 95.1,
+        "chg_pct_vs_close": 4.66,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 85511713135,
+        "pe_ratio": 42.41,
+        "high_52w": 153.8599,
+        "low_52w": 63.515,
+        "avg_volume": 15854721,
+        "pct_below_52w_high": 35.31
+      },
+      "catalyst_days": null,
+      "catalyst": "No verified print in 14d calendar",
+      "quality_n6": 4,
+      "scores": {
+        "retail_attention_vibes": 0.8,
+        "near_term_catalyst": 0.3,
+        "support_not_chase": 0.5,
+        "wont_go_to_zero": 0.88,
+        "total": 0.607,
+        "conviction": "Media",
+        "note": "Premarket +4.7% gap = chase-today. Still ~35% off 52w. Soft catalyst."
+      }
+    },
+    {
+      "symbol": "TSLA",
+      "quote": {
+        "last_rth": 345.28,
+        "premarket": 349.43,
+        "prev_close": 345.13,
+        "chg_pct_vs_close": 1.25,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1363700624000,
+        "pe_ratio": 326.23,
+        "high_52w": 498.83,
+        "low_52w": 297.38,
+        "avg_volume": 31821906,
+        "pct_below_52w_high": 30.0
+      },
+      "catalyst_days": null,
+      "quality_n6": 4,
+      "scores": {
+        "retail_attention_vibes": 0.85,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.62,
+        "wont_go_to_zero": 0.85,
+        "total": 0.636,
+        "conviction": "Media",
+        "note": "Retail always-on. No 14d print. PE 326. Not a dual-gate rotate."
+      }
+    },
+    {
+      "symbol": "META",
+      "quote": {
+        "last_rth": 545.885,
+        "premarket": 548.64,
+        "prev_close": 545.83,
+        "chg_pct_vs_close": 0.51,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 1390646249549,
+        "pe_ratio": 20.57,
+        "high_52w": 790.8,
+        "low_52w": 520.26,
+        "avg_volume": 15063792,
+        "pct_below_52w_high": 30.62
+      },
+      "catalyst_days": null,
+      "quality_n6": 5,
+      "scores": {
+        "retail_attention_vibes": 0.7,
+        "near_term_catalyst": 0.22,
+        "support_not_chase": 0.7,
+        "wont_go_to_zero": 0.92,
+        "total": 0.615,
+        "conviction": "Media",
+        "note": "~31% off 52w. No near-term swing catalyst in 14d."
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "quote": {
+        "last_rth": 481.379,
+        "premarket": 482.014,
+        "prev_close": 481.15,
+        "chg_pct_vs_close": 0.18,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 3574503833450,
+        "pe_ratio": 26.99,
+        "high_52w": 553.72,
+        "low_52w": 349.2,
+        "avg_volume": 24506640,
+        "pct_below_52w_high": 12.95
+      },
+      "catalyst_days": null,
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.45,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.65,
+        "wont_go_to_zero": 0.98,
+        "total": 0.509,
+        "conviction": "Baja",
+        "note": "Quality 6/6, ex-div 8/20. Pace benchmark only. 13F not a BUY. No Xu catalyst."
+      }
+    },
+    {
+      "symbol": "AMZN",
+      "quote": {
+        "last_rth": 260.19,
+        "premarket": 261.75,
+        "prev_close": 260.11,
+        "chg_pct_vs_close": 0.63,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 2806490830443,
+        "pe_ratio": 21.38,
+        "high_52w": 287.2,
+        "low_52w": 196.0,
+        "avg_volume": 33205628,
+        "pct_below_52w_high": 8.86
+      },
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.5,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.55,
+        "wont_go_to_zero": 0.95,
+        "total": 0.503,
+        "conviction": "Baja",
+        "note": "13F hunting ground. Near 52w high. No 14d print."
+      }
+    },
+    {
+      "symbol": "GOOGL",
+      "quote": {
+        "last_rth": 340.62,
+        "premarket": 342.89,
+        "prev_close": 340.67,
+        "chg_pct_vs_close": 0.65,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 4165782600000,
+        "pe_ratio": 17.32,
+        "high_52w": 408.61,
+        "low_52w": 199.43,
+        "avg_volume": 20446404,
+        "pct_below_52w_high": 16.09
+      },
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.55,
+        "near_term_catalyst": 0.25,
+        "support_not_chase": 0.6,
+        "wont_go_to_zero": 0.95,
+        "total": 0.55,
+        "conviction": "Media",
+        "note": "Marvell warrant news is GOOGL supplier diversification — not a Xu setup for Alphabet itself this morning."
+      }
+    },
+    {
+      "symbol": "AAPL",
+      "quote": {
+        "last_rth": 311.32,
+        "premarket": 312.14,
+        "prev_close": 311.3,
+        "chg_pct_vs_close": 0.27,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 4543466344000,
+        "pe_ratio": 36.32,
+        "high_52w": 344.5699,
+        "low_52w": 223.7804,
+        "avg_volume": 41002150,
+        "pct_below_52w_high": 9.42
+      },
+      "quality_n6": 6,
+      "scores": {
+        "retail_attention_vibes": 0.5,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.55,
+        "wont_go_to_zero": 0.98,
+        "total": 0.51,
+        "conviction": "Baja"
+      }
+    },
+    {
+      "symbol": "UBER",
+      "quote": {
+        "last_rth": 78.57,
+        "premarket": 79.42,
+        "prev_close": 78.55,
+        "chg_pct_vs_close": 1.11,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "fundamentals": {
+        "market_cap": 160483947481,
+        "pe_ratio": 17.15,
+        "high_52w": 101.99,
+        "low_52w": 65.41,
+        "avg_volume": 19228820,
+        "pct_below_52w_high": 22.13
+      },
+      "quality_n6": 5,
+      "scores": {
+        "retail_attention_vibes": 0.4,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.65,
+        "wont_go_to_zero": 0.88,
+        "total": 0.481,
+        "conviction": "Baja",
+        "note": "13F hunting ground only."
+      }
+    },
+    {
+      "symbol": "SPCX",
+      "quote": {
+        "last_rth": 133.93,
+        "premarket": 135.25,
+        "prev_close": 134.0,
+        "chg_pct_vs_close": 0.93,
+        "source": "MCP get_equity_quotes 2026-08-21T12:03Z"
+      },
+      "quality_n6": 3,
+      "scores": {
+        "retail_attention_vibes": 0.35,
+        "near_term_catalyst": 0.2,
+        "support_not_chase": 0.55,
+        "wont_go_to_zero": 0.7,
+        "total": 0.415,
+        "conviction": "Baja",
+        "note": "Personal Friday watch only. Not Agentic."
+      }
+    }
+  ]
+}

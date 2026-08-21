@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W34",
+  "appliedAt": "2026-08-21T21:01:03.391Z",
+  "decision": "HALTED",
+  "haltReason": "missingWeeklyReview: logs/scorecard/weekly/2026-W34.md and 2026-W34-suggestions.json not present. Dual-gate calibration requires this week's Weekly Review before any weight change.",
+  "previousWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "newWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.0,
+    "wont_go_to_zero": 0.0
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": null,
+    "haltDrawdownLimitPct": 20,
+    "weeklyNavDropPct": null,
+    "haltWeeklyNavDropLimitPct": 8,
+    "weeklyReviewPresent": false,
+    "noEvidenceRuleTriggered": false,
+    "openDualGateSwing": true,
+    "openNameNote": "AVGO all-in remains open; session did not flatten."
+  },
+  "ackmanRationale": "ISO week 2026-W34 (Fri 2026-08-21) has no Weekly Review artifacts. haltCalibrationWhen.missingWeeklyReview is true, so Xu timing weights are frozen at lastCalibratedWeek 2026-W33. Ackman quality remains a checklist, not a second weight file. Open dual-gate AVGO is not touched. No attribution, no ±0.03 deltas, no threshold moves.",
+  "attributionSummary": {
+    "bestSignal": null,
+    "fundVsSpyPct": null,
+    "navUsd": null
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "week": "2026-34",
+  "asOf": "2026-08-21",
+  "promptVersion": "2.2.3",
+  "mode": "informational",
+  "doNotTrade": true,
+  "price": 136.95,
+  "priorSessionClose": 134.0,
+  "overnight": 136.71,
+  "overnightMaterial": false,
+  "marketCap": 1858557967514,
+  "sharesOutstanding": 13571069496.27,
+  "high52w": 225.64,
+  "low52w": 104.83,
+  "shares": 261.798568,
+  "averageCostUsd": 118.94,
+  "positionValue": 35853.31,
+  "costBasis": 31138.32,
+  "pnlUsd": 4714.99,
+  "pnlPct": 15.14,
+  "grade": "ON TRACK",
+  "suggestedAction": "HOLD",
+  "earlyReassess": false,
+  "q3PathTarget": 155,
+  "nearestSellFramework": 160,
+  "band": "base",
+  "sotp": {
+    "bear": { "low": 65, "high": 90 },
+    "base": { "low": 125, "high": 175 },
+    "bull": { "low": 270, "high": 390 }
+  },
+  "nextEarnings": {
+    "date": "2026-11-17",
+    "quarter": "2026Q3",
+    "timing": "pm",
+    "verified": false
+  },
+  "lastEarnings": {
+    "date": "2026-08-04",
+    "quarter": "2026Q2",
+    "epsActual": -0.09,
+    "epsEstimate": -0.16,
+    "verified": true
+  },
+  "aiNotes": "Q2 AI rev $2.56B FACT; OI loss $1.26B FACT; 1.4 GW nameplate FACT; YE2026 >2 GW GUIDANCE; $6.7B six-month pack ramp Oct GUIDANCE; Google 90d terminate after 2026-12-31 FACT (FWP). MODEL ~$7.3B/GW/yr and ~$1328/W mkt. No churn/pack slip. Cycle stretched not deteriorating (hyperscaler capex raised). First weekly file.",
+  "basketRthLast": {
+    "SPY": 765.69,
+    "QQQ": 713.4,
+    "NVDA": 214.76,
+    "MSFT": 483.34,
+    "GOOGL": 344.9,
+    "AMZN": 258.65,
+    "META": 549.91,
+    "ORCL": 146.49,
+    "AVGO": 368.45
+  },
+  "macros": {
+    "ust10yPct": 4.74,
+    "tips10yPct": 2.4,
+    "igOasBps": 81,
+    "igOasAsOf": "2026-08-19"
+  },
+  "cycle": "stretched",
+  "getFinancialsSpcx": null
+}

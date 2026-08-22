@@ -6,7 +6,7 @@
   "supersedes": {
     "prior": "ackman-only / Pershing Square replica",
     "ended": "2026-08-15",
-    "lpDirective": "2026-08-19: Dual-gate on AVGO until 2026-09-19. MSFT +30%/~60d (~15%/mo) is the bar. If AVGO is not working by then, Ackman-only all-in ONE name — never 2+ stocks."
+    "lpDirective": "2026-08-22 (Julio): Stay on dual-gate (Ackman ≥4/6 AND Xu timing). New all-in only if verified earnings date is 7–10 calendar days out (inclusive). Under 7d = not a new buy (HOLD if already in). Over 10d = not a new buy (dead time). No news-bomb overlay. AVGO stays. 2026-08-19 review clock unchanged."
   },
   "explicitlyExcluded": [
     "ackman-style 3–12 month activist *multi-name* book / 13F replica",
@@ -34,13 +34,13 @@
       "marginAllowed": false
     }
   },
-  "clientMandate": "All-in requires BOTH: (1) Ackman/Pershing quality checklist ≥4/6 (durable listed business). (2) Xu timing — one name, vibes + support + catalyst, never chase. Target +20–30%. Holding through a Q or ~1 month+ is allowed when Ackman quality owns the wait (do not sell-before-print just because Xu default said so). Still sell at +20–30%, screenshot, or dead setup. 13F is hunting ground only. No options/crypto/margin/pennies. One name.",
+  "clientMandate": "All-in requires BOTH: (1) Ackman/Pershing quality checklist ≥4/6 (durable listed business). (2) Xu timing — one name, vibes + support + catalyst, never chase. NEW entries: upcoming earnings only, with a verified report date 7–10 calendar days out inclusive (pre-Q + post-Q run). Under 7 days = not a new buy; if already in, HOLD through the print. Over 10 days = not a new buy (too much dead time). Target +20–30% or dead thesis. No news-bomb / headline overlay. 13F is hunting ground only. No options/crypto/margin/pennies. One name. AVGO (entered 2026-08-19 for 2026-09-02 pm) stays.",
   "returnPlan": {
     "swingTargetPctLow": 20,
     "swingTargetPctHigh": 30,
     "holdHorizon": "days-to-weeks, up to ~1–2 months when dual-gate quality hold",
     "scorecardBenchmark": "SPY same-period return in logs/scorecard/",
-    "note": "Target +20–30%. May hold through a print if both gates passed. No GTC stop. Screenshot / dead setup = exit."
+    "note": "Target +20–30%. Hold through a print if already in (including when days-to-Q drops below 7). No GTC stop. Screenshot / dead thesis = exit. No news-bomb rotation."
   },
   "bookPolicy": {
     "maxSimultaneousEquityPositions": 1,
@@ -74,10 +74,34 @@
     "then": "Resume prior *process*: Ackman-style quality all-in (MSFT 60-day), still ONE listed stock ~92% NAV. Never split 2+ names (not AMZN+MSFT+SPCX).",
     "stillForbidden": ["second simultaneous equity", "13F copy", "GTC stop required", "options", "margin"]
   },
+  "entryUniverse": {
+    "upcomingEarningsOnly": true,
+    "minDaysBeforeEarnings": 7,
+    "maxDaysBeforeEarnings": 10,
+    "windowInclusive": true,
+    "dayCount": "calendar",
+    "verifyWith": ["get_earnings_results", "get_earnings_calendar"],
+    "unverifiedDateIsPass": true,
+    "newEntryRequires": "Verified next report date 7–10 calendar days from the session date (inclusive). Book is in for the pre-Q and post-Q run without dead time.",
+    "underMinDays": "Not a new buy. If already in, HOLD through the print — do not sell because the Q is close.",
+    "overMaxDays": "Not a new buy — too much dead time before the print.",
+    "holdIfAlreadyInAndQCloserThanMin": true,
+    "holdNote": "AVGO: entered 2026-08-19 for 2026-09-02 pm — do not flatten on this mandate change. Dual-gate exit still +20–30% or dead thesis.",
+    "examples": {
+      "newBuyBlockedUnderMin": "NVDA with Q 2026-08-26 is not a new buy on 2026-08-22 (<7 calendar days).",
+      "newBuyBlockedOverMax": "A name with Q >10 calendar days out is not a new buy (dead time).",
+      "liveHold": "AVGO Q 2026-09-02 pm — stay in; dual-gate thesis still governs exit."
+    },
+    "forbiddenOverlays": [
+      "news-bomb / headline overlay",
+      "rotate-on-crazy-news",
+      "new buy because of a headline without a 7–10d verified earnings date"
+    ]
+  },
   "researchUniverse": [
     "GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"
   ],
-  "universeNote": "Seed list only. Primary idea source = scanner + retail attention (Reddit/X/AfterHour-style vibes), same as Xu. Any tradable common stock that passes HIS filter can rank #1. Don't chase. No pennies.",
+  "universeNote": "Seed list for research/watchlist only. NEW all-in universe = upcoming earnings with verified date 7–10 calendar days out inclusive (`entryUniverse`). Under 7d: not a new buy (HOLD if already in). Over 10d: not a new buy. Don't chase. No pennies. No news-bomb overlay.",
   "ideaSource": "terminally_online",
   "notTradableViaAgentic": [
     { "name": "ETH", "reason": "Crypto — Xu: can go to zero; not Agentic equities" },
@@ -89,7 +113,7 @@
     "Shares only — no options, no crypto, no margin (nothing that can go to zero overnight)",
     "No penny stocks",
     "Terminally online: follow where retail attention is going (vibes), not DCF",
-    "Buy at support with a real near-term catalyst",
+    "Buy at support with a real near-term catalyst — for new all-in that catalyst is a verified earnings date 7–10 calendar days out inclusive",
     "Never chase a stock that has already run",
     "Sell before the rumor becomes fully priced news; +20–30% / screenshot rule",
     "No stop-losses — watch like a hawk",

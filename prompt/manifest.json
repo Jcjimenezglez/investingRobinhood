@@ -1,6 +1,6 @@
 {
-  "version": "2.2.4",
-  "description": "v2.2.4: LP Julio 2026-08-22 — new all-in only if verified Q is 7–10 calendar days out inclusive; HOLD if already in and Q <7d; no news-bomb overlay; AVGO stay.",
+  "version": "2.2.5",
+  "description": "v2.2.5: LP Julio 2026-08-22 — after AVGO, new all-in only if verified Q is exactly 7 calendar days out (min=7 max=7); HOLD if already in; no news-bomb overlay; AVGO stay until target or kill.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

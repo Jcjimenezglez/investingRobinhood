@@ -17,8 +17,8 @@ Fondo concentrado de **$100** en cuenta Agentic aislada — tesis-driven, catali
 ## Estrategia (dual-gate, one listed stock)
 
 - **All-in one name** — Ackman quality ≥4/6 **and** Xu timing; ~92% / 8% cash
-- **New entries:** verified earnings date **7–10 calendar days** out inclusive. Under 7d: not a new buy (HOLD if already in). Over 10d: not a new buy.
-- **Live:** AVGO (entered 2026-08-19 for 2026-09-02 pm) — do not flatten on this rule change
+- **New entries (after AVGO):** verified earnings date **exactly 7 calendar days** out (`minDaysBeforeEarnings: 7`, `maxDaysBeforeEarnings: 7`). Under 7 or over 7: not a new buy. Already-in HOLD through the print.
+- **Live:** AVGO (entered 2026-08-19 for 2026-09-02 pm) — HOLD until +20–30% or dead thesis
 - **Exit:** +20–30% or dead thesis. Hold through the print if already in. No GTC stop. No news-bomb overlay.
 
 Config: [`config/risk-policy.json`](config/risk-policy.json) · Mandato: [`config/fund-mandate.json`](config/fund-mandate.json)
@@ -98,7 +98,7 @@ investingRobinhood/
 2. Viernes → weekly review + sugerencias calibración weights
 3. Mensual → `logs/scorecard/monthly/YYYY-MM.md`
 
-Prompt version: ver [`prompt/manifest.json`](prompt/manifest.json) (actual **2.2.4**).
+Prompt version: ver [`prompt/manifest.json`](prompt/manifest.json) (actual **2.2.5**).
 
 ## Public site (`web/`)
 

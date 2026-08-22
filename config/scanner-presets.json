@@ -14,7 +14,7 @@
       "title": "investingRH-earnings-14d",
       "scan_id": "8b25ac95-7bc8-4d7f-9ada-39b3d0c8e06c",
       "preset": "UPCOMING_EARNINGS",
-      "purpose": "Discovery only. NEW BUY still requires verified Q 7–10 calendar days inclusive (fund-mandate entryUniverse). Hits with Q <7d or >10d are not new buys.",
+      "purpose": "Discovery only. After AVGO, NEW BUY still requires verified Q exactly 7 calendar days (fund-mandate entryUniverse min=7 max=7). Hits with Q <7d or >7d are not new buys.",
       "mergePriority": "high",
       "runIn": ["premarket", "market-open"]
     },

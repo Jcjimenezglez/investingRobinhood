@@ -23,7 +23,7 @@
 ```
 ¿>1 nombre? → flatten
 ¿calidad Ackman ≥4/6? NO → no all-in
-¿Xu: vibes + catalyst + support + no chase + verified Q 7–10d inclusive?
+¿Xu: vibes + catalyst + support + no chase + verified Q exactly 7 calendar days?
   NO → cash (unless already in → HOLD through print)
   SÍ ambas + window → all-in → hawk → sell 20–30% or kill (hold through Q allowed)
 ```

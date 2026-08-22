@@ -2,14 +2,14 @@
 
 Agente modular para trading vía Robinhood MCP. System prompt en `prompt/sections/`.
 
-**Mandato vigente (prompt v2.2.4):** dual-gate — calidad **Ackman/Pershing** + timing **Xu**. All-in **una** listed stock. New entries: verified Q **7–10 calendar days** inclusive. Under 7d: not a new buy (HOLD if already in). Over 10d: not a new buy. Live: **AVGO** (do not flatten). Revisión **19-sep-2026** vs ritmo MSFT (~15%/mes). Sin GTC stop. Hold through Q permitido. No news-bomb overlay.
+**Mandato vigente (prompt v2.2.5):** dual-gate — calidad **Ackman/Pershing** + timing **Xu**. All-in **una** listed stock. After AVGO, new entries: verified Q **exactly 7 calendar days**. Under 7 or over 7: not a new buy. Already-in HOLD through print. Live: **AVGO** (do not flatten until target or kill). Revisión **19-sep-2026** vs ritmo MSFT (~15%/mes). Sin GTC stop. No news-bomb overlay.
 
 ## Libro y capas
 
 | Capa | Archivo | Rol |
 |------|---------|-----|
 | Calidad | `config/ackman-quality-screen.json` · `prompt/sections/12-ackman-quality-screen.md` | ≥4/6 para all-in. 13F no es BUY |
-| Timing | `config/kevin-xu-playbook.json` | Un nombre, no chase, soporte + catalizador. New BUY: Q 7–10d inclusive |
+| Timing | `config/kevin-xu-playbook.json` | Un nombre, no chase, soporte + catalizador. New BUY after AVGO: Q exactly 7 calendar days |
 | Números | `config/risk-policy.json` | ~92% all-in, 8% cash, +20–30% exit |
 | Reloj AVGO | `config/fund-mandate.json` → `fallbackIfDualGateFails` | Review 2026-09-19 |
 

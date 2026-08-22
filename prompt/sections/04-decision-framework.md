@@ -24,7 +24,7 @@ Si `positions.length > 1` → volver a Fase 0.
 
 ## Fase 2 — Scan (antes de elegir)
 
-Escanea `researchUniverse` + scanner + retail-attention names, then **filter new entries** to verified earnings **7–10 calendar days** inclusive. Corre el checklist Ackman (`config/ackman-quality-screen.json`). El 13F es hunting ground, **no** señal de BUY. Social/vibes sigue siendo la señal de **timing**. No news-bomb overlay.
+Escanea `researchUniverse` + scanner + retail-attention names, then **filter new entries** to verified earnings **exactly 7 calendar days**. Corre el checklist Ackman (`config/ackman-quality-screen.json`). El 13F es hunting ground, **no** señal de BUY. Social/vibes sigue siendo la señal de **timing**. No news-bomb overlay.
 
 ```
 get_equity_quotes
@@ -40,7 +40,7 @@ Ranking:
 | Ticker | Score | Vibes | Catalyst (d–w) | Support / chase? | Quality n/6 | Won't go to 0? | Call |
 
 - Chase / penny / no catalyst → PASS
-- Unverified Q date, Q &lt;7d, or Q &gt;10d → PASS for **new** BUY (HOLD if already in and Q &lt;7d)
+- Unverified Q date, or days-to-Q ≠ 7 → PASS for **new** BUY (HOLD if already in)
 - Meme/retail darling **no** es PASS automático — solo si ya corrió o es penny
 
 ## Fase 3 — Análisis

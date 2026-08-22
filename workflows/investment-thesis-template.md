@@ -29,11 +29,11 @@ Copia a `logs/theses/TICKER-YYYY-MM-DD.md`.
 
 ### 3. Catalyst
 
-| Catalyst | Window (days) | Verified date | In 7–10d window? |
-|----------|----------------|---------------|------------------|
-| Next earnings (required for NEW BUY) | calendar days to print | YYYY-MM-DD (MCP) | YES only if 7–10 inclusive |
+| Catalyst | Window (days) | Verified date | Exactly 7d? |
+|----------|----------------|---------------|-------------|
+| Next earnings (required for NEW BUY) | calendar days to print | YYYY-MM-DD (MCP) | YES only if === 7 |
 
-New all-in: PASS if unverified, &lt;7d, or &gt;10d. Existing position: HOLD through print if already in.
+New all-in: PASS if unverified, &lt;7d, or &gt;7d. Existing position: HOLD through print if already in.
 
 ### 4. Don't chase
 

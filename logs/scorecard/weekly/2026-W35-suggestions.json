@@ -1,0 +1,23 @@
+{
+  "week": "2026-W35",
+  "navUsd": 118.95,
+  "spyReturnPct": 2.89,
+  "fundReturnPct": 18.95,
+  "attribution": {
+    "retail_attention_vibes": 0.2,
+    "near_term_catalyst": 0.5,
+    "support_not_chase": 0.7,
+    "wont_go_to_zero": 0.5
+  },
+  "proposedDeltas": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.0,
+    "wont_go_to_zero": 0.0
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "xuNote": "W35: HOLD AVGO only, 0 trades. Live +1.39% vs SPY −0.13% since 8/19; behind interpolated ~15%/mo after 9d but reviewDate is 2026-09-19. support_not_chase correlated best (held $350 washout, passed NVDA chase). Next week is the Q (9/02 pm, Labor Day Mon). Do not raise vibes weight. Fallback standby."
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W35",
+  "appliedAt": "2026-08-28T21:00:14.000Z",
+  "decision": "NO_CHANGE",
+  "haltReason": null,
+  "previousWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "newWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.0,
+    "wont_go_to_zero": 0.0
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 0.36,
+    "haltDrawdownLimitPct": 20,
+    "weeklyNavDropPct": 0.18,
+    "haltWeeklyNavDropLimitPct": 8,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": true,
+    "openDualGateSwing": true,
+    "openNameNote": "AVGO dual-gate live test still open into Q 2026-09-02 pm; session did not flatten."
+  },
+  "ackmanRationale": "W35 weekly review + suggestions present. NAV $118.95 (−0.18% WoW), drawdown from HWM 0.36% (under 20%). Zero completed swings / 0 trades — only HOLD AVGO. Proposed deltas all 0.0; weekly note says hold weights and do not bump vibes or support_not_chase again after W34. no_evidence rule and open dual-gate swing both prefer NO_CHANGE. Xu timing weights stay at lastCalibratedWeek 2026-W33.",
+  "attributionSummary": {
+    "bestSignal": "support_not_chase",
+    "fundVsSpyPct": 16.06,
+    "navUsd": 118.95
+  }
+}

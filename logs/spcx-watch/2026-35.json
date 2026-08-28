@@ -1,0 +1,88 @@
+{
+  "week": "2026-35",
+  "asOf": "2026-08-28",
+  "promptVersion": "2.2.3",
+  "mode": "informational",
+  "doNotTrade": true,
+  "price": 141.47,
+  "priorSessionClose": 140.87,
+  "overnight": 141.037,
+  "overnightMaterial": false,
+  "marketCap": 1919899170475.72,
+  "sharesOutstanding": 13571069276.0,
+  "high52w": 225.64,
+  "low52w": 104.83,
+  "shares": 261.798568,
+  "averageCostUsd": 118.94,
+  "positionValue": 37036.64,
+  "costBasis": 31138.32,
+  "pnlUsd": 5898.32,
+  "pnlPct": 18.94,
+  "grade": "ON TRACK",
+  "suggestedAction": "HOLD",
+  "earlyReassess": false,
+  "q3PathTarget": 155,
+  "nearestSellFramework": 160,
+  "band": "base",
+  "sotp": {
+    "bear": {
+      "low": 65,
+      "high": 90
+    },
+    "base": {
+      "low": 125,
+      "high": 175
+    },
+    "bull": {
+      "low": 270,
+      "high": 390
+    }
+  },
+  "nextEarnings": {
+    "date": "2026-11-17",
+    "quarter": "2026Q3",
+    "timing": "pm",
+    "verified": false,
+    "epsEstimate": 0.13
+  },
+  "lastEarnings": {
+    "date": "2026-08-04",
+    "quarter": "2026Q2",
+    "epsActual": -0.09,
+    "epsEstimate": -0.16,
+    "verified": true
+  },
+  "aiNotes": "No new Q print. Q2 AI rev $2.56B FACT; OI loss $1.26B FACT; 1.4 GW nameplate FACT; YE2026 >2 GW GUIDANCE; $6.7B six-month pack ramp Oct GUIDANCE still not slipped. UAE 10y Starlink license FACT 8/28. Cursor ransomware-use headline reputational not FS-broken. Musk $3.5T/2033 GUIDANCE not fact. MODEL ~$7.3B/GW/yr and ~$1371/W mkt. Cycle stretched not deteriorating (NVDA $96.2B / $108B guide FACT 8/26; no hyperscaler capex cut).",
+  "week34Price": 136.95,
+  "week34PnlPct": 15.14,
+  "basketRthLast": {
+    "SPY": 769.39,
+    "QQQ": 716.44,
+    "NVDA": 217.54,
+    "MSFT": 513.67,
+    "GOOGL": 346.48,
+    "AMZN": 266.38,
+    "META": 578.02,
+    "ORCL": 150.72,
+    "AVGO": 368.68
+  },
+  "macros": {
+    "ust10yPct": 4.67,
+    "ust10yAsOf": "2026-08-27",
+    "tips10yPct": 2.34,
+    "tips10yAsOf": "2026-08-27",
+    "igOasBps": 79,
+    "igOasAsOf": "2026-08-27",
+    "teLive10yPct": 4.72,
+    "teLiveTips10yPct": 2.41,
+    "teLiveAsOf": "2026-08-28"
+  },
+  "cycle": "stretched",
+  "getFinancialsSpcx": null,
+  "nvdaQ2": {
+    "revenueB": 96.2,
+    "q3GuideB": 108.0,
+    "date": "2026-08-26",
+    "source": "NVIDIA Q2 FY27 press release"
+  }
+}

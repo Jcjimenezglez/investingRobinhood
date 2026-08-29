@@ -1,13 +1,15 @@
 # Bench — Current Watchlist
 
-**Last updated:** 2026-08-22 (Automation-06)  
-**Current bench:** **ORCL** (Oracle Corp) — `ORCL-2026-08-22.md`  
+**Last updated:** 2026-08-29 (Automation-06)  
+**Current bench:** **ORCL** (Oracle Corp) — `ORCL-2026-08-29.md`  
+**Prior memo:** `ORCL-2026-08-22.md` (same name; W35 refresh)  
 **Prior bench:** BN — `BN-2026-08-08.md` (superseded; Q2 printed 2026-08-13)
 
 ## Change log
 
 | Week | Bench | Memo | Notes |
 |------|-------|------|-------|
+| 2026-W35 | **ORCL** | `ORCL-2026-08-29.md` | **Unchanged.** Dual-gate #1 unheld still ORCL Ackman **6/6** + Xu **PASS** washout (**$150.72** vs 52w high **$345.72**, **−56.4%**; +2.9% vs last week's $146.49, still under $176 chase veto). Q **2026-09-10 pm verified**. Same-day ADBE 6/6 passed over (shallower washout −21.4%, ran +5.9% this week). Exact-7 = **2026-09-03**. **WATCH** — still in AVGO through 2026-09-02; **not** a now-rotation. NKE Q now **verified 2026-10-01**; MU Q now **verified 2026-09-30** (still FAIL chase). Friday universe still stale. |
 | 2026-W34 | **ORCL** | `ORCL-2026-08-22.md` | Rotated from BN (Q2 printed Aug 13; next Q Nov 12, no near-term catalyst). Dual-gate #1 unheld: ORCL Ackman **6/6** + Xu **PASS** washout (**$146.49** vs 52w high **$345.72**, **−57.6%**). Q **2026-09-10 pm verified**. Same-day ADBE 6/6 passed over (shallower washout −26%). Exact-7 = **2026-09-03**. **WATCH** — still in AVGO through 2026-09-02; **not** a now-rotation. Friday universe stale; NVDA FAIL Xu (chase + 4d window). |
 | 2026-W32 | **BN** | `BN-2026-08-08.md` | Rotated from UBER; BN #1 unheld (0.825 composite, Ackman #1 at 17.6%). Q2 earnings Aug 13. |
 | 2026-W31 | UBER | `UBER-2026-08-02.md` | #1 unheld; Q2 earnings Aug 5. |

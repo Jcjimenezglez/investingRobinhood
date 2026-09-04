@@ -1,0 +1,23 @@
+{
+  "week": "2026-W36",
+  "navUsd": 112.59,
+  "spyReturnPct": 3.0,
+  "fundReturnPct": 12.59,
+  "attribution": {
+    "retail_attention_vibes": -0.2,
+    "near_term_catalyst": 0.3,
+    "support_not_chase": 0.6,
+    "wont_go_to_zero": 0.5
+  },
+  "proposedDeltas": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": -0.01,
+    "support_not_chase": 0.01,
+    "wont_go_to_zero": 0.0
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "xuNote": "W36: SELL AVGO Thu 9/03 @ $346.40 (−4.50% / −$4.86) after soft Q4 guide gap; book now CASH $112.59. Quality intact, timing failed. Best signal support_not_chase (refused ORCL/ADBE 6d + KR exact-7). Propose −0.01 near_term_catalyst / +0.01 support_not_chase. Julio autopsy pause before next ALL-IN. Fallback standby; reviewDate 2026-09-19 still process clock."
+}

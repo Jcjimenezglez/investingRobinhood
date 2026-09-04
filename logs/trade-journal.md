@@ -1031,3 +1031,16 @@ Brackets GTC: ❌ fractional — monitoreo Automation + alertas manuales.
 **Post-trade book:** 1 equity AVGO. Cash residual ~8%.
 
 <!-- El agente appendea entradas aquí después de cada trade -->
+
+## 2026-09-03 11:10 ET — SELL AVGO (Xu timing / soft guide)
+
+| Campo | Valor |
+|-------|-------|
+| **Cuenta** | Agentic ••••3029 |
+| **Acción** | SELL AVGO (full flatten) |
+| **Tipo** | Market fractional · regular_hours · gfd · **no stop GTC** |
+| **Fill** | 0.297756 sh @ **$346.4001** |
+| **Order ID** | 6a998dfd-6d4d-4c5c-84b1-e6b7cb548aa5 |
+| **Cost** | $362.71 · realized **−4.50%** (−$4.86) |
+| **Razón** | Post-print soft Q4 guide gap; quality intact, Xu timing fail; Julio autopsy before rotate |
+| **Post** | 0 equity · cash NAV **$112.59** |

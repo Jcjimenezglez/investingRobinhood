@@ -1,10 +1,10 @@
 {
   "version": "2.1.0",
-  "description": "Kevin Xu scoring — HIS filter: retail vibes, catalyst, support/not-chase, can't-go-to-zero. Social is a real weight, not a 5% afterthought.",
+  "description": "Kevin Xu scoring \u2014 HIS filter: retail vibes, catalyst, support/not-chase, can't-go-to-zero. Social is a real weight, not a 5% afterthought.",
   "weights": {
     "retail_attention_vibes": 0.35,
-    "near_term_catalyst": 0.25,
-    "support_not_chase": 0.25,
+    "near_term_catalyst": 0.24,
+    "support_not_chase": 0.26,
     "wont_go_to_zero": 0.15
   },
   "min_score_for_medium_conviction": 0.55,
@@ -12,7 +12,7 @@
   "catalystProximityDays": {
     "optimalMin": 1,
     "optimalMax": 21,
-    "tooFarPenalty": 0.20
+    "tooFarPenalty": 0.2
   },
   "extensionHints": {
     "passIfUpPctIntoCatalyst": 20,
@@ -27,12 +27,18 @@
   },
   "technicalTimingOverlay": {
     "enabled": true,
-    "tools": ["get_equity_technical_indicators"],
+    "tools": [
+      "get_equity_technical_indicators"
+    ],
     "defaultInterval": "day",
-    "indicators": ["rsi", "macd", "sma"],
+    "indicators": [
+      "rsi",
+      "macd",
+      "sma"
+    ],
     "weightInScore": 0,
     "note": "Support vs extension only. Xu does not DCF or draw fancy charts as the thesis."
   },
   "calibrationNote": "Kevin Xu Calibration Agent (automation-05).",
-  "lastCalibratedWeek": "2026-W33"
+  "lastCalibratedWeek": "2026-W36"
 }

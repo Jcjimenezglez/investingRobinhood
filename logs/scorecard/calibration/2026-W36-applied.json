@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W36",
+  "appliedAt": "2026-09-04T21:11:41.000Z",
+  "decision": "APPLIED",
+  "haltReason": null,
+  "previousWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.25,
+    "support_not_chase": 0.25,
+    "wont_go_to_zero": 0.15
+  },
+  "newWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.24,
+    "support_not_chase": 0.26,
+    "wont_go_to_zero": 0.15
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": -0.01,
+    "support_not_chase": 0.01,
+    "wont_go_to_zero": 0.0
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 5.69,
+    "haltDrawdownLimitPct": 20,
+    "weeklyNavDropPct": 5.35,
+    "haltWeeklyNavDropLimitPct": 8,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": false,
+    "openDualGateSwing": false,
+    "openNameNote": "Book CASH after AVGO SELL 2026-09-03 @ $346.4001 (\u22124.50%). No open dual-gate name."
+  },
+  "ackmanRationale": "W36 weekly review + suggestions present. Completed swing: AVGO SELL Thu 9/03 (\u22124.50% / \u2212$4.86) after soft Q4 guide; quality intact, timing failed. NAV $112.59 (\u22125.35% WoW), drawdown from HWM 5.69% (under 20%). Best signal support_not_chase (+0.6) \u2014 refused ORCL/ADBE wrong day-count and KR exact-7. Apply bounded \u22120.01 near_term_catalyst / +0.01 support_not_chase per suggestions; thresholds unchanged. No open dual-gate swing. Options OFF; no trades this session.",
+  "attributionSummary": {
+    "bestSignal": "support_not_chase",
+    "fundVsSpyPct": 9.59,
+    "navUsd": 112.59
+  }
+}

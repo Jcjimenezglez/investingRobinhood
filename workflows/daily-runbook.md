@@ -14,8 +14,10 @@ El ticker abierto = `get_equity_positions`. No hardcodear un nombre.
 ## 2. Scan
 
 - Signals del día si existen
-- `run_scan` + earnings calendar
+- `run_scan` + earnings calendar / `get_earnings_results`
 - Quotes + **calidad n/6** + vibes + catalyst + **don't-chase**
+- **New-entry window:** after AVGO, verified Q **exactly 7 calendar days** (`minDaysBeforeEarnings: 7`, `maxDaysBeforeEarnings: 7`). Under 7 or over 7 = PASS new buy. Already-in HOLD through print. Unverified date = PASS.
+- No news-bomb / headline overlay
 - 13F **no** es BUY
 - Ranking en `logs/intelligence/`
 
@@ -26,8 +28,8 @@ El ticker abierto = `get_equity_positions`. No hardcodear un nombre.
 | >1 posición | SELL all |
 | 1 posición, P&L ≥ +20% | SELL all |
 | 1 posición, setup/calidad muerta | SELL all |
-| 1 posición, tesis intacta | HOLD (incluye hold through Q si dual-gate al entrar) |
-| 0 posiciones, #1 Alta **y** quality ≥4/6, no chase | BUY all-in (~92%) |
+| 1 posición, tesis intacta | HOLD (incluye hold through Q; do not sell because Q is &lt;7d). AVGO stays. |
+| 0 posiciones, #1 Alta **y** quality ≥4/6, no chase, **verified Q exactly 7 calendar days** | BUY all-in (~92%) |
 | Else | cash / hold |
 
 ## 4. Ejecución

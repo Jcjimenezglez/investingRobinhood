@@ -17,7 +17,8 @@ Si count == 1:
   pnl_pct = (last / avg_cost - 1) * 100
   Si pnl_pct >= 20 → SELL all (band 20–30)
   Si setup/kill / quality thesis broken en memo → SELL all
-  Dual-gate: NO vender solo porque el Q es mañana
+  Dual-gate: NO vender solo porque el Q es mañana o days-to-Q < 7
+  No news-bomb flatten. AVGO live hold unless target/kill.
   Else hawk-watch
 No GTC stops. No options. No “protección” extra salvo flatten y target.
 ```

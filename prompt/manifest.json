@@ -1,6 +1,6 @@
 {
-  "version": "2.2.3",
-  "description": "v2.2.3: Agent instructions aligned to live dual-gate AVGO; review 2026-09-19 vs MSFT ~15%/mo.",
+  "version": "2.2.5",
+  "description": "v2.2.5: LP Julio 2026-08-22 — after AVGO, new all-in only if verified Q is exactly 7 calendar days out (min=7 max=7); HOLD if already in; no news-bomb overlay; AVGO stay until target or kill.",
   "loadOrder": [
     "sections/01-identity.md",
     "sections/02-mcp-workflow.md",

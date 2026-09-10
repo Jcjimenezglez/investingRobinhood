@@ -9,7 +9,7 @@
   },
   "strategy": {
     "name": "kevin-xu-all-in-swing",
-    "description": "Ackman quality check + Kevin Xu execution: all-in one listed stock; vibes + support + catalyst; no crypto/margin/options/pennies. Capture 20–30% then rotate.",
+    "description": "Ackman quality check + Xu execution: all-in one listed stock; vibes + support + catalyst; after AVGO, new entries only when verified Q is exactly 7 calendar days out. No crypto/margin/options/pennies. Capture 20–30% then rotate. No news-bomb overlay.",
     "primaryObjective": "capture_xu_style_swings",
     "secondaryObjective": "avoid_blowups_via_no_leverage_no_options_no_crypto",
     "timeHorizon": "days-to-weeks",
@@ -39,6 +39,11 @@
     "memeBlocklist": [],
     "memeNote": "Xu traded GME early. Retail/meme names OK if not a penny and not a chase.",
     "preferredTickers": ["GOOGL", "HOOD", "AMZN", "META", "AAPL", "MSFT", "NVDA", "UBER", "QSR", "BN", "SPCX", "TSLA"],
+    "upcomingEarningsOnly": true,
+    "minDaysBeforeEarnings": 7,
+    "maxDaysBeforeEarnings": 7,
+    "windowInclusive": true,
+    "entryUniverseNote": "After AVGO: NEW BUY only if verified earnings date is exactly 7 calendar days out (min=7 max=7). Under 7 or over 7: PASS new buy. Already-in HOLD through print; sell only at +20–30% or dead thesis. AVGO live hold until target or kill.",
     "fundMandateConfig": "config/fund-mandate.json"
   },
   "positionSizing": {
@@ -89,7 +94,7 @@
       "autoTakeProfit": true,
       "takeProfitPctLow": 20,
       "takeProfitPctHigh": 30,
-      "note": "Sell 100% at +20–30%, screenshot, or dead setup. Dual-gate: if Ackman quality AND Xu entry both passed, do NOT auto-sell just because earnings is tonight — hold is allowed (~1 month+). If only Xu passed and quality <4/6, that trade should not have been all-in.",
+      "note": "Sell 100% at +20–30%, screenshot, or dead thesis. Dual-gate: do NOT auto-sell just because Q is <7 days or tonight — HOLD through the print if already in. AVGO stay. If only Xu passed and quality <4/6, that trade should not have been all-in.",
       "fullExitTriggers": [
         "swing_target_20_to_30_pct",
         "screenshot_rule",

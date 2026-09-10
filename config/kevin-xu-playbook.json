@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.1",
   "source": "Kevin Xu (@kevinxu) public rules for *execution*. Quality checklist is separate: config/ackman-quality-screen.json. All-in one equity; no margin/options/crypto/pennies; vibes + support + catalyst; don't chase; sell 20–30% / before rumor is news; no stops. He traded GME early: meme/retail names are allowed if not a chase.",
   "rules": {
     "oneNameAtATime": true,
@@ -18,7 +18,21 @@
     "sellBeforeEarningsPrintNote": "LP 2026-08-19: not required when Ackman quality AND Xu entry both passed. Still sell if +20–30% already in before the print (screenshot).",
     "preEarningsRunUp": {
       "enabled": true,
-      "note": "Buying washout before an expected-good Q is valid Xu entry. Holding the print is allowed on dual-gate all-in. If +20–30% hits before the 8-K, sell — rumor is already news."
+      "upcomingEarningsOnly": true,
+      "minDaysBeforeEarnings": 7,
+      "maxDaysBeforeEarnings": 7,
+      "windowInclusive": true,
+      "note": "After AVGO: new all-in only if verified earnings date is exactly 7 calendar days out. Under 7 or over 7: not a new buy. Already-in HOLD through the print; sell at +20–30% or dead thesis. No news-bomb overlay."
+    },
+    "entryUniverse": {
+      "upcomingEarningsOnly": true,
+      "minDaysBeforeEarnings": 7,
+      "maxDaysBeforeEarnings": 7,
+      "exactCalendarDaysBeforeEarnings": 7,
+      "windowInclusive": true,
+      "dayCount": "calendar",
+      "unverifiedDateIsPass": true,
+      "holdExistingThroughPrint": true
     },
     "hardStopGtc": false,
     "hardStopNote": "Xu: no stop-losses. Exit = target, screenshot, rumor-is-news, or setup dead."
@@ -26,9 +40,9 @@
   "setupChecklist": [
     "Listed common stock — not options, not crypto, not a penny that can go to zero overnight",
     "Retail attention / vibes building (Reddit, X, scanners) — Xu is terminally online, not DCF",
-    "Near-term catalyst in days–weeks",
+    "Near-term catalyst = verified upcoming earnings exactly 7 calendar days out (new entries only)",
     "Buy near support — do not chase a name that already ran",
-    "Pre-Q washout + expected-good print is a valid entry",
+    "Pre-Q washout is a valid entry only when the print is exactly 7 calendar days out",
     "Do not chase a name that already ran ≥20% into the event",
     "Worst case on a real stock is typically an ugly gap (~20–25%), not zero",
     "Written swing memo exists"
@@ -38,6 +52,8 @@
     "Penny / OTC / can go to zero overnight",
     "Needs options, crypto, or margin to work",
     "Horizon is 3–12 months with no near-term swing",
-    "Would require a second simultaneous name"
+    "Would require a second simultaneous name",
+    "No verified earnings date, or next Q is not exactly 7 calendar days out (new buy only — existing holds stay if already in)",
+    "News-bomb / headline-only idea with no exactly-7d earnings date"
   ]
 }

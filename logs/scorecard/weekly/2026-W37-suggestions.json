@@ -1,0 +1,23 @@
+{
+  "week": "2026-W37",
+  "navUsd": 112.59,
+  "spyReturnPct": 2.2,
+  "fundReturnPct": 12.59,
+  "attribution": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.3,
+    "support_not_chase": 0.8,
+    "wont_go_to_zero": 0.4
+  },
+  "proposedDeltas": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.0,
+    "wont_go_to_zero": 0.0
+  },
+  "proposedThresholdDeltas": {
+    "min_score_for_medium_conviction": 0.0,
+    "min_score_for_high_conviction": 0.0
+  },
+  "xuNote": "W37: flat cash NAV $112.59 all week (0 trades). AVGO already closed W36 (−4.50%). Best signal support_not_chase (refused ORCL/ADBE chase + BRTX penny). Propose NO_CHANGE weights. Autopsy pause + reviewDate 2026-09-19 still process clock; next lean NKE/COST exact-7 9/24 if pause lifts."
+}

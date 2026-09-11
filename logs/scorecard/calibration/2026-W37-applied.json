@@ -1,0 +1,53 @@
+{
+  "$schema": "calibration-applied-v1",
+  "week": "2026-W37",
+  "appliedAt": "2026-09-11T21:07:58.000Z",
+  "decision": "NO_CHANGE",
+  "haltReason": null,
+  "previousWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.24,
+    "support_not_chase": 0.26,
+    "wont_go_to_zero": 0.15
+  },
+  "newWeights": {
+    "retail_attention_vibes": 0.35,
+    "near_term_catalyst": 0.24,
+    "support_not_chase": 0.26,
+    "wont_go_to_zero": 0.15
+  },
+  "previousThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "newThresholds": {
+    "min_score_for_medium_conviction": 0.55,
+    "min_score_for_high_conviction": 0.72
+  },
+  "proposedDeltasReviewed": {
+    "retail_attention_vibes": 0.0,
+    "near_term_catalyst": 0.0,
+    "support_not_chase": 0.0,
+    "wont_go_to_zero": 0.0
+  },
+  "policyChecks": {
+    "maxDeltaPerWeightPerWeek": 0.03,
+    "allDeltasWithinBound": true,
+    "allWeightsInFloorCeiling": true,
+    "weightsSumToOne": true,
+    "drawdownFromHwmPct": 5.69,
+    "haltDrawdownLimitPct": 20,
+    "weeklyNavDropPct": 0.0,
+    "haltWeeklyNavDropLimitPct": 8,
+    "weeklyReviewPresent": true,
+    "noEvidenceRuleTriggered": true,
+    "openDualGateSwing": false,
+    "openNameNote": "Book CASH all week (0 equity). AVGO already closed W36. Julio autopsy pause through reviewDate 2026-09-19; no open dual-gate name."
+  },
+  "ackmanRationale": "W37 weekly review + suggestions present. NAV $112.59 (0.00% WoW, all-cash), drawdown from HWM 5.69% (under 20%). Zero completed swings / 0 trades — HOLD cash under autopsy. Proposed deltas all 0.0. no_evidence rule → NO_CHANGE. Best process signal support_not_chase (+0.8) — refused ORCL/ADBE chase and BRTX penny — is process credit, not enough closed-swing evidence to move weights after W36's +0.01 support_not_chase / −0.01 near_term_catalyst. Xu timing weights stay at lastCalibratedWeek 2026-W36. Options OFF; no trades this session.",
+  "attributionSummary": {
+    "bestSignal": "support_not_chase",
+    "fundVsSpyPct": 10.39,
+    "navUsd": 112.59
+  }
+}

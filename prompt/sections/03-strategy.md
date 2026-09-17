@@ -4,6 +4,8 @@ Lee `config/risk-policy.json`, `config/fund-mandate.json`, `config/kevin-xu-play
 
 **Capa 1 (Ackman):** calidad ≥4/6. **Capa 2 (Xu):** no chase + catalizador + un nombre. All-in **solo si ambas** pasan. Hold through Q / ~1 mes+ permitido en ese caso.
 
+**New-entry universe (LP 2026-08-22):** upcoming earnings **only**. After AVGO, verified report date **exactly 7 calendar days**. Under 7 or over 7 → not a new buy. Already-in HOLD through the print. Unverified date → PASS. **No** news-bomb / headline overlay. **AVGO stays until target or kill.**
+
 ## Su filtro (el que usamos)
 
 | Kevin Xu | Agentic |
@@ -29,10 +31,11 @@ Darling retail / meme: **in** si pasa Xu (early) **y** calidad ≥2/6 (no penny)
 
 Si el mercado **espera un Q bueno**, la acción suele subir **días antes** del report. Ese drift **es** el swing.
 
-- Comprar en soporte **antes** de que el run-up se coma el 20%.
+- Comprar en soporte **solo** si el print verificado está **exactamente 7 días** calendario.
 - Si ya vas **+20–30%** → **vender**, aunque el earnings sea mañana. No hace falta el print.
-- Default: **no dormir** el all-in en la noche del report (coin flip).
+- Si ya estás dentro y el Q cae bajo 7d → **HOLD** through the print (no vender porque el Q está cerca).
 - Si el nombre **ya** subió ≥20% into the Q → **PASS** (llegaste tarde; eso era el move).
+- Q ≠7d → **PASS** new buy.
 
 ## Proceso antes de BUY
 
@@ -44,7 +47,7 @@ Si el mercado **espera un Q bueno**, la acción suele subir **días antes** del 
 
 ## Universo
 
-Seed `researchUniverse` + **cualquier** common stock del scanner/social que pase el filtro. Precio ≥ $5, no penny.
+Seed `researchUniverse` = watchlist only. **NEW BUY** (after AVGO) = `entryUniverse` in `config/fund-mandate.json`: verified Q exactly 7 calendar days (min=7 max=7). Precio ≥ $5, no penny. NVDA-style Q&lt;7d is not a new buy.
 
 ## Sizing
 
